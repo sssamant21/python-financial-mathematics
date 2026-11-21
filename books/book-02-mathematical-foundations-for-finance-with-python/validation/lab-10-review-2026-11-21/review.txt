@@ -1,0 +1,44 @@
+"""Pinned chapter CLI/checker execution andindependent completeassessment oracle."""
+from pathlib import Path
+from fractions import Fraction as F
+from decimal import Decimal,localcontext
+from datetime import datetime,timezone
+import subprocess,json,sys,tempfile,hashlib,platform,math
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='63984650b354db8b361106303bc5d2317a314e71';prefix='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/';label=sys.argv[1] if len(sys.argv)>1 else 'first';full='--chapter' in sys.argv;commands=[];manifest=[];rows=[]
+def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+def exponential(x):
+ total=term=Decimal(1)
+ for n in range(1,121):term=term*x/n;total+=term
+ return total
+def compare(a,w,path='assessment'):
+ if isinstance(w,dict):
+  rows.append(dict(path=path,kind='schema',passed=set(a)==set(w)))
+  for k in w:compare(a[k],w[k],path+'.'+k)
+ elif isinstance(w,list):
+  rows.append(dict(path=path,kind='schema',passed=len(a)==len(w)))
+  for i,x in enumerate(w):compare(a[i],x,path+'.'+str(i))
+ else:
+  if type(w)in(bool,str):ok=type(a)==type(w) and a==w
+  elif w==0:ok=type(a)in(int,float) and a==0
+  else:ok=type(a)in(int,float) and math.isfinite(a) and math.isclose(a,float(w),rel_tol=5e-14,abs_tol=1e-12)
+  rows.append(dict(path=path,kind='leaf',actual=a,expected=w,passed=ok))
+with tempfile.TemporaryDirectory() as tmp:
+ paths=subprocess.check_output(['git','ls-tree','-r','--name-only',pin,'--',prefix],cwd=root,text=True).splitlines();paths=[p for p in paths if p.endswith('.py')]
+ for path in paths:
+  raw=subprocess.check_output(['git','show',pin+':'+path],cwd=root);(Path(tmp)/Path(path).name).write_bytes(raw);manifest.append(dict(path=path,sha256=hashlib.sha256(raw).hexdigest()))
+ names=sorted(Path(p).name for p in paths) if full else ['section_9_10.py','check_section_9_10.py']
+ for name in names:
+  r=subprocess.run([sys.executable,name],cwd=tmp,capture_output=True,text=True,timeout=90);commands.append(dict(argv=[sys.executable,name],returncode=r.returncode,stdout=r.stdout,stderr=r.stderr));print(name,r.returncode,flush=True)
+ r=subprocess.run([sys.executable,'-m','compileall','-q','.'],cwd=tmp,capture_output=True,text=True,timeout=90);commands.append(dict(argv=[sys.executable,'-m','compileall','-q','.'],returncode=r.returncode,stdout=r.stdout,stderr=r.stderr))
+ for item in manifest:assert hashlib.sha256((Path(tmp)/Path(item['path']).name).read_bytes()).hexdigest()==item['sha256']
+ record=next(c for c in commands if c['argv'][-1]=='section_9_10.py');actual=json.loads(record['stdout'])
+ with localcontext() as ctx:
+  ctx.prec=140;flows=[(F(120),F(1,2)),(F(120),F(1)),(F(120),F(2)),(F(1120),F(3))];R=F(.04);V=sum(dec(c)*exponential(-dec(R*t)) for c,t in flows);first=-sum(dec(t*c)*exponential(-dec(R*t)) for c,t in flows);second=sum(dec(t*t*c)*exponential(-dec(R*t)) for c,t in flows);scenarios=[]
+  for bp in [-100,-50,-25,0,25,50,100]:
+   h=bp/10000;H=F(h);HH=dec(H);shifted=sum(dec(c)*exponential(-dec((R+H)*t)) for c,t in flows);exact=shifted-V;linear=first*HH;quadratic=linear+second*HH*HH/2;low=min(R,R+H);B1=sum(dec(t*t*c)*exponential(-dec(low*t)) for c,t in flows)*HH*HH/2;B2=sum(dec(t*t*t*c)*exponential(-dec(low*t)) for c,t in flows)*abs(HH)**3/6
+   d=dict(shock_bp=float(bp),shock_decimal=h,exact_change=float(exact),linear_change=float(linear),quadratic_change=float(quadratic),exact_value=float(shifted),linear_error=float(exact-linear),quadratic_error=float(exact-quadratic),absolute_linear_error=float(abs(exact-linear)),absolute_quadratic_error=float(abs(exact-quadratic)),linear_bound=float(B1),quadratic_bound=float(B2));allowance=1e-12*max(1.,abs(float(V)));d['linear_bound_pass']=d['absolute_linear_error']<=d['linear_bound']+allowance;d['quadratic_bound_pass']=d['absolute_quadratic_error']<=d['quadratic_bound']+allowance;scenarios.append(d)
+  expected=dict(assessment='Chapter 09 cumulative',baseline_value=float(V),duration=float(-first/V),convexity=float(second/V),scenarios=scenarios,in_model_checks_passed=True,runtime_certified=False,independent_review_completed=False)
+ compare(actual,expected)
+result=dict(pin=pin,executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),full_chapter=full,source_manifest=manifest,commands=commands,rows=rows,passed=sum(r['passed'] for r in rows),failed=sum(not r['passed'] for r in rows),command_failures=sum(c['returncode']!=0 for c in commands),scope='fullchapter sourcecommands when --chapter;independent assessment oracle,notfullbook/independentreview')
+(here/(label+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(dict(passed=result['passed'],failed=result['failed'],source_files=len(manifest),commands=len(commands),command_failures=result['command_failures'])));assert result['failed']==result['command_failures']==0

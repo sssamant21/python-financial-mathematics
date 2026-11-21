@@ -443,3 +443,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Scoped Section18.8 paired-estimator/covariance assumptions
 
 [Evidence](v10-paired-estimation/README.md):545predicatespass twice over27weightedorderedN3pairedpaths.486nativeestimatefields,27caller covariance comparisons,27nativeinterval/exactdecisions,fiveexactmodelaggregates distinct. TrueVar(meanDifference)=50/3;ignoringwithinpaircovariance gives250/3. Exactfixture-normalintervalcoverage25/32,notsource95%certification. Fourformalcommands/24invocationsof12existingmethods;priorF180/104predicate listingidentityverified,13originalfailurespreserved. InitialobserverJSONFractionfailure/sourceandcorrectedreruns retained;nofinancialsourcechange/defect/newanswers/workflows/historicalmethods. Next18.9convergenceassumptions;V10INPROGRESS,F28/F32/F209/F165/F185 andbroaderintegration/resource/model/platform/release/independent/canonicalacceptanceopen.
+
+
+## V10 — Scoped Section18.9 nested-prefix convergence assumptions
+
+[Evidence](v10-nested-convergence/README.md):738predicatespass twice across81weightedfour-observationpaths.648nativeprefixsummaryfields,81error-worseningdecisions,nineexactmodelaggregates separate. Cov(mean2,mean4)=50;Var(mean4−mean2)=50versusnaiveindependentsum150. P(largerprefixerrorworsens)=17/64forthisstatedIIDmodel,notasymptoticcertification. Fourformalcommands/24invocationsof12existingmethods;priorF181/88predicate listingidentityverified,12originalfailurespreserved. No sourcechange/defect/newanswers/workflows/historicalmethods. Next18.10confidence/simulation-errorassumptions;V10INPROGRESS,F28/F32/F209/F165/F185 andbroaderintegration/resource/model/platform/release/independent/canonicalacceptanceopen.

@@ -1,0 +1,45 @@
+# V-224 — Section9.10 cumulative lab and Chapter9 runtime crosswalk
+
+Pinned source `63984650b354db8b361106303bc5d2317a314e71`,reviewed2026-11-21. [Runnable review](review.txt),[completeChapter9 run](first.json),[assessment replay](replay.json),[verification](verification.json),[full-book identity delta](runtime-delta.json). Source/environment/actualUTCexecutiontimestamp/stdout/stderr/hashmanifests retained.
+
+Run from repository root:
+
+```bash
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/lab-10-review-2026-11-21/review.txt first --chapter
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/lab-10-review-2026-11-21/review.txt replay
+```
+
+## Actual runtime and independent assessment reference
+
+ThecompleteChapter9 batch stagesall56Pythonfiles verbatimfromthepin intoanisolatedtemporarydirectory,executesall46checkers andall10sectionCLI labs,thencompiles/verifiesall56files. All57commandrecords pass. Sourcehashesverifybefore/after;includescurrentV216check9.05(which differsfromtheolderfull-bookpin). Thisisnotafull-bookexecutionorsupported-platformcertification.
+
+Theassessmentreplaystages/verifiesthesame56files butexecutesonlyassessmentCLI,itsreferencechecker andcompile(threecommandrecords). Theentirechapter isnotclaimedtwiceexecuted. Bothruns pass114independent assessmentpredicates(105leaves/9schemas) withidenticalrows. Firstcommandinitialresults andactualreplay arebothpassing;nofailure ordefect wasmanufactured.
+
+Independent140-digit/120-termTaylor-series exponential references derivebaselineV,D,K andallsevenexact/linear/quadraticchanges,values,signed/absoluteerrors,intervalbounds andreportedboundflags. Representedbinary64rate andconvertedshock inputs areused;exactR+Hdefinesendpoint/bounds aftersourceeligibilitygates. Theoracle doesnotcallactualprojecthelpers orDecimal.exp. Sourceandoracle shareDecimalbasicarithmetic;this isaselectedfixturecheck,notuniversalrounding/truncationcertification. Numericrtol5e-14/atol1e-12;zeros/strings/booleans/schemas exact.
+
+Nativein_model_checks_passedistrueonlyfortheconstantassessmentassertions;runtime_certified andindependent_review_completed remainfalse. Theassessmentomitsfirst/secondderivativefields;thefullprojectreport isstillneededforthose.Applied-taskexport iscallerwork,notnativefilewriting. Standard-libraryscriptsdonotauthenticatefinancialdata/model/as-of/reviewerprovenance.
+
+## Chapter9 lab inventory and scope
+
+| Sections | Fresh execution and evidence interpretation |
+|---|---|
+|9.1/9.2|Nativeabsolute/relative/elasticity labs execute;earlyexercisehelpercheckers execute. Suppliedanalyticderivatives arenotautomaticdifferentiation.|
+|9.3/9.4|First/secondorderTaylor labs andcompletefield/shock/ladder checkers execute. Localaccuracy isnotuniversalquadratic-improvement acceptance.|
+|9.5|Remainder/bound labandcomplete/polynomialcheckers execute,including thelaternonvacuousboundchecker. Observedfloatflags arenotlatentmathematicalboundproofs.|
+|9.6|Discountedvalue/parallel/spot/cash-flow helpers execute. Continuousrateconventionsandindependentspotvsmarketkeyratesremainexplicit.|
+|9.7|Kink/payoff/difference/scenario labs/checkers execute. Formalphysicalspot0extension remainsseparatefromphysicaltwo-sidedderivativeinterpretation.|
+|9.8|Sensitivityreportlabandbaseline/term/parallel/spotcheckers execute. Optionalcurrencytolerance isnotaremainderbound.|
+|9.9|Projectlab/baseline/scenario/reportcheckers execute. CallerCSV/otherextensionsremainseparatefromnativeprojectAPI.|
+|9.10|CumulativeCLI andassessment/earlyexercise/cash-flow/appliedalignmentcheckers execute. Assertion-modecontrolledprobesremainintheunchangedscopedchecker.|
+
+ThisrefreshesthesuppliedCLI-labexecutiongateandallChapter9checkersatonecurrentpin. Earlier V211–V223prompt-to-source/printedanswer/extensioncrosswalks retain theirscope/historicalfailures. Checkerscontainnumerouspredicates;46checkercommands arenot46newunique tests,noraretheir internalcounts addedtohistoricaltotalsorCOVpercentages.
+
+## Exercise and applied-project progression
+
+All24workedexercisesretainseparatereviewdispositions:1–8analytic/helper/callercompositions;9–13single-paymentduration/convexity/shocks/bounds;14–16cash-flowmoments/weighted-varianceproof/cashsensitivities;17–20kinks/offsetidentity;21bpconversion;22independentspotcomposition;23relative-errordenominatorlimit;24acceptanceversusin-modelbounds. Theirdedicatedexistingcheckerswhereprovidednowexecuteinthechapterbatch;conceptualproofs/provenanceapprovalarenotmisrepresentedasruntimeoutputs.
+
+Exercise25'ssixappliedtasksretainpriorV210mapping:baseline/fullreportratherthansummary,exactseven-shockladder,approximation/error/boundfields,non-universal-improvementcounterexample andcallerJSONexport.Thededicatedcheckerexecuteshere;itdoesnotcreateanativegeneralexport/optimization/pricingAPI. OptionalCSV/kink/nonparallel/toleranceextensionsfrom9.9remainexplicitlyscoped;theyarenotallimplementedintheprojectfacade.
+
+Allten suppliedChapter9CLIlabshavefreshpinnedruntimeevidence. Thechaptercompletionchecklistisupdatedtothatpreciseexecutiongate;independentmathematical/financialeditorialreviewandcanonicalapprovalremainunchecked. NeitherChapter9norBook2isdeclaredfullyaccepted. Next10.1accumulation/Riemann-sumslab/source-contractcrosswalk.
+
+Freshfull-bookinventory642Pythonfiles/429check-test scripts/643requiredblobs;642matchlatestfullV212at`2ee81822af67357087e2af6193348f2b3c5dbdf8`,onlyearlierV216check9.05differs. Thatcheckerpassesinthecurrentchapterrun;full-bookruntimeisstilltheolderpin.ThisbatchchangesnoPython/requiredfixtureblobs.38selectedCOVcategoriesremainpartial,noneclosed;broaderresource/provenance/model/platform/release/independent/canonicalacceptanceopen.Book1independentlytracked.
