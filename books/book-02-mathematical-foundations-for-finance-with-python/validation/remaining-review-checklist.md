@@ -1647,3 +1647,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-233 checkpoint — Section10.3 finite-stencil/secant contracts
 
 [Evidence](ch10-ftc-centered-2026-11-21/README.md):17 passes/five baseline failed predicates reproduced; corrected22 predicates pass twice. Explicit actual-rounded-span secant policy, finite distinct stencil preflight and complete represented quotient handle selected range/callback contracts. Policies/extensions are distinct from defect counts; derivative/truncation/domain limits explicit. Six native regressions, prior27 polynomial/24 composition/33 chapter-support predicates and all21 Chapter10 files/11checkers/10CLIs pass. Next: atomic publication then full pinned runtime refresh before10.4. All38 selected COV categories remain partial, none closed; broader acceptance stays open. Book1 separate.
+
+
+## V-234 checkpoint — Full pinned Book2 FTC runtime refresh
+
+[Evidence](full-runtime-ftc-2026-11-21/README.md) at `7e98df4194191241042e19c5dba66873a8b4a852`: 642/642 Python files compile, 429/429 check/test scripts pass, 643/643 required source/fixture blobs verify before/after. Includes accumulated10.3 polynomial/composition/stencil changes; explicit policies/extensions and baseline failures retain scope. Actual outputs/status/timings and source manifest retained. Next10.4 substitution/integration-by-parts lab/source crosswalk; selected10.3 runtime progression gate met, no book or independent acceptance claimed. All38 selected COV categories remain partial, none closed; broader numerical/resource/provenance/model/platform/release/independent/canonical gates stay open. Book1 separate.

@@ -1,0 +1,102 @@
+{
+  "source_pin": "7e98df4194191241042e19c5dba66873a8b4a852",
+  "executed_at_utc": "2026-11-21T21:15:21.572550+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "label": "build environment local tools",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "venv",
+        "--system-site-packages",
+        "/tmp/book1-v10-wheel-p79unh7p/build"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "tool versions",
+      "argv": [
+        "/tmp/book1-v10-wheel-p79unh7p/build/bin/python",
+        "-c",
+        "import importlib.metadata as m;print({x:m.version(x) for x in [\"pip\",\"setuptools\",\"wheel\"]})"
+      ],
+      "returncode": 0,
+      "stdout": "{'pip': '25.0.1', 'setuptools': '84.2.1', 'wheel': '0.48.0'}\n",
+      "stderr": ""
+    },
+    {
+      "label": "offline exact-scaffold wheel build",
+      "argv": [
+        "/tmp/book1-v10-wheel-p79unh7p/build/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-index",
+        "--no-build-isolation",
+        "--no-deps",
+        "--wheel-dir",
+        "/tmp/book1-v10-wheel-p79unh7p/wheels",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "Processing /tmp/book1-v10-wheel-p79unh7p/project\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: financial-toolkit-educational\n  Building wheel for financial-toolkit-educational (pyproject.toml): started\n  Building wheel for financial-toolkit-educational (pyproject.toml): finished with status 'done'\n  Created wheel for financial-toolkit-educational: filename=financial_toolkit_educational-0.1.0-py3-none-any.whl size=8776 sha256=9e1899c10ec31fdc43f7c9dea6f337ade2a38e150d6cdac2c60dddcb2c224509\n  Stored in directory: /tmp/pip-ephem-wheel-cache-npwdb4pj/wheels/aa/a8/f5/2031fbc6ed75fb9e1ed3f69c164a607d9174c526027c957b91\nSuccessfully built financial-toolkit-educational\n",
+      "stderr": ""
+    },
+    {
+      "label": "clean consumer",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "venv",
+        "/tmp/book1-v10-wheel-p79unh7p/consumer"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "offline local wheel install",
+      "argv": [
+        "/tmp/book1-v10-wheel-p79unh7p/consumer/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "/tmp/book1-v10-wheel-p79unh7p/wheels/financial_toolkit_educational-0.1.0-py3-none-any.whl"
+      ],
+      "returncode": 0,
+      "stdout": "Processing /tmp/book1-v10-wheel-p79unh7p/wheels/financial_toolkit_educational-0.1.0-py3-none-any.whl\nInstalling collected packages: financial-toolkit-educational\nSuccessfully installed financial-toolkit-educational-0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "isolated installed first",
+      "argv": [
+        "/tmp/book1-v10-wheel-p79unh7p/consumer/bin/python",
+        "-I",
+        "/tmp/book1-v10-wheel-p79unh7p/outside/probe.py",
+        "/tmp/book1-v10-wheel-p79unh7p/outside/first.json"
+      ],
+      "returncode": 0,
+      "stdout": "40 0\n",
+      "stderr": ""
+    },
+    {
+      "label": "isolated installed replay",
+      "argv": [
+        "/tmp/book1-v10-wheel-p79unh7p/consumer/bin/python",
+        "-I",
+        "/tmp/book1-v10-wheel-p79unh7p/outside/probe.py",
+        "/tmp/book1-v10-wheel-p79unh7p/outside/replay.json"
+      ],
+      "returncode": 0,
+      "stdout": "40 0\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "New selected clean-wheel probes, not rerun of355 historical predicates or108 methods; no global/index installation or release acceptance"
+}
