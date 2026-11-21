@@ -81,3 +81,16 @@ python stable_monetary_tail.py --probabilities 1e-200 1e-200 --exposures-cents 1
 ```
 
 Five synthetic tests are authored, including the expected 1e-400 two-default event, comparison with the float PMF for ordinary probabilities, deterministic endpoints, and invalid inputs. **Tests and exact-revision CI have not been executed or verified in this publication milestone.** No licensed data, independent model review, dependence calibration, or production certification.
+
+## Bounded sparse high-precision monetary-loss DP
+
+`sparse_monetary_tail.py` uses a sparse map from **exact integer-cent losses** to **Decimal probability masses**, combining independent borrower default/no-default outcomes. Unlike exhaustive default-mask enumeration, identical loss totals merge at every step. This can handle more than 16 borrowers when loss-state collisions keep the map small, but worst-case state growth remains exponential. The method **never silently prunes states**: it raises an error if the configured state limit is exceeded. Inputs allow 1–128 borrowers, Decimal-string probabilities, precision 32–1000 digits, and 2–100,000 states. EAD × LGD must be a whole cent; no rounding or loss discretization is performed.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_sparse_monetary_tail.py
+python -m py_compile sparse_monetary_tail.py test_sparse_monetary_tail.py
+python sparse_monetary_tail.py --probabilities 1e-200 1e-200 --exposures-cents 100 100 --lgds 1 1 --threshold-cents 200
+```
+
+The six synthetic tests compare small portfolios to independent Decimal default-mask enumeration, exercise an underflowing 1e-400 joint tail, deterministic endpoints, borrower ordering, state-limit rejection, and invalid inputs. **New tests and exact-revision hosted CI remain unverified until executed.** This remains an independent-default educational model, not a scalable production engine or a calibrated credit-risk estimate. For very many borrower states, more specialized methods and independent numerical validation are required.
