@@ -1,6 +1,6 @@
 # Chapter 10 — Integration and Continuous Cash Flows
 
-**Manuscript status:** 10/10 sections published as Draft. [Pinned candidate Linux checker runtime](../validation/full-runtime-improper-2026-11-22/README.md) is recorded;selected10.1–10.6 lab/source crosswalks are scoped. Remaining substantive reviews and independent editorial/canonical acceptance stay open.
+**Manuscript status:** 10/10 sections published as Draft. [Pinned candidate Linux checker runtime](../validation/full-runtime-quadrature-2026-11-22/README.md) is recorded;selected10.1–10.7 lab/source crosswalks are scoped. Remaining substantive reviews and independent editorial/canonical acceptance stay open.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -14,7 +14,7 @@
 | 10.4 | [Substitution and Integration by Parts](10.04-substitution-and-integration-by-parts.md) | Draft — scoped lab/source crosswalk and candidate runtime recorded;broader acceptance open |
 | 10.5 | [Discounting Continuous Payment Streams](10.05-discounting-continuous-payment-streams.md) | Draft — scoped lab/source crosswalk and candidate runtime recorded;broader acceptance open |
 | 10.6 | [Improper Integrals and Infinite Horizons](10.06-improper-integrals-and-infinite-horizons.md) | Draft — scoped lab/source/report/proof and candidate runtime recorded;broader acceptance open |
-| 10.7 | [Numerical Quadrature](10.07-numerical-quadrature.md) | Draft — [weighted-output/grid/refinement subset](../validation/ch10-refinement-2026-11-22/README.md) corrected;remaining source/lab/independent acceptance open |
+| 10.7 | [Numerical Quadrature](10.07-numerical-quadrature.md) | Draft — [finance/report/lab crosswalk](../validation/ch10-finance-oracle-2026-11-22/README.md) and full candidate runtime recorded;broader acceptance open |
 | 10.8 | [Discrete versus Continuous Payments](10.08-discrete-versus-continuous-payments.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
 | 10.9 | [Chapter Project — Continuous Cash-Flow Valuation Engine](10.09-continuous-cash-flow-valuation-engine.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
 | 10.10 | [Exercises and Applied Problems](10.10-exercises-and-applied-problems.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
@@ -71,6 +71,6 @@
 
 ## Validation status
 
-Draft manuscript and reference-check source are published. Candidate Linux checker runtime is recorded at V252;remaining section reviews, independent code/mathematical/editorial review and canonical approval remain open.
+Draft manuscript and reference-check source are published. Candidate Linux checker runtime is recorded at V257;remaining section reviews, independent code/mathematical/editorial review and canonical approval remain open.
 
 **Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.

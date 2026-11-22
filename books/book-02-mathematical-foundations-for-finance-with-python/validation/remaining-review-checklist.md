@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-22
-**Full-runtime candidate source revision:** `1a5045c7a3c39727737579534f7074051559aa64` ([V252](full-runtime-improper-2026-11-22/README.md)).
-**Latest scoped source:** V255 Section10.7 refinement correction;baseline `41ab3fbc4d0207aa3c2fa39aca56ee6a5f5c939c`,candidate hashes/runtime in [evidence](ch10-refinement-2026-11-22/README.md).
+**Full-runtime candidate source revision:** `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85` ([V257](full-runtime-quadrature-2026-11-22/README.md)).
+**Latest scoped source:** V256 Section10.7 independent finance/report/alias crosswalk at the same executable pin;[evidence](ch10-finance-oracle-2026-11-22/README.md).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** Partial10.7 refinement reports/sequence contracts recorded;next finance/oracle/assumption/lab then full refresh before10.8. Broader gates open.
+**Disposition:** Selected10.7 source/report/proof/lab crosswalk and full-runtime gate recorded. Next10.8;broader numerical/resource/provenance/model/platform/release/independent/canonical gates open. Historical static checkpoint retains its older scope.
 
 ## Reconciled evidence
 
@@ -1757,3 +1757,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-255 checkpoint — Partial Section10.7 refinement report/sequence contracts
 
 [Evidence](ch10-refinement-2026-11-22/README.md):47 passes/18 failed baseline contract predicates reproduced; corrected65 pass twice plus retained78 grid/56 weighted predicates. Complete binary-report difference/divisor avoids intermediate overflow; final nonzero-underflow ValueError policy explicit. Controlled integrator reports distinguished from genuine native callback cases;2500-digit Decimal oracle. New snapshotted finite list/tuple1–32-level and all-count parameter preflight policies separated from source numerical bugs; irregular/duplicate/decreasing order retained, only consecutive doubling emits error. Initial set-serialization records retained separately. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.7 executable changes since V252,no new full run. Nextfinance/report/oracle/aliasing/exercise/lab,then full refresh before10.8. All38 COV categories partial,none closed;broader acceptance open. Book1 separate.
+
+
+## V-256 checkpoint — Section10.7 independent finance/report/alias crosswalk
+
+[Evidence](ch10-finance-oracle-2026-11-22/README.md):92 predicates pass twice with identical complete reports. Exact rational integrated product-Taylor reference PV4445.578725751999813... and explicit remainder<1e−80 replace shared-rule oracle dependence for this fixed model;15 source estimates satisfy derived smooth truncation bounds plus declared2e−10 floating allowance. High-resolution midpoint comparison separate. Smooth dyadic-root polynomial gives native0/0/error0 but exact integral1. All14 exercise/applied-lab assumptions reconciled without new answer/workflow counts. Four native CLI/compile commands;no source change. NextV257 full pinned refresh before10.8. V253–255 failures/policies/limits retained;all38 COV categories partial,none closed;broader acceptance open. Book1 separate.
+
+
+## V-257 checkpoint — Full pinned quadrature runtime refresh
+
+[Evidence](full-runtime-quadrature-2026-11-22/README.md) at `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85`:642/642 Python files compile,429/429 check-test scripts pass,643/643 required blobs verify before/after. V253–255 corrected10.7 weighted/grid/refinement/sequence sources included;earlier failures/policies/limits preserved. Exact output/status/timing/manifest retained;all executable identities match documentation candidate. V25692-predicate finance/report/alias crosswalk remains separate. Selected10.7 runtime progression gate met;next10.8 discrete/continuous lab-source crosswalk. No book/platform/model/reviewer/release/canonical acceptance. All38 COV categories partial,none closed;broader gates open. Book1 separate.

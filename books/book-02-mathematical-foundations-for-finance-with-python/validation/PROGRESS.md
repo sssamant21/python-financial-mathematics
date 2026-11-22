@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-22
-**Overall status:** In progress — V255 partial10.7 refinement report/sequence correction recorded; next independent finance/report oracle and assumption/lab crosswalk, then full refresh before10.8. V252 remains latest full runtime,preceding10.7 source/checker changes.
+**Overall status:** In progress — V256 Section10.7 finance/report/alias crosswalk and V257 full candidate Linux runtime recorded at `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85` (642/429/643). Next10.8;broader acceptance gaps open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 642/642 at `1a5045c7a3c39727737579534f7074051559aa64`. [V252](full-runtime-improper-2026-11-22/README.md). |
-| Automated script execution | Full candidate Linux pass | 429/429 at `1a5045c7a3c39727737579534f7074051559aa64`;643 required blobs verify before/after. [V252](full-runtime-improper-2026-11-22/README.md). |
+| Python compilation | Full candidate Linux pass | 642/642 at `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85`. [V257](full-runtime-quadrature-2026-11-22/README.md). |
+| Automated script execution | Full candidate Linux pass | 429/429 at `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85`;643 required blobs verify before/after. [V257](full-runtime-quadrature-2026-11-22/README.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1883,3 +1883,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-255 checkpoint — Partial Section10.7 refinement report/sequence contracts
 
 [Evidence](ch10-refinement-2026-11-22/README.md):47 passes/18 failed baseline contract predicates reproduced; corrected65 pass twice plus retained78 grid/56 weighted predicates. Complete binary-report difference/divisor avoids intermediate overflow; final nonzero-underflow ValueError policy explicit. Controlled integrator reports distinguished from genuine native callback cases;2500-digit Decimal oracle. New snapshotted finite list/tuple1–32-level and all-count parameter preflight policies separated from source numerical bugs; irregular/duplicate/decreasing order retained, only consecutive doubling emits error. Initial set-serialization records retained separately. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.7 executable changes since V252,no new full run. Nextfinance/report/oracle/aliasing/exercise/lab,then full refresh before10.8. All38 COV categories partial,none closed;broader acceptance open. Book1 separate.
+
+
+## V-256 checkpoint — Section10.7 independent finance/report/alias crosswalk
+
+[Evidence](ch10-finance-oracle-2026-11-22/README.md):92 predicates pass twice with identical complete reports. Exact rational integrated product-Taylor reference PV4445.578725751999813... and explicit remainder<1e−80 replace shared-rule oracle dependence for this fixed model;15 source estimates satisfy derived smooth truncation bounds plus declared2e−10 floating allowance. High-resolution midpoint comparison separate. Smooth dyadic-root polynomial gives native0/0/error0 but exact integral1. All14 exercise/applied-lab assumptions reconciled without new answer/workflow counts. Four native CLI/compile commands;no source change. NextV257 full pinned refresh before10.8. V253–255 failures/policies/limits retained;all38 COV categories partial,none closed;broader acceptance open. Book1 separate.
+
+
+## V-257 checkpoint — Full pinned quadrature runtime refresh
+
+[Evidence](full-runtime-quadrature-2026-11-22/README.md) at `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85`:642/642 Python files compile,429/429 check-test scripts pass,643/643 required blobs verify before/after. V253–255 corrected10.7 weighted/grid/refinement/sequence sources included;earlier failures/policies/limits preserved. Exact output/status/timing/manifest retained;all executable identities match documentation candidate. V25692-predicate finance/report/alias crosswalk remains separate. Selected10.7 runtime progression gate met;next10.8 discrete/continuous lab-source crosswalk. No book/platform/model/reviewer/release/canonical acceptance. All38 COV categories partial,none closed;broader gates open. Book1 separate.

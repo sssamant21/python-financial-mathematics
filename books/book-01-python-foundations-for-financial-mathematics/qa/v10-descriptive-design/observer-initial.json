@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "books/book-01-python-foundations-for-financial-mathematics/qa/v10-descriptive-design/observer-initial.py",
+    "observer-reproduction"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/e0bed2e906cb/run2211/books/book-01-python-foundations-for-financial-mathematics/qa/v10-descriptive-design/observer-initial.py\", line 27, in <module>\n    for k,v in oracle(x).items():ck(name+' '+k,actual[k],v,'native summary vs pairwise/raw-order rational oracle',v is not None)\n               ^^^^^^^^^\n  File \"/workspace/scratch/e0bed2e906cb/run2211/books/book-01-python-foundations-for-financial-mathematics/qa/v10-descriptive-design/observer-initial.py\", line 14, in oracle\n    return dict(count=n,mean=sum(x)/n,median=o[n//2] if n%2 else (o[n//2-1]+o[n//2])/2,minimum=o[0],maximum=o[-1],range=o[-1]-o[0],population_variance=v,population_sd=rootq(v),sample_variance=s,sample_sd=None if s is None else rootq(s),negative_fraction=F(sum(v<0 for v in x),n))\n                                                                                                                                                                       ^^^^^^^^\n  File \"/workspace/scratch/e0bed2e906cb/run2211/books/book-01-python-foundations-for-financial-mathematics/qa/v10-descriptive-design/observer-initial.py\", line 11, in rootq\n    with localcontext() as c:c.prec=100;return float((D(x.numerator)/D(x.denominator)).sqrt())\n                                                        ^^^^^^^^^^^\nAttributeError: 'float' object has no attribute 'numerator'\n",
+  "scope": "Observer singleton empty-sum rational-type failure, not a manuscript defect"
+}
