@@ -300,3 +300,5 @@ Project 51 sparse-precision extension: [bounded Decimal monetary-loss DP](51-poi
 
 
 Project 51 observational benchmark: [synthetic scaling report](51-poisson-binomial-credit-loss/README.md#observational-benchmark-report-2026-11-21) adds a bounded JSON measurement harness with UTC/runtime context, traced Python allocation diagnostics and analytical tail checks. Run `python benchmark_report.py --sizes 4 8 12 16 20` from Project 51. Newly authored tests and exact-revision CI are pending verification; measured bytes are not RSS or capacity guarantees.
+
+Project 51 now includes [bounded repeated synthetic benchmark diagnostics](51-poisson-binomial-credit-loss/README.md#repeated-synthetic-benchmark-variability-2026-11-22), with 75 authored tests (72 previously CI-verified; three new tests unverified). Traced allocations are not RSS, and timing observations are not capacity guarantees.
