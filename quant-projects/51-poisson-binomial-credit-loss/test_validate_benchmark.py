@@ -39,6 +39,25 @@ class ContractTests(unittest.TestCase):
                 target[key] = value
                 with self.assertRaises(ValueError): validate(r)
 
+    def test_rejects_in_range_but_wrong_analytical_tail(self):
+        for value in ('0.5', '0.6835937500000000000000001'):
+            with self.subTest(value=value):
+                r = copy.deepcopy(self.report)
+                r['rows'][0]['analytical_tail'] = value
+                with self.assertRaises(ValueError):
+                    validate(r)
+
+    def test_accepts_distinct_severity_same_tail(self):
+        r = copy.deepcopy(self.report)
+        r['rows'][0].update(pattern='distinct', expected_states=16)
+        self.assertEqual(validate(r), 1)
+
+    def test_rejects_in_range_tail_for_wrong_borrower_count(self):
+        r = copy.deepcopy(self.report)
+        r['rows'][0].update(borrowers=8, expected_states=9)
+        with self.assertRaises(ValueError):
+            validate(r)
+
     def test_rejects_duplicate(self):
         self.report['rows'].append(copy.deepcopy(self.report['rows'][0]))
         with self.assertRaises(ValueError): validate(self.report)
