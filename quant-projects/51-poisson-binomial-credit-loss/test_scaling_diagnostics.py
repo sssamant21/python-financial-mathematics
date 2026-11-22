@@ -104,5 +104,24 @@ class ScalingDiagnosticsTests(unittest.TestCase):
         self.assertEqual(output.getvalue(), '')
 
 
+    def test_three_point_growth_matches_exact_support_sizes(self):
+        report = fixture()
+        report['rows'] = []
+        from decimal import Decimal
+        for pattern in ('equal', 'distinct'):
+            for n in (4, 8, 12):
+                report['rows'].append({
+                    'borrowers': n, 'pattern': pattern,
+                    'expected_states': n + 1 if pattern == 'equal' else 2 ** n,
+                    'analytical_tail': str(Decimal(1) - Decimal('0.75') ** n),
+                    'peak_traced_bytes_min': 100,
+                    'peak_traced_bytes_median': 110,
+                    'peak_traced_bytes_max': 120,
+                })
+        rows = summarize(report)
+        self.assertEqual([r['states'] for r in rows], [5, 9, 13, 16, 256, 4096])
+        self.assertEqual([r['state_growth_from_previous'] for r in rows],
+                         [None, 9 / 5, 13 / 9, None, 16.0, 16.0])
+
 if __name__ == '__main__':
     unittest.main()
