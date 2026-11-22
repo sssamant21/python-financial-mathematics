@@ -2,6 +2,10 @@
 import json
 import math
 from section_10_05 import constant_pv
+from fractions import Fraction
+from decimal import Context,Decimal,localcontext
+
+MAX_PAYMENT_COUNT_BITS=4096
 
 def finite(x,name):
     if type(x) not in (int,float):
@@ -50,23 +54,52 @@ def schedule_pv(payments,rate):
         raise ValueError("nonfinite PV")
     return result
 
+def _payment_decimal(value):
+    return Decimal(value.numerator)/Decimal(value.denominator)
+
+def _decay_average(x):
+    # (1-exp(-x))/x on x>=0,including its continuous value at0.
+    if not x:
+        return Decimal(1)
+    if x>10000:
+        return 1/x
+    if x<Decimal(".1"):
+        term=total=Decimal(1)
+        for k in range(1,2000):
+            term*=(-x)/(k+1)
+            updated=total+term
+            if updated==total:
+                return total
+            total=updated
+        raise ValueError("payment series did not converge")
+    return (1-(-x).exp())/x
+
 def equal_payment_pv(payment_rate,rate,horizon,n,timing="end"):
     c,r,t=finite(payment_rate,"payment_rate"),finite(rate,"rate"),valid_horizon(horizon)
     n=valid_count(n)
     if timing not in ("begin","mid","end"):
         raise ValueError("timing must be begin, mid, or end")
+    if n.bit_length()>MAX_PAYMENT_COUNT_BITS:
+        raise ValueError("payment count outside supported integer-size budget")
     if c==0 or t==0:
         return 0.0
-    h=t/n
-    x=r*h
-    if not math.isfinite(x):
-        raise ValueError("nonfinite exponent")
-    if x==0:
-        return c*t
-    # Exact finite geometric sum, evaluated stably for small |x|.
-    base=(-math.expm1(-r*t))/(-math.expm1(-x))
-    offset={"begin":0.0,"mid":0.5,"end":1.0}[timing]
-    result=c*h*base*math.exp(-x*offset)
+    C,R,T=Fraction(c),Fraction(r),Fraction(t)
+    full=R*T
+    offset={"begin":Fraction(0),"mid":Fraction(1,2),"end":Fraction(1)}[timing]
+    step=abs(full)/n
+    dominant=-step*offset if full>=0 else step*(n-1+offset)
+    # With the declared count-size and float inputs,these cutoffs cannot
+    # discard a reportable compensated result. Final underflow remains0.
+    if dominant>10000:
+        raise ValueError("nonfinite PV")
+    if dominant < -10000:
+        return 0.0
+    with localcontext(Context(prec=800)):
+        value=_payment_decimal(C*T)
+        if full:
+            value*=_decay_average(_payment_decimal(abs(full)))/_decay_average(_payment_decimal(step))
+            value*=_payment_decimal(dominant).exp()
+        result=float(value)
     if not math.isfinite(result):
         raise ValueError("nonfinite PV")
     return result

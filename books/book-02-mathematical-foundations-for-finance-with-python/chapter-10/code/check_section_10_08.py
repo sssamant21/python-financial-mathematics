@@ -32,7 +32,28 @@ def check_continuous_complete_scale():
         shared.assert_called_once_with(1200.,.06,2.)
 
 
+def check_equal_payment_complete_scale():
+    from decimal import Decimal,localcontext
+    import section_10_08 as lab
+    with localcontext() as ctx:
+        ctx.prec=1800
+        c=Decimal.from_float(1e308)
+        expected=float(c*((-Decimal(1)).exp()+(-Decimal(2)).exp()))
+    assert equal_payment_pv(1e308,1.,2.,2,"end")==expected
+    assert equal_payment_pv(1.,1e308,1e308,2,"begin")==5e307
+    assert equal_payment_pv(1.,1e308,1e308,2,"end")==0.
+    with localcontext() as ctx:
+        ctx.prec=1800
+        immediate=float(Decimal.from_float(1e-308)*Decimal.from_float(1e308))
+    assert equal_payment_pv(1e-308,-1e308,1e308,1,"begin")==immediate
+    for timing in ("begin","mid","end"):
+        rejects(ValueError,equal_payment_pv,1e308,0.,2.,2,timing)
+        close(equal_payment_pv(1200.,.06,2.,10**400,timing),continuous_pv(1200.,.06,2.))
+        rejects(ValueError,equal_payment_pv,1.,.1,1.,1<<4096,timing)
+
+
 def run():
+    check_equal_payment_complete_scale()
     check_continuous_complete_scale()
     c,T=1200,2
     close(continuous_pv(c,0,T),2400)

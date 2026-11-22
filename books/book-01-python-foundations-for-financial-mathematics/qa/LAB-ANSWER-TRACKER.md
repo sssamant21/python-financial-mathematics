@@ -608,3 +608,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section15.2 quantile/selection/exposure assumptions
 
 [Evidence](v10-quantile-design/README.md):975 predicates pass twice;64 exact n3 four-point histories/five quantiles verify native type7/nearest ranks/loss reflection. External next strict-breach laws39/128 versus9/64 illustrate small-sample estimator limits,not calibrated.05 risk. Nearest-rank negative-reflection counterexample and beginning/ending exposure/trim/stress policies explicit. Final four commands/24 invocations of twelve existing methods;F128 identities/prior nine failures/49 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next15.3 variance/denominator/dependence then15.4–15.7. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section15.3 variance/denominator/dependence assumptions
+
+[Evidence](v10-variance-models/README.md):303 predicates pass twice across20 temporal paths and three cross-asset laws. Identical daily marginal variance.01 permits four-period sum SD.2/.4/0 under IID/shared/alternating laws;native square-root scaling does not validate dependence. Expected ddof1 variance.01/0/1⁄75 and all-n downside denominators checked independently. Four commands/24 invocations of twelve existing methods;F129 identities/prior observer error/twelve source failures/47 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next15.4 shape/moment assumptions,then15.5–15.7. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

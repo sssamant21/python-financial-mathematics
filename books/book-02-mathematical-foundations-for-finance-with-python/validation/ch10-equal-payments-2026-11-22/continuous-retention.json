@@ -1,0 +1,165 @@
+{
+  "pin": "3394dadd805cd683c35c4e1232df2b7a1b01aff9",
+  "source_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_08.py",
+  "source_sha256": "ada8e5ac7fc0e58e497f33b42b574b0ca31971fd6deae4618d8002a9a5c54df1",
+  "dependency_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_05.py",
+  "dependency_sha256": "067414f6cc9e989434a49425f1be6163007c7226a544fc67023dc2f2c170bef5",
+  "mode": "candidate",
+  "executed_at_utc": "2026-11-22T18:12:38.549144+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "rows": [
+    {
+      "name": "ordinary",
+      "actual": "2261.59126565685",
+      "expected": "2261.59126565685",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "zero rate",
+      "actual": "2400.0",
+      "expected": "2400.0",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "overflow compensated",
+      "actual": "8.646647167633874e+307",
+      "expected": "8.646647167633874e+307",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "negative cashflow",
+      "actual": "-8.646647167633874e+307",
+      "expected": "-8.646647167633874e+307",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "overflow exponent decay",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "small positive PV",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "compensated growth",
+      "actual": "2.233994766161711",
+      "expected": "2.233994766161711",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "signed compensated growth",
+      "actual": "-2.233994766161711",
+      "expected": "-2.233994766161711",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "zero huge growth",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "zero horizon",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "tiny horizon",
+      "actual": "0.6321205588285577",
+      "expected": "0.6321205588285577",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "nearzero rate",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "final overflow",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "growth unsupported",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring reference;final underflow0 retained;growth cutoff explicit",
+      "passed": true
+    },
+    {
+      "name": "invalid (True, 0.1, 1)",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "kind": "existing input contract",
+      "passed": true
+    },
+    {
+      "name": "invalid (1, nan, 1)",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "kind": "existing input contract",
+      "passed": true
+    },
+    {
+      "name": "invalid (1, 0.1, -1)",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "kind": "existing input contract",
+      "passed": true
+    },
+    {
+      "name": "observed shared Section10.5 call",
+      "actual": "1",
+      "expected": "1",
+      "kind": "explicit delegation after Section10.8 validation",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_08.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"continuous_pv\": 2261.59126565685,\n  \"scenarios\": [\n    {\n      \"n\": 2,\n      \"payment_amount\": 1200.0,\n      \"nominal_total\": 2400.0,\n      \"begin_pv\": 2330.1174403010987,\n      \"begin_difference\": 68.52617464424884,\n      \"mid_pv\": 2261.2520625836837,\n      \"mid_difference\": -0.339203073166118,\n      \"end_pv\": 2194.4219643616875,\n      \"end_difference\": -67.16930129516231\n    },\n    {\n      \"n\": 8,\n      \"payment_amount\": 300.0,\n      \"nominal_total\": 2400.0,\n      \"begin_pv\": 2278.5956048264898,\n      \"begin_difference\": 17.004339169639934,\n      \"mid_pv\": 2261.5700633778742,\n      \"mid_difference\": -0.021202278975579247,\n      \"end_pv\": 2244.671735841637,\n      \"end_difference\": -16.919529815212627\n    },\n    {\n      \"n\": 24,\n      \"payment_amount\": 100.0,\n      \"nominal_total\": 2400.0,\n      \"begin_pv\": 2267.2499554674987,\n      \"begin_difference\": 5.658689810648866,\n      \"mid_pv\": 2261.5889098343323,\n      \"mid_difference\": -0.0023558225175293046,\n      \"end_pv\": 2255.9419991392147,\n      \"end_difference\": -5.649266517635169\n    },\n    {\n      \"n\": 730,\n      \"payment_amount\": 3.287671232876712,\n      \"nominal_total\": 2400.0,\n      \"begin_pv\": 2261.7771549631834,\n      \"begin_difference\": 0.18588930633359269,\n      \"mid_pv\": 2261.5912631104907,\n      \"mid_difference\": -2.5463591555308085e-06,\n      \"end_pv\": 2261.4053865359524,\n      \"end_difference\": -0.1858791208974253\n    }\n  ],\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 18,
+  "failed": 0,
+  "scope": "Continuous-PV only;equal-payment/schedule/ratio/report contracts remain pending;no independent/platform/model acceptance"
+}

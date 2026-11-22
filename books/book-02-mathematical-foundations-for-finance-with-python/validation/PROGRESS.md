@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-22
-**Overall status:** In progress — V258 partial10.8 continuous-PV complete-scaling correction recorded;next equal-payment/schedule/ratio/full-report and assumption/lab contracts. V257 remains latest full runtime,preceding two changed10.8 blobs.
+**Overall status:** In progress — V259 partial10.8 complete equal-payment PV correction recorded;next schedule/ratio/full-report and assumption/lab contracts. V257 remains latest full runtime,preceding two changed10.8 blobs.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1898,3 +1898,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-258 checkpoint — Partial Section10.8 continuous-PV scaling
 
 [Evidence](ch10-continuous-comparison-2026-11-22/README.md):10 passes/eight failed baseline predicates reproduced;corrected18 pass twice against independent1800-digit integrated/halving-Taylor-squaring references. Six complete-value/zero failures,one exception contract and one new shared-call contract distinguished. continuous_pv now validates then delegates to existing corrected10.5 constant_pv;dependency hashes and actual call observed. Final-underflow0 and growth/resource policies retained. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.8 blobs differ from V257,no new full runtime. Next10.8 equal-payment/schedule/ratio/full-report then timing/units/exercise/lab crosswalk. All38 COV categories partial,none closed;broader gates open. Book1 separate.
+
+
+## V-259 checkpoint — Partial Section10.8 complete equal-payment PV
+
+[Evidence](ch10-equal-payments-2026-11-22/README.md):18 passes/21 failed final baseline predicates reproduced;corrected39 pass twice plus18 retained continuous predicates. Independent1800-digit explicit sums verify all timings/compensated signed and growth/zero/final-range/immediate-payment cases;huge-n control labelled separately. Source exact binary-input complete geometric normalization/stable phi/800-digit report avoids premature intermediates. Three static bit-budget policy probes distinguished;bit_length<=4096 and cutoff/underflow/resource limits explicit. Interim33 records retained. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.8 blobs differ from V257,no new full runtime. Nextschedule/ratio/full-report then timing/units/exercise/lab. All38 COV categories partial,none closed;broader gates open. Book1 separate.

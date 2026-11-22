@@ -15,7 +15,7 @@
 | 10.5 | [Discounting Continuous Payment Streams](10.05-discounting-continuous-payment-streams.md) | Draft — scoped lab/source crosswalk and candidate runtime recorded;broader acceptance open |
 | 10.6 | [Improper Integrals and Infinite Horizons](10.06-improper-integrals-and-infinite-horizons.md) | Draft — scoped lab/source/report/proof and candidate runtime recorded;broader acceptance open |
 | 10.7 | [Numerical Quadrature](10.07-numerical-quadrature.md) | Draft — [finance/report/lab crosswalk](../validation/ch10-finance-oracle-2026-11-22/README.md) and full candidate runtime recorded;broader acceptance open |
-| 10.8 | [Discrete versus Continuous Payments](10.08-discrete-versus-continuous-payments.md) | Draft — [continuous-PV subset](../validation/ch10-continuous-comparison-2026-11-22/README.md) corrected;remaining source/lab/independent acceptance open |
+| 10.8 | [Discrete versus Continuous Payments](10.08-discrete-versus-continuous-payments.md) | Draft — [continuous/equal-payment subset](../validation/ch10-equal-payments-2026-11-22/README.md) corrected;remaining source/lab/independent acceptance open |
 | 10.9 | [Chapter Project — Continuous Cash-Flow Valuation Engine](10.09-continuous-cash-flow-valuation-engine.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
 | 10.10 | [Exercises and Applied Problems](10.10-exercises-and-applied-problems.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
 
