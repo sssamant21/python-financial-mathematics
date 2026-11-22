@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-22
 **Full-runtime candidate source revision:** `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85` ([V257](full-runtime-quadrature-2026-11-22/README.md)).
-**Latest scoped source:** V260 Section10.8 schedule correction;baseline `3c23b8721b0e2fa5a936438fd9cb0fa1aa4e0fbe`,candidate identities/execution in [evidence](ch10-schedule-2026-11-22/README.md).
+**Latest scoped source:** V261 Section10.8 ratio/report corrections;baseline `83322aff81c8a0fa62a1cd0787e6cad96acf56e0`,candidate identities/execution in [evidence](ch10-ratio-report-2026-11-22/README.md).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** Partial10.8 schedule PV recorded;next ratio/full-report then assumption/lab obligations and full refresh. Broader gates open.
+**Disposition:** Partial10.8 ratio/full fixed-report contracts recorded;next timing/limit/units/exercise/lab then full refresh before10.9. Broader gates open.
 
 ## Reconciled evidence
 
@@ -1782,3 +1782,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-260 checkpoint — Partial Section10.8 explicit schedule PV
 
 [Evidence](ch10-schedule-2026-11-22/README.md):seven passes/20 failed final baseline contract predicates reproduced;corrected27 pass twice plus18/39 retained continuous/equal predicates. Independent2200-digit halving/Taylor/squaring references and reversed schedules verify compensated growth,signed/group cancellation,subnormal residual,zero/final-range cases. Static cap and full-row priority probes distinct;10000 bounded rows,exact binary groups,2000-digit fixed-order terms and unresolved-zero/growth/underflow support limits explicit. Interim23 retained. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.8 blobs differ from V257,no new full runtime. Nextratio/full-report then timing/units/exercise/lab and refreshed full run. All38 COV categories partial,none closed;broader gates open. Book1 separate.
+
+
+## V-261 checkpoint — Partial Section10.8 timing ratio/full fixed report
+
+[Evidence](ch10-ratio-report-2026-11-22/README.md):59 passes/20 failed baseline predicates reproduced;corrected79 pass twice with identical complete reports. Exact binary-input step/stable phi/800-digit combined scaling preserves extreme/subnormal ratios;three4096-bit policy probes separate. Independent2200-digit exponential quotient and complete report-field oracles;false-zero ratio cannot pass via absolute tolerance. Nonfinite nominal report metadata now rejects before assembly. Interim76 retained. Chapter10:21 compiled,11 checkers/10 CLIs pass plus18/39/27 retained predicates;fresh642/429/643 inventory,two10.8 blobs differ from V257,no new full runtime. Nexttiming/limit/units/exercise/lab then full refresh before10.9. All38 COV categories partial,none closed;broader gates open. Book1 separate.

@@ -618,3 +618,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section15.4 shape/moment-identification assumptions
 
 [Evidence](v10-shape-models/README.md):65 predicates pass twice. Two deterministic72-observation finite laws share first four raw moments/full native reports(skew0,kurtosis3,excess0) but strict R<−.02 frequency differs0 versus1/72. Raw-power central-moment oracles,adjusted-estimator labels,stress/selection and affine transforms checked;no Gaussian/tail identification or forecast accepted. Final four commands/24 invocations of twelve existing methods;F130 identities/prior ten failures/49 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next15.5 covariance/pairing,then15.6–15.7. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section15.5 covariance/joint-law/pairing assumptions
+
+[Evidence](v10-covariance-models/README.md):283 predicates pass twice across30 pairings with fixed marginal samples,ddof/correlation/portfolio/matrix oracles. Zero covariance under Y=100X² coexists with joint event.2 versus independence product.08. External pairwise-subset matrix has quadratic−6,distinct from selected common-row native matrix quadratic2;no PSD/alignment/independence approval claimed. Four commands/24 invocations of twelve existing methods;F131 identities/prior eight failures/44 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next15.6 correlation/selection,then15.7. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

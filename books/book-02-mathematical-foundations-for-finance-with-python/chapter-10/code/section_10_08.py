@@ -132,25 +132,33 @@ def timing_ratio(rate,horizon,n,timing="end"):
     n=valid_count(n)
     if timing not in ("begin","mid","end"):
         raise ValueError("unknown timing")
-    x=r*t/n
-    if not math.isfinite(x):
-        raise ValueError("nonfinite exponent")
-    if x==0:
+    if n.bit_length()>MAX_PAYMENT_COUNT_BITS:
+        raise ValueError("ratio count outside supported integer-size budget")
+    x=Fraction(r)*Fraction(t)/n
+    if not x:
         return 1.0
-    # x/(e^x-1) is stable via expm1; very small x remains well-conditioned.
-    factor=x/math.expm1(x)
-    shift={"begin":1.0,"mid":0.5,"end":0.0}[timing]
-    result=factor*math.exp(x*shift)
+    offset={"begin":Fraction(0),"mid":Fraction(1,2),"end":Fraction(1)}[timing]
+    magnitude=abs(x)
+    exponent=-magnitude*(offset if x>0 else 1-offset)
+    if exponent < -10000:
+        return 0.0
+    with localcontext(Context(prec=800)):
+        result=float(_payment_decimal(exponent).exp()/_decay_average(_payment_decimal(magnitude)))
     if not math.isfinite(result):
         raise ValueError("nonfinite ratio")
     return result
 
 def comparison(payment_rate=1200,rate=0.06,horizon=2):
     c,r,t=finite(payment_rate,"payment_rate"),finite(rate,"rate"),valid_horizon(horizon)
+    total=Fraction(c)*Fraction(t)
+    try:nominal_total=float(total)
+    except OverflowError as exc:raise ValueError("nominal total outside report range") from exc
+    if not math.isfinite(nominal_total):
+        raise ValueError("nominal total outside report range")
     reference=continuous_pv(c,r,t)
     rows=[]
     for n in (2,8,24,730):
-        row={"n":n,"payment_amount":c*t/n,"nominal_total":c*t}
+        row={"n":n,"payment_amount":float(total/n),"nominal_total":nominal_total}
         for timing in ("begin","mid","end"):
             value=equal_payment_pv(c,r,t,n,timing)
             row[timing+"_pv"]=value

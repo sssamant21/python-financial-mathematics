@@ -69,7 +69,25 @@ def check_schedule_complete_scale():
     rejects(ValueError,schedule_pv,itertools.repeat((0.,1.)),0.)
 
 
+def check_ratio_complete_range_and_report():
+    from decimal import Decimal,localcontext
+    for rate in (710.,1500.):
+        with localcontext() as ctx:
+            ctx.prec=2200
+            expected=float(Decimal.from_float(rate)/(Decimal.from_float(rate).exp()-1)*((Decimal.from_float(rate)/2).exp()))
+        assert timing_ratio(rate,1.,1,"mid")==expected
+    assert timing_ratio(1e308,1.,1,"begin")==1e308
+    assert timing_ratio(-1e308,1.,1,"end")==1e308
+    assert timing_ratio(1e308,1e308,1,"end")==0.
+    rejects(ValueError,timing_ratio,1e308,1e308,1,"begin")
+    for timing in ("begin","mid","end"):
+        assert timing_ratio(.06,2.,10**400,timing)==1.
+        rejects(ValueError,timing_ratio,.1,1.,1<<4096,timing)
+    rejects(ValueError,comparison,1e308,1.,2.)
+
+
 def run():
+    check_ratio_complete_range_and_report()
     check_schedule_complete_scale()
     check_equal_payment_complete_scale()
     check_continuous_complete_scale()
