@@ -419,8 +419,8 @@ jobs:
       - name: Validate Project 51 heterogeneous default counts
         run: |
           cd quant-projects/51-poisson-binomial-credit-loss
-          python -m unittest -v test_poisson_binomial.py test_numerical_checks.py test_monetary_loss.py test_monetary_reference.py test_log_default_diagnostic.py test_stable_monetary_tail.py test_sparse_monetary_tail.py test_state_benchmark.py test_memory_benchmark.py test_memory_comparison.py test_benchmark_report.py
-          python -m py_compile poisson_binomial.py numerical_checks.py monetary_loss.py test_poisson_binomial.py test_numerical_checks.py test_monetary_loss.py test_monetary_reference.py log_default_diagnostic.py test_log_default_diagnostic.py stable_monetary_tail.py test_stable_monetary_tail.py sparse_monetary_tail.py test_sparse_monetary_tail.py state_benchmark.py test_state_benchmark.py memory_benchmark.py test_memory_benchmark.py memory_comparison.py test_memory_comparison.py benchmark_report.py test_benchmark_report.py
+          python -m unittest -v test_poisson_binomial.py test_numerical_checks.py test_monetary_loss.py test_monetary_reference.py test_log_default_diagnostic.py test_stable_monetary_tail.py test_sparse_monetary_tail.py test_state_benchmark.py test_memory_benchmark.py test_memory_comparison.py test_benchmark_report.py test_repeated_benchmark.py
+          python -m py_compile poisson_binomial.py numerical_checks.py monetary_loss.py test_poisson_binomial.py test_numerical_checks.py test_monetary_loss.py test_monetary_reference.py log_default_diagnostic.py test_log_default_diagnostic.py stable_monetary_tail.py test_stable_monetary_tail.py sparse_monetary_tail.py test_sparse_monetary_tail.py state_benchmark.py test_state_benchmark.py memory_benchmark.py test_memory_benchmark.py memory_comparison.py test_memory_comparison.py benchmark_report.py test_benchmark_report.py repeated_benchmark.py test_repeated_benchmark.py
           python poisson_binomial.py --probabilities 0.01 0.02 0.05 0.10 --threshold 2
           python numerical_checks.py --probabilities 0.01 0.02 0.05 0.10
           python monetary_loss.py --probabilities 0.01 0.05 --exposures-cents 10000 20000 --lgds 0.4 0.5 --threshold-cents 10000
@@ -429,12 +429,26 @@ jobs:
           python sparse_monetary_tail.py --probabilities 1e-200 1e-200 --exposures-cents 100 100 --lgds 1 1 --threshold-cents 200
           python memory_comparison.py --sizes 4 8 --max-states 1000
           python benchmark_report.py --sizes 4 8 --max-states 1000
+          python repeated_benchmark.py --sizes 4 --repetitions 2 --max-states 100
 
       - name: Capture bounded Project 51 synthetic benchmark evidence
         run: |
           cd quant-projects/51-poisson-binomial-credit-loss
           python benchmark_report.py --sizes 4 8 12 16 20 --precision 100 --max-states 10000 --output benchmark-evidence.json
           python -c "import json; r=json.load(open('benchmark-evidence.json')); assert r['synthetic_only'] and len(r['rows'])==8; print('Benchmark JSON validated: 8 bounded cases')"
+      - name: Capture repeated Project 51 synthetic variability evidence
+        run: |
+          cd quant-projects/51-poisson-binomial-credit-loss
+          python repeated_benchmark.py --sizes 4 8 12 --repetitions 3 --precision 100 --max-states 10000 > repeated-benchmark-evidence.json
+          python -c "import json; r=json.load(open('repeated-benchmark-evidence.json')); assert r['synthetic_only'] is True and r['repetitions']==3 and len(r['rows'])==6; assert all(row['peak_traced_bytes_min'] <= row['peak_traced_bytes_median'] <= row['peak_traced_bytes_max'] for row in r['rows']); print('Repeated benchmark validated: 6 bounded cases')"
+      - name: Upload Project 51 repeated benchmark evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-51-repeated-synthetic-benchmark
+          path: quant-projects/51-poisson-binomial-credit-loss/repeated-benchmark-evidence.json
+          retention-days: 14
+          if-no-files-found: error
+
       - name: Upload Project 51 benchmark evidence
         uses: actions/upload-artifact@v4
         with:
