@@ -59,6 +59,13 @@ def run():
     close(time_weighted_discount_integral(0,1.5e154),1.125e308)
     rejects(ValueError,phi,-717)
     rejects(ValueError,time_weighted_discount_integral,-1,720)
+    assert linear_cashflow_pv(-1e308,1e308,0,2)==0
+    close(linear_cashflow_pv(1e-308,0,0,1e308),1)
+    close(linear_cashflow_pv(0,1e-308,0,1e200),5e91)
+    close(linear_cashflow_pv(0,1e-300,-1,1000),1.96810104290303e+137,abs_tol=0)
+    close(linear_cashflow_pv(1e-300,1e-300,-1,1000),1.970071114017047e+137,abs_tol=0)
+    assert linear_cashflow_pv(0,0,-1e308,1e308)==0
+    assert linear_cashflow_pv(-11999,2,-2,6000)==6000
     print("PASS: Section 10.4 independent reference checks")
 
 if __name__=="__main__":

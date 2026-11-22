@@ -92,13 +92,36 @@ def time_weighted_discount_integral(rate,horizon):
         result = _fraction_decimal(t*t)*_moment_decimal(r*t)
         return _moment_report(result)
 
-def linear_cashflow_pv(intercept,slope,rate,horizon):
-    a,b = finite(intercept,"intercept"),finite(slope,"slope")
-    r,t = finite(rate,"rate"),nonnegative_horizon(horizon)
-    result = a*discount_integral(r,t)+b*time_weighted_discount_integral(r,t)
+def _pv_report(value):
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError("nonfinite present value") from exc
     if not math.isfinite(result):
         raise ValueError("nonfinite present value")
     return result
+
+def linear_cashflow_pv(intercept,slope,rate,horizon):
+    a,b = Fraction(finite(intercept,"intercept")),Fraction(finite(slope,"slope"))
+    r,t = Fraction(finite(rate,"rate")),Fraction(nonnegative_horizon(horizon))
+    if not t or not (a or b):
+        return 0.0
+    if not r:
+        return _pv_report(a*t+b*t*t/2)
+    constant = a*r+b
+    exponential = constant+b*r*t
+    denominator = r*r
+    if not exponential:
+        return _pv_report(constant/denominator)
+    exponent = r*t
+    if exponent > 10000:
+        return _pv_report(constant/denominator)
+    if exponent < -10000:
+        raise ValueError("nonfinite present value")
+    with localcontext(Context(prec=2000)):
+        numerator = (_fraction_decimal(constant)
+                     -_fraction_decimal(exponential)*(-_fraction_decimal(exponent)).exp())
+        return _pv_report(numerator/_fraction_decimal(denominator))
 
 def midpoint_reference(function,a,b,n=1000):
     if not callable(function):
