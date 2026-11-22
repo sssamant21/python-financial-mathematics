@@ -64,6 +64,12 @@ def run():
     rejects(ValueError,midpoint_integral,lambda t:calls.append(t) or 1,math.ulp(0.),2)
     assert calls==[]
     assert midpoint_integral(lambda t:math.ulp(0.),1,2)==math.ulp(0.)
+    assert growing_pv_rate_derivative(0,1,0,1000)==0
+    close(growing_pv_rate_derivative(1e-308,0,0,1e200),-5e91,rel_tol=1e-14,abs_tol=0)
+    close(growing_pv_rate_derivative(1e308,0,1e308,1e308),-1e-308,rel_tol=1e-14,abs_tol=0)
+    close(growing_pv_rate_derivative(1e308,-1e308,1e308,1),-2.5e-309,rel_tol=1e-14,abs_tol=0)
+    rejects(ValueError,growing_pv_rate_derivative,1e308,0,0,2)
+    assert growing_pv_rate_derivative(1e308,1e308,-1e308,0)==0
     report=assessment()
     assert len(report["scenarios"])==5
     assert report["runtime_certified"] is False

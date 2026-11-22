@@ -164,10 +164,16 @@ def variable_curve_pv(payment_rate,base_rate,slope,T,n=2000):
         lambda t:finite(payment_rate(t),"payment rate")*math.exp(-r*t-0.5*k*t*t),T,n)
 
 def growing_pv_rate_derivative(initial_rate,growth,discount,T):
-    c,g,r,t=(finite(v,name) for v,name in
-             ((initial_rate,"initial_rate"),(growth,"growth"),(discount,"discount"),(T,"horizon")))
-    horizon(t)
-    return -c*time_weighted_factor(r-g,t)
+    c,g,r=(Fraction(finite(v,name)) for v,name in
+           ((initial_rate,"initial_rate"),(growth,"growth"),(discount,"discount")))
+    t=Fraction(horizon(T))
+    if not c or not t:
+        return 0.0
+    # Differentiate the entire scaled PV, preserving the exact represented
+    # rate difference and coefficient before one final float report.
+    with localcontext(Context(prec=800)):
+        value=-_fraction_decimal(c*t*t)*_moment_decimal((r-g)*t)
+        return _moment_report(value)
 
 def assessment():
     c,g,T=1000,0.02,4
