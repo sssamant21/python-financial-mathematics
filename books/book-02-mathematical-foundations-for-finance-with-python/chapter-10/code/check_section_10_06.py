@@ -37,6 +37,13 @@ def run():
     rejects(ValueError,finite_horizon_pv,1000,0,0.05,-1)
     rejects(TypeError,finite,True,"value")
     rejects(ValueError,finite,float("nan"),"value")
+    assert perpetuity_pv(0,1e308,-1e308)==0
+    assert perpetuity_pv(0,-1e308,1e308)==0
+    assert perpetuity_pv(1,-1e308,1e308)==5e-309
+    assert perpetuity_pv(1e308,-1e308,1e308)==0.5
+    assert perpetuity_pv(-1e308,-1e308,1e308)==-0.5
+    assert perpetuity_pv(1,-1e-16,1)==0.9999999999999999
+    assert perpetuity_pv(1e308,-1e-16,1)==9.999999999999998e307
     report=assessment()
     assert len(report["scenarios"])==5
     assert not report["scenarios"][-1]["converges"]

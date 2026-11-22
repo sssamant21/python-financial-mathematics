@@ -558,3 +558,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Partial Section15.12 rolling-mean overlap/timing
 
 [Evidence](v10-rolling-overlap/README.md):89 predicates pass twice:80 native mean fields across16 exact IID-sign paths,five weighted variance/covariance checks and four trailing perturbation/map/lag checks. Adjacent three-window covariance2/9 versus variance1/3; disjoint two-window covariance0 under declared IID law. Native positional lag is distinct from timestamp/venue execution acceptance. Four commands/24 invocations of twelve existing methods; F138 identity, initial observer crash/twelve baseline failures/54 arithmetic predicates retain scope. No source change/new workflow/answer/historical totals. Next15.12 rolling SD/correlation/compounded-window distribution/selection/project-timing boundaries; section/V10/Book1 partial. F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Partial Section15.12 rolling distributions/selection
+
+[Evidence](v10-rolling-distributions/README.md):585 predicates pass twice:64 native SD/compound fields,512 correlation fields and nine exact-law aggregates. Adjacent sample-variance covariance1/9 and compounded covariance201/10000; undefined correlation probability7/16 under declared IID signs. Caller lower-window variance expectation5/6 versus1 is selection, not lower process risk. Four commands/24 invocations of twelve existing methods; F138 identity/observer crash/twelve baseline failures/54 arithmetic/89 mean predicates retain scope. No source change/new workflow/answer/historical totals. Next15.12 local-window bankruptcy/global-account and window-policy/EWMA/project/data-timing assumptions; section/V10/Book1 partial. F28/F32/F209/F165/F185/broader acceptance open.

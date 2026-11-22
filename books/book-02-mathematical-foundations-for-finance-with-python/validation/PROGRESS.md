@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-22
-**Overall status:** In progress — V245 Section10.5 fixed-report crosswalk and V246 full candidate Linux runtime recorded at `56ed4b707947235643686a472fb6e5b860199cee` (642/429/643). Next10.6 lab/source review; broader acceptance gaps remain open.
+**Overall status:** In progress — V247 Section10.6 perpetuity subset recorded;finite-horizon/tail/target/p-integral/report contracts remain open. V246 full runtime stays at its older source pin (642/429/643);only10.6 source/checker differ and pass scoped support. Broader acceptance gaps remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1838,3 +1838,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-246 checkpoint — Full pinned continuous-payment runtime refresh
 
 [Evidence](full-runtime-payments-2026-11-22/README.md) at `56ed4b707947235643686a472fb6e5b860199cee`:642/642 Python files compile,429/429 check/test scripts pass,643/643 required blobs verify before/after. Includes accumulated10.5 kernel/moment/PV/midpoint/derivative/curve corrections; earlier failures/observer corrections/policies/precision/resource limits preserved. Actual outputs/status/timings/manifest retained; all executable blobs match documentation candidate. Selected10.5 runtime progression gate met; next10.6 improper-integral/infinite-horizon lab/source crosswalk. No book/independent/platform/release/canonical acceptance. All38 selected COV categories remain partial, none closed; broader gates open. Book1 separate.
+
+
+## V-247 checkpoint — Section10.6 perpetuity/partial lab
+
+[Evidence](ch10-perpetuity-2026-11-22/README.md):18 passes/seven baseline failed predicates reproduced; corrected25 predicates pass twice with independent1800-digit Decimal quotient expectations. Exact represented decay/convergence and complete rational reporting fix selected zero/overflowed-difference/last-bit cases; underflow0/final ValueError and resource/input policies explicit. Seven native regressions and all21 Chapter10 files/eleven checkers/tenCLIs pass. Twelve escaped backticks/status repaired; six lab units/fourteen exercise dispositions remain separate. Next10.6 finite-horizon/tail, then target/p-integral/report/proof contracts; refresh full runtime before10.7. Fresh642/429/643 inventory,641/643 V246 blobs match; only10.6 source/checker differ. No new full runtime/section completion/independent acceptance. All38 selected COV categories partial, none closed; broader gates open. Book1 separate.

@@ -1,6 +1,7 @@
 """Section 10.6: improper integrals and infinite horizons."""
 import json
 import math
+from fractions import Fraction
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -38,12 +39,21 @@ def finite_horizon_pv(payment,growth,discount,horizon):
     return result
 
 def perpetuity_pv(payment,growth,discount):
-    c,d=inputs(payment,growth,discount)
-    if c==0:
+    # Preserve the exact represented decay difference through convergence
+    # classification and the complete quotient. Other helpers retain their
+    # own declared finite-horizon/tail contracts.
+    c=Fraction(finite(payment,"payment"))
+    g=Fraction(finite(growth,"growth"))
+    r=Fraction(finite(discount,"discount"))
+    if not c:
         return 0.0
+    d=r-g
     if d<=0:
         raise ValueError("nonzero exponential perpetuity diverges: require discount > growth")
-    result=c/d
+    try:
+        result=float(c/d)
+    except OverflowError as exc:
+        raise ValueError("nonfinite perpetuity") from exc
     if not math.isfinite(result):
         raise ValueError("nonfinite perpetuity")
     return result

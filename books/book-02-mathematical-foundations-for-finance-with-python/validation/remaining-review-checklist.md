@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-22
 **Full-runtime candidate source revision:** `56ed4b707947235643686a472fb6e5b860199cee` ([V246](full-runtime-payments-2026-11-22/README.md)).
-**Latest scoped source:** V245 Section10.5 full fixed-report crosswalk at the same executable pin; [report/provenance evidence](ch10-payment-report-2026-11-22/README.md).
+**Latest scoped source:** V247 Section10.6 perpetuity baseline `e29f14d85ecbdf6bde690da001b06d61fa191865`;candidate source/checker identities and limits in [evidence](ch10-perpetuity-2026-11-22/README.md).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** Selected10.5 source/report crosswalk and full runtime progression gate recorded. Next10.6; numerical/resource/provenance/model/platform/release/independent/canonical gaps remain open. Historical static checkpoint below retains its older scope.
+**Disposition:** Section10.6 perpetuity subset passes scoped checks;remaining finite-horizon/tail/target/p-integral/report/proof contracts and fresh full-runtime gate before10.7 remain open. V246 full run retains its older pin;broader acceptance gaps stay open.
 
 ## Reconciled evidence
 
@@ -1712,3 +1712,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-246 checkpoint — Full pinned continuous-payment runtime refresh
 
 [Evidence](full-runtime-payments-2026-11-22/README.md) at `56ed4b707947235643686a472fb6e5b860199cee`:642/642 Python files compile,429/429 check/test scripts pass,643/643 required blobs verify before/after. Includes accumulated10.5 kernel/moment/PV/midpoint/derivative/curve corrections; earlier failures/observer corrections/policies/precision/resource limits preserved. Actual outputs/status/timings/manifest retained; all executable blobs match documentation candidate. Selected10.5 runtime progression gate met; next10.6 improper-integral/infinite-horizon lab/source crosswalk. No book/independent/platform/release/canonical acceptance. All38 selected COV categories remain partial, none closed; broader gates open. Book1 separate.
+
+
+## V-247 checkpoint — Section10.6 perpetuity/partial lab
+
+[Evidence](ch10-perpetuity-2026-11-22/README.md):18 passes/seven baseline failed predicates reproduced; corrected25 predicates pass twice with independent1800-digit Decimal quotient expectations. Exact represented decay/convergence and complete rational reporting fix selected zero/overflowed-difference/last-bit cases; underflow0/final ValueError and resource/input policies explicit. Seven native regressions and all21 Chapter10 files/eleven checkers/tenCLIs pass. Twelve escaped backticks/status repaired; six lab units/fourteen exercise dispositions remain separate. Next10.6 finite-horizon/tail, then target/p-integral/report/proof contracts; refresh full runtime before10.7. Fresh642/429/643 inventory,641/643 V246 blobs match; only10.6 source/checker differ. No new full runtime/section completion/independent acceptance. All38 selected COV categories partial, none closed; broader gates open. Book1 separate.

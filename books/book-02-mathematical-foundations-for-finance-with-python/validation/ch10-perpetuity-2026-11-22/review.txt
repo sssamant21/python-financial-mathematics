@@ -1,0 +1,31 @@
+"""Perpetuity convergence/complete-ratio contracts with independent high-precision decimal oracles."""
+from pathlib import Path
+from decimal import Decimal as D,Context,localcontext
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='e29f14d85ecbdf6bde690da001b06d61fa191865';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_06.py';check=path.replace('section_10_06.py','check_section_10_06.py');baseline='--baseline' in sys.argv;rows=[];commands=[];manifest={}
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root) if baseline else (root/p).read_bytes();manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+def oracle(c,g,r):
+ # Independent Decimal arithmetic on exact binary-float conversions; source
+ # instead forms an exact rational difference/quotient.
+ if c==0:return 0.0
+ with localcontext(Context(prec=1800)):
+  C,G,R=[D.from_float(float(v)) for v in (c,g,r)]
+  return float(C/(R-G))
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('perpetuity_source',Path(tmp)/'section_10_06.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ def test(name,call,want=None,exc=None,kind='perpetuity convergence/ratio contract'):
+  try:got=call();ok=exc is None and got==want;actual=got
+  except Exception as e:ok=exc is not None and type(e) is exc;actual=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(name=name,actual=actual,expected=exc.__name__ if exc else str(want),comparison='exact equality to independent1800-digit decimal report or exact exception type',kind=kind,passed=ok))
+ cases=[('worked exercise2 constant',600,0,.03),('worked exercise5 growing',500,.03,.08),('ordinary constant',1200,0,.06),('ordinary growth',1000,.02,.05),('negative convergent payment',-1000,.02,.05),('zero payment equality',0,.05,.05),('zero payment divergent positive difference',0,1e308,-1e308),('zero payment overflowing decay',0,-1e308,1e308),('complete decay difference overflow finite PV',1,-1e308,1e308),('scaled complete decay finite PV',1e308,-1e308,1e308),('negative scaled decay finite PV',-1e308,-1e308,1e308),('tiny positive decay',1e-308,0,math.ulp(0.)),('nearest convergence boundary',1,1,math.nextafter(1,2)),('exact difference before quotient',1,-1e-16,1),('large payment exact difference',1e308,-1e-16,1),('underflow report allowed',math.ulp(0.),0,1e308)]
+ for name,c,g,r in cases:test(name,lambda c=c,g=g,r=r:m.perpetuity_pv(c,g,r),oracle(c,g,r))
+ for name,fn,exc in [('positive equal rates diverges',lambda:m.perpetuity_pv(1,.05,.05),ValueError),('negative equal rates diverges',lambda:m.perpetuity_pv(-1,.05,.05),ValueError),('growth exceeds discount diverges',lambda:m.perpetuity_pv(1,.06,.05),ValueError),('negative stream growth exceeds discount',lambda:m.perpetuity_pv(-1,.06,.05),ValueError),('true final PV overflow',lambda:m.perpetuity_pv(1e308,0,math.ulp(0.)),ValueError),('nonfinite payment',lambda:m.perpetuity_pv(math.inf,0,1),ValueError),('nonfinite growth even zero payment',lambda:m.perpetuity_pv(0,math.nan,1),ValueError),('nonfinite discount even zero payment',lambda:m.perpetuity_pv(0,0,math.inf),ValueError),('bool payment',lambda:m.perpetuity_pv(True,0,1),TypeError)]:test(name,fn,exc=exc)
+ for args in [[sys.executable,'section_10_06.py'],[sys.executable,'check_section_10_06.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0
+result=dict(pin=pin,source_selection='baseline' if baseline else 'candidate',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='Perpetuity convergence and exact complete quotient only; finite-horizon, tail, target horizon, p-integral and full report unfinished')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']]);
+if not baseline:assert result['failed']==0
