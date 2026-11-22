@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
           cache: pip
@@ -444,7 +444,7 @@ jobs:
           python scaling_diagnostics.py repeated-benchmark-evidence.json > scaling-diagnostics.json
           python -c "import json; r=json.load(open('repeated-benchmark-evidence.json')); assert r['repetitions']==3 and len(r['rows'])==6; print('Repeated benchmark validated: 6 bounded cases')"
       - name: Upload Project 51 repeated benchmark evidence
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: project-51-repeated-synthetic-benchmark
           path: |
@@ -454,7 +454,7 @@ jobs:
           if-no-files-found: error
 
       - name: Upload Project 51 benchmark evidence
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: project-51-synthetic-benchmark
           path: quant-projects/51-poisson-binomial-credit-loss/benchmark-evidence.json
@@ -465,8 +465,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
       - name: Install pinned external bond-pricing library
