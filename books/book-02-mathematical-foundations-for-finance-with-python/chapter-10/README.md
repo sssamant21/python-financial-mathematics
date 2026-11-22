@@ -1,6 +1,6 @@
 # Chapter 10 — Integration and Continuous Cash Flows
 
-**Manuscript status:** 10/10 sections published as Draft. Runtime execution and independent editorial review pending.
+**Manuscript status:** 10/10 sections published as Draft. [Pinned candidate Linux checker runtime](../validation/full-runtime-payments-2026-11-22/README.md) is recorded;selected10.1–10.5 lab/source crosswalks are scoped. Remaining substantive reviews and independent editorial/canonical acceptance stay open.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -8,16 +8,16 @@
 
 | Section | Title | Status |
 |---|---|---|
-| 10.1 | [Accumulation and Riemann Sums](10.01-accumulation-and-riemann-sums.md) | Draft — runtime validation pending |
-| 10.2 | [Definite and Indefinite Integrals](10.02-definite-and-indefinite-integrals.md) | Draft — runtime validation pending |
-| 10.3 | [The Fundamental Theorem of Calculus](10.03-fundamental-theorem-of-calculus.md) | Draft — runtime validation pending |
-| 10.4 | [Substitution and Integration by Parts](10.04-substitution-and-integration-by-parts.md) | Draft — runtime validation pending |
-| 10.5 | [Discounting Continuous Payment Streams](10.05-discounting-continuous-payment-streams.md) | Draft — runtime validation pending |
-| 10.6 | [Improper Integrals and Infinite Horizons](10.06-improper-integrals-and-infinite-horizons.md) | Draft — runtime validation pending |
-| 10.7 | [Numerical Quadrature](10.07-numerical-quadrature.md) | Draft — runtime validation pending |
-| 10.8 | [Discrete versus Continuous Payments](10.08-discrete-versus-continuous-payments.md) | Draft — runtime validation pending |
-| 10.9 | [Chapter Project — Continuous Cash-Flow Valuation Engine](10.09-continuous-cash-flow-valuation-engine.md) | Draft — runtime validation pending |
-| 10.10 | [Exercises and Applied Problems](10.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
+| 10.1 | [Accumulation and Riemann Sums](10.01-accumulation-and-riemann-sums.md) | Draft — scoped lab/source crosswalk and candidate runtime recorded;broader acceptance open |
+| 10.2 | [Definite and Indefinite Integrals](10.02-definite-and-indefinite-integrals.md) | Draft — scoped lab/source crosswalk and candidate runtime recorded;broader acceptance open |
+| 10.3 | [The Fundamental Theorem of Calculus](10.03-fundamental-theorem-of-calculus.md) | Draft — scoped lab/source crosswalk and candidate runtime recorded;broader acceptance open |
+| 10.4 | [Substitution and Integration by Parts](10.04-substitution-and-integration-by-parts.md) | Draft — scoped lab/source crosswalk and candidate runtime recorded;broader acceptance open |
+| 10.5 | [Discounting Continuous Payment Streams](10.05-discounting-continuous-payment-streams.md) | Draft — scoped lab/source crosswalk and candidate runtime recorded;broader acceptance open |
+| 10.6 | [Improper Integrals and Infinite Horizons](10.06-improper-integrals-and-infinite-horizons.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
+| 10.7 | [Numerical Quadrature](10.07-numerical-quadrature.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
+| 10.8 | [Discrete versus Continuous Payments](10.08-discrete-versus-continuous-payments.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
+| 10.9 | [Chapter Project — Continuous Cash-Flow Valuation Engine](10.09-continuous-cash-flow-valuation-engine.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
+| 10.10 | [Exercises and Applied Problems](10.10-exercises-and-applied-problems.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
 
 ## Section 10.10 companion material
 
@@ -71,6 +71,6 @@
 
 ## Validation status
 
-Draft manuscript and reference-check source are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
+Draft manuscript and reference-check source are published. Candidate Linux checker runtime is recorded at V246;remaining section reviews, independent code/mathematical/editorial review and canonical approval remain open.
 
 **Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.

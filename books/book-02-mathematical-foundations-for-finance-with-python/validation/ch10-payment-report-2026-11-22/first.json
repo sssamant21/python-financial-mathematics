@@ -1,0 +1,434 @@
+{
+  "pin": "56ed4b707947235643686a472fb6e5b860199cee",
+  "executed_at_utc": "2026-11-22T07:09:46.824888+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_05.py": {
+      "sha256": "067414f6cc9e989434a49425f1be6163007c7226a544fc67023dc2f2c170bef5",
+      "git_blob": "d98286af681e57c5eefcb47249ac6d0266608d91"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_05.py": {
+      "sha256": "e41598d59b3b841d24d927987aa89c15f349599de8319c57d086993ed891c2b4",
+      "git_blob": "4d642e8b4686d928e336ea4a48371f5dbb27a8d8"
+    }
+  },
+  "rows": [
+    {
+      "name": "global report schema",
+      "actual": "{'runtime_certified', 'independent_review_completed', 'variable_curve_pv', 'scenarios', 'parallel_rate_derivative_at_5pct'}",
+      "expected": "{'runtime_certified', 'independent_review_completed', 'scenarios', 'parallel_rate_derivative_at_5pct', 'variable_curve_pv'}",
+      "kind": "fixed no-parameter report schema",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "scenario count",
+      "actual": "5",
+      "expected": "5",
+      "kind": "fixed source scenario contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "runtime certification flag",
+      "actual": "False",
+      "expected": "False",
+      "kind": "assistant execution does not certify release",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "independent review flag",
+      "actual": "False",
+      "expected": "False",
+      "kind": "assistant checks are not independent signoff",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row0 schema",
+      "actual": "{'exact_pv', 'midpoint_pv', 'discount_rate', 'absolute_difference'}",
+      "expected": "{'exact_pv', 'midpoint_pv', 'discount_rate', 'absolute_difference'}",
+      "kind": "fixed report row keys",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row0 discount rate",
+      "actual": "-0.01",
+      "expected": "-0.01",
+      "kind": "native scenario order",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row0 exact PV",
+      "actual": "4249.895052645856",
+      "expected": "4249.89505264585572138977872119683765896357555980309952048956298482137462723161867178002430514267389961908253112295675892",
+      "kind": "native field vs independent termwise integral",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row0 midpoint PV",
+      "actual": "4249.895052008372",
+      "expected": "4249.89505200837144852022586495816272756572414233744269001100720085886961461896119969845764506582127346141257142140725984",
+      "kind": "native field vs independent exponential-grid recurrence",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row0 reported discrepancy",
+      "actual": "6.374839358613826e-07",
+      "expected": "6.374839358613826e-07",
+      "kind": "exact subtraction of reported floats, not rigorous error bound",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row1 schema",
+      "actual": "{'exact_pv', 'midpoint_pv', 'discount_rate', 'absolute_difference'}",
+      "expected": "{'exact_pv', 'midpoint_pv', 'discount_rate', 'absolute_difference'}",
+      "kind": "fixed report row keys",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row1 discount rate",
+      "actual": "0",
+      "expected": "0",
+      "kind": "native scenario order",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row1 exact PV",
+      "actual": "4164.353383747928",
+      "expected": "4164.35338374792772531313736998830626304041858303362375438498191457419722221975479438544362248138471029962430909540201928",
+      "kind": "native field vs independent termwise integral",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row1 midpoint PV",
+      "actual": "4164.353383470304",
+      "expected": "4164.35338347030416640956460949125281320122014012915803875684724748091689447648689414227134296324931592564720849584564910",
+      "kind": "native field vs independent exponential-grid recurrence",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row1 reported discrepancy",
+      "actual": "2.776241672108881e-07",
+      "expected": "2.776241672108881e-07",
+      "kind": "exact subtraction of reported floats, not rigorous error bound",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row2 schema",
+      "actual": "{'exact_pv', 'midpoint_pv', 'discount_rate', 'absolute_difference'}",
+      "expected": "{'exact_pv', 'midpoint_pv', 'discount_rate', 'absolute_difference'}",
+      "kind": "fixed report row keys",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row2 discount rate",
+      "actual": "0.02",
+      "expected": "0.02",
+      "kind": "native scenario order",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row2 exact PV",
+      "actual": "4000.0",
+      "expected": "4000",
+      "kind": "native field vs independent termwise integral",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row2 midpoint PV",
+      "actual": "4000.0",
+      "expected": "4000.000",
+      "kind": "native field vs independent exponential-grid recurrence",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row2 reported discrepancy",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "exact subtraction of reported floats, not rigorous error bound",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row3 schema",
+      "actual": "{'exact_pv', 'midpoint_pv', 'discount_rate', 'absolute_difference'}",
+      "expected": "{'exact_pv', 'midpoint_pv', 'discount_rate', 'absolute_difference'}",
+      "kind": "fixed report row keys",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row3 discount rate",
+      "actual": "0.05",
+      "expected": "0.05",
+      "kind": "native scenario order",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row3 exact PV",
+      "actual": "3769.3187760947494",
+      "expected": "3769.31877609474946498477962326350140633409555955829953860216004270999745091047851399420040660656056143966417699188440815",
+      "kind": "native field vs independent termwise integral",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row3 midpoint PV",
+      "actual": "3769.3187755293516",
+      "expected": "3769.31877552935164862993388530697253729671137834553590343255147796006664256785423589459416809692000468946624769719170036",
+      "kind": "native field vs independent exponential-grid recurrence",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row3 reported discrepancy",
+      "actual": "5.653978405462112e-07",
+      "expected": "5.653978405462112e-07",
+      "kind": "exact subtraction of reported floats, not rigorous error bound",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row4 schema",
+      "actual": "{'exact_pv', 'midpoint_pv', 'discount_rate', 'absolute_difference'}",
+      "expected": "{'exact_pv', 'midpoint_pv', 'discount_rate', 'absolute_difference'}",
+      "kind": "fixed report row keys",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row4 discount rate",
+      "actual": "0.08",
+      "expected": "0.08",
+      "kind": "native scenario order",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row4 exact PV",
+      "actual": "3556.202315557443",
+      "expected": "3556.20231555744317115351640687191025002356596843126805560629542393996160248110277321517909950337205275370381159095833264",
+      "kind": "native field vs independent termwise integral",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row4 midpoint PV",
+      "actual": "3556.202313423722",
+      "expected": "3556.20231342372180640522604181614666448977991822195322831956404257506625472538129417425590145480467897399669419125185772",
+      "kind": "native field vs independent exponential-grid recurrence",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "row4 reported discrepancy",
+      "actual": "2.13372095458908e-06",
+      "expected": "2.13372095458908e-06",
+      "kind": "exact subtraction of reported floats, not rigorous error bound",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "parallel rate derivative",
+      "actual": "-7387.900974203981",
+      "expected": "-7387.90097420398063079695373814895547301254335859419195791326291835654246865772296341768279733176903664664527877701811710",
+      "kind": "native full derivative vs independent integral moment",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "positive-flow derivative negative",
+      "actual": "True",
+      "expected": "True",
+      "kind": "fixed payment-model invariant",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "supplemental second derivative positive",
+      "actual": "True",
+      "expected": "True",
+      "kind": "conceptual integral formula; no native second-derivative API",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "variable curve midpoint PV",
+      "actual": "3869.910624340203",
+      "expected": "3869.91062434020299931916696957278911270216673154331232830643419989437065796476473286077070607021236800308003099643010302",
+      "kind": "native full curve field vs independent120-digit quadratic-grid recurrence",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ideal midpoint error within analytic curvature bound",
+      "actual": "True",
+      "expected": "True",
+      "kind": "exact-arithmetic midpoint theorem for this smooth fixed integrand",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "native curve versus continuous reference",
+      "actual": "True",
+      "expected": "True",
+      "kind": "diagnostic comparison with explicit1e-9 floating margin, not rigorous floating error proof",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "PV decreases with discount rate",
+      "actual": "True",
+      "expected": "True",
+      "kind": "fixed nonnegative payment stream",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "growth equals discount PV",
+      "actual": "4000.0",
+      "expected": "4000",
+      "kind": "fixed identity",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "CLI equals full source report",
+      "actual": "{'scenarios': [{'discount_rate': -0.01, 'exact_pv': 4249.895052645856, 'midpoint_pv': 4249.895052008372, 'absolute_difference': 6.374839358613826e-07}, {'discount_rate': 0, 'exact_pv': 4164.353383747928, 'midpoint_pv': 4164.353383470304, 'absolute_difference': 2.776241672108881e-07}, {'discount_rate': 0.02, 'exact_pv': 4000.0, 'midpoint_pv': 4000.0, 'absolute_difference': 0.0}, {'discount_rate': 0.05, 'exact_pv': 3769.3187760947494, 'midpoint_pv': 3769.3187755293516, 'absolute_difference': 5.653978405462112e-07}, {'discount_rate': 0.08, 'exact_pv': 3556.202315557443, 'midpoint_pv': 3556.202313423722, 'absolute_difference': 2.13372095458908e-06}], 'parallel_rate_derivative_at_5pct': -7387.900974203981, 'variable_curve_pv': 3869.910624340203, 'runtime_certified': False, 'independent_review_completed': False}",
+      "expected": "{'scenarios': [{'discount_rate': -0.01, 'exact_pv': 4249.895052645856, 'midpoint_pv': 4249.895052008372, 'absolute_difference': 6.374839358613826e-07}, {'discount_rate': 0, 'exact_pv': 4164.353383747928, 'midpoint_pv': 4164.353383470304, 'absolute_difference': 2.776241672108881e-07}, {'discount_rate': 0.02, 'exact_pv': 4000.0, 'midpoint_pv': 4000.0, 'absolute_difference': 0.0}, {'discount_rate': 0.05, 'exact_pv': 3769.3187760947494, 'midpoint_pv': 3769.3187755293516, 'absolute_difference': 5.653978405462112e-07}, {'discount_rate': 0.08, 'exact_pv': 3556.202315557443, 'midpoint_pv': 3556.202313423722, 'absolute_difference': 2.13372095458908e-06}], 'parallel_rate_derivative_at_5pct': -7387.900974203981, 'variable_curve_pv': 3869.910624340203, 'runtime_certified': False, 'independent_review_completed': False}",
+      "kind": "native function/CLI complete report agreement",
+      "absolute_tolerance": 0,
+      "passed": true
+    }
+  ],
+  "references": {
+    "-0.01": {
+      "continuous_pv": "4249.89505264585572138977872119683765896357555980309952048956298482137462723161867178002430514267389961908253112295675892",
+      "ideal_midpoint_pv": "4249.89505200837144852022586495816272756572414233744269001100720085886961461896119969845764506582127346141257142140725984",
+      "scope": "midpoint callback uses binary-rounded net rate; ideal discrete oracle neglects callback math.exp/multiply and sample-rounding effects, checked with tolerance"
+    },
+    "0": {
+      "continuous_pv": "4164.35338374792772531313736998830626304041858303362375438498191457419722221975479438544362248138471029962430909540201928",
+      "ideal_midpoint_pv": "4164.35338347030416640956460949125281320122014012915803875684724748091689447648689414227134296324931592564720849584564910",
+      "scope": "midpoint callback uses binary-rounded net rate; ideal discrete oracle neglects callback math.exp/multiply and sample-rounding effects, checked with tolerance"
+    },
+    "0.02": {
+      "continuous_pv": "4000",
+      "ideal_midpoint_pv": "4000.000",
+      "scope": "midpoint callback uses binary-rounded net rate; ideal discrete oracle neglects callback math.exp/multiply and sample-rounding effects, checked with tolerance"
+    },
+    "0.05": {
+      "continuous_pv": "3769.31877609474946498477962326350140633409555955829953860216004270999745091047851399420040660656056143966417699188440815",
+      "ideal_midpoint_pv": "3769.31877552935164862993388530697253729671137834553590343255147796006664256785423589459416809692000468946624769719170036",
+      "scope": "midpoint callback uses binary-rounded net rate; ideal discrete oracle neglects callback math.exp/multiply and sample-rounding effects, checked with tolerance"
+    },
+    "0.08": {
+      "continuous_pv": "3556.20231555744317115351640687191025002356596843126805560629542393996160248110277321517909950337205275370381159095833264",
+      "ideal_midpoint_pv": "3556.20231342372180640522604181614666448977991822195322831956404257506625472538129417425590145480467897399669419125185772",
+      "scope": "midpoint callback uses binary-rounded net rate; ideal discrete oracle neglects callback math.exp/multiply and sample-rounding effects, checked with tolerance"
+    },
+    "variable_curve": {
+      "continuous_reference": "3869.91062139128792935724487572511095759659362769969573696114929962330585004429356923805754131514463076703754532288163040",
+      "ideal_midpoint": "3869.91062434020299931916696957278911270216673154331232830643419989437065796476473286077070607021236800308003099643010302",
+      "curvature_error_bound": "0.00000393333333333333335831335138739935631459515547059742100180058883623565590959003657189896330237388610839843750000000000000",
+      "native_rounding_margin": "1e-9",
+      "scope": "specified deterministic fixed curve; no universal integrability/truncation guarantee"
+    },
+    "sensitivity": {
+      "first": "-7387.90097420398063079695373814895547301254335859419195791326291835654246865772296341768279733176903664664527877701811710",
+      "supplemental_second": "19502.4986977813700352837621874966322950705241143807419949843401249121178300452064675652286811217170310721461334553439099",
+      "scope": "second derivative conceptual/reference only, not native implementation"
+    }
+  },
+  "report": {
+    "scenarios": [
+      {
+        "discount_rate": -0.01,
+        "exact_pv": 4249.895052645856,
+        "midpoint_pv": 4249.895052008372,
+        "absolute_difference": 6.374839358613826e-07
+      },
+      {
+        "discount_rate": 0,
+        "exact_pv": 4164.353383747928,
+        "midpoint_pv": 4164.353383470304,
+        "absolute_difference": 2.776241672108881e-07
+      },
+      {
+        "discount_rate": 0.02,
+        "exact_pv": 4000.0,
+        "midpoint_pv": 4000.0,
+        "absolute_difference": 0.0
+      },
+      {
+        "discount_rate": 0.05,
+        "exact_pv": 3769.3187760947494,
+        "midpoint_pv": 3769.3187755293516,
+        "absolute_difference": 5.653978405462112e-07
+      },
+      {
+        "discount_rate": 0.08,
+        "exact_pv": 3556.202315557443,
+        "midpoint_pv": 3556.202313423722,
+        "absolute_difference": 2.13372095458908e-06
+      }
+    ],
+    "parallel_rate_derivative_at_5pct": -7387.900974203981,
+    "variable_curve_pv": 3869.910624340203,
+    "runtime_certified": false,
+    "independent_review_completed": false
+  },
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_05.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"scenarios\": [\n    {\n      \"discount_rate\": -0.01,\n      \"exact_pv\": 4249.895052645856,\n      \"midpoint_pv\": 4249.895052008372,\n      \"absolute_difference\": 6.374839358613826e-07\n    },\n    {\n      \"discount_rate\": 0,\n      \"exact_pv\": 4164.353383747928,\n      \"midpoint_pv\": 4164.353383470304,\n      \"absolute_difference\": 2.776241672108881e-07\n    },\n    {\n      \"discount_rate\": 0.02,\n      \"exact_pv\": 4000.0,\n      \"midpoint_pv\": 4000.0,\n      \"absolute_difference\": 0.0\n    },\n    {\n      \"discount_rate\": 0.05,\n      \"exact_pv\": 3769.3187760947494,\n      \"midpoint_pv\": 3769.3187755293516,\n      \"absolute_difference\": 5.653978405462112e-07\n    },\n    {\n      \"discount_rate\": 0.08,\n      \"exact_pv\": 3556.202315557443,\n      \"midpoint_pv\": 3556.202313423722,\n      \"absolute_difference\": 2.13372095458908e-06\n    }\n  ],\n  \"parallel_rate_derivative_at_5pct\": -7387.900974203981,\n  \"variable_curve_pv\": 3869.910624340203,\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_05.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.5 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 38,
+  "failed": 0,
+  "scope": "Full fixed assessment fields/schema and independent ordinary continuous/discrete references. Report has no configurable provenance/valuation-date API; external QA records fixed source assumptions, not market calibration."
+}

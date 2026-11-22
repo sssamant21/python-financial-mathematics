@@ -548,3 +548,13 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section15.11 historical-tail stability/selection
 
 [Evidence](v10-historical-tail-selection/README.md):267 predicates pass twice:256 native metrics across64 six-return paths/two alphas pluseleven exact weighted/selection-law checks. Under the declared binary IID law, no-bad training probability.531441 becomes.780452463519 after caller lower-VaR selection from two independent identical candidates; future strict-exceedance probabilities.0531441/.0780452463519 preserve atom conventions. No real-data calibration or source defect. Four commands/24 invocations of twelve existing methods; F137 source/fence identity, prior failures/46 arithmetic/168 scaling predicates retain scope. No new workflow/answer/historical totals. Next15.11 return-basis/corporate-action/alignment/project-provenance boundaries; section/V10/Book1 partial. F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section15.11 return-basis/alignment/project boundaries
+
+[Evidence](v10-return-basis/README.md):58 predicates pass twice over13 supplied price paths plus caller transformations/provenance. Split/dividend/FX basis changes, different observation intervals/order/revisions and stale-path dispersion illustrate source numeric boundaries; actual corporate-action/calendar/availability/FX adapters remain unimplemented/unaccepted. Prescribed project hash/separate risk fixture/excess/Sharpe context verified. Four commands/24 invocations of twelve existing methods; F137 identity and prior failures/46 arithmetic/168 scaling/267 tail predicates retain scope. No source change/new workflow/answer/historical totals. Selected15.11 assumption crosswalk recorded; next15.12 rolling-window/order/dependence assumptions. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Partial Section15.12 rolling-mean overlap/timing
+
+[Evidence](v10-rolling-overlap/README.md):89 predicates pass twice:80 native mean fields across16 exact IID-sign paths,five weighted variance/covariance checks and four trailing perturbation/map/lag checks. Adjacent three-window covariance2/9 versus variance1/3; disjoint two-window covariance0 under declared IID law. Native positional lag is distinct from timestamp/venue execution acceptance. Four commands/24 invocations of twelve existing methods; F138 identity, initial observer crash/twelve baseline failures/54 arithmetic predicates retain scope. No source change/new workflow/answer/historical totals. Next15.12 rolling SD/correlation/compounded-window distribution/selection/project-timing boundaries; section/V10/Book1 partial. F28/F32/F209/F165/F185/broader acceptance open.

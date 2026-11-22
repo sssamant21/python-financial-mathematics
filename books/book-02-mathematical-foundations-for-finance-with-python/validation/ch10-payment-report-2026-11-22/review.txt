@@ -1,0 +1,75 @@
+"""Pinned fixed assessment schema, all numeric fields and independent midpoint references."""
+from pathlib import Path
+from fractions import Fraction as F
+from decimal import Decimal as D,Context,localcontext
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='56ed4b707947235643686a472fb6e5b860199cee';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_05.py';check=path.replace('section_10_05.py','check_section_10_05.py');rows=[];commands=[];manifest={};references={}
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root);manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+def dec(v):return D(v.numerator)/D(v.denominator)
+def exp_series(x):
+ term=total=D(1)
+ for k in range(1,1000):
+  term*=x/k;new=total+term
+  if new==total:return total
+  total=new
+ raise RuntimeError('reference exp convergence')
+def moment(k,T,power=0):
+ term=D(1);total=term/D(power+1)
+ for j in range(1,1000):
+  term*=k*T/j;new=total+term/D(j+power+1)
+  if new==total:return T**(power+1)*total
+  total=new
+ raise RuntimeError('reference moment convergence')
+def ck(name,got,want,kind,approx=False,atol=0):
+ ok=math.isclose(float(got),float(want),rel_tol=5e-14,abs_tol=atol) if approx else got==want
+ rows.append(dict(name=name,actual=str(got),expected=str(want),kind=kind,absolute_tolerance=atol,passed=ok))
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('report_source',Path(tmp)/'section_10_05.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);report=m.assessment()
+ ck('global report schema',set(report),{'scenarios','parallel_rate_derivative_at_5pct','variable_curve_pv','runtime_certified','independent_review_completed'},'fixed no-parameter report schema')
+ ck('scenario count',len(report['scenarios']),5,'fixed source scenario contract')
+ ck('runtime certification flag',report['runtime_certified'],False,'assistant execution does not certify release')
+ ck('independent review flag',report['independent_review_completed'],False,'assistant checks are not independent signoff')
+ with localcontext(Context(prec=120)):
+  C,T=D(1000),D(4);g=dec(F(.02));h=T/2000
+  for i,r in enumerate([-.01,0,.02,.05,.08]):
+   row=report['scenarios'][i];k=g-dec(F(r));exact=C*moment(k,T)
+   # Source callback uses a separately rounded binary growth-minus-rate.
+   callback_k=dec(F(.02-r));factor=exp_series(callback_k*h/2);ratio=exp_series(callback_k*h);total=D(0)
+   for j in range(2000):total+=factor;factor*=ratio
+   discrete=C*h*total
+   ck(f'row{i} schema',set(row),{'discount_rate','exact_pv','midpoint_pv','absolute_difference'},'fixed report row keys')
+   ck(f'row{i} discount rate',row['discount_rate'],r,'native scenario order')
+   ck(f'row{i} exact PV',row['exact_pv'],exact,'native field vs independent termwise integral',True)
+   ck(f'row{i} midpoint PV',row['midpoint_pv'],discrete,'native field vs independent exponential-grid recurrence',True)
+   ck(f'row{i} reported discrepancy',row['absolute_difference'],abs(row['exact_pv']-row['midpoint_pv']),'exact subtraction of reported floats, not rigorous error bound')
+   references[str(r)]=dict(continuous_pv=str(exact),ideal_midpoint_pv=str(discrete),scope='midpoint callback uses binary-rounded net rate; ideal discrete oracle neglects callback math.exp/multiply and sample-rounding effects, checked with tolerance')
+  derivative=-C*moment(g-dec(F(.05)),T,1);second=C*moment(g-dec(F(.05)),T,2)
+  ck('parallel rate derivative',report['parallel_rate_derivative_at_5pct'],derivative,'native full derivative vs independent integral moment',True)
+  ck('positive-flow derivative negative',report['parallel_rate_derivative_at_5pct']<0,True,'fixed payment-model invariant')
+  ck('supplemental second derivative positive',second>0,True,'conceptual integral formula; no native second-derivative API')
+  A=g-dec(F(.03));B=-dec(F(.005))/2
+  # Integrate Taylor coefficients of exp(A*t+B*t^2): j*a_j=A*a_(j-1)+2B*a_(j-2).
+  older=D(1);previous=A;integral=T+previous*T*T/2
+  for j in range(2,300):
+   coefficient=(A*previous+2*B*older)/j;integral+=coefficient*T**(j+1)/(j+1);older,previous=previous,coefficient
+  continuous=C*integral
+  term=exp_series(A*h/2+B*h*h/4);ratio=exp_series(A*h+2*B*h*h);ratio_step=exp_series(2*B*h*h);total=D(0)
+  for j in range(2000):total+=term;term*=ratio;ratio*=ratio_step
+  discrete=C*h*total
+  bound=T**3/(24*D(2000)**2)*C*((abs(A)+2*abs(B)*T)**2+2*abs(B))
+  ck('variable curve midpoint PV',report['variable_curve_pv'],discrete,'native full curve field vs independent120-digit quadratic-grid recurrence',True)
+  ck('ideal midpoint error within analytic curvature bound',abs(discrete-continuous)<=bound,True,'exact-arithmetic midpoint theorem for this smooth fixed integrand')
+  ck('native curve versus continuous reference',abs(D(str(report['variable_curve_pv']))-continuous)<=bound+D('1e-9'),True,'diagnostic comparison with explicit1e-9 floating margin, not rigorous floating error proof')
+  references['variable_curve']=dict(continuous_reference=str(continuous),ideal_midpoint=str(discrete),curvature_error_bound=str(bound),native_rounding_margin='1e-9',scope='specified deterministic fixed curve; no universal integrability/truncation guarantee')
+  references['sensitivity']=dict(first=str(derivative),supplemental_second=str(second),scope='second derivative conceptual/reference only, not native implementation')
+ ck('PV decreases with discount rate',all(a['exact_pv']>b['exact_pv'] for a,b in zip(report['scenarios'],report['scenarios'][1:])),True,'fixed nonnegative payment stream')
+ ck('growth equals discount PV',report['scenarios'][2]['exact_pv'],4000,'fixed identity')
+ for args in [[sys.executable,'section_10_05.py'],[sys.executable,'check_section_10_05.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0
+ ck('CLI equals full source report',json.loads(commands[0]['stdout']),report,'native function/CLI complete report agreement')
+result=dict(pin=pin,executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,references=references,report=report,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='Full fixed assessment fields/schema and independent ordinary continuous/discrete references. Report has no configurable provenance/valuation-date API; external QA records fixed source assumptions, not market calibration.')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']]);assert result['failed']==0

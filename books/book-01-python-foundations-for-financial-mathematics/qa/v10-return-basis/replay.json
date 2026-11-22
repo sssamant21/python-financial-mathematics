@@ -1,0 +1,756 @@
+{
+  "pin": "56ed4b707947235643686a472fb6e5b860199cee",
+  "executed_at_utc": "2026-11-22T07:09:53.474760+00:00",
+  "source_path": "books/book-01-python-foundations-for-financial-mathematics/chapter-15/15.11-financial-return-statistics.md",
+  "source_sha256": "9ea6709f5b729a734fb3204dcc022b99c90fd71215703d710b0cd13a51eb4fdc",
+  "listing_sha256": "9af9657c8a3e1e6c793870296cd87786b2dcf5e135480a44645b921899fae1a7",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "rows": [
+    {
+      "name": "raw split return0",
+      "actual": "-0.5",
+      "expected": "-1/2",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "raw split compounded endpoint",
+      "actual": "-0.5",
+      "expected": "-1/2",
+      "kind": "source compounding of reported returns vs endpoint, within tolerance",
+      "passed": true
+    },
+    {
+      "name": "raw split log endpoint",
+      "actual": "-0.6931471805599453",
+      "expected": "-0.6931471805599453094172321214581765680755001343602552541206800094933936219696947156058633269964186875",
+      "kind": "native log additivity vs independent100-digit endpoint logarithm",
+      "passed": true
+    },
+    {
+      "name": "split-adjusted return0",
+      "actual": "0.0",
+      "expected": "0",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "split-adjusted compounded endpoint",
+      "actual": "0.0",
+      "expected": "0",
+      "kind": "source compounding of reported returns vs endpoint, within tolerance",
+      "passed": true
+    },
+    {
+      "name": "split-adjusted log endpoint",
+      "actual": "0.0",
+      "expected": "0",
+      "kind": "native log additivity vs independent100-digit endpoint logarithm",
+      "passed": true
+    },
+    {
+      "name": "split share-value preservation",
+      "actual": "0",
+      "expected": "0",
+      "kind": "supplemental share-count/corporate-action algebra, no source adapter",
+      "passed": true
+    },
+    {
+      "name": "split raw versus adjusted differs",
+      "actual": "True",
+      "expected": "True",
+      "kind": "basis matters despite valid positive numeric inputs",
+      "passed": true
+    },
+    {
+      "name": "ex-dividend price-only return0",
+      "actual": "-0.01",
+      "expected": "-1/100",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "ex-dividend price-only compounded endpoint",
+      "actual": "-0.01",
+      "expected": "-1/100",
+      "kind": "source compounding of reported returns vs endpoint, within tolerance",
+      "passed": true
+    },
+    {
+      "name": "ex-dividend price-only log endpoint",
+      "actual": "-0.010050335853501442",
+      "expected": "-0.01005033585350144118354885755854770608551500767462987337869942552958300900425031364970819254909762769",
+      "kind": "native log additivity vs independent100-digit endpoint logarithm",
+      "passed": true
+    },
+    {
+      "name": "caller total-return index return0",
+      "actual": "0.0",
+      "expected": "0",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "caller total-return index compounded endpoint",
+      "actual": "0.0",
+      "expected": "0",
+      "kind": "source compounding of reported returns vs endpoint, within tolerance",
+      "passed": true
+    },
+    {
+      "name": "caller total-return index log endpoint",
+      "actual": "0.0",
+      "expected": "0",
+      "kind": "native log additivity vs independent100-digit endpoint logarithm",
+      "passed": true
+    },
+    {
+      "name": "cash dividend holding-period total return",
+      "actual": "0",
+      "expected": "0",
+      "kind": "supplemental cash-flow convention, not native dividend processing",
+      "passed": true
+    },
+    {
+      "name": "local-currency price return0",
+      "actual": "0.1",
+      "expected": "1/10",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "local-currency price compounded endpoint",
+      "actual": "0.1",
+      "expected": "1/10",
+      "kind": "source compounding of reported returns vs endpoint, within tolerance",
+      "passed": true
+    },
+    {
+      "name": "local-currency price log endpoint",
+      "actual": "0.09531017980432487",
+      "expected": "0.09531017980432486004395212328076509222060536530864419918523980816300101423588423283905750291303649307",
+      "kind": "native log additivity vs independent100-digit endpoint logarithm",
+      "passed": true
+    },
+    {
+      "name": "caller base-currency value return0",
+      "actual": "-0.45",
+      "expected": "-9/20",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "caller base-currency value compounded endpoint",
+      "actual": "-0.45",
+      "expected": "-9/20",
+      "kind": "source compounding of reported returns vs endpoint, within tolerance",
+      "passed": true
+    },
+    {
+      "name": "caller base-currency value log endpoint",
+      "actual": "-0.5978370007556204",
+      "expected": "-0.5978370007556204493732799981774114758548947690516110549354402013303926077338104827668058240833821945",
+      "kind": "native log additivity vs independent100-digit endpoint logarithm",
+      "passed": true
+    },
+    {
+      "name": "FX product identity",
+      "actual": "-9/20",
+      "expected": "-9/20",
+      "kind": "native metrics of caller currency transform",
+      "passed": true
+    },
+    {
+      "name": "stale intermediate quote return0",
+      "actual": "0.0",
+      "expected": "0",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "stale intermediate quote return1",
+      "actual": "0.1",
+      "expected": "1/10",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "stale intermediate quote compounded endpoint",
+      "actual": "0.1",
+      "expected": "1/10",
+      "kind": "source compounding of reported returns vs endpoint, within tolerance",
+      "passed": true
+    },
+    {
+      "name": "stale intermediate quote log endpoint",
+      "actual": "0.09531017980432487",
+      "expected": "0.09531017980432486004395212328076509222060536530864419918523980816300101423588423283905750291303649307",
+      "kind": "native log additivity vs independent100-digit endpoint logarithm",
+      "passed": true
+    },
+    {
+      "name": "alternative intermediate quote return0",
+      "actual": "0.05",
+      "expected": "1/20",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "alternative intermediate quote return1",
+      "actual": "0.047619047619047616",
+      "expected": "1/21",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "alternative intermediate quote compounded endpoint",
+      "actual": "0.09999999999999999",
+      "expected": "1/10",
+      "kind": "source compounding of reported returns vs endpoint, within tolerance",
+      "passed": true
+    },
+    {
+      "name": "alternative intermediate quote log endpoint",
+      "actual": "0.09531017980432485",
+      "expected": "0.09531017980432486004395212328076509222060536530864419918523980816300101423588423283905750291303649307",
+      "kind": "native log additivity vs independent100-digit endpoint logarithm",
+      "passed": true
+    },
+    {
+      "name": "stale observed-path SD",
+      "actual": "0.07071067811865475",
+      "expected": "0.07071067811865475244008443621048490392848359376884740365883398689953662392310535194251937671638207864",
+      "kind": "native volatility of supplied observed path, not latent-price accuracy",
+      "passed": true
+    },
+    {
+      "name": "alternative observed-path SD",
+      "actual": "0.0016835875742536868",
+      "expected": "0.001683587574253686736898867335442095886584808171179153145662714548195554934062109127366619006934108692",
+      "kind": "native volatility of supplied observed path, not latent-price accuracy",
+      "passed": true
+    },
+    {
+      "name": "stale path dispersion differs",
+      "actual": "True",
+      "expected": "True",
+      "kind": "specific counterexample only; no universal direction or freshness detector",
+      "passed": true
+    },
+    {
+      "name": "asset A irregular labels return0",
+      "actual": "0.1",
+      "expected": "1/10",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "asset A irregular labels return1",
+      "actual": "0.1",
+      "expected": "1/10",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "asset A irregular labels compounded endpoint",
+      "actual": "0.21",
+      "expected": "21/100",
+      "kind": "source compounding of reported returns vs endpoint, within tolerance",
+      "passed": true
+    },
+    {
+      "name": "asset A irregular labels log endpoint",
+      "actual": "0.19062035960864973",
+      "expected": "0.1906203596086497200879042465615301844412107306172883983704796163260020284717684656781150058260729861",
+      "kind": "native log additivity vs independent100-digit endpoint logarithm",
+      "passed": true
+    },
+    {
+      "name": "asset B different labels return0",
+      "actual": "-0.1",
+      "expected": "-1/10",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "asset B different labels return1",
+      "actual": "0.1",
+      "expected": "1/10",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "asset B different labels compounded endpoint",
+      "actual": "-0.01",
+      "expected": "-1/100",
+      "kind": "source compounding of reported returns vs endpoint, within tolerance",
+      "passed": true
+    },
+    {
+      "name": "asset B different labels log endpoint",
+      "actual": "-0.010050335853501444",
+      "expected": "-0.01005033585350144118354885755854770608551500767462987337869942552958300900425031364970819254909762769",
+      "kind": "native log additivity vs independent100-digit endpoint logarithm",
+      "passed": true
+    },
+    {
+      "name": "equal return counts despite misaligned intervals",
+      "actual": "True",
+      "expected": "True",
+      "kind": "native lengths cannot prove calendar alignment",
+      "passed": true
+    },
+    {
+      "name": "nonchronological input return0",
+      "actual": "0.21",
+      "expected": "21/100",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "nonchronological input return1",
+      "actual": "-0.09090909090909091",
+      "expected": "-1/11",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "nonchronological input compounded endpoint",
+      "actual": "0.1",
+      "expected": "1/10",
+      "kind": "source compounding of reported returns vs endpoint, within tolerance",
+      "passed": true
+    },
+    {
+      "name": "nonchronological input log endpoint",
+      "actual": "0.09531017980432484",
+      "expected": "0.09531017980432486004395212328076509222060536530864419918523980816300101423588423283905750291303649307",
+      "kind": "native log additivity vs independent100-digit endpoint logarithm",
+      "passed": true
+    },
+    {
+      "name": "caller ordering changes return sequence",
+      "actual": "True",
+      "expected": "True",
+      "kind": "no native timestamp/order guard",
+      "passed": true
+    },
+    {
+      "name": "original source snapshot return0",
+      "actual": "0.1",
+      "expected": "1/10",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "original source snapshot compounded endpoint",
+      "actual": "0.1",
+      "expected": "1/10",
+      "kind": "source compounding of reported returns vs endpoint, within tolerance",
+      "passed": true
+    },
+    {
+      "name": "original source snapshot log endpoint",
+      "actual": "0.09531017980432487",
+      "expected": "0.09531017980432486004395212328076509222060536530864419918523980816300101423588423283905750291303649307",
+      "kind": "native log additivity vs independent100-digit endpoint logarithm",
+      "passed": true
+    },
+    {
+      "name": "revised source snapshot return0",
+      "actual": "0.05",
+      "expected": "1/20",
+      "kind": "native price-only return vs independent exact price difference ratio",
+      "passed": true
+    },
+    {
+      "name": "revised source snapshot compounded endpoint",
+      "actual": "0.05",
+      "expected": "1/20",
+      "kind": "source compounding of reported returns vs endpoint, within tolerance",
+      "passed": true
+    },
+    {
+      "name": "revised source snapshot log endpoint",
+      "actual": "0.04879016416943201",
+      "expected": "0.04879016416943200306537440422316465860797366441558241004007657311410792432363103881941372131558662990",
+      "kind": "native log additivity vs independent100-digit endpoint logarithm",
+      "passed": true
+    },
+    {
+      "name": "snapshot hashes differ",
+      "actual": "True",
+      "expected": "True",
+      "kind": "content identity, not temporal availability/authenticity",
+      "passed": true
+    },
+    {
+      "name": "prescribed project fixture identity",
+      "actual": "d8d2cdd725bbbbf0a59cc258d3a0d83f3912130213a01b3e137839aa60fd9d50",
+      "expected": "d8d2cdd725bbbbf0a59cc258d3a0d83f3912130213a01b3e137839aa60fd9d50",
+      "kind": "synthetic inputs match previous project record",
+      "passed": true
+    },
+    {
+      "name": "price fixture and separate risk fixture have different lengths",
+      "actual": "True",
+      "expected": "True",
+      "kind": "risk fixture intentionally supplied independently, not silently derived from prices",
+      "passed": true
+    },
+    {
+      "name": "prescribed hypothetical excess mean",
+      "actual": "0.009",
+      "expected": "9/1000",
+      "kind": "source mean of caller arithmetic excess differences",
+      "passed": true
+    },
+    {
+      "name": "prescribed hypothetical per-period Sharpe",
+      "actual": "0.22499999999999998",
+      "expected": "9/40",
+      "kind": "caller ratio of native metrics, no native Sharpe API",
+      "passed": true
+    }
+  ],
+  "models": [
+    {
+      "name": "raw split",
+      "prices": [
+        100,
+        50
+      ],
+      "labels": [
+        1,
+        2
+      ],
+      "declared_basis": "unadjusted per-share price around hypothetical2-for-1 split",
+      "native_returns": [
+        -0.5
+      ],
+      "native_logs": [
+        -0.6931471805599453
+      ],
+      "scope": "Caller-specified synthetic price basis/labels; native API consumes numbers only"
+    },
+    {
+      "name": "split-adjusted",
+      "prices": [
+        100,
+        100
+      ],
+      "labels": [
+        1,
+        2
+      ],
+      "declared_basis": "caller supplied comparable per-old-share/total-value basis",
+      "native_returns": [
+        0.0
+      ],
+      "native_logs": [
+        0.0
+      ],
+      "scope": "Caller-specified synthetic price basis/labels; native API consumes numbers only"
+    },
+    {
+      "name": "ex-dividend price-only",
+      "prices": [
+        100,
+        99
+      ],
+      "labels": [
+        1,
+        2
+      ],
+      "declared_basis": "price only, hypothetical cash dividend1 separately specified",
+      "native_returns": [
+        -0.01
+      ],
+      "native_logs": [
+        -0.010050335853501442
+      ],
+      "scope": "Caller-specified synthetic price basis/labels; native API consumes numbers only"
+    },
+    {
+      "name": "caller total-return index",
+      "prices": [
+        100,
+        100
+      ],
+      "labels": [
+        1,
+        2
+      ],
+      "declared_basis": "caller assembled total wealth with cash dividend1",
+      "native_returns": [
+        0.0
+      ],
+      "native_logs": [
+        0.0
+      ],
+      "scope": "Caller-specified synthetic price basis/labels; native API consumes numbers only"
+    },
+    {
+      "name": "local-currency price",
+      "prices": [
+        100,
+        110
+      ],
+      "labels": [
+        1,
+        2
+      ],
+      "declared_basis": "local currency, hypothetical FX rates2 then1 base per local",
+      "native_returns": [
+        0.1
+      ],
+      "native_logs": [
+        0.09531017980432487
+      ],
+      "scope": "Caller-specified synthetic price basis/labels; native API consumes numbers only"
+    },
+    {
+      "name": "caller base-currency value",
+      "prices": [
+        200,
+        110
+      ],
+      "labels": [
+        1,
+        2
+      ],
+      "declared_basis": "caller price\u00d7FX conversion, same declared labels",
+      "native_returns": [
+        -0.45
+      ],
+      "native_logs": [
+        -0.5978370007556204
+      ],
+      "scope": "Caller-specified synthetic price basis/labels; native API consumes numbers only"
+    },
+    {
+      "name": "stale intermediate quote",
+      "prices": [
+        100,
+        100,
+        110
+      ],
+      "labels": [
+        1,
+        2,
+        3
+      ],
+      "declared_basis": "synthetic stale intermediate observation",
+      "native_returns": [
+        0.0,
+        0.1
+      ],
+      "native_logs": [
+        0.0,
+        0.09531017980432487
+      ],
+      "scope": "Caller-specified synthetic price basis/labels; native API consumes numbers only"
+    },
+    {
+      "name": "alternative intermediate quote",
+      "prices": [
+        100,
+        105,
+        110
+      ],
+      "labels": [
+        1,
+        2,
+        3
+      ],
+      "declared_basis": "separate hypothetical more frequently updated path, not verified truth",
+      "native_returns": [
+        0.05,
+        0.047619047619047616
+      ],
+      "native_logs": [
+        0.04879016416943201,
+        0.04652001563489285
+      ],
+      "scope": "Caller-specified synthetic price basis/labels; native API consumes numbers only"
+    },
+    {
+      "name": "asset A irregular labels",
+      "prices": [
+        100,
+        110,
+        121
+      ],
+      "labels": [
+        1,
+        2,
+        4
+      ],
+      "declared_basis": "numeric values with labels1,2,4",
+      "native_returns": [
+        0.1,
+        0.1
+      ],
+      "native_logs": [
+        0.09531017980432487,
+        0.09531017980432487
+      ],
+      "scope": "Caller-specified synthetic price basis/labels; native API consumes numbers only"
+    },
+    {
+      "name": "asset B different labels",
+      "prices": [
+        100,
+        90,
+        99
+      ],
+      "labels": [
+        1,
+        3,
+        4
+      ],
+      "declared_basis": "numeric values with labels1,3,4",
+      "native_returns": [
+        -0.1,
+        0.1
+      ],
+      "native_logs": [
+        -0.10536051565782631,
+        0.09531017980432487
+      ],
+      "scope": "Caller-specified synthetic price basis/labels; native API consumes numbers only"
+    },
+    {
+      "name": "nonchronological input",
+      "prices": [
+        100,
+        121,
+        110
+      ],
+      "labels": [
+        1,
+        4,
+        2
+      ],
+      "declared_basis": "caller order labels1,4,2",
+      "native_returns": [
+        0.21,
+        -0.09090909090909091
+      ],
+      "native_logs": [
+        0.1906203596086497,
+        -0.09531017980432487
+      ],
+      "scope": "Caller-specified synthetic price basis/labels; native API consumes numbers only"
+    },
+    {
+      "name": "original source snapshot",
+      "prices": [
+        100,
+        110
+      ],
+      "labels": [
+        1,
+        2
+      ],
+      "declared_basis": "caller snapshot before hypothetical correction",
+      "native_returns": [
+        0.1
+      ],
+      "native_logs": [
+        0.09531017980432487
+      ],
+      "scope": "Caller-specified synthetic price basis/labels; native API consumes numbers only"
+    },
+    {
+      "name": "revised source snapshot",
+      "prices": [
+        100,
+        105
+      ],
+      "labels": [
+        1,
+        2
+      ],
+      "declared_basis": "different caller snapshot, availability unspecified",
+      "native_returns": [
+        0.05
+      ],
+      "native_logs": [
+        0.04879016416943201
+      ],
+      "scope": "Caller-specified synthetic price basis/labels; native API consumes numbers only"
+    },
+    {
+      "name": "prescribed project provenance",
+      "fixture_sha256": "d8d2cdd725bbbbf0a59cc258d3a0d83f3912130213a01b3e137839aa60fd9d50",
+      "prices": [
+        100,
+        110,
+        99
+      ],
+      "risk_returns": [
+        -0.04,
+        -0.01,
+        0,
+        0.02,
+        0.08,
+        0.01
+      ],
+      "riskfree": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "periods_per_year": 252,
+      "prices_labels": [
+        0,
+        1,
+        2
+      ],
+      "risk_labels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "calendar_dates": null,
+      "currency": "fictional USD",
+      "cash_flows": null,
+      "scope": "No actual dividend/split/FX/calendar/quote/revision feed or market risk-free source; risk fixture separate; per-period excess/Sharpe caller logic"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "financial_return_statistics.py"
+      ],
+      "returncode": 0,
+      "stdout": "Arithmetic: 0.0\nGeometric: -0.005012562893380045\nCumulative: -0.01\n",
+      "stderr": "test_01_simple (__main__.ReturnStatisticsTests.test_01_simple) ... ok\ntest_02_log (__main__.ReturnStatisticsTests.test_02_log) ... ok\ntest_03_mean (__main__.ReturnStatisticsTests.test_03_mean) ... ok\ntest_04_geometric (__main__.ReturnStatisticsTests.test_04_geometric) ... ok\ntest_05_cumulative (__main__.ReturnStatisticsTests.test_05_cumulative) ... ok\ntest_06_bankruptcy (__main__.ReturnStatisticsTests.test_06_bankruptcy) ... ok\ntest_07_volatility (__main__.ReturnStatisticsTests.test_07_volatility) ... ok\ntest_08_annual_vol (__main__.ReturnStatisticsTests.test_08_annual_vol) ... ok\ntest_09_var (__main__.ReturnStatisticsTests.test_09_var) ... ok\ntest_10_es (__main__.ReturnStatisticsTests.test_10_es) ... ok\ntest_11_log_additivity (__main__.ReturnStatisticsTests.test_11_log_additivity) ... ok\ntest_12_invalid (__main__.ReturnStatisticsTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "financial_return_statistics.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "prior_evidence_identity_verified": true,
+  "passed": 58,
+  "failed": 0,
+  "scope": "Supplied synthetic return-basis transformations and project lineage; source consumes positive positional prices, not corporate-action/timestamp/FX/freshness/revision adapters or independent acceptance"
+}
