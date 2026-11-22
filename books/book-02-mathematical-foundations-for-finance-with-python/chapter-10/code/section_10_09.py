@@ -3,7 +3,9 @@ from dataclasses import dataclass
 import json
 import math
 from fractions import Fraction
-from section_10_05 import _exponential_integral as _shared_exponential_integral
+from section_10_05 import (_exponential_integral as _shared_exponential_integral,
+                           time_weighted_factor as _shared_time_weighted_factor,
+                           _linear_pv as _shared_linear_pv)
 
 def finite(x,name):
     if type(x) not in (int,float):
@@ -66,19 +68,7 @@ def exponential_integral(a,k,T):
 
 def weighted_integral(rate,T):
     r,t=finite(rate,"rate"),horizon(T)
-    x=r*t
-    if not math.isfinite(x):
-        raise ValueError("nonfinite exponent")
-    if abs(x)<0.1:
-        term=0.5
-        total=term
-        for k in range(1,100):
-            term*=(-x)*(k+1)/(k*(k+2))
-            total+=term
-            if abs(term)<=1e-16*max(1,abs(total)):
-                break
-        return finite(t*t*total,"weighted integral")
-    return finite(t*t*(-math.expm1(-x)-x*math.exp(-x))/(x*x),"weighted integral")
+    return _shared_time_weighted_factor(r,t)
 
 def analytic_pv(stream,curve,T,shift=0.0):
     if not isinstance(stream,Stream) or not isinstance(curve,Curve):
@@ -93,9 +83,10 @@ def analytic_pv(stream,curve,T,shift=0.0):
     if stream.kind=="exponential":
         growth=Fraction(finite(stream.b,"b"))-rate
         return _shared_exponential_integral(Fraction(finite(stream.a,"a")),growth,Fraction(t))
-    # The linear/moment branch has a separate, still pending range review.
-    r=curve.base+shift
-    return finite(exponential_integral(stream.a,-r,t)+stream.b*weighted_integral(r,t),"PV")
+    # Combine both terms before reporting: individually unreportable moments
+    # can cancel, or a tiny moment can be rescued by its finite coefficient.
+    return _shared_linear_pv(Fraction(finite(stream.a,"a")),
+                             Fraction(finite(stream.b,"b")),rate,Fraction(t))
 
 def simpson(f,T,n=256):
     t=horizon(T)

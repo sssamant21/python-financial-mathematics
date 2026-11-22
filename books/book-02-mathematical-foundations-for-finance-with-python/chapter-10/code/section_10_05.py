@@ -109,6 +109,10 @@ def _pv_report(value):
 def linear_pv(intercept,slope,rate,T):
     a,b = Fraction(finite(intercept,"intercept")),Fraction(finite(slope,"slope"))
     r,t = Fraction(finite(rate,"rate")),Fraction(horizon(T))
+    return _linear_pv(a,b,r,t)
+
+def _linear_pv(a,b,r,t):
+    """Complete linear PV for validated exact rational inputs (internal)."""
     if not t or not (a or b):
         return 0.0
     if not r:
