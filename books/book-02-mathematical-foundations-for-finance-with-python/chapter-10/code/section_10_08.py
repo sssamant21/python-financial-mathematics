@@ -1,6 +1,7 @@
 """Section 10.8: discrete versus continuous payments."""
 import json
 import math
+from section_10_05 import constant_pv
 
 def finite(x,name):
     if type(x) not in (int,float):
@@ -26,13 +27,9 @@ def valid_count(n):
 
 def continuous_pv(payment_rate,rate,horizon):
     c,r,t=finite(payment_rate,"payment_rate"),finite(rate,"rate"),valid_horizon(horizon)
-    x=r*t
-    if not math.isfinite(x):
-        raise ValueError("nonfinite exponent")
-    result=c*t if x==0 else c*t*(-math.expm1(-x))/x
-    if not math.isfinite(result):
-        raise ValueError("nonfinite PV")
-    return result
+    # Share the complete scaled exponential integral, preserving this API's
+    # validated signed payment rate and nonnegative horizon contract.
+    return constant_pv(c,r,t)
 
 def schedule_pv(payments,rate):
     r=finite(rate,"rate")

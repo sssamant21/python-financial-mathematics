@@ -6,7 +6,7 @@
 
 This index consolidates source-level comparisons of manuscript claims, examples, exercise/solution tasks, labs, projects and actual assertions. “Mapped” means the evidence or its absence is documented. It does not mean every claim is tested, every solution is correct, or a reviewer has approved the material. Ninety COV categories describe recurring evidence gaps; they are not ninety confirmed software defects or a severity score.
 
-**Latest execution checkpoint:** [V257 full runtime](full-runtime-quadrature-2026-11-22/README.md) and [V256 finance/report/alias crosswalk](ch10-finance-oracle-2026-11-22/README.md);next10.8. Original mapping scope retained.
+**Latest execution checkpoint:** [V258 continuous-PV scaling](ch10-continuous-comparison-2026-11-22/README.md);partial10.8. V257 remains latest full runtime,preceding two changed executable blobs.
 
 ## Complete section map
 
@@ -1719,3 +1719,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-257 checkpoint — Full pinned quadrature runtime refresh
 
 [Evidence](full-runtime-quadrature-2026-11-22/README.md) at `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85`:642/642 Python files compile,429/429 check-test scripts pass,643/643 required blobs verify before/after. V253–255 corrected10.7 weighted/grid/refinement/sequence sources included;earlier failures/policies/limits preserved. Exact output/status/timing/manifest retained;all executable identities match documentation candidate. V25692-predicate finance/report/alias crosswalk remains separate. Selected10.7 runtime progression gate met;next10.8 discrete/continuous lab-source crosswalk. No book/platform/model/reviewer/release/canonical acceptance. All38 COV categories partial,none closed;broader gates open. Book1 separate.
+
+
+## V-258 checkpoint — Partial Section10.8 continuous-PV scaling
+
+[Evidence](ch10-continuous-comparison-2026-11-22/README.md):10 passes/eight failed baseline predicates reproduced;corrected18 pass twice against independent1800-digit integrated/halving-Taylor-squaring references. Six complete-value/zero failures,one exception contract and one new shared-call contract distinguished. continuous_pv now validates then delegates to existing corrected10.5 constant_pv;dependency hashes and actual call observed. Final-underflow0 and growth/resource policies retained. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.8 blobs differ from V257,no new full runtime. Next10.8 equal-payment/schedule/ratio/full-report then timing/units/exercise/lab crosswalk. All38 COV categories partial,none closed;broader gates open. Book1 separate.

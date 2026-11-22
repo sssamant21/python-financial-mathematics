@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-22
 **Full-runtime candidate source revision:** `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85` ([V257](full-runtime-quadrature-2026-11-22/README.md)).
-**Latest scoped source:** V256 Section10.7 independent finance/report/alias crosswalk at the same executable pin;[evidence](ch10-finance-oracle-2026-11-22/README.md).
+**Latest scoped source:** V258 Section10.8 continuous-PV correction;baseline `3394dadd805cd683c35c4e1232df2b7a1b01aff9`,candidate/dependency identities and execution in [evidence](ch10-continuous-comparison-2026-11-22/README.md).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** Selected10.7 source/report/proof/lab crosswalk and full-runtime gate recorded. Next10.8;broader numerical/resource/provenance/model/platform/release/independent/canonical gates open. Historical static checkpoint retains its older scope.
+**Disposition:** Partial10.8 continuous-PV scaling recorded;next equal-payment/schedule/ratio/full-report then assumption/lab obligations. V257 full runtime precedes two10.8 changes;broader gates open.
 
 ## Reconciled evidence
 
@@ -1767,3 +1767,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-257 checkpoint — Full pinned quadrature runtime refresh
 
 [Evidence](full-runtime-quadrature-2026-11-22/README.md) at `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85`:642/642 Python files compile,429/429 check-test scripts pass,643/643 required blobs verify before/after. V253–255 corrected10.7 weighted/grid/refinement/sequence sources included;earlier failures/policies/limits preserved. Exact output/status/timing/manifest retained;all executable identities match documentation candidate. V25692-predicate finance/report/alias crosswalk remains separate. Selected10.7 runtime progression gate met;next10.8 discrete/continuous lab-source crosswalk. No book/platform/model/reviewer/release/canonical acceptance. All38 COV categories partial,none closed;broader gates open. Book1 separate.
+
+
+## V-258 checkpoint — Partial Section10.8 continuous-PV scaling
+
+[Evidence](ch10-continuous-comparison-2026-11-22/README.md):10 passes/eight failed baseline predicates reproduced;corrected18 pass twice against independent1800-digit integrated/halving-Taylor-squaring references. Six complete-value/zero failures,one exception contract and one new shared-call contract distinguished. continuous_pv now validates then delegates to existing corrected10.5 constant_pv;dependency hashes and actual call observed. Final-underflow0 and growth/resource policies retained. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.8 blobs differ from V257,no new full runtime. Next10.8 equal-payment/schedule/ratio/full-report then timing/units/exercise/lab crosswalk. All38 COV categories partial,none closed;broader gates open. Book1 separate.

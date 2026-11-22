@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-22
-**Overall status:** In progress — V256 Section10.7 finance/report/alias crosswalk and V257 full candidate Linux runtime recorded at `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85` (642/429/643). Next10.8;broader acceptance gaps open.
+**Overall status:** In progress — V258 partial10.8 continuous-PV complete-scaling correction recorded;next equal-payment/schedule/ratio/full-report and assumption/lab contracts. V257 remains latest full runtime,preceding two changed10.8 blobs.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1893,3 +1893,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-257 checkpoint — Full pinned quadrature runtime refresh
 
 [Evidence](full-runtime-quadrature-2026-11-22/README.md) at `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85`:642/642 Python files compile,429/429 check-test scripts pass,643/643 required blobs verify before/after. V253–255 corrected10.7 weighted/grid/refinement/sequence sources included;earlier failures/policies/limits preserved. Exact output/status/timing/manifest retained;all executable identities match documentation candidate. V25692-predicate finance/report/alias crosswalk remains separate. Selected10.7 runtime progression gate met;next10.8 discrete/continuous lab-source crosswalk. No book/platform/model/reviewer/release/canonical acceptance. All38 COV categories partial,none closed;broader gates open. Book1 separate.
+
+
+## V-258 checkpoint — Partial Section10.8 continuous-PV scaling
+
+[Evidence](ch10-continuous-comparison-2026-11-22/README.md):10 passes/eight failed baseline predicates reproduced;corrected18 pass twice against independent1800-digit integrated/halving-Taylor-squaring references. Six complete-value/zero failures,one exception contract and one new shared-call contract distinguished. continuous_pv now validates then delegates to existing corrected10.5 constant_pv;dependency hashes and actual call observed. Final-underflow0 and growth/resource policies retained. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.8 blobs differ from V257,no new full runtime. Next10.8 equal-payment/schedule/ratio/full-report then timing/units/exercise/lab crosswalk. All38 COV categories partial,none closed;broader gates open. Book1 separate.

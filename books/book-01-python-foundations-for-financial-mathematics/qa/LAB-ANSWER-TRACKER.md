@@ -603,3 +603,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section15.1 descriptive measurement/sampling assumptions
 
 [Evidence](v10-descriptive-design/README.md):171 predicates pass twice. All summary fields over eight fixtures, unit/shift/missing/trim choices and six temporal orderings checked; equal summaries/full products can hide external drawdowns.1–.19. Four exact n2 IID-sign paths give E[s²]=.01 but E[s]=sqrt(.02)/2, not populationSD.1. Singleton rational-type observer crash and170/1 drawdown-oracle first/replay retained, corrected without manuscript change. Final four commands/24 invocations of12 existing methods; F127 identities/prior five failures/32 predicates/24 answers/six tasks retain scope. No new historical/workflow/answer/step totals. Next15.2 location/quantile/selection assumptions then15.3–15.7. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section15.2 quantile/selection/exposure assumptions
+
+[Evidence](v10-quantile-design/README.md):975 predicates pass twice;64 exact n3 four-point histories/five quantiles verify native type7/nearest ranks/loss reflection. External next strict-breach laws39/128 versus9/64 illustrate small-sample estimator limits,not calibrated.05 risk. Nearest-rank negative-reflection counterexample and beginning/ending exposure/trim/stress policies explicit. Final four commands/24 invocations of twelve existing methods;F128 identities/prior nine failures/49 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next15.3 variance/denominator/dependence then15.4–15.7. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

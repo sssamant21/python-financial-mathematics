@@ -13,7 +13,27 @@ def rejects(exc,fn,*args):
         return
     raise AssertionError("expected "+exc.__name__)
 
+def check_continuous_complete_scale():
+    from decimal import Decimal,localcontext
+    import section_10_08 as lab
+    from unittest.mock import patch
+    with localcontext() as ctx:
+        ctx.prec=1800
+        expected=float(Decimal.from_float(1e308)*(1-(-Decimal(2)).exp()))
+        growth=float(Decimal.from_float(1e-308)*((Decimal(710)).exp()-1))
+    assert continuous_pv(1e308,1.,2.)==expected
+    assert continuous_pv(-1e308,1.,2.)==-expected
+    assert continuous_pv(1e308,1e308,1e308)==1.
+    assert continuous_pv(1e-308,-1.,710.)==growth
+    assert continuous_pv(0.,-1e308,1e308)==0.
+    assert continuous_pv(1e-308,1e308,1.)==0.  # Declared final-underflow policy.
+    with patch.object(lab,"constant_pv",wraps=lab.constant_pv) as shared:
+        continuous_pv(1200.,.06,2.)
+        shared.assert_called_once_with(1200.,.06,2.)
+
+
 def run():
+    check_continuous_complete_scale()
     c,T=1200,2
     close(continuous_pv(c,0,T),2400)
     close(schedule_pv([(0,100),(1,100)],0),200)
