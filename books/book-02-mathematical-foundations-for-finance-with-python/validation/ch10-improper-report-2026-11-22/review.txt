@@ -1,0 +1,76 @@
+"""Pinned complete improper-integral fixed report with independent ordinary references."""
+from pathlib import Path
+from fractions import Fraction as F
+from decimal import Decimal as D,Context,localcontext
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='1a5045c7a3c39727737579534f7074051559aa64';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_06.py';check=path.replace('section_10_06.py','check_section_10_06.py');rows=[];commands=[];manifest={};references=[]
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root);manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+def dec(v):return D(v.numerator)/D(v.denominator)
+def exp_series(x):
+ term=total=D(1)
+ for k in range(1,1500):
+  term*=x/k;new=total+term
+  if new==total:return total
+  total=new
+ raise RuntimeError('report exponential reference')
+def negative_log(f):
+ m,e=math.frexp(f)
+ def log_inv(y):
+  q=(1-y)/(1+y);term=total=q;q2=q*q
+  for k in range(1,5000):
+   term*=q2;new=total+term/(2*k+1)
+   if new==total:return 2*total
+   total=new
+  raise RuntimeError('report logarithm reference')
+ return log_inv(D.from_float(m))-e*log_inv(D('.5'))
+def integral(k,t):
+ term=total=D(1)
+ for j in range(1,1500):
+  term*=k*t/(j+1);new=total+term
+  if new==total:return t*total
+  total=new
+ raise RuntimeError('report integral reference')
+def ck(name,got,want,kind,approx=False):
+ if isinstance(got,set):got=sorted(got);want=sorted(want)
+ ok=math.isclose(float(got),float(want),rel_tol=5e-14,abs_tol=0) if approx else got==want
+ rows.append(dict(name=name,actual=str(got),expected=str(want),kind=kind,passed=ok))
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('improper_report',Path(tmp)/'section_10_06.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);report=m.assessment()
+ ck('global schema',set(report),{'scenarios','runtime_certified','independent_review_completed'},'fixed no-parameter report')
+ ck('scenario count',len(report['scenarios']),5,'fixed source scenarios')
+ ck('runtime flag',report['runtime_certified'],False,'assistant runtime is not certification')
+ ck('independent flag',report['independent_review_completed'],False,'assistant checking is not independent signoff')
+ with localcontext(Context(prec=1800)):
+  L=negative_log(.01);R=F(.05)
+  for i,g in enumerate([0,.02,.04,.049,.05]):
+   row=report['scenarios'][i];d=R-F(g);converges=d>0;keys={'growth','discount','converges','finite_horizons'}|({'perpetuity','tail_at_100','one_percent_tail_horizon'} if converges else set())
+   ck(f'row{i} schema',set(row),keys,'convergence-gated native schema')
+   ck(f'row{i} growth',row['growth'],g,'ordered scenario field')
+   ck(f'row{i} discount',row['discount'],.05,'fixed discount convention')
+   ck(f'row{i} convergence',row['converges'],converges,'exact represented-rate convergence comparison')
+   ck(f'row{i} horizon keys',set(row['finite_horizons']),{'10','30','100'},'fixed horizon labels')
+   refs={}
+   for T in [10,30,100]:
+    want=D(1000)*integral(-dec(d),D(T));ck(f'row{i} finite T{T}',row['finite_horizons'][str(T)],want,'independent termwise finite integral',True);refs[str(T)]=str(want)
+   ck(f'row{i} finite monotonicity',row['finite_horizons']['10']<row['finite_horizons']['30']<row['finite_horizons']['100'],True,'fixed positive stream')
+   if converges:
+    pv=dec(F(1000)/d);tail=pv*exp_series(-dec(d)*100);ideal=L/dec(d);upper=float(ideal)
+    if D.from_float(upper)<ideal:upper=math.nextafter(upper,math.inf)
+    ck(f'row{i} perpetuity',row['perpetuity'],pv,'independent Decimal ratio',True)
+    ck(f'row{i} tail',row['tail_at_100'],tail,'independent exponential series tail',True)
+    ck(f'row{i} target',row['one_percent_tail_horizon'],upper,'independent atanh-log plus upward report')
+    ck(f'row{i} target inequality',dec(d)*D.from_float(row['one_percent_tail_horizon'])>=L,True,'selected high-precision target comparison, not all-input proof')
+    ck(f'row{i} decomposition',row['finite_horizons']['100']+row['tail_at_100'],pv,'reported-float decomposition identity within tolerance',True)
+    ck(f'row{i} positive tail and finite below limit',row['tail_at_100']>0 and row['finite_horizons']['100']<row['perpetuity'],True,'fixed nonnegative convergent model')
+    refs.update(perpetuity=str(pv),tail=str(tail),ideal_target=str(ideal),upper_report=upper)
+   references.append(dict(growth=g,discount=.05,converges=converges,reference=refs))
+ ck('near-critical perpetuity increases',all(a['perpetuity']<b['perpetuity'] for a,b in zip(report['scenarios'][:3],report['scenarios'][1:4])),True,'fixed approaching-decay-zero model')
+ for args in [[sys.executable,'section_10_06.py'],[sys.executable,'check_section_10_06.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0
+ ck('CLI complete report agreement',json.loads(commands[0]['stdout']),report,'source function/CLI agreement')
+result=dict(pin=pin,executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,references=references,report=report,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='Complete fixed ordinary report; independent finite/tail/limit/target references. Proof/provenance crosswalk external; no generalized report, financial/model/platform/independent acceptance.')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']]);assert result['failed']==0

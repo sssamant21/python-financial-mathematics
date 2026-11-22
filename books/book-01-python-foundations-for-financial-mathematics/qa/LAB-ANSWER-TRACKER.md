@@ -578,3 +578,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Partial Section15.13 availability/clock/revision boundaries
 
 [Evidence](v10-asof-boundaries/README.md):68 predicates pass twice:50 numeric/aware known-clock cases and18 latency/revision/unit/domain checks. Native False/equal timestamps do not prove readiness/authenticity; caller latest-eligible selection and processing-delay policies remain supplemental. Fixed offsets only,no new ZoneInfo/platform claim. Four commands/24 invocations of twelve existing methods; F219 whole-source and F139 fence identity verified; earlier failures/42 predicates retain scope. No source change/new workflow/answer/historical totals. Next15.13 ACF/volatility/nonstationarity/data/outlier/cost/project assumptions; section/V10/Book1 partial. F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section15.13 dependence/data/cost/project assumptions
+
+[Evidence](v10-dependence-diagnostics/README.md):175 predicates pass twice over32 exact mixture paths plus caller data/cost/project checks. Raw population covariance0 with squared covariance9/40000; conditional native sample ACF mean−1/4 and constant squared-path rejections do not prove independence. Imputation conventions alter diagnostics; hypothetical.001 cost produces net mean−.001. Conceptual nonstationarity/outlier/causality/project disposition recorded separately. Four commands/24 invocations of twelve existing methods; F219/F139 identities and historical failures/evidence scopes preserved. No source change/new workflow/answer/historical totals. Selected15.13 crosswalk recorded; next15.14 toolkit integration/model-report assumptions. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

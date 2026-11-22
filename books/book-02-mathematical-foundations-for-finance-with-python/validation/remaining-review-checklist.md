@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-22
-**Full-runtime candidate source revision:** `56ed4b707947235643686a472fb6e5b860199cee` ([V246](full-runtime-payments-2026-11-22/README.md)).
-**Latest scoped source:** V250 Section10.6 target/p-integral baseline `e40e5540302f0767f169978f9964e94655d5fc1e`;candidate identities/limits in [evidence](ch10-target-horizon-2026-11-22/README.md).
+**Full-runtime candidate source revision:** `1a5045c7a3c39727737579534f7074051559aa64` ([V252](full-runtime-improper-2026-11-22/README.md)).
+**Latest scoped source:** V251 Section10.6 full fixed-report/proof crosswalk at the same executable pin;[evidence](ch10-improper-report-2026-11-22/README.md).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** Selected10.6 numerical subsets pass;full fixed-report/proof/provenance and fresh pinned full runtime before10.7 remain open. V246 retains its older pin;broader acceptance gaps remain open.
+**Disposition:** Selected10.6 source/report/proof crosswalk and full-runtime gate recorded. Next10.7;broader numerical/resource/provenance/model/platform/release/independent/canonical acceptance open. Historical static checkpoint retains its older scope.
 
 ## Reconciled evidence
 
@@ -1732,3 +1732,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-250 checkpoint — Section10.6 target/p-integral contracts
 
 [Evidence](ch10-target-horizon-2026-11-22/README.md):21 passes/eight baseline failed predicates reproduced; corrected29 predicates pass twice. Independent1800-digit range-reduced atanh-log/quotient references verify exact selected upward horizon reports and p-integral last-bit correction. Five policy probes distinct from two decay-range and one quotient failure; finite precision/resource/upward support limits explicit. Eight native regressions, prior26 tail/21 finite/25 perpetuity predicates plus all21 Chapter10 files/eleven checkers/tenCLIs pass. Next10.6 full report/proof/provenance then full pinned refresh before10.7. Fresh642/429/643 inventory,641/643 V246 blobs match; only10.6 source/checker differ. No new full runtime/section completion/independent acceptance. All38 selected COV categories partial, none closed; broader gates open. Book1 separate.
+
+
+## V-251 checkpoint — Section10.6 fixed report/proof crosswalk
+
+[Evidence](ch10-improper-report-2026-11-22/README.md):75 predicates pass twice with identical complete reports. Every fixed global/row/numeric/convergence-gated field checked against independent1800-digit integral/exp/atanh-log references;selected upward targets and ordinary decomposition verified. Endpoint/comparison/p-integral/sensitivity derivations and provenance are external conceptual/QA crosswalks,not invented APIs or independent signoff. Six native command records pass;no source change/failure. Nextfinish V252 pinned full runtime and verify unchanged executable identities before10.7. Earlier failures/policies/resource/precision limits preserved. All38 COV categories partial,none closed;broader acceptance open. Book1 separate.
+
+
+## V-252 checkpoint — Full pinned improper-integral runtime refresh
+
+[Evidence](full-runtime-improper-2026-11-22/README.md) at `1a5045c7a3c39727737579534f7074051559aa64`:642/642 Python files compile,429/429 check/test scripts pass,643/643 required blobs verify before/after. Accumulated10.6 perpetuity/finite/tail/target/p-integral corrections included;initial failures,policy probes,observer records and numerical/resource limits preserved. Actual outputs/status/timings/manifest retained;all executable identities match documentation candidate. Selected10.6 runtime progression gate met;next10.7 numerical-quadrature lab/source crosswalk. No book/independent/platform/release/canonical acceptance. All38 selected COV categories partial,none closed;broader gates open. Book1 separate.

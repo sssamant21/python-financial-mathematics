@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-22
-**Overall status:** In progress — V250 Section10.6 target/p-integral subset recorded;full report/proof/provenance and full-runtime gate remain open. V246 full run retains its older pin (642/429/643);only10.6 source/checker differ and pass scoped support. Broader acceptance gaps remain open.
+**Overall status:** In progress — V251 Section10.6 fixed-report/proof crosswalk and V252 full candidate Linux runtime recorded at `1a5045c7a3c39727737579534f7074051559aa64` (642/429/643). Next10.7;broader acceptance gaps remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 642/642 at `56ed4b707947235643686a472fb6e5b860199cee`. [V246](full-runtime-payments-2026-11-22/README.md). |
-| Automated script execution | Full candidate Linux pass | 429/429 at `56ed4b707947235643686a472fb6e5b860199cee`;643 required blobs verify before/after. [V246](full-runtime-payments-2026-11-22/README.md). |
+| Python compilation | Full candidate Linux pass | 642/642 at `1a5045c7a3c39727737579534f7074051559aa64`. [V252](full-runtime-improper-2026-11-22/README.md). |
+| Automated script execution | Full candidate Linux pass | 429/429 at `1a5045c7a3c39727737579534f7074051559aa64`;643 required blobs verify before/after. [V252](full-runtime-improper-2026-11-22/README.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1858,3 +1858,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-250 checkpoint — Section10.6 target/p-integral contracts
 
 [Evidence](ch10-target-horizon-2026-11-22/README.md):21 passes/eight baseline failed predicates reproduced; corrected29 predicates pass twice. Independent1800-digit range-reduced atanh-log/quotient references verify exact selected upward horizon reports and p-integral last-bit correction. Five policy probes distinct from two decay-range and one quotient failure; finite precision/resource/upward support limits explicit. Eight native regressions, prior26 tail/21 finite/25 perpetuity predicates plus all21 Chapter10 files/eleven checkers/tenCLIs pass. Next10.6 full report/proof/provenance then full pinned refresh before10.7. Fresh642/429/643 inventory,641/643 V246 blobs match; only10.6 source/checker differ. No new full runtime/section completion/independent acceptance. All38 selected COV categories partial, none closed; broader gates open. Book1 separate.
+
+
+## V-251 checkpoint — Section10.6 fixed report/proof crosswalk
+
+[Evidence](ch10-improper-report-2026-11-22/README.md):75 predicates pass twice with identical complete reports. Every fixed global/row/numeric/convergence-gated field checked against independent1800-digit integral/exp/atanh-log references;selected upward targets and ordinary decomposition verified. Endpoint/comparison/p-integral/sensitivity derivations and provenance are external conceptual/QA crosswalks,not invented APIs or independent signoff. Six native command records pass;no source change/failure. Nextfinish V252 pinned full runtime and verify unchanged executable identities before10.7. Earlier failures/policies/resource/precision limits preserved. All38 COV categories partial,none closed;broader acceptance open. Book1 separate.
+
+
+## V-252 checkpoint — Full pinned improper-integral runtime refresh
+
+[Evidence](full-runtime-improper-2026-11-22/README.md) at `1a5045c7a3c39727737579534f7074051559aa64`:642/642 Python files compile,429/429 check/test scripts pass,643/643 required blobs verify before/after. Accumulated10.6 perpetuity/finite/tail/target/p-integral corrections included;initial failures,policy probes,observer records and numerical/resource limits preserved. Actual outputs/status/timings/manifest retained;all executable identities match documentation candidate. Selected10.6 runtime progression gate met;next10.7 numerical-quadrature lab/source crosswalk. No book/independent/platform/release/canonical acceptance. All38 selected COV categories partial,none closed;broader gates open. Book1 separate.
