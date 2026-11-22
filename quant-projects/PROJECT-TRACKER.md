@@ -1409,3 +1409,18 @@ Added an exact-Decimal independent reference `1 - 0.75**n` (absolute tolerance `
 ### Project 51 — analytical-tail tolerance boundary regression (2026-11-22)
 
 Added two synthetic contract tests for the declared absolute `1e-24` Decimal tolerance: a perturbation exactly at the boundary is accepted and a `2e-24` perturbation is rejected. **89 tests are now authored** (87 previous + 2). The tests have not been executed in this checkpoint; exact-revision GitHub Actions results remain **unverified**. Prior verified baseline is [84/84 on run 45005569241](https://github.com/sssamant21/python-financial-mathematics/actions/runs/45005569241). Next: verify all 89 tests and generated benchmark contract in CI, then add bounded state-growth diagnostics. No historical calibration, correlated-default validation, independent mathematical review or production certification.
+
+
+### Project 51 bounded scaling diagnostics (2026-11-22)
+
+Added `scaling_diagnostics.py` and four synthetic regression tests in `test_scaling_diagnostics.py`. The tool validates the repeated-benchmark JSON contract before reporting exact theoretical state counts, ratios between successive tested borrower counts within each severity pattern, and median traced Python allocations. It does **not** extrapolate runtime, RSS memory, capacity or service levels.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_scaling_diagnostics.py
+python -m py_compile scaling_diagnostics.py test_scaling_diagnostics.py
+python repeated_benchmark.py --repetitions 3 > repeated.json
+python scaling_diagnostics.py repeated.json
+```
+
+**Local authored-source checks:** 4/4 new tests passed; both new Python files compiled. These checks used a local copy of the published validator logic, not a checkout of the exact published GitHub revision. Project 51 now has **93 authored tests** (89 previously plus 4 new); full exact-revision CI for 93 tests, real-market calibration and independent review remain **unverified**. The dedicated CI workflow has not yet been expanded to run this new test module. Next: include this module in the dedicated workflow and verify all 93 tests and generated JSON against the published SHA.
