@@ -1,0 +1,25 @@
+{
+  "finding": "F219",
+  "kind": "Scoped nominal-versus-attained-size assumption wording, not implementation defect/new failed numeric predicate",
+  "baseline_executable_pin": "aad482ca16bd3c011c402f4ce92ff216170123e4",
+  "changes": [
+    {
+      "original": "Suppose a researcher tests 20 true null hypotheses at \u03b1=.05. If each test has a valid marginal 5% Type I error rate, the expected number of false rejections is:",
+      "corrected": "Suppose a researcher tests 20 true null hypotheses at nominal level \u03b1=.05. If each test has an actual marginal false-rejection probability of .05, the expected number of false rejections is:"
+    },
+    {
+      "original": "This expectation does not require test independence; independence affects the distribution of false rejections and the probability of at least one.",
+      "corrected": "This equality does not require test independence; independence affects the distribution of false rejections and the probability of at least one. If each valid test only bounds its false-rejection probability by .05, the expected count is at most 1 and may be smaller for conservative discrete tests."
+    },
+    {
+      "original": "13. **Data snooping:** 20 null tests at \u03b1=.05. **Worked solution:** Expected false positives=1 if all nulls true.",
+      "corrected": "13. **Data snooping:** 20 true-null tests at nominal level \u03b1=.05. **Worked solution:** Expected false positives=1 when each actual marginal false-rejection probability is .05. If valid tests only bound each probability by .05, the expectation is at most 1 and can be lower; independence is not required for the expectation."
+    }
+  ],
+  "counterexample": "Native n6 fair-sign null size1/32 gives expected20\u00d71/32=5/8, not1",
+  "baseline_source_sha256": "001b38cf03d4a0fd95e3588a1160005cb8470a8e24b98bf5d971ed8ea44f60c3",
+  "candidate_source_sha256": "fdd813580641a1711ad53ead9d4e4fd7f3672b0453b20246e908982c3807a0c5",
+  "listing_sha256": "386df46b950e64673cdb592c17689a7a6d34c1c4a6ef7e9db27df6551e51d3b5",
+  "listing_unchanged": true,
+  "scope": "Section4 and Exercise13 only; executed baseline prose pin is distinct from candidate corrected prose, executable fence identical"
+}

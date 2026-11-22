@@ -52,6 +52,14 @@ def run():
     assert finite_horizon_pv(1e308,0,1e308,1e308)==1
     assert finite_horizon_pv(1,0,1e-300,1e-300)==1e-300
     rejects(ValueError,finite_horizon_pv,1,1,0,1000)
+    assert tail_value(0,1e308,-1e308,1)==0
+    assert tail_value(0,-1e308,1e308,1)==0
+    assert tail_value(1e308,-1e308,1e308,0)==0.5
+    assert tail_value(1e308,-1e308,1e308,1)==0
+    close(tail_value(1e308,0,.5,2),7.357588823428846e+307,rel_tol=1e-14,abs_tol=0)
+    close(tail_value(-1e308,0,.5,2),-7.357588823428846e+307,rel_tol=1e-14,abs_tol=0)
+    close(tail_value(1e308,0,1,1000),5.075958897549457e-127,rel_tol=1e-14,abs_tol=0)
+    close(tail_value(1,-1e-16,1,700),9.85967654375908e-305,rel_tol=1e-14,abs_tol=0)
     report=assessment()
     assert len(report["scenarios"])==5
     assert not report["scenarios"][-1]["converges"]

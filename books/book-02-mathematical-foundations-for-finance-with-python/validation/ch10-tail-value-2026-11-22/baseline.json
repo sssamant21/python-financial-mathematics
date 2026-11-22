@@ -1,0 +1,327 @@
+{
+  "pin": "aad482ca16bd3c011c402f4ce92ff216170123e4",
+  "source_selection": "baseline",
+  "executed_at_utc": "2026-11-22T10:08:20.921908+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_06.py": {
+      "sha256": "b546eff5d13d91b514e5f98c28f13214bec645fbcf6bc469f39c07eae5a4ed93",
+      "git_blob": "8c380b7043fcbf5ff5c62f849089ab85ec7ec370"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_06.py": {
+      "sha256": "fc7f1e41d752611992c039db7ac026769df03a6a2ff2b11cb8d3d80826f6ced6",
+      "git_blob": "b42dcf3b9e1ed15028aa9e932f487cade8d75f8c"
+    }
+  },
+  "rows": [
+    {
+      "name": "ordinary tail",
+      "actual": 1659.568945595464,
+      "expected": "1659.5689455954644",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative convergent stream",
+      "actual": -1659.568945595464,
+      "expected": "-1659.5689455954644",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero horizon",
+      "actual": 33333.33333333333,
+      "expected": "33333.33333333333",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero payment divergent huge difference",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite net decay"
+      },
+      "expected": "0.0",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "zero payment huge decay difference",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite net decay"
+      },
+      "expected": "0.0",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "overflowed decay at zero horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite net decay"
+      },
+      "expected": "0.5",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "overflowed decay positive horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite net decay"
+      },
+      "expected": "0.0",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "unreportable prefactor finite tail",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite tail"
+      },
+      "expected": "7.357588823428846e+307",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "negative unreportable prefactor finite tail",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite tail"
+      },
+      "expected": "-7.357588823428846e+307",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "exponential underflow rescued by prefactor",
+      "actual": 0.0,
+      "expected": "5.075958897549457e-127",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "huge decay and horizon",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "small horizon",
+      "actual": 1e+303,
+      "expected": "1e+303",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "subnormal zero-horizon quotient",
+      "actual": 1e-308,
+      "expected": "1e-308",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "final underflow allowed",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "exact difference before exponent",
+      "actual": 9.85967654375977e-305,
+      "expected": "9.85967654375908e-305",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "true zero-horizon tail overflow",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite tail"
+      },
+      "expected": "ValueError",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "equal rates nonzero tail diverges",
+      "actual": {
+        "exception": "ValueError",
+        "message": "tail requires a convergent perpetuity"
+      },
+      "expected": "ValueError",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative stream nonconvergent",
+      "actual": {
+        "exception": "ValueError",
+        "message": "tail requires a convergent perpetuity"
+      },
+      "expected": "ValueError",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative horizon even zero payment",
+      "actual": {
+        "exception": "ValueError",
+        "message": "horizon must be nonnegative"
+      },
+      "expected": "ValueError",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "nonfinite growth zero payment",
+      "actual": {
+        "exception": "ValueError",
+        "message": "growth must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "nonfinite horizon zero payment",
+      "actual": {
+        "exception": "ValueError",
+        "message": "horizon must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bool horizon",
+      "actual": {
+        "exception": "TypeError",
+        "message": "horizon must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "kind": "complete tail value contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ordinary decomposition T0",
+      "actual": 33333.33333333333,
+      "expected": "33333.33333333333",
+      "kind": "supporting finite plus tail identity, not arbitrary complete-expression proof",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ordinary decomposition T1",
+      "actual": 33333.33333333333,
+      "expected": "33333.33333333333",
+      "kind": "supporting finite plus tail identity, not arbitrary complete-expression proof",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ordinary decomposition T10",
+      "actual": 33333.33333333333,
+      "expected": "33333.33333333333",
+      "kind": "supporting finite plus tail identity, not arbitrary complete-expression proof",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ordinary decomposition T100",
+      "actual": 33333.33333333333,
+      "expected": "33333.33333333333",
+      "kind": "supporting finite plus tail identity, not arbitrary complete-expression proof",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_06.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"scenarios\": [\n    {\n      \"growth\": 0,\n      \"discount\": 0.05,\n      \"converges\": true,\n      \"finite_horizons\": {\n        \"10\": 7869.386805747331,\n        \"30\": 15537.396797031402,\n        \"100\": 19865.24106001829\n      },\n      \"perpetuity\": 20000.0,\n      \"tail_at_100\": 134.75893998170935,\n      \"one_percent_tail_horizon\": 92.10340371976181\n    },\n    {\n      \"growth\": 0.02,\n      \"discount\": 0.05,\n      \"converges\": true,\n      \"finite_horizons\": {\n        \"10\": 8639.392643942738,\n        \"30\": 19781.01134198003,\n        \"100\": 31673.764387737865\n      },\n      \"perpetuity\": 33333.33333333333,\n      \"tail_at_100\": 1659.568945595464,\n      \"one_percent_tail_horizon\": 153.5056728662697\n    },\n    {\n      \"growth\": 0.04,\n      \"discount\": 0.05,\n      \"converges\": true,\n      \"finite_horizons\": {\n        \"10\": 9516.258196404042,\n        \"30\": 25918.177931828213,\n        \"100\": 63212.05588285576\n      },\n      \"perpetuity\": 99999.99999999999,\n      \"tail_at_100\": 36787.944117144216,\n      \"one_percent_tail_horizon\": 460.517018598809\n    },\n    {\n      \"growth\": 0.049,\n      \"discount\": 0.05,\n      \"converges\": true,\n      \"finite_horizons\": {\n        \"10\": 9950.166250831946,\n        \"30\": 29554.466451491822,\n        \"100\": 95162.58196404042\n      },\n      \"perpetuity\": 999999.9999999991,\n      \"tail_at_100\": 904837.4180359587,\n      \"one_percent_tail_horizon\": 4605.170185988087\n    },\n    {\n      \"growth\": 0.05,\n      \"discount\": 0.05,\n      \"converges\": false,\n      \"finite_horizons\": {\n        \"10\": 10000.0,\n        \"30\": 30000.0,\n        \"100\": 100000.0\n      }\n    }\n  ],\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_06.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.6 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 18,
+  "failed": 8,
+  "scope": "Complete convergent tail and selected decomposition cases; target/p-integral/full report/proof obligations unfinished"
+}

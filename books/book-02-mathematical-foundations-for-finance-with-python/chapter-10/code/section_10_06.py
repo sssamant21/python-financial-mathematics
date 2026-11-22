@@ -80,15 +80,30 @@ def perpetuity_pv(payment,growth,discount):
     return result
 
 def tail_value(payment,growth,discount,horizon):
-    c,d=inputs(payment,growth,discount)
-    t=finite(horizon,"horizon")
+    c=Fraction(finite(payment,"payment"))
+    g=Fraction(finite(growth,"growth"))
+    r=Fraction(finite(discount,"discount"))
+    t=Fraction(finite(horizon,"horizon"))
     if t<0:
         raise ValueError("horizon must be nonnegative")
-    if c==0:
+    if not c:
         return 0.0
+    d=r-g
     if d<=0:
         raise ValueError("tail requires a convergent perpetuity")
-    result=(c/d)*math.exp(-d*t)
+    if not t:
+        value=c/d
+    elif d*t>10000:
+        return 0.0
+    else:
+        with localcontext(Context(prec=800)):
+            def decimal(v):
+                return Decimal(v.numerator)/Decimal(v.denominator)
+            value=decimal(c/d)*(-decimal(d*t)).exp()
+    try:
+        result=float(value)
+    except OverflowError as exc:
+        raise ValueError("nonfinite tail") from exc
     if not math.isfinite(result):
         raise ValueError("nonfinite tail")
     return result
