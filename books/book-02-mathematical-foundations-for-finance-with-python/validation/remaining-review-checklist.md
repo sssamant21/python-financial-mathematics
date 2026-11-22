@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-22
 **Full-runtime candidate source revision:** `56ed4b707947235643686a472fb6e5b860199cee` ([V246](full-runtime-payments-2026-11-22/README.md)).
-**Latest scoped source:** V249 Section10.6 tail baseline `aad482ca16bd3c011c402f4ce92ff216170123e4`;candidate identities/limits in [evidence](ch10-tail-value-2026-11-22/README.md).
+**Latest scoped source:** V250 Section10.6 target/p-integral baseline `e40e5540302f0767f169978f9964e94655d5fc1e`;candidate identities/limits in [evidence](ch10-target-horizon-2026-11-22/README.md).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** Selected10.6 perpetuity/finite-horizon/tail subsets pass;target/p-integral/report/proof and fresh full runtime before10.7 remain open. V246 full run retains its older pin;broader acceptance gaps stay open.
+**Disposition:** Selected10.6 numerical subsets pass;full fixed-report/proof/provenance and fresh pinned full runtime before10.7 remain open. V246 retains its older pin;broader acceptance gaps remain open.
 
 ## Reconciled evidence
 
@@ -1727,3 +1727,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-249 checkpoint — Section10.6 complete tail value
 
 [Evidence](ch10-tail-value-2026-11-22/README.md):18 passes/eight baseline failed predicates reproduced; corrected26 predicates pass twice against independent1800-digit halving/Taylor/squaring references. Exact decay/prefactor/exponent and800-digit reporting preserve selected compensated tails; zero/convergence/final ValueError/underflow0/resource policies explicit. Eight native regressions, prior21 finite-horizon/25 perpetuity predicates and all21 Chapter10 files/eleven checkers/tenCLIs pass. Next10.6 target/p-integral/report/proof contracts; full refresh before10.7. Fresh642/429/643 inventory,641/643 V246 blobs match; only10.6 source/checker differ. No new full runtime/section completion/independent acceptance. All38 selected COV categories partial, none closed; broader gates open. Book1 separate.
+
+
+## V-250 checkpoint — Section10.6 target/p-integral contracts
+
+[Evidence](ch10-target-horizon-2026-11-22/README.md):21 passes/eight baseline failed predicates reproduced; corrected29 predicates pass twice. Independent1800-digit range-reduced atanh-log/quotient references verify exact selected upward horizon reports and p-integral last-bit correction. Five policy probes distinct from two decay-range and one quotient failure; finite precision/resource/upward support limits explicit. Eight native regressions, prior26 tail/21 finite/25 perpetuity predicates plus all21 Chapter10 files/eleven checkers/tenCLIs pass. Next10.6 full report/proof/provenance then full pinned refresh before10.7. Fresh642/429/643 inventory,641/643 V246 blobs match; only10.6 source/checker differ. No new full runtime/section completion/independent acceptance. All38 selected COV categories partial, none closed; broader gates open. Book1 separate.

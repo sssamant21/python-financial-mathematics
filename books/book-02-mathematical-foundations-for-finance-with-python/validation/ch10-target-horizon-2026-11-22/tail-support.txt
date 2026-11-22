@@ -1,0 +1,45 @@
+"""Complete convergent tail references using independent exponential series."""
+from pathlib import Path
+from fractions import Fraction as F
+from decimal import Decimal as D,Context,localcontext
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='e40e5540302f0767f169978f9964e94655d5fc1e';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_06.py';check=path.replace('section_10_06.py','check_section_10_06.py');baseline='--baseline' in sys.argv;rows=[];commands=[];manifest={}
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root) if baseline else (root/p).read_bytes();manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+def exp_series(x):
+ count=0
+ while abs(x)>D('.5'):x/=2;count+=1
+ total=term=D(1)
+ for k in range(1,1800):
+  term*=x/k;new=total+term
+  if new==total:break
+  total=new
+ else:raise RuntimeError('tail oracle convergence')
+ for _ in range(count):total*=total
+ return total
+def oracle(c,g,r,t):
+ C,G,R,T=map(F,(c,g,r,t));d=R-G
+ if not C:return 0.
+ if not T:return float(C/d)
+ if d*T>10000:return 0.
+ with localcontext(Context(prec=1800)):
+  def dec(v):return D(v.numerator)/D(v.denominator)
+  return float(dec(C/d)*exp_series(dec(-d*T)))
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('tail_source',Path(tmp)/'section_10_06.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ def test(name,fn,want=None,exc=None,kind='complete tail value contract'):
+  try:got=fn();ok=exc is None and math.isclose(got,float(want),rel_tol=5e-14,abs_tol=0);actual=got
+  except Exception as e:ok=exc is not None and type(e) is exc;actual=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(name=name,actual=actual,expected=exc.__name__ if exc else str(want),kind=kind,relative_tolerance=5e-14,absolute_tolerance=0,passed=ok))
+ cases=[('ordinary tail',1000,.02,.05,100),('negative convergent stream',-1000,.02,.05,100),('zero horizon',1000,.02,.05,0),('zero payment divergent huge difference',0,1e308,-1e308,1),('zero payment huge decay difference',0,-1e308,1e308,1),('overflowed decay at zero horizon',1e308,-1e308,1e308,0),('overflowed decay positive horizon',1e308,-1e308,1e308,1),('unreportable prefactor finite tail',1e308,0,.5,2),('negative unreportable prefactor finite tail',-1e308,0,.5,2),('exponential underflow rescued by prefactor',1e308,0,1,1000),('huge decay and horizon',1e308,0,1e308,1e308),('small horizon',1000,0,1e-300,1e-300),('subnormal zero-horizon quotient',1,0,1e308,0),('final underflow allowed',1e-308,0,1e308,1),('exact difference before exponent',1,-1e-16,1,700)]
+ for name,c,g,r,t in cases:test(name,lambda c=c,g=g,r=r,t=t:m.tail_value(c,g,r,t),oracle(c,g,r,t))
+ for name,fn,exc in [('true zero-horizon tail overflow',lambda:m.tail_value(1e308,0,.5,0),ValueError),('equal rates nonzero tail diverges',lambda:m.tail_value(1,.05,.05,1),ValueError),('negative stream nonconvergent',lambda:m.tail_value(-1,.06,.05,1),ValueError),('negative horizon even zero payment',lambda:m.tail_value(0,0,1,-1),ValueError),('nonfinite growth zero payment',lambda:m.tail_value(0,math.nan,1,1),ValueError),('nonfinite horizon zero payment',lambda:m.tail_value(0,0,1,math.inf),ValueError),('bool horizon',lambda:m.tail_value(1,0,1,True),TypeError)]:test(name,fn,exc=exc)
+ for T in [0,1,10,100]:test('ordinary decomposition T'+str(T),lambda T=T:m.finite_horizon_pv(1000,.02,.05,T)+m.tail_value(1000,.02,.05,T),float(F(1000)/(F(.05)-F(.02))),kind='supporting finite plus tail identity, not arbitrary complete-expression proof')
+ for args in [[sys.executable,'section_10_06.py'],[sys.executable,'check_section_10_06.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0
+result=dict(pin=pin,source_selection='baseline' if baseline else 'candidate',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='Complete convergent tail and selected decomposition cases; target/p-integral/full report/proof obligations unfinished')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']]);
+if not baseline:assert result['failed']==0

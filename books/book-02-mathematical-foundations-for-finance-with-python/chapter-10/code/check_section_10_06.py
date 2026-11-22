@@ -60,6 +60,14 @@ def run():
     close(tail_value(-1e308,0,.5,2),-7.357588823428846e+307,rel_tol=1e-14,abs_tol=0)
     close(tail_value(1e308,0,1,1000),5.075958897549457e-127,rel_tol=1e-14,abs_tol=0)
     close(tail_value(1,-1e-16,1,700),9.85967654375908e-305,rel_tol=1e-14,abs_tol=0)
+    assert horizon_for_tail_fraction(.02,.05,.01)==153.50567286626972
+    assert horizon_for_tail_fraction(0,.05,.05)==59.91464547107982
+    assert horizon_for_tail_fraction(0,1,math.nextafter(1,0))==1.1102230246251568e-16
+    assert horizon_for_tail_fraction(0,1,math.ulp(0.))==744.4400719213813
+    assert horizon_for_tail_fraction(0,1e308,.01)==4.605170185988092e-308
+    assert horizon_for_tail_fraction(-1e308,1e308,.01)==2.302585092994046e-308
+    assert horizon_for_tail_fraction(-1e308,1e308,math.nextafter(1,0))==math.ulp(0.)
+    assert p_integral_from_one(2**54+4)==5.551115123125782e-17
     report=assessment()
     assert len(report["scenarios"])==5
     assert not report["scenarios"][-1]["converges"]

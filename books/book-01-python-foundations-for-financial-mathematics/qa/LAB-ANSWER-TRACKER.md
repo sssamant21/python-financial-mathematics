@@ -573,3 +573,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10/F219 — Partial Section15.13 retention/ledger assumptions
 
 [Evidence](v10-selection-ledger/README.md):170 predicates pass twice. Outcome retention changes conditional estimand(.1 selected versus1/150 full conditional;unconditional full0). Native exact n6 null size1/32 implies expected false count5/8 for20 tests; F219 qualifies Section4/Exercise13 nominal-versus-actual wording, unchanged executable fence. Complete20 versus supplied10 trial counts change source thresholds and caller diagnostic decisions; no hidden-ledger audit or real p calibration. Six commands/48 invocations of24 existing methods; F139/F135/F217/F218 evidence scopes preserved. No new workflow/answer/historical totals. Next15.13 timing/revision and ACF/volatility/data/cost/project assumptions; section/V10/Book1 partial. F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Partial Section15.13 availability/clock/revision boundaries
+
+[Evidence](v10-asof-boundaries/README.md):68 predicates pass twice:50 numeric/aware known-clock cases and18 latency/revision/unit/domain checks. Native False/equal timestamps do not prove readiness/authenticity; caller latest-eligible selection and processing-delay policies remain supplemental. Fixed offsets only,no new ZoneInfo/platform claim. Four commands/24 invocations of twelve existing methods; F219 whole-source and F139 fence identity verified; earlier failures/42 predicates retain scope. No source change/new workflow/answer/historical totals. Next15.13 ACF/volatility/nonstationarity/data/outlier/cost/project assumptions; section/V10/Book1 partial. F28/F32/F209/F165/F185/broader acceptance open.

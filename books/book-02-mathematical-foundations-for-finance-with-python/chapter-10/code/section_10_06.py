@@ -109,22 +109,33 @@ def tail_value(payment,growth,discount,horizon):
     return result
 
 def horizon_for_tail_fraction(growth,discount,fraction):
-    _,d=inputs(1.0,growth,discount)
+    g=Fraction(finite(growth,"growth"))
+    r=Fraction(finite(discount,"discount"))
     f=finite(fraction,"fraction")
+    d=r-g
     if d<=0:
         raise ValueError("require discount > growth")
     if not 0<f<1:
         raise ValueError("fraction must be between 0 and 1")
-    result=-math.log(f)/d
-    if not math.isfinite(result):
-        raise ValueError("nonfinite target horizon")
-    return result
+    with localcontext(Context(prec=800)):
+        decay=Decimal(d.numerator)/Decimal(d.denominator)
+        value=-Decimal.from_float(f).ln()/decay
+        result=float(value)
+        if not math.isfinite(result):
+            raise ValueError("nonfinite target horizon")
+        # Report an upper float, including a minimum-subnormal report when a
+        # nearest report would be zero. No finite upper float means rejection.
+        if Decimal.from_float(result)<value:
+            result=math.nextafter(result,math.inf)
+        if not math.isfinite(result):
+            raise ValueError("no finite upper target horizon")
+        return result
 
 def p_integral_from_one(p):
-    power=finite(p,"p")
+    power=Fraction(finite(p,"p"))
     if power<=1:
         raise ValueError("integral diverges for p <= 1")
-    return 1/(power-1)
+    return float(1/(power-1))
 
 def assessment():
     rows=[]

@@ -1,0 +1,49 @@
+"""Tail target horizons with upward report policy and p-integral boundary review."""
+from pathlib import Path
+from decimal import Decimal as D,Context,localcontext
+from fractions import Fraction as F
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='e40e5540302f0767f169978f9964e94655d5fc1e';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_06.py';check=path.replace('section_10_06.py','check_section_10_06.py');baseline='--baseline' in sys.argv;rows=[];commands=[];manifest={};references=[]
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root) if baseline else (root/p).read_bytes();manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+def negative_log_reference(f):
+ # Binary range reduction followed by log via atanh series, independent of
+ # source Decimal.ln. frexp reconstructs exact binary m*2^exponent.
+ m,e=math.frexp(float(f))
+ def log_inverse(y):
+  q=(1-y)/(1+y);term=total=q;q2=q*q
+  for j in range(1,6000):
+   term*=q2;new=total+term/(2*j+1)
+   if new==total:return 2*total
+   total=new
+  raise RuntimeError('reference logarithm series convergence')
+ return log_inverse(D.from_float(m))-e*log_inverse(D('.5'))
+def oracle(g,r,f):
+ with localcontext(Context(prec=1800)):
+  G,R,X=[D.from_float(float(v)) for v in (g,r,f)];value=negative_log_reference(f)/(R-G);result=float(value)
+  if not math.isfinite(result):raise ValueError('target outside finite float range')
+  if D.from_float(result)<value:result=math.nextafter(result,math.inf)
+  if not math.isfinite(result):raise ValueError('no finite upper report')
+  return result,str(value)
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('target_source',Path(tmp)/'section_10_06.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ def test(name,fn,want=None,exc=None,kind='existing type/domain contract'):
+  try:got=fn();ok=exc is None and got==want;actual=got
+  except Exception as e:ok=exc is not None and type(e) is exc;actual=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(name=name,actual=actual,expected=exc.__name__ if exc else str(want),kind=kind,comparison='exact directed-float report or exact exception type',passed=ok))
+ cases=[('ordinary',.02,.05,.01),('worked five-percent tail',0,.05,.05),('near-one fraction',0,1,math.nextafter(1,0)),('minimum fraction',0,1,math.ulp(0.)),('large decay',0,1e308,.01),('overflowed decay',-1e308,1e308,.01),('underflowed nearest horizon',-1e308,1e308,math.nextafter(1,0)),('tiny decay finite target',0,1e-308,.9),('exact difference before quotient',-1e-16,1,.5),('negative rate but convergent',-.03,-.01,.1)]
+ for name,g,r,f in cases:
+  want,ideal=oracle(g,r,f);test(name,lambda g=g,r=r,f=f:m.horizon_for_tail_fraction(g,r,f),want,kind='explicit upward-report policy plus complete exact decay contract');references.append(dict(name=name,ideal_horizon=ideal,upward_float=want,scope='1800-digit range-reduced atanh-log reference; upward policy is distinct from original nearest approximation'))
+ for name,fn,exc in [('nonconvergent equal rates',lambda:m.horizon_for_tail_fraction(.05,.05,.01),ValueError),('nonconvergent negative decay',lambda:m.horizon_for_tail_fraction(.06,.05,.01),ValueError),('zero target fraction',lambda:m.horizon_for_tail_fraction(0,1,0),ValueError),('unit target fraction',lambda:m.horizon_for_tail_fraction(0,1,1),ValueError),('bool fraction',lambda:m.horizon_for_tail_fraction(0,1,True),TypeError),('nonfinite discount',lambda:m.horizon_for_tail_fraction(0,math.inf,.01),ValueError),('true target horizon overflow',lambda:m.horizon_for_tail_fraction(0,math.ulp(0.),.01),ValueError)]:test(name,fn,exc=exc)
+ for power in [math.nextafter(1,2),2,3,10,2**54,2**54+4,1e100,1e308]:
+  with localcontext(Context(prec=1800)):want=float(1/(D.from_float(float(power))-1))
+  test('p-integral '+str(power),lambda power=power:m.p_integral_from_one(power),want,kind='independent exact-binary Decimal antiderivative quotient')
+ for name,fn,exc in [('p divergent boundary',lambda:m.p_integral_from_one(1),ValueError),('p below boundary',lambda:m.p_integral_from_one(0),ValueError),('bool p',lambda:m.p_integral_from_one(True),TypeError),('nonfinite p',lambda:m.p_integral_from_one(math.inf),ValueError)]:test(name,fn,exc=exc)
+ for args in [[sys.executable,'section_10_06.py'],[sys.executable,'check_section_10_06.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0
+result=dict(pin=pin,source_selection='baseline' if baseline else 'candidate',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,references=references,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='Selected target-horizon upward support policy, exact-decay/range and p-integral boundaries; full-report/proof and full-runtime progression unfinished')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']]);
+if not baseline:assert result['failed']==0

@@ -1,0 +1,39 @@
+"""Perpetuity convergence/complete-ratio contracts with independent high-precision decimal oracles."""
+from pathlib import Path
+from decimal import Decimal as D,Context,localcontext
+from fractions import Fraction as F
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='e40e5540302f0767f169978f9964e94655d5fc1e';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_06.py';check=path.replace('section_10_06.py','check_section_10_06.py');baseline='--baseline' in sys.argv;rows=[];commands=[];manifest={}
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root) if baseline else (root/p).read_bytes();manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+def oracle(c,g,r,t):
+ C,G,R,T=map(F,(c,g,r,t));K=G-R
+ if not C or not T:return 0.
+ if not K:return float(C*T)
+ if K*T < -10000:return float(-C/K)
+ with localcontext(Context(prec=1800)):
+  def dec(v):return D(v.numerator)/D(v.denominator)
+  x=dec(K*T);term=total=D(1)
+  # Integrated exponential series: C*T*sum x^j/(j+1)!.
+  for j in range(1,16000):
+   term*=x/(j+1);new=total+term
+   if new==total:return float(dec(C*T)*new)
+   total=new
+  raise RuntimeError('independent integral-series convergence')
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('finite_source',Path(tmp)/'section_10_06.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ def test(name,call,want=None,exc=None):
+  try:got=call();ok=exc is None and math.isclose(got,float(want),rel_tol=5e-14,abs_tol=0);actual=got
+  except Exception as e:ok=exc is not None and type(e) is exc;actual=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(name=name,actual=actual,expected=exc.__name__ if exc else str(want),relative_tolerance=5e-14,absolute_tolerance=0,passed=ok))
+ cases=[('ordinary',1000,.02,.05,10),('negative payment',-1000,.02,.05,10),('zero decay',1000,.05,.05,10),('negative decay finite',1000,.06,.05,10),('zero scale huge difference',0,1e308,-1e308,1),('zero horizon huge difference',1,1e308,-1e308,0),('scaled growing integral',1e-300,1,0,1000),('minimum payment growing integral',math.ulp(0.),1,0,745),('overflowed decay finite PV',1e308,-1e308,1e308,1),('overflowed exponent finite PV',1e308,0,1e308,1e308),('underflowed exponent finite PV',1,0,1e-300,1e-300),('tiny positive decay',1000,0,1e-300,2),('minimum positive decay',1000,0,math.ulp(0.),2),('constant finite scaling',1e-308,0,0,1e308),('underflow final report allowed',1e-308,0,0,1e-308)]
+ for name,c,g,r,t in cases:test(name,lambda c=c,g=g,r=r,t=t:m.finite_horizon_pv(c,g,r,t),oracle(c,g,r,t))
+ for name,fn,exc in [('true growing PV overflow',lambda:m.finite_horizon_pv(1,1,0,1000),ValueError),('true zero-decay overflow',lambda:m.finite_horizon_pv(1e308,0,0,2),ValueError),('negative horizon even zero payment',lambda:m.finite_horizon_pv(0,0,0,-1),ValueError),('bool horizon',lambda:m.finite_horizon_pv(1,0,0,True),TypeError),('nonfinite horizon even zero payment',lambda:m.finite_horizon_pv(0,0,0,math.inf),ValueError),('nonfinite growth even zero horizon',lambda:m.finite_horizon_pv(1,math.nan,0,0),ValueError)]:test(name,fn,exc=exc)
+ for args in [[sys.executable,'section_10_06.py'],[sys.executable,'check_section_10_06.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0
+result=dict(pin=pin,source_selection='baseline' if baseline else 'candidate',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='Finite-horizon complete exponential stream only; tail/target/p-integral/report/proof contracts remain unfinished')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']]);
+if not baseline:assert result['failed']==0
