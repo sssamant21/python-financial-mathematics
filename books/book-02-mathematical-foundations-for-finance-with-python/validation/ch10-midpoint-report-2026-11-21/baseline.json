@@ -1,0 +1,320 @@
+{
+  "pin": "cdf2679391b0060db8465c0de08c09c632d658e6",
+  "source_selection": "baseline",
+  "executed_at_utc": "2026-11-22T01:17:17.043807+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_04.py": {
+      "sha256": "37f49583c9b1a6d2953735259cf1bb7137e301488037ab3508dc32437ba4a6d7",
+      "git_blob": "bd2e9c255fe66f2ccef81024747aea4bbf6c8f4a"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_04.py": {
+      "sha256": "fa0e5e2aded0d3daac7320e75bc312f896714495260e362674656f7a55ffad60",
+      "git_blob": "294764bc54c727925eab17ec45a3c96c575ef14c"
+    }
+  },
+  "rows": [
+    {
+      "name": "linear signed amount",
+      "actual": 240.0,
+      "expected": "240",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "reverse orientation",
+      "actual": -240.0,
+      "expected": "-240",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "quadratic N1",
+      "actual": 0.25,
+      "expected": "1/4",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "quadratic N2",
+      "actual": 0.3125,
+      "expected": "5/16",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "quadratic N4",
+      "actual": 0.328125,
+      "expected": "21/64",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "quadratic N16",
+      "actual": 0.3330078125,
+      "expected": "341/1024",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "quadratic N64",
+      "actual": 0.33331298828125,
+      "expected": "5461/16384",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "zero width amount",
+      "actual": {
+        "exception": "TypeError",
+        "message": "integrand must be numeric, excluding bool"
+      },
+      "expected": "0",
+      "kind": "existing numerical contract",
+      "passed": false
+    },
+    {
+      "name": "zero width skips callback",
+      "actual": [
+        2.0
+      ],
+      "expected": "[]",
+      "kind": "existing numerical contract",
+      "passed": false
+    },
+    {
+      "name": "invalid n bool",
+      "actual": {
+        "exception": "ValueError",
+        "message": "n must be positive integer"
+      },
+      "expected": "ValueError",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "noncallable",
+      "actual": {
+        "exception": "TypeError",
+        "message": "function must be callable"
+      },
+      "expected": "TypeError",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "nonfinite callback",
+      "actual": {
+        "exception": "ValueError",
+        "message": "integrand must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "bool callback",
+      "actual": {
+        "exception": "TypeError",
+        "message": "integrand must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "caller exception preserved",
+      "actual": {
+        "exception": "LookupError",
+        "message": "sentinel caller failure"
+      },
+      "expected": "LookupError",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "product overflow cancellation",
+      "actual": {
+        "exception": "ValueError",
+        "message": "-inf + inf in fsum"
+      },
+      "expected": "0",
+      "kind": "selected finite-result support extension",
+      "passed": false
+    },
+    {
+      "name": "unreportable final sum",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "intermediate overflow in fsum"
+      },
+      "expected": "ValueError",
+      "kind": "existing numerical contract",
+      "passed": false
+    },
+    {
+      "name": "wide interval finite result",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite midpoint reference"
+      },
+      "expected": "1.9999999999999998",
+      "kind": "selected finite-result support extension",
+      "passed": false
+    },
+    {
+      "name": "unrepresentable tiny grid rejected",
+      "actual": 0.0,
+      "expected": "ValueError",
+      "kind": "selected explicit grid policy",
+      "passed": false
+    },
+    {
+      "name": "adjacent endpoints rejected",
+      "actual": 2.220446049250313e-16,
+      "expected": "ValueError",
+      "kind": "selected explicit grid policy",
+      "passed": false
+    },
+    {
+      "name": "invalid grid callback atomicity",
+      "actual": [
+        1.0,
+        1.0000000000000002
+      ],
+      "expected": "[]",
+      "kind": "selected explicit grid policy",
+      "passed": false
+    },
+    {
+      "name": "interior overflow midpoint avoided",
+      "actual": 6.999999999999999e+307,
+      "expected": "6.999999999999999e+307",
+      "kind": "selected finite-result support extension",
+      "passed": true
+    },
+    {
+      "name": "midpoint positions",
+      "actual": [
+        1.175e+308,
+        1.5249999999999999e+308
+      ],
+      "expected": "[1.175e+308, 1.5249999999999999e+308]",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "reportable accumulation of subnormal products",
+      "actual": 0.0,
+      "expected": "5e-324",
+      "kind": "selected complete-product range extension",
+      "passed": false
+    },
+    {
+      "name": "fixed report global schema",
+      "actual": true,
+      "expected": "True",
+      "kind": "fixed report schema",
+      "passed": true
+    },
+    {
+      "name": "fixed report row schema 0",
+      "actual": true,
+      "expected": "True",
+      "kind": "fixed report schema",
+      "passed": true
+    },
+    {
+      "name": "fixed report row schema 1",
+      "actual": true,
+      "expected": "True",
+      "kind": "fixed report schema",
+      "passed": true
+    },
+    {
+      "name": "fixed report row schema 2",
+      "actual": true,
+      "expected": "True",
+      "kind": "fixed report schema",
+      "passed": true
+    },
+    {
+      "name": "fixed report row schema 3",
+      "actual": true,
+      "expected": "True",
+      "kind": "fixed report schema",
+      "passed": true
+    },
+    {
+      "name": "fixed report row schema 4",
+      "actual": true,
+      "expected": "True",
+      "kind": "fixed report schema",
+      "passed": true
+    },
+    {
+      "name": "negative rate PV exceeds undiscounted",
+      "actual": true,
+      "expected": "True",
+      "kind": "fixed report model invariant",
+      "passed": true
+    },
+    {
+      "name": "zero rate PV identity",
+      "actual": 2200.0,
+      "expected": "2200",
+      "kind": "fixed report model invariant",
+      "passed": true
+    },
+    {
+      "name": "positive rate PV below undiscounted",
+      "actual": true,
+      "expected": "True",
+      "kind": "fixed report model invariant",
+      "passed": true
+    },
+    {
+      "name": "native fixed report equals complete CLI",
+      "actual": true,
+      "expected": "True",
+      "kind": "fixed report execution agreement",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_04.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"model\": \"linear cash-flow rate with flat continuous discount\",\n  \"horizon_years\": 2,\n  \"scenarios\": [\n    {\n      \"rate\": -0.01,\n      \"discount_integral\": 2.020134002675581,\n      \"time_weighted_integral\": 2.0268677377930606,\n      \"present_value\": 2222.820776454887,\n      \"midpoint_reference\": 2222.820775744462,\n      \"absolute_difference\": 7.104249561962206e-07\n    },\n    {\n      \"rate\": 0,\n      \"discount_integral\": 2.0,\n      \"time_weighted_integral\": 2.0,\n      \"present_value\": 2200.0,\n      \"midpoint_reference\": 2200.0,\n      \"absolute_difference\": 0.0\n    },\n    {\n      \"rate\": 0.01,\n      \"discount_integral\": 1.9801326693244699,\n      \"time_weighted_integral\": 1.9735322710959173,\n      \"present_value\": 2177.4858964340615,\n      \"midpoint_reference\": 2177.4858970578143,\n      \"absolute_difference\": 6.237528396013658e-07\n    },\n    {\n      \"rate\": 0.04,\n      \"discount_integral\": 1.9220913403341053,\n      \"time_weighted_integral\": 1.8964661890208465,\n      \"present_value\": 2111.73795923619,\n      \"midpoint_reference\": 2111.7379612358486,\n      \"absolute_difference\": 1.999658707063645e-06\n    },\n    {\n      \"rate\": 0.08,\n      \"discount_integral\": 1.8482026379223582,\n      \"time_weighted_integral\": 1.7989382498741948,\n      \"present_value\": 2028.0964629097778,\n      \"midpoint_reference\": 2028.0964656750152,\n      \"absolute_difference\": 2.765237468338455e-06\n    }\n  ],\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_04.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.4 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 24,
+  "failed": 9,
+  "scope": "Selected midpoint finite-grid/callback/sum contracts and fixed five-scenario report; no arbitrary report-parameter API, resource or independent acceptance"
+}

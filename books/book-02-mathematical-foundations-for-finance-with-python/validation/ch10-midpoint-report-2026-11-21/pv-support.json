@@ -1,0 +1,216 @@
+{
+  "pin": "31f4962bb9efee1a6e09d65c72a59187f0ce14c4",
+  "source_selection": "candidate",
+  "executed_at_utc": "2026-11-22T01:18:40.703205+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_04.py": {
+      "sha256": "1cdb374f79d3d7bde8e42fb8c1fac4b6ec898c4d22b9d3f609bcff845ab0f2d3",
+      "git_blob": "4e2e1b5382baf6ea4cc5cd06badad218fcedb891"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_04.py": {
+      "sha256": "e2a1ab022d63918cb78a9c62f19342c2bf82592b858769684ad69d0044499ff1",
+      "git_blob": "12c0850f4e6b4a95578885984e9565caaa6ea9f0"
+    }
+  },
+  "rows": [
+    {
+      "name": "ordinary positive",
+      "actual": 2111.73795923619,
+      "expected": "2111.73795923619",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "ordinary negative rate",
+      "actual": 2222.820776454887,
+      "expected": "2222.820776454887",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "zero rate",
+      "actual": 2200.0,
+      "expected": "2200.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "signed zero-rate cancellation",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "zero slope ignores unreportable moment",
+      "actual": 0.9999999999999999,
+      "expected": "0.9999999999999999",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "small slope large horizon",
+      "actual": 4.9999999999999995e+91,
+      "expected": "4.9999999999999995e+91",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "scaled growing time moment",
+      "actual": 1.96810104290303e+137,
+      "expected": "1.96810104290303e+137",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "scaled growing complete stream",
+      "actual": 1.970071114017047e+137,
+      "expected": "1.970071114017047e+137",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "tiny rate",
+      "actual": 2200.0,
+      "expected": "2200.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "minimum rate",
+      "actual": 2200.0,
+      "expected": "2200.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "huge discount horizon",
+      "actual": 1e-308,
+      "expected": "1e-308",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "zero stream extreme exponent",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "zero horizon validates first",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "negative PV",
+      "actual": -2111.73795923619,
+      "expected": "-2111.73795923619",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "underflow report allowed",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "exact leading exponential cancellation beyond cutoff",
+      "actual": 6000.0,
+      "expected": "6000",
+      "kind": "exact rational coefficient/antiderivative identity",
+      "passed": true
+    },
+    {
+      "name": "true PV overflow",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite present value"
+      },
+      "expected": "ValueError",
+      "kind": "complete PV contract",
+      "passed": true
+    },
+    {
+      "name": "true growing PV overflow",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite present value"
+      },
+      "expected": "ValueError",
+      "kind": "complete PV contract",
+      "passed": true
+    },
+    {
+      "name": "negative horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "horizon must be nonnegative"
+      },
+      "expected": "ValueError",
+      "kind": "complete PV contract",
+      "passed": true
+    },
+    {
+      "name": "bool intercept",
+      "actual": {
+        "exception": "TypeError",
+        "message": "intercept must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "kind": "complete PV contract",
+      "passed": true
+    },
+    {
+      "name": "nonfinite coefficient even zero horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "slope must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "complete PV contract",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_04.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"model\": \"linear cash-flow rate with flat continuous discount\",\n  \"horizon_years\": 2,\n  \"scenarios\": [\n    {\n      \"rate\": -0.01,\n      \"discount_integral\": 2.020134002675581,\n      \"time_weighted_integral\": 2.0268677377930606,\n      \"present_value\": 2222.820776454887,\n      \"midpoint_reference\": 2222.820775744462,\n      \"absolute_difference\": 7.104249561962206e-07\n    },\n    {\n      \"rate\": 0,\n      \"discount_integral\": 2.0,\n      \"time_weighted_integral\": 2.0,\n      \"present_value\": 2200.0,\n      \"midpoint_reference\": 2200.0,\n      \"absolute_difference\": 0.0\n    },\n    {\n      \"rate\": 0.01,\n      \"discount_integral\": 1.9801326693244699,\n      \"time_weighted_integral\": 1.9735322710959173,\n      \"present_value\": 2177.4858964340615,\n      \"midpoint_reference\": 2177.4858970578143,\n      \"absolute_difference\": 6.237528396013658e-07\n    },\n    {\n      \"rate\": 0.04,\n      \"discount_integral\": 1.9220913403341053,\n      \"time_weighted_integral\": 1.8964661890208465,\n      \"present_value\": 2111.73795923619,\n      \"midpoint_reference\": 2111.7379612358486,\n      \"absolute_difference\": 1.999658707063645e-06\n    },\n    {\n      \"rate\": 0.08,\n      \"discount_integral\": 1.8482026379223582,\n      \"time_weighted_integral\": 1.7989382498741948,\n      \"present_value\": 2028.0964629097778,\n      \"midpoint_reference\": 2028.0964656750152,\n      \"absolute_difference\": 2.765237468338455e-06\n    }\n  ],\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_04.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.4 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 21,
+  "failed": 0,
+  "scope": "complete linear PV subset; independent800-digit termwise integral/closed identities; midpoint/report range still unfinished"
+}

@@ -1,0 +1,59 @@
+"""Selected midpoint grid/callback/report contracts, baseline or candidate."""
+from pathlib import Path
+from fractions import Fraction as F
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='cdf2679391b0060db8465c0de08c09c632d658e6'
+path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_04.py';check=path.replace('section_10_04.py','check_section_10_04.py');baseline='--baseline' in sys.argv
+rows=[];commands=[];manifest={}
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root) if baseline else (root/p).read_bytes()
+ manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ p=Path(tmp)/'section_10_04.py';spec=importlib.util.spec_from_file_location('integral_reference',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ def test(name,call,want,exc=None,kind='existing numerical contract'):
+  try:
+   got=call();ok=exc is None and (got==want if isinstance(want,(list,bool)) or want is None else math.isclose(got,float(want),rel_tol=5e-14,abs_tol=0));observed=got
+  except Exception as e:ok=exc is not None and type(e) is exc;observed=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(name=name,actual=observed,expected=exc.__name__ if exc else str(want),kind=kind,passed=ok))
+ test('linear signed amount',lambda:m.midpoint_reference(lambda t:100+20*t,0,2,4),240)
+ test('reverse orientation',lambda:m.midpoint_reference(lambda t:100+20*t,2,0,4),-240)
+ for n in [1,2,4,16,64]:
+  # Midpoint sum x^2 on [0,1] = 1/3 - 1/(12n^2), derived by sums of i and i^2.
+  test('quadratic N'+str(n),lambda n=n:m.midpoint_reference(lambda t:t*t,0,1,n),F(1,3)-F(1,12*n*n))
+ calls=[]
+ test('zero width amount',lambda:m.midpoint_reference(lambda t:calls.append(t),2,2,4),0)
+ test('zero width skips callback',lambda:calls,[])
+ test('invalid n bool',lambda:m.midpoint_reference(lambda t:1,0,1,True),None,ValueError)
+ test('noncallable',lambda:m.midpoint_reference(None,0,1,4),None,TypeError)
+ test('nonfinite callback',lambda:m.midpoint_reference(lambda t:math.inf,0,1,2),None,ValueError)
+ test('bool callback',lambda:m.midpoint_reference(lambda t:True,0,1,2),None,TypeError)
+ def raised(t):raise LookupError('sentinel caller failure')
+ test('caller exception preserved',lambda:m.midpoint_reference(raised,0,1,2),None,LookupError)
+ test('product overflow cancellation',lambda:m.midpoint_reference(lambda t:1e308 if t<2 else -1e308,0,4,2),0,kind='selected finite-result support extension')
+ test('unreportable final sum',lambda:m.midpoint_reference(lambda t:1e308,0,4,4),None,ValueError)
+ test('wide interval finite result',lambda:m.midpoint_reference(lambda t:1e-308,-1e308,1e308,2),float(F(1e-308)*2*F(1e308)),kind='selected finite-result support extension')
+ test('unrepresentable tiny grid rejected',lambda:m.midpoint_reference(lambda t:1,0,math.ulp(0.0),2),None,ValueError,kind='selected explicit grid policy')
+ # No representable interior midpoint exists here: reject before invoking callback.
+ calls=[]
+ test('adjacent endpoints rejected',lambda:m.midpoint_reference(lambda t:calls.append(t) or 1,1,math.nextafter(1,2),2),None,ValueError,kind='selected explicit grid policy')
+ test('invalid grid callback atomicity',lambda:calls,[],kind='selected explicit grid policy')
+ calls=[]
+ test('interior overflow midpoint avoided',lambda:m.midpoint_reference(lambda t:calls.append(t) or 1,1e308,1.7e308,2),float(F(1.7e308)-F(1e308)),kind='selected finite-result support extension')
+ test('midpoint positions',lambda:calls,[float(F(1e308)+(F(1.7e308)-F(1e308))*F(i,4)) for i in [1,3]])
+ test('reportable accumulation of subnormal products',lambda:m.midpoint_reference(lambda t:math.ulp(0.0),0,1,2),math.ulp(0.0),kind='selected complete-product range extension')
+ report=m.assessment()
+ test('fixed report global schema',lambda:set(report)=={'model','horizon_years','scenarios','runtime_certified','independent_review_completed'},True,kind='fixed report schema')
+ for i,row in enumerate(report['scenarios']):
+  test('fixed report row schema '+str(i),lambda row=row:set(row)=={'rate','discount_integral','time_weighted_integral','present_value','midpoint_reference','absolute_difference'},True,kind='fixed report schema')
+ test('negative rate PV exceeds undiscounted',lambda:report['scenarios'][0]['present_value']>2200,True,kind='fixed report model invariant')
+ test('zero rate PV identity',lambda:report['scenarios'][1]['present_value'],2200,kind='fixed report model invariant')
+ test('positive rate PV below undiscounted',lambda:all(row['present_value']<2200 for row in report['scenarios'][2:]),True,kind='fixed report model invariant')
+ for args in [[sys.executable,'section_10_04.py'],[sys.executable,'check_section_10_04.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0
+ test('native fixed report equals complete CLI',lambda:report==json.loads(commands[0]['stdout']),True,kind='fixed report execution agreement')
+result=dict(pin=pin,source_selection='baseline' if baseline else 'candidate',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='Selected midpoint finite-grid/callback/sum contracts and fixed five-scenario report; no arbitrary report-parameter API, resource or independent acceptance')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']])
+if not baseline:assert result['failed']==0

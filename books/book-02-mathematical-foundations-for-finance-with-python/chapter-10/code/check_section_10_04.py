@@ -66,6 +66,16 @@ def run():
     close(linear_cashflow_pv(1e-300,1e-300,-1,1000),1.970071114017047e+137,abs_tol=0)
     assert linear_cashflow_pv(0,0,-1e308,1e308)==0
     assert linear_cashflow_pv(-11999,2,-2,6000)==6000
+    calls=[]
+    assert midpoint_reference(lambda t:calls.append(t),1,1,3)==0
+    assert calls==[]
+    assert midpoint_reference(lambda t:math.ulp(0.0),0,1,2)==math.ulp(0.0)
+    assert midpoint_reference(lambda t:1e308 if t<2 else -1e308,0,4,2)==0
+    rejects(ValueError,midpoint_reference,lambda t:1e308,0,4,4)
+    calls=[]
+    rejects(ValueError,midpoint_reference,lambda t:calls.append(t) or 1,1,math.nextafter(1,2),2)
+    assert calls==[]
+    rejects(ValueError,midpoint_reference,lambda t:1,0,math.ulp(0.0),2)
     print("PASS: Section 10.4 independent reference checks")
 
 if __name__=="__main__":

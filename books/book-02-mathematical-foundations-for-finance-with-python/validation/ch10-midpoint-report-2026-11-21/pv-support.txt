@@ -1,0 +1,45 @@
+"""Complete linear cash-flow PV with independent termwise integral references."""
+from pathlib import Path
+from fractions import Fraction as F
+from decimal import Decimal as D,Context,localcontext
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='31f4962bb9efee1a6e09d65c72a59187f0ce14c4';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_04.py';check=path.replace('section_10_04.py','check_section_10_04.py');baseline='--baseline' in sys.argv;rows=[];commands=[];manifest={}
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root) if baseline else (root/p).read_bytes();manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+def oracle(a,b,r,t):
+ A,B,R,T=map(F,(a,b,r,t))
+ if not T or not(A or B):return 0.
+ if not R:return float(A*T+B*T*T/2)
+ if R*T>10000:return float(A/R+B/(R*R))
+ with localcontext(Context(prec=800)):
+  def dec(x):return D(x.numerator)/D(x.denominator)
+  term=D(1);total=D(0);unchanged=0;x=dec(-R*T)
+  for k in range(12000):
+   if k:term*=x/k
+   updated=total+term*dec(A*T/F(k+1)+B*T*T/F(k+2))
+   unchanged=unchanged+1 if updated==total else 0;total=updated
+   if k>=8 and unchanged>=3:return float(total)
+  raise RuntimeError('integral oracle did not converge')
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('pv_reference',Path(tmp)/'section_10_04.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ def test(name,fn,want,exc=None,kind='complete PV contract'):
+  try:got=fn();ok=exc is None and math.isclose(got,float(want),rel_tol=5e-14,abs_tol=0);actual=got
+  except Exception as e:ok=exc is not None and type(e) is exc;actual=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(name=name,actual=actual,expected=exc.__name__ if exc else str(want),kind=kind,passed=ok))
+ cases=[('ordinary positive',1000,100,.04,2),('ordinary negative rate',1000,100,-.01,2),('zero rate',1000,100,0,2),('signed zero-rate cancellation',-1e308,1e308,0,2),('zero slope ignores unreportable moment',1e-308,0,0,1e308),('small slope large horizon',0,1e-308,0,1e200),('scaled growing time moment',0,1e-300,-1,1000),('scaled growing complete stream',1e-300,1e-300,-1,1000),('tiny rate',1000,100,1e-300,2),('minimum rate',1000,100,math.ulp(0.0),2),('huge discount horizon',1,1,1e308,1e308),('zero stream extreme exponent',0,0,-1e308,1e308),('zero horizon validates first',1e308,1e308,-1e308,0),('negative PV',-1000,-100,.04,2),('underflow report allowed',1e-308,0,0,1e-308)]
+ for name,a,b,r,t in cases:test(name,lambda a=a,b=b,r=r,t=t:m.linear_cashflow_pv(a,b,r,t),oracle(a,b,r,t),kind='selected complete-expression/range contract')
+ # d[(t-6000)exp(2t)]/dt=(-11999+2t)exp(2t): endpoint exponential term cancels exactly.
+ test('exact leading exponential cancellation beyond cutoff',lambda:m.linear_cashflow_pv(-11999,2,-2,6000),6000,kind='exact rational coefficient/antiderivative identity')
+ test('true PV overflow',lambda:m.linear_cashflow_pv(1e308,1e308,0,2),None,ValueError)
+ test('true growing PV overflow',lambda:m.linear_cashflow_pv(1,1,-1,1000),None,ValueError)
+ test('negative horizon',lambda:m.linear_cashflow_pv(0,0,0,-1),None,ValueError)
+ test('bool intercept',lambda:m.linear_cashflow_pv(True,0,0,1),None,TypeError)
+ test('nonfinite coefficient even zero horizon',lambda:m.linear_cashflow_pv(0,math.inf,0,0),None,ValueError)
+ for args in [[sys.executable,'section_10_04.py'],[sys.executable,'check_section_10_04.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+result=dict(pin=pin,source_selection='baseline' if baseline else 'candidate',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='complete linear PV subset; independent800-digit termwise integral/closed identities; midpoint/report range still unfinished')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']])
+if not baseline:assert result['failed']==0 and all(c['returncode']==0 for c in commands)
