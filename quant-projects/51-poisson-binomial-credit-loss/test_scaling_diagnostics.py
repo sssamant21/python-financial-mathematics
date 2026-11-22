@@ -42,6 +42,20 @@ class ScalingDiagnosticsTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             summarize(report)
 
+    def test_memory_passthrough_and_reproducibility(self):
+        report = fixture()
+        first = summarize(report)
+        self.assertEqual(first, summarize(report))
+        self.assertEqual([r['peak_traced_bytes_median'] for r in first],
+                         [110, 110, 110, 110])
+        self.assertEqual([r['states'] for r in first], [5, 9, 16, 256])
+
+    def test_rejects_corrupted_analytical_tail(self):
+        report = fixture()
+        report['rows'][0]['analytical_tail'] = '0.5'
+        with self.assertRaises(ValueError):
+            summarize(report)
+
     def test_no_mutation(self):
         report = fixture()
         before = copy.deepcopy(report)
