@@ -52,7 +52,25 @@ def check_equal_payment_complete_scale():
         rejects(ValueError,equal_payment_pv,1.,.1,1.,1<<4096,timing)
 
 
+def check_schedule_complete_scale():
+    from decimal import Decimal,localcontext
+    import itertools
+    assert schedule_pv([(0.,1e308),(1.,1e308),(2.,-1e308),(3.,-1e308),(4.,3.)],0.)==3.
+    assert schedule_pv([(10001.,1e308),(10001.,-1e308),(0.,3.)],-1.)==3.
+    with localcontext() as ctx:
+        ctx.prec=2200
+        expected=float(Decimal.from_float(1e-308)*Decimal(710).exp())
+    assert schedule_pv([(710.,1e-308)],-1.)==expected
+    assert schedule_pv([(1e308,0.)],-1e308)==0.
+    assert schedule_pv([(0.,1e308),(math.ulp(0.),-1e308)],1e-308)==math.ulp(0.)
+    assert schedule_pv([(1.,math.ulp(0.))],1.)==0.
+    rejects(ValueError,schedule_pv,[(0.,1e308),(0.,1e308)],0.)
+    rejects(ValueError,schedule_pv,[(10001.,1.),(-1.,1.)],-1.)
+    rejects(ValueError,schedule_pv,itertools.repeat((0.,1.)),0.)
+
+
 def run():
+    check_schedule_complete_scale()
     check_equal_payment_complete_scale()
     check_continuous_complete_scale()
     c,T=1200,2

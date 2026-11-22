@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-22
 **Full-runtime candidate source revision:** `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85` ([V257](full-runtime-quadrature-2026-11-22/README.md)).
-**Latest scoped source:** V259 Section10.8 equal-payment correction;baseline `f19f4218adbf94b9e6c33e5b5e8ae2a1d3024e9d`,candidate identities/execution in [evidence](ch10-equal-payments-2026-11-22/README.md).
+**Latest scoped source:** V260 Section10.8 schedule correction;baseline `3c23b8721b0e2fa5a936438fd9cb0fa1aa4e0fbe`,candidate identities/execution in [evidence](ch10-schedule-2026-11-22/README.md).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** Partial10.8 complete equal-payment PV recorded;next schedule/ratio/full-report then assumption/lab obligations. V257 full runtime precedes two10.8 changes;broader gates open.
+**Disposition:** Partial10.8 schedule PV recorded;next ratio/full-report then assumption/lab obligations and full refresh. Broader gates open.
 
 ## Reconciled evidence
 
@@ -1777,3 +1777,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-259 checkpoint — Partial Section10.8 complete equal-payment PV
 
 [Evidence](ch10-equal-payments-2026-11-22/README.md):18 passes/21 failed final baseline predicates reproduced;corrected39 pass twice plus18 retained continuous predicates. Independent1800-digit explicit sums verify all timings/compensated signed and growth/zero/final-range/immediate-payment cases;huge-n control labelled separately. Source exact binary-input complete geometric normalization/stable phi/800-digit report avoids premature intermediates. Three static bit-budget policy probes distinguished;bit_length<=4096 and cutoff/underflow/resource limits explicit. Interim33 records retained. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.8 blobs differ from V257,no new full runtime. Nextschedule/ratio/full-report then timing/units/exercise/lab. All38 COV categories partial,none closed;broader gates open. Book1 separate.
+
+
+## V-260 checkpoint — Partial Section10.8 explicit schedule PV
+
+[Evidence](ch10-schedule-2026-11-22/README.md):seven passes/20 failed final baseline contract predicates reproduced;corrected27 pass twice plus18/39 retained continuous/equal predicates. Independent2200-digit halving/Taylor/squaring references and reversed schedules verify compensated growth,signed/group cancellation,subnormal residual,zero/final-range cases. Static cap and full-row priority probes distinct;10000 bounded rows,exact binary groups,2000-digit fixed-order terms and unresolved-zero/growth/underflow support limits explicit. Interim23 retained. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.8 blobs differ from V257,no new full runtime. Nextratio/full-report then timing/units/exercise/lab and refreshed full run. All38 COV categories partial,none closed;broader gates open. Book1 separate.

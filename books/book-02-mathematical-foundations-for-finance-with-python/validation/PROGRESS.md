@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-22
-**Overall status:** In progress — V259 partial10.8 complete equal-payment PV correction recorded;next schedule/ratio/full-report and assumption/lab contracts. V257 remains latest full runtime,preceding two changed10.8 blobs.
+**Overall status:** In progress — V260 partial10.8 schedule PV correction recorded;next ratio/full-report and assumption/lab contracts. V257 remains latest full runtime,preceding two changed10.8 blobs.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1903,3 +1903,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-259 checkpoint — Partial Section10.8 complete equal-payment PV
 
 [Evidence](ch10-equal-payments-2026-11-22/README.md):18 passes/21 failed final baseline predicates reproduced;corrected39 pass twice plus18 retained continuous predicates. Independent1800-digit explicit sums verify all timings/compensated signed and growth/zero/final-range/immediate-payment cases;huge-n control labelled separately. Source exact binary-input complete geometric normalization/stable phi/800-digit report avoids premature intermediates. Three static bit-budget policy probes distinguished;bit_length<=4096 and cutoff/underflow/resource limits explicit. Interim33 records retained. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.8 blobs differ from V257,no new full runtime. Nextschedule/ratio/full-report then timing/units/exercise/lab. All38 COV categories partial,none closed;broader gates open. Book1 separate.
+
+
+## V-260 checkpoint — Partial Section10.8 explicit schedule PV
+
+[Evidence](ch10-schedule-2026-11-22/README.md):seven passes/20 failed final baseline contract predicates reproduced;corrected27 pass twice plus18/39 retained continuous/equal predicates. Independent2200-digit halving/Taylor/squaring references and reversed schedules verify compensated growth,signed/group cancellation,subnormal residual,zero/final-range cases. Static cap and full-row priority probes distinct;10000 bounded rows,exact binary groups,2000-digit fixed-order terms and unresolved-zero/growth/underflow support limits explicit. Interim23 retained. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.8 blobs differ from V257,no new full runtime. Nextratio/full-report then timing/units/exercise/lab and refreshed full run. All38 COV categories partial,none closed;broader gates open. Book1 separate.

@@ -613,3 +613,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section15.3 variance/denominator/dependence assumptions
 
 [Evidence](v10-variance-models/README.md):303 predicates pass twice across20 temporal paths and three cross-asset laws. Identical daily marginal variance.01 permits four-period sum SD.2/.4/0 under IID/shared/alternating laws;native square-root scaling does not validate dependence. Expected ddof1 variance.01/0/1⁄75 and all-n downside denominators checked independently. Four commands/24 invocations of twelve existing methods;F129 identities/prior observer error/twelve source failures/47 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next15.4 shape/moment assumptions,then15.5–15.7. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section15.4 shape/moment-identification assumptions
+
+[Evidence](v10-shape-models/README.md):65 predicates pass twice. Two deterministic72-observation finite laws share first four raw moments/full native reports(skew0,kurtosis3,excess0) but strict R<−.02 frequency differs0 versus1/72. Raw-power central-moment oracles,adjusted-estimator labels,stress/selection and affine transforms checked;no Gaussian/tail identification or forecast accepted. Final four commands/24 invocations of twelve existing methods;F130 identities/prior ten failures/49 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next15.5 covariance/pairing,then15.6–15.7. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

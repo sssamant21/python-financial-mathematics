@@ -5,6 +5,7 @@ from section_10_05 import constant_pv
 from fractions import Fraction
 from decimal import Context,Decimal,localcontext
 
+MAX_SCHEDULE_PAYMENTS=10000
 MAX_PAYMENT_COUNT_BITS=4096
 
 def finite(x,name):
@@ -36,20 +37,42 @@ def continuous_pv(payment_rate,rate,horizon):
     return constant_pv(c,r,t)
 
 def schedule_pv(payments,rate):
-    r=finite(rate,"rate")
-    terms=[]
-    for payment in payments:
-        if len(payment)!=2:
+    r=Fraction(finite(rate,"rate"))
+    grouped={}
+    # Validate all bounded rows before exponential arithmetic. Exact equal-time
+    # groups cancel before any overflowing discounted component is formed.
+    for index,payment in enumerate(payments):
+        if index>=MAX_SCHEDULE_PAYMENTS:
+            raise ValueError("payment schedule exceeds supported count")
+        if not isinstance(payment,(list,tuple)) or len(payment)!=2:
             raise ValueError("payment must be (time, amount)")
-        t,amount=payment
-        time=finite(t,"time")
+        time=finite(payment[0],"time")
         if time<0:
             raise ValueError("payment time must be nonnegative")
-        value=finite(amount,"amount")*math.exp(-r*time)
-        if not math.isfinite(value):
-            raise ValueError("nonfinite discounted payment")
-        terms.append(value)
-    result=math.fsum(terms)
+        amount=Fraction(finite(payment[1],"amount"))
+        exponent=-r*Fraction(time)
+        grouped[exponent]=grouped.get(exponent,Fraction(0))+amount
+    grouped={e:a for e,a in grouped.items() if a}
+    if not grouped:
+        return 0.0
+    if set(grouped)=={Fraction(0)}:
+        try:result=float(grouped[Fraction(0)])
+        except OverflowError as exc:raise ValueError("nonfinite PV") from exc
+    else:
+        terms=[]
+        with localcontext(Context(prec=2000)):
+            for exponent,amount in sorted(grouped.items()):
+                if exponent>10000:
+                    raise ValueError("schedule growth outside supported range")
+                if exponent < -10000:
+                    continue
+                terms.append(_payment_decimal(amount)*_payment_decimal(exponent).exp())
+            if not terms:
+                return 0.0
+            value=sum(terms,Decimal(0))
+            if not value:
+                raise ValueError("signed sum unresolved at supported precision")
+            result=float(value)
     if not math.isfinite(result):
         raise ValueError("nonfinite PV")
     return result
