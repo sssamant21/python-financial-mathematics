@@ -70,6 +70,12 @@ def run():
     close(growing_pv_rate_derivative(1e308,-1e308,1e308,1),-2.5e-309,rel_tol=1e-14,abs_tol=0)
     rejects(ValueError,growing_pv_rate_derivative,1e308,0,0,2)
     assert growing_pv_rate_derivative(1e308,1e308,-1e308,0)==0
+    assert variable_curve_pv(lambda t:0,-1e308,0,4,2)==0
+    close(variable_curve_pv(lambda t:1e-300,-1000,0,2,1),3.940142228034094e134,rel_tol=1e-14,abs_tol=0)
+    close(variable_curve_pv(lambda t:1e308,1000,0,2,1),1.0151917795098914e-126,rel_tol=1e-14,abs_tol=0)
+    assert variable_curve_pv(lambda t:1,1e308,-1e308,4,1)==4
+    assert variable_curve_pv(lambda t:1 if t<2 else -1,-2000,1000,4,2)==0
+    rejects(ValueError,variable_curve_pv,lambda t:1,-20000,0,2,1)
     report=assessment()
     assert len(report["scenarios"])==5
     assert report["runtime_certified"] is False

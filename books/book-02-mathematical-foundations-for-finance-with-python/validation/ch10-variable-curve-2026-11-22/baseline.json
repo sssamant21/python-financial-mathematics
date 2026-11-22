@@ -1,0 +1,326 @@
+{
+  "pin": "d0162ccb04b8a3fd97fe3928de6a5c1a597f1ab7",
+  "source_selection": "baseline",
+  "executed_at_utc": "2026-11-22T06:09:07.993970+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_05.py": {
+      "sha256": "787686ed04e33443eb8cb1ee069b9595c0f4f0ee496223545f99fbea988b1ca1",
+      "git_blob": "223c30fe90cc9cb35028d17cdc7db154ddc4b110"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_05.py": {
+      "sha256": "16b066305ab977d4140baba44bd361623030e666569b4ae65b8ea68b7344bf7f",
+      "git_blob": "e96ecaa08a3bba0c6d1fd36b9122354c0bb9a136"
+    }
+  },
+  "rows": [
+    {
+      "name": "ordinary constant curve",
+      "actual": 3721.6616954648653,
+      "expected": "3721.6616954648653",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ordinary signed stream",
+      "actual": -135.8725702388714,
+      "expected": "-135.8725702388714",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero payment huge exponent",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "expected": "0.0",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "tiny scale rescues exp overflow",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "expected": "3.940142228034094e+134",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "large scale rescues exp underflow",
+      "actual": 0.0,
+      "expected": "1.0151917795098913e-126",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "complete exponent cancellation",
+      "actual": {
+        "exception": "ValueError",
+        "message": "integrand must be finite"
+      },
+      "expected": "4.0",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "equal exponent signed cancellation",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "expected": "0.0",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "complete width rescues product underflow",
+      "actual": 0.3678794411714426,
+      "expected": "0.36787944117144233",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "subnormal product accumulation",
+      "actual": 5e-324,
+      "expected": "5e-324",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero horizon amount",
+      "actual": 0.0,
+      "expected": "0",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero horizon no calls",
+      "actual": [],
+      "expected": "[]",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "collapsed grid rejects",
+      "actual": {
+        "exception": "ValueError",
+        "message": "midpoint not representable inside its subinterval"
+      },
+      "expected": "ValueError",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "collapsed grid no calls",
+      "actual": [],
+      "expected": "[]",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ascending callback amount",
+      "actual": 8.0,
+      "expected": "8",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ascending callback positions",
+      "actual": [
+        1.0,
+        3.0,
+        5.0,
+        7.0
+      ],
+      "expected": "[1.0, 3.0, 5.0, 7.0]",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "true final overflow",
+      "actual": {
+        "exception": "ValueError",
+        "message": "integrand must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "noncallable",
+      "actual": {
+        "exception": "TypeError",
+        "message": "payment_rate must be callable"
+      },
+      "expected": "TypeError",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "nonfinite payment",
+      "actual": {
+        "exception": "ValueError",
+        "message": "payment rate must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bool payment",
+      "actual": {
+        "exception": "TypeError",
+        "message": "payment rate must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "nonfinite rate zero horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "base_rate must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid count zero horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "n must be a positive integer"
+      },
+      "expected": "ValueError",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "caller failure propagates",
+      "actual": {
+        "exception": "LookupError",
+        "message": "sentinel callback failure"
+      },
+      "expected": "LookupError",
+      "kind": "complete variable-curve discrete-sum contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "explicit large positive exponent guard",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "expected": "ValueError",
+      "kind": "conservative supported-exponent policy, not universal overflow claim",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "group cancellation precedes positive guard",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "expected": "0",
+      "kind": "exact coefficient cancellation before support guard",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "extreme negative exponent underflows whole sum",
+      "actual": 0.0,
+      "expected": "0",
+      "kind": "absolute negligible-tail bound",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_05.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"scenarios\": [\n    {\n      \"discount_rate\": -0.01,\n      \"exact_pv\": 4249.895052645856,\n      \"midpoint_pv\": 4249.895052008372,\n      \"absolute_difference\": 6.374839358613826e-07\n    },\n    {\n      \"discount_rate\": 0,\n      \"exact_pv\": 4164.353383747928,\n      \"midpoint_pv\": 4164.353383470304,\n      \"absolute_difference\": 2.776241672108881e-07\n    },\n    {\n      \"discount_rate\": 0.02,\n      \"exact_pv\": 4000.0,\n      \"midpoint_pv\": 4000.0,\n      \"absolute_difference\": 0.0\n    },\n    {\n      \"discount_rate\": 0.05,\n      \"exact_pv\": 3769.3187760947494,\n      \"midpoint_pv\": 3769.3187755293516,\n      \"absolute_difference\": 5.653978405462112e-07\n    },\n    {\n      \"discount_rate\": 0.08,\n      \"exact_pv\": 3556.202315557443,\n      \"midpoint_pv\": 3556.202313423722,\n      \"absolute_difference\": 2.13372095458908e-06\n    }\n  ],\n  \"parallel_rate_derivative_at_5pct\": -7387.900974203981,\n  \"variable_curve_pv\": 3869.910624340203,\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_05.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.5 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 18,
+  "failed": 7,
+  "scope": "Selected complete variable-curve midpoint sums/callbacks, not continuous-integral error bounds; full fixed-report/provenance still unfinished"
+}

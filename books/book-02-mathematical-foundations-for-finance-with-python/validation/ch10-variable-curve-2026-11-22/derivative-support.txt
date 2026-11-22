@@ -1,0 +1,38 @@
+"""Complete growing-payment rate derivative against an independent integral series."""
+from pathlib import Path
+from fractions import Fraction as F
+from decimal import Decimal as D,Context,localcontext
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='d0162ccb04b8a3fd97fe3928de6a5c1a597f1ab7';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_05.py';check=path.replace('section_10_05.py','check_section_10_05.py');baseline='--baseline' in sys.argv;rows=[];commands=[];manifest={}
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root) if baseline else (root/p).read_bytes();manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+def oracle(c,g,r,t):
+ C,G,R,T=map(F,(c,g,r,t));K=G-R
+ if not C or not T:return 0.
+ if not K:return float(-C*T*T/2)
+ with localcontext(Context(prec=1000)):
+  def dec(v):return D(v.numerator)/D(v.denominator)
+  if K*T < -1000:return float(dec(-C/(K*K)))
+  term=D(1);total=D('.5');x=dec(K*T)
+  for k in range(1,15000):
+   term*=x/k;new=total+term/(k+2)
+   if new==total:return float(dec(-C*T*T)*new)
+   total=new
+  raise RuntimeError('independent derivative moment series convergence')
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('payment_derivative',Path(tmp)/'section_10_05.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ def test(name,call,want=None,exc=None,kind='complete rate-derivative contract'):
+  try:got=call();ok=exc is None and math.isclose(got,float(want),rel_tol=5e-14,abs_tol=0);actual=got
+  except Exception as e:ok=exc is not None and type(e) is exc;actual=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(name=name,actual=actual,expected=exc.__name__ if exc else str(want),kind=kind,relative_tolerance=5e-14,absolute_tolerance=0,passed=ok))
+ cases=[('ordinary',1000,.02,.05,4),('zero net rate',1000,.02,.02,4),('negative payment',-1000,.02,.05,4),('zero payment huge growing moment',0,1,0,1000),('small payment rescues growing moment',1e-300,1,0,1000),('small payment huge zero-rate horizon',1e-308,0,0,1e200),('large scale rescues moment underflow',1e308,0,1e308,1e308),('exact difference overflow finite derivative',1e308,-1e308,1e308,1),('minimum scale finite growing derivative',math.ulp(0.),1,0,750),('zero horizon huge inputs',1e308,1e308,-1e308,0),('huge positive discount ordinary scale',1,0,1,1e308),('tiny net rate',1000,1e-300,0,2),('zero rate derivative underflow allowed',1e-308,0,0,1e-308),('exact difference before exponent',1e-300,1,-1e-16,700)]
+ for name,c,g,r,t in cases:test(name,lambda c=c,g=g,r=r,t=t:m.growing_pv_rate_derivative(c,g,r,t),oracle(c,g,r,t))
+ for name,fn,exc in [('true growing derivative overflow',lambda:m.growing_pv_rate_derivative(1,1,0,1000),ValueError),('true product overflow',lambda:m.growing_pv_rate_derivative(1e308,0,0,2),ValueError),('negative horizon',lambda:m.growing_pv_rate_derivative(0,0,0,-1),ValueError),('bool payment',lambda:m.growing_pv_rate_derivative(True,0,0,1),TypeError),('nonfinite growth zero scale',lambda:m.growing_pv_rate_derivative(0,math.inf,0,1),ValueError),('nonfinite discount zero horizon',lambda:m.growing_pv_rate_derivative(1,0,math.nan,0),ValueError)]:test(name,fn,exc=exc)
+ for args in [[sys.executable,'section_10_05.py'],[sys.executable,'check_section_10_05.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0
+result=dict(pin=pin,source_selection='baseline' if baseline else 'candidate',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='Complete growing-PV parallel-rate derivative only; variable-curve and full-report contracts unfinished')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']]);
+if not baseline:assert result['failed']==0

@@ -128,14 +128,7 @@ def linear_pv(intercept,slope,rate,T):
                      -_fraction_decimal(exponential)*(-_fraction_decimal(exponent)).exp())
         return _pv_report(numerator/_fraction_decimal(denominator))
 
-def midpoint_integral(function,T,n=2000):
-    if not callable(function):
-        raise TypeError("function must be callable")
-    t=horizon(T)
-    if type(n) is not int or n<=0:
-        raise ValueError("n must be a positive integer")
-    if not t:
-        return 0.0
+def _midpoint_grid(t,n):
     width=Fraction(t)/n
     samples=[]
     # Validate every rounded point before executing caller code. A collapsed
@@ -146,6 +139,17 @@ def midpoint_integral(function,T,n=2000):
         if not left<Fraction(sample)<right:
             raise ValueError("midpoint not representable inside its subinterval")
         samples.append(sample)
+    return samples,width
+
+def midpoint_integral(function,T,n=2000):
+    if not callable(function):
+        raise TypeError("function must be callable")
+    t=horizon(T)
+    if type(n) is not int or n<=0:
+        raise ValueError("n must be a positive integer")
+    if not t:
+        return 0.0
+    samples,width=_midpoint_grid(t,n)
     total=sum((Fraction(finite(function(x),"integrand"))*width
                for x in samples),Fraction(0))
     try:
@@ -159,9 +163,36 @@ def midpoint_integral(function,T,n=2000):
 def variable_curve_pv(payment_rate,base_rate,slope,T,n=2000):
     if not callable(payment_rate):
         raise TypeError("payment_rate must be callable")
-    r,k=finite(base_rate,"base_rate"),finite(slope,"slope")
-    return midpoint_integral(
-        lambda t:finite(payment_rate(t),"payment rate")*math.exp(-r*t-0.5*k*t*t),T,n)
+    r,k=Fraction(finite(base_rate,"base_rate")),Fraction(finite(slope,"slope"))
+    t=horizon(T)
+    if type(n) is not int or n<=0:
+        raise ValueError("n must be a positive integer")
+    if not t:
+        return 0.0
+    samples,width=_midpoint_grid(t,n)
+    terms={}
+    for sample in samples:
+        x=Fraction(sample)
+        coefficient=Fraction(finite(payment_rate(sample),"payment rate"))*width
+        exponent=-r*x-k*x*x/2
+        terms[exponent]=terms.get(exponent,Fraction(0))+coefficient
+    # Exact equal-exponent grouping precedes range guards and exponentials.
+    terms={x:c for x,c in terms.items() if c}
+    if not terms:
+        return 0.0
+    with localcontext(Context(prec=800)):
+        total=Decimal(0)
+        retained=False
+        for exponent,coefficient in terms.items():
+            if exponent>10000:
+                raise ValueError("curve exponent beyond supported range")
+            if exponent < -10000:
+                continue
+            retained=True
+            total+=_fraction_decimal(coefficient)*_fraction_decimal(exponent).exp()
+        if retained and not total:
+            raise ValueError("curve cancellation below retained precision")
+        return _pv_report(total)
 
 def growing_pv_rate_derivative(initial_rate,growth,discount,T):
     c,g,r=(Fraction(finite(v,name)) for v,name in
