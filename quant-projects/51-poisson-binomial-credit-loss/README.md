@@ -225,3 +225,7 @@ python validate_benchmark.py repeated.json
 ```
 
 Five new synthetic-fixture regression tests passed locally on source-equivalent files; exact published-revision CI remains **unverified**. The existing 79-test verified CI checkpoint predates this extension. Next: add these tests and JSON validation to the dedicated workflow, then inspect exact-revision CI and review actual artifacts.
+
+### Independent synthetic analytical-tail check (2026-11-22)
+
+`validate_benchmark.py` now independently recomputes the predeclared synthetic event probability `P(at least one default) = 1 - (0.75 ** borrowers)` using exact `Decimal` arithmetic. It rejects a JSON report whose `analytical_tail` differs by more than `1e-24`, even when the reported probability remains within `[0, 1]`. Equal and distinct severity patterns share this event probability, but have different support-state counts. This is an **independent fixture identity**, not independent validation of the general monetary-loss algorithm. Three additional tests cover incorrect in-range tails, equal/distinct identity and incorrect borrower count. Run `python -m unittest -v test_validate_benchmark.py` and `python -m py_compile validate_benchmark.py test_validate_benchmark.py`. The new exact-revision CI result and independent review remain **unverified**.
