@@ -1,7 +1,7 @@
 """Independent reference checks for Section 10.5."""
 import math
 from section_10_05 import (
-    finite,exponential_integral,constant_pv,growing_pv,linear_pv,midpoint_integral,
+    finite,exponential_integral,time_weighted_factor,constant_pv,growing_pv,linear_pv,midpoint_integral,
     variable_curve_pv,growing_pv_rate_derivative,assessment)
 
 def close(a,b,rel_tol=2e-8,abs_tol=1e-8):
@@ -46,6 +46,15 @@ def run():
     close(growing_pv(1e-300,1,-1e-16,700),10142.320547350755,rel_tol=1e-14,abs_tol=0)
     rejects(ValueError,exponential_integral,1,1,1000)
     assert growing_pv(0,1e308,-1e308,1)==0
+    assert linear_pv(-1e308,1e308,0,2)==0
+    close(linear_pv(1e-308,0,0,1e308),1,rel_tol=1e-14,abs_tol=0)
+    close(linear_pv(0,1e-308,0,1e200),5e91,rel_tol=1e-14,abs_tol=0)
+    assert linear_pv(-11999,2,-2,6000)==6000
+    assert linear_pv(0,0,-1e308,1e308)==0
+    close(time_weighted_factor(1,1e200),1,rel_tol=1e-14,abs_tol=0)
+    close(time_weighted_factor(0,1.5e154),1.125e308,rel_tol=1e-14,abs_tol=0)
+    close(time_weighted_factor(-1,700),7.089482062597681e306,rel_tol=1e-14,abs_tol=0)
+    rejects(ValueError,time_weighted_factor,-1,720)
     report=assessment()
     assert len(report["scenarios"])==5
     assert report["runtime_certified"] is False

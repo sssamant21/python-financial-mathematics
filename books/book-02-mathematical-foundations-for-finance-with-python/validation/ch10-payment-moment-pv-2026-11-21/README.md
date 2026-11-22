@@ -1,0 +1,29 @@
+# V-241 — Section10.5 time-weighted moment and complete linear PV
+
+Baseline executable source: `1d5215359aa0b0897cd05778a48ec136a48f50ea`. [Runnable review](review.txt), [baseline](baseline.json), [baseline replay](baseline-replay.json), [corrected first](first.json), [corrected replay](replay.json), [initial checker failure](checker-initial.json), [checker correction](checker-correction.json), [kernel support runner](kernel-support.txt)/[results](kernel-support.json), [chapter runner](chapter-support.txt)/[results](chapter-support.json), [fresh inventory](inventory.json).
+
+```bash
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-payment-moment-pv-2026-11-21/review.txt baseline --baseline
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-payment-moment-pv-2026-11-21/review.txt first
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-payment-moment-pv-2026-11-21/review.txt replay
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-payment-moment-pv-2026-11-21/kernel-support.txt kernel-support
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-payment-moment-pv-2026-11-21/chapter-support.txt
+```
+
+Baseline28 passes/fifteen failed predicates reproduce identically. Corrected43 predicates pass twice:21 complete-PV/validation cases and22 moment/validation cases. Native checker gains nine regression assertions; these are separate from supplemental43 predicates. Each scoped run executes native CLI/checker/compilation (three commands); earlier31 exponential/constant/growing kernel/report-PV predicates pass support (three commands). All21 Chapter10 files compile, eleven checkers/ten lab CLIs pass (22 commands), before/after hashes retained. Candidate source/checker Git blob/SHA256 identities are recorded; baseline pin does not contain these fixes.
+
+**Retained observer correction:** first candidate already passed all43 independent predicates, but a newly authored native assertion used6.927283062697201e306 for J(−1,700). Independent integral series and identity J=699exp(700)+1 give7.089482062597681e306. That failed checker output, its exact old blob, correction rationale and successful reruns remain retained; it is not recast as an extra financial-source defect or omitted from the record.
+
+The oracle integrates exp(−rt) and t exp(−rt) power series term by term at800-digit precision; complete linear-PV coefficients enter each integrated term before summation. This differs from source closed moments/antiderivative endpoint formulas. It also checks exact zero-rate/leading-coefficient identities and large-positive-decay limits with negligible omitted tails. Relative tolerance5e-14, absolute0 ensures tiny/subnormal errors are not masked. Selected phi transition cases around|rT|=.1 and ordinary positive/negative rates are included; no quadrature agreement alone is used as the oracle.
+
+Corrections:
+
+- `time_weighted_factor` uses exact represented rate×horizon and horizon² with800-digit moment evaluation before one float report. Zero horizon returns0 after input validation. Selected huge horizons/discounts and compensated growing cases remain finite when mathematically reportable; true overflow becomes `ValueError` and final underflow0 is explicit.
+- `linear_pv` forms exact full coefficients. At rate0 it reports aT+bT²/2 once, permitting signed cancellation or a tiny slope times a huge horizon without separately reporting J. At nonzero rate it combines [a r+b−(a r+b+b r T)exp(−rT)]/r² at2000 digits after exact coefficient cancellation. Zero stream/horizon shortcuts follow complete validation. The exact derivative-of-(t−6000)exp(2t) example a=−11999,b=2,r=−2,T6000 returns6000 because the growing endpoint coefficient is exactly0 even beyond the cutoff.
+- These are selected finite-result support extensions with explicit overflow/underflow policies, not universal correctly-rounded or arbitrary workload guarantees. The model remains deterministic continuous discounting; no stochastic curve calibration or financial acceptance follows.
+
+For the moment, rT>10000 has a negligible exponential tail and J≈1/r²; rT<−10000 with nonzero horizon is necessarily unreportable given finite-float bounds. For linear PV, exact growing-endpoint cancellation precedes cutoffs. Nonzero rational coefficients from these represented finite inputs have bounded denominators/powers; a nonzero exp(10000) contribution cannot be rescued into float range by those minimum coefficients. At positive decay beyond10000, the omitted endpoint contribution is below reporting precision. These conservative bounds justify the selected shortcuts;2000-digit endpoint subtraction and800-digit moment evaluation remain finite-precision algorithms with exact-arithmetic/high-precision resource costs. No runtime/peak-memory or all-input proof is asserted.
+
+Lab units previously recorded in V240 are not recounted: linear payment Exercise7 now has substantive complete-expression checks; derivative Exercises11–12 still await complete sensitivity contracts. Ordinary native sensitivity/curve/report runs are support only. Project/section remains partial. Next:10.5 midpoint grid/preflight/callback/complete-sum, variable-curve complete expressions, growing-PV derivative and full-report/provenance obligations; then fresh pinned full runtime before10.6.
+
+Fresh inventory642 Python/429 check-test/643 required blobs;641/643 V239 blobs match, only10.5 source/checker differ. Not a new full runtime; retain V239's own pinned pass. All38 selected COV categories remain partial, none closed, distinct from defect counts/completion percentages. Broader numerical/resource/provenance/model/platform/release/independent/canonical gates remain open. Book1 is separate.

@@ -60,32 +60,73 @@ def growing_pv(initial_rate,growth,discount,T):
     t=horizon(T)
     return _exponential_integral(Fraction(c),Fraction(g)-Fraction(r),Fraction(t))
 
-def time_weighted_factor(rate,T):
-    r,t=finite(rate,"rate"),horizon(T)
-    x=r*t
-    if not math.isfinite(x):
-        raise ValueError("nonfinite exponent")
-    if abs(x)<0.1:
-        term=0.5
-        total=term
-        for k in range(1,100):
-            term*=(-x)*(k+1)/(k*(k+2))
-            total+=term
-            if abs(term)<=1e-16*max(1,abs(total)):
-                break
-        result=t*t*total
-    else:
-        result=t*t*(-math.expm1(-x)-x*math.exp(-x))/(x*x)
+def _moment_report(value):
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError("nonfinite time-weighted result") from exc
     if not math.isfinite(result):
-        raise ValueError("nonfinite weighted integral")
+        raise ValueError("nonfinite time-weighted result")
+    return result
+
+def _fraction_decimal(value):
+    return Decimal(value.numerator)/Decimal(value.denominator)
+
+def _moment_decimal(x):
+    if x < -10000:
+        raise ValueError("nonfinite time-weighted result")
+    if x > 10000:
+        return _fraction_decimal(1/(x*x))
+    value = _fraction_decimal(x)
+    if abs(x) < Fraction(1,10):
+        term = total = Decimal("0.5")
+        for k in range(1,2000):
+            term *= (-value)*(k+1)/(k*(k+2))
+            updated = total+term
+            if updated == total:
+                return total
+            total = updated
+        raise ValueError("moment series did not converge")
+    return (1-(1+value)*(-value).exp())/(value*value)
+
+def time_weighted_factor(rate,T):
+    r, t = Fraction(finite(rate,"rate")), Fraction(horizon(T))
+    if not t:
+        return 0.0
+    with localcontext(Context(prec=800)):
+        result = _fraction_decimal(t*t)*_moment_decimal(r*t)
+        return _moment_report(result)
+
+def _pv_report(value):
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError("nonfinite present value") from exc
+    if not math.isfinite(result):
+        raise ValueError("nonfinite present value")
     return result
 
 def linear_pv(intercept,slope,rate,T):
-    a,b,r,t=finite(intercept,"intercept"),finite(slope,"slope"),finite(rate,"rate"),horizon(T)
-    result=constant_pv(a,r,t)+b*time_weighted_factor(r,t)
-    if not math.isfinite(result):
-        raise ValueError("nonfinite linear PV")
-    return result
+    a,b = Fraction(finite(intercept,"intercept")),Fraction(finite(slope,"slope"))
+    r,t = Fraction(finite(rate,"rate")),Fraction(horizon(T))
+    if not t or not (a or b):
+        return 0.0
+    if not r:
+        return _pv_report(a*t+b*t*t/2)
+    constant = a*r+b
+    exponential = constant+b*r*t
+    denominator = r*r
+    if not exponential:
+        return _pv_report(constant/denominator)
+    exponent = r*t
+    if exponent > 10000:
+        return _pv_report(constant/denominator)
+    if exponent < -10000:
+        raise ValueError("nonfinite present value")
+    with localcontext(Context(prec=2000)):
+        numerator = (_fraction_decimal(constant)
+                     -_fraction_decimal(exponential)*(-_fraction_decimal(exponent)).exp())
+        return _pv_report(numerator/_fraction_decimal(denominator))
 
 def midpoint_integral(function,T,n=2000):
     if not callable(function):

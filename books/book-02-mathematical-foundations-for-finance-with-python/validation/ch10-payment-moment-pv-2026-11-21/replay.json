@@ -1,0 +1,382 @@
+{
+  "pin": "1d5215359aa0b0897cd05778a48ec136a48f50ea",
+  "source_selection": "candidate",
+  "executed_at_utc": "2026-11-22T03:12:03.010527+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_05.py": {
+      "sha256": "6d78015ea9fbf79b176b60834f8db430aa63d645d18b45efff2365fe02a3d883",
+      "git_blob": "d8988d8419f86fb79749d3695a395abe2d755e7c"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_05.py": {
+      "sha256": "5d63f0290d6d610373f16d40503587c0637af997221599b8ff1bb5fbe1da50d9",
+      "git_blob": "7a9693f14025b86baccf684e790133b011bc5c3a"
+    }
+  },
+  "rows": [
+    {
+      "name": "ordinary positive",
+      "actual": 2111.73795923619,
+      "expected": "2111.73795923619",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "ordinary negative rate",
+      "actual": 2222.820776454887,
+      "expected": "2222.820776454887",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "zero rate",
+      "actual": 2200.0,
+      "expected": "2200.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "signed zero-rate cancellation",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "zero slope ignores unreportable moment",
+      "actual": 0.9999999999999999,
+      "expected": "0.9999999999999999",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "small slope large horizon",
+      "actual": 4.9999999999999995e+91,
+      "expected": "4.9999999999999995e+91",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "scaled growing time moment",
+      "actual": 1.96810104290303e+137,
+      "expected": "1.96810104290303e+137",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "scaled growing complete stream",
+      "actual": 1.970071114017047e+137,
+      "expected": "1.970071114017047e+137",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "tiny rate",
+      "actual": 2200.0,
+      "expected": "2200.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "minimum rate",
+      "actual": 2200.0,
+      "expected": "2200.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "huge discount horizon",
+      "actual": 1e-308,
+      "expected": "1e-308",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "zero stream extreme exponent",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "zero horizon validates first",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "negative PV",
+      "actual": -2111.73795923619,
+      "expected": "-2111.73795923619",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "underflow report allowed",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "selected complete-expression/range contract",
+      "passed": true
+    },
+    {
+      "name": "exact leading exponential cancellation beyond cutoff",
+      "actual": 6000.0,
+      "expected": "6000",
+      "kind": "exact rational coefficient/antiderivative identity",
+      "passed": true
+    },
+    {
+      "name": "true PV overflow",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite present value"
+      },
+      "expected": "ValueError",
+      "kind": "complete PV contract",
+      "passed": true
+    },
+    {
+      "name": "true growing PV overflow",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite present value"
+      },
+      "expected": "ValueError",
+      "kind": "complete PV contract",
+      "passed": true
+    },
+    {
+      "name": "negative horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "horizon must be nonnegative"
+      },
+      "expected": "ValueError",
+      "kind": "complete PV contract",
+      "passed": true
+    },
+    {
+      "name": "bool intercept",
+      "actual": {
+        "exception": "TypeError",
+        "message": "intercept must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "kind": "complete PV contract",
+      "passed": true
+    },
+    {
+      "name": "nonfinite coefficient even zero horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "slope must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "complete PV contract",
+      "passed": true
+    },
+    {
+      "name": "moment r0 T2",
+      "actual": 2.0,
+      "expected": "2.0",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r0.04 T2",
+      "actual": 1.8964661890208465,
+      "expected": "1.8964661890208465",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r-0.04 T2",
+      "actual": 2.109936086898831,
+      "expected": "2.109936086898831",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r0.1 T1",
+      "actual": 0.46788401604444696,
+      "expected": "0.46788401604444696",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r-0.1 T1",
+      "actual": 0.5346173731917138,
+      "expected": "0.5346173731917138",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r0.0999999999 T1",
+      "actual": 0.46788401607537755,
+      "expected": "0.46788401607537755",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r0.1000000001 T1",
+      "actual": 0.4678840160135163,
+      "expected": "0.4678840160135163",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r1 T1e+200",
+      "actual": 1.0,
+      "expected": "1.0",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r1e+200 T1e+200",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r1e+308 T1e+308",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r1e-200 T1",
+      "actual": 0.5,
+      "expected": "0.5",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r-1e+308 T1e-305",
+      "actual": 1.9681010429030442e-179,
+      "expected": "1.9681010429030442e-179",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r1e+308 T5e-324",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r0 T1.5e+154",
+      "actual": 1.1250000000000002e+308,
+      "expected": "1.1250000000000002e+308",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r0 T1e-200",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r-1 T700",
+      "actual": 7.089482062597681e+306,
+      "expected": "7.089482062597681e+306",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r1e+308 T0",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment r0 T5e-324",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "independent integral-moment series",
+      "passed": true
+    },
+    {
+      "name": "moment final overflow",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite time-weighted result"
+      },
+      "expected": "ValueError",
+      "kind": "complete PV contract",
+      "passed": true
+    },
+    {
+      "name": "moment growing overflow",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite time-weighted result"
+      },
+      "expected": "ValueError",
+      "kind": "complete PV contract",
+      "passed": true
+    },
+    {
+      "name": "moment negative horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "horizon must be nonnegative"
+      },
+      "expected": "ValueError",
+      "kind": "complete PV contract",
+      "passed": true
+    },
+    {
+      "name": "moment nonfinite rate even zero horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "rate must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "complete PV contract",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_05.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"scenarios\": [\n    {\n      \"discount_rate\": -0.01,\n      \"exact_pv\": 4249.895052645856,\n      \"midpoint_pv\": 4249.895052008372,\n      \"absolute_difference\": 6.374839358613826e-07\n    },\n    {\n      \"discount_rate\": 0,\n      \"exact_pv\": 4164.353383747928,\n      \"midpoint_pv\": 4164.353383470304,\n      \"absolute_difference\": 2.776241672108881e-07\n    },\n    {\n      \"discount_rate\": 0.02,\n      \"exact_pv\": 4000.0,\n      \"midpoint_pv\": 4000.0,\n      \"absolute_difference\": 0.0\n    },\n    {\n      \"discount_rate\": 0.05,\n      \"exact_pv\": 3769.3187760947494,\n      \"midpoint_pv\": 3769.3187755293516,\n      \"absolute_difference\": 5.653978405462112e-07\n    },\n    {\n      \"discount_rate\": 0.08,\n      \"exact_pv\": 3556.202315557443,\n      \"midpoint_pv\": 3556.202313423722,\n      \"absolute_difference\": 2.13372095458908e-06\n    }\n  ],\n  \"parallel_rate_derivative_at_5pct\": -7387.900974203981,\n  \"variable_curve_pv\": 3869.910624340203,\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_05.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.5 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 43,
+  "failed": 0,
+  "scope": "time-weighted moment and complete linear PV subset; independent800-digit integral series/closed identities; midpoint/curve/derivative/report contracts unfinished"
+}
