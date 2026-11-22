@@ -134,8 +134,24 @@ def midpoint_integral(function,T,n=2000):
     t=horizon(T)
     if type(n) is not int or n<=0:
         raise ValueError("n must be a positive integer")
-    dt=t/n
-    result=math.fsum(finite(function((i+0.5)*dt),"integrand")*dt for i in range(n))
+    if not t:
+        return 0.0
+    width=Fraction(t)/n
+    samples=[]
+    # Validate every rounded point before executing caller code. A collapsed
+    # midpoint is not an interior sample of its exact partition interval.
+    for i in range(n):
+        left,right=i*width,(i+1)*width
+        sample=float((left+right)/2)
+        if not left<Fraction(sample)<right:
+            raise ValueError("midpoint not representable inside its subinterval")
+        samples.append(sample)
+    total=sum((Fraction(finite(function(x),"integrand"))*width
+               for x in samples),Fraction(0))
+    try:
+        result=float(total)
+    except OverflowError as exc:
+        raise ValueError("nonfinite quadrature") from exc
     if not math.isfinite(result):
         raise ValueError("nonfinite quadrature")
     return result

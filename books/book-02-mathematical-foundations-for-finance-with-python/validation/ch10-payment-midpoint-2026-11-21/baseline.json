@@ -1,0 +1,373 @@
+{
+  "pin": "5da9c8d7875acd64ab532feed63537cbe63749c6",
+  "source_selection": "baseline",
+  "executed_at_utc": "2026-11-22T04:06:43.681564+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_05.py": {
+      "sha256": "6d78015ea9fbf79b176b60834f8db430aa63d645d18b45efff2365fe02a3d883",
+      "git_blob": "d8988d8419f86fb79749d3695a395abe2d755e7c"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_05.py": {
+      "sha256": "5d63f0290d6d610373f16d40503587c0637af997221599b8ff1bb5fbe1da50d9",
+      "git_blob": "7a9693f14025b86baccf684e790133b011bc5c3a"
+    }
+  },
+  "rows": [
+    {
+      "name": "linear exact amount",
+      "actual": 240.0,
+      "expected": "240",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "quadratic N1",
+      "actual": 0.25,
+      "expected": "1/4",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "quadratic N2",
+      "actual": 0.3125,
+      "expected": "5/16",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "quadratic N4",
+      "actual": 0.328125,
+      "expected": "21/64",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "quadratic N16",
+      "actual": 0.3330078125,
+      "expected": "341/1024",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "quadratic N64",
+      "actual": 0.33331298828125,
+      "expected": "5461/16384",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero horizon amount",
+      "actual": {
+        "exception": "TypeError",
+        "message": "integrand must be numeric, excluding bool"
+      },
+      "expected": "0",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "zero horizon skips callback",
+      "actual": [
+        0.0
+      ],
+      "expected": "[]",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "invalid n True",
+      "actual": {
+        "exception": "ValueError",
+        "message": "n must be a positive integer"
+      },
+      "expected": "ValueError",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid n 0",
+      "actual": {
+        "exception": "ValueError",
+        "message": "n must be a positive integer"
+      },
+      "expected": "ValueError",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid n -1",
+      "actual": {
+        "exception": "ValueError",
+        "message": "n must be a positive integer"
+      },
+      "expected": "ValueError",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid n 1.5",
+      "actual": {
+        "exception": "ValueError",
+        "message": "n must be a positive integer"
+      },
+      "expected": "ValueError",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero horizon still validates n",
+      "actual": {
+        "exception": "ValueError",
+        "message": "n must be a positive integer"
+      },
+      "expected": "ValueError",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "noncallable even zero horizon",
+      "actual": {
+        "exception": "TypeError",
+        "message": "function must be callable"
+      },
+      "expected": "TypeError",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "horizon must be nonnegative"
+      },
+      "expected": "ValueError",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "infinite horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "horizon must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "nonfinite callback",
+      "actual": {
+        "exception": "ValueError",
+        "message": "integrand must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bool callback",
+      "actual": {
+        "exception": "TypeError",
+        "message": "integrand must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "caller exception preserved",
+      "actual": {
+        "exception": "LookupError",
+        "message": "sentinel caller failure"
+      },
+      "expected": "LookupError",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "overflow products cancel",
+      "actual": {
+        "exception": "ValueError",
+        "message": "-inf + inf in fsum"
+      },
+      "expected": "0",
+      "kind": "selected complete-product support extension",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "true final overflow",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "intermediate overflow in fsum"
+      },
+      "expected": "ValueError",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "wide positive horizon finite amount",
+      "actual": 0.9999999999999999,
+      "expected": "0.9999999999999999",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "tiny grid rejected",
+      "actual": 0.0,
+      "expected": "ValueError",
+      "kind": "explicit preflight policy",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "invalid grid no callback side effects",
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": "[]",
+      "kind": "explicit preflight policy",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "native callback amount",
+      "actual": 8.0,
+      "expected": "8",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ascending sample positions",
+      "actual": [
+        1.0,
+        3.0,
+        5.0,
+        7.0
+      ],
+      "expected": "[1.0, 3.0, 5.0, 7.0]",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "subnormal products combine to reportable sum",
+      "actual": 0.0,
+      "expected": "5e-324",
+      "kind": "selected complete-product support extension",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "second callback failure propagates",
+      "actual": {
+        "exception": "LookupError",
+        "message": "second callback failure"
+      },
+      "expected": "LookupError",
+      "kind": "midpoint contract",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "already-run callback effects retained",
+      "actual": [
+        0.5,
+        1.5
+      ],
+      "expected": "[0.5, 1.5]",
+      "kind": "caller effects are not rolled back",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_05.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"scenarios\": [\n    {\n      \"discount_rate\": -0.01,\n      \"exact_pv\": 4249.895052645856,\n      \"midpoint_pv\": 4249.895052008372,\n      \"absolute_difference\": 6.374839358613826e-07\n    },\n    {\n      \"discount_rate\": 0,\n      \"exact_pv\": 4164.353383747928,\n      \"midpoint_pv\": 4164.353383470304,\n      \"absolute_difference\": 2.776241672108881e-07\n    },\n    {\n      \"discount_rate\": 0.02,\n      \"exact_pv\": 4000.0,\n      \"midpoint_pv\": 4000.0,\n      \"absolute_difference\": 0.0\n    },\n    {\n      \"discount_rate\": 0.05,\n      \"exact_pv\": 3769.3187760947494,\n      \"midpoint_pv\": 3769.3187755293516,\n      \"absolute_difference\": 5.653978405462112e-07\n    },\n    {\n      \"discount_rate\": 0.08,\n      \"exact_pv\": 3556.202315557443,\n      \"midpoint_pv\": 3556.202313423722,\n      \"absolute_difference\": 2.13372095458908e-06\n    }\n  ],\n  \"parallel_rate_derivative_at_5pct\": -7387.900974203981,\n  \"variable_curve_pv\": 3869.910624340203,\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_05.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.5 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 22,
+  "failed": 7,
+  "scope": "Selected midpoint zero-origin grid/callback/complete-sum contracts only; variable-curve, derivative and full report remain unfinished"
+}

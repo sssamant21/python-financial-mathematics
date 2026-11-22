@@ -55,6 +55,15 @@ def run():
     close(time_weighted_factor(0,1.5e154),1.125e308,rel_tol=1e-14,abs_tol=0)
     close(time_weighted_factor(-1,700),7.089482062597681e306,rel_tol=1e-14,abs_tol=0)
     rejects(ValueError,time_weighted_factor,-1,720)
+    calls=[]
+    assert midpoint_integral(lambda t:calls.append(t),0,4)==0
+    assert calls==[]
+    assert midpoint_integral(lambda t:1e308 if t<2 else -1e308,4,2)==0
+    rejects(ValueError,midpoint_integral,lambda t:1e308,4,4)
+    calls=[]
+    rejects(ValueError,midpoint_integral,lambda t:calls.append(t) or 1,math.ulp(0.),2)
+    assert calls==[]
+    assert midpoint_integral(lambda t:math.ulp(0.),1,2)==math.ulp(0.)
     report=assessment()
     assert len(report["scenarios"])==5
     assert report["runtime_certified"] is False

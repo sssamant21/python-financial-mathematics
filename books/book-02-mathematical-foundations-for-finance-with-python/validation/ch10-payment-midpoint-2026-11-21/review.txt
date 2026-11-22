@@ -1,0 +1,52 @@
+"""Section10.5 zero-origin midpoint grid, callback and complete-sum contracts."""
+from pathlib import Path
+from fractions import Fraction as F
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='5da9c8d7875acd64ab532feed63537cbe63749c6';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_05.py';check=path.replace('section_10_05.py','check_section_10_05.py');baseline='--baseline' in sys.argv;rows=[];commands=[];manifest={}
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root) if baseline else (root/p).read_bytes();manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('payment_midpoint',Path(tmp)/'section_10_05.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ def test(name,call,want=None,exc=None,kind='midpoint contract'):
+  try:got=call();ok=exc is None and (got==want if isinstance(want,(list,bool)) or want is None else math.isclose(got,float(want),rel_tol=5e-14,abs_tol=0));actual=got
+  except Exception as e:ok=exc is not None and type(e) is exc;actual=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(name=name,actual=actual,expected=exc.__name__ if exc else str(want),kind=kind,relative_tolerance=5e-14,absolute_tolerance=0,passed=ok))
+ test('linear exact amount',lambda:m.midpoint_integral(lambda t:100+20*t,2,4),240)
+ for n in [1,2,4,16,64]:test('quadratic N'+str(n),lambda n=n:m.midpoint_integral(lambda t:t*t,1,n),F(1,3)-F(1,12*n*n))
+ calls=[]
+ test('zero horizon amount',lambda:m.midpoint_integral(lambda t:calls.append(t),0,4),0)
+ test('zero horizon skips callback',lambda:calls,[])
+ for n in [True,0,-1,1.5]:test('invalid n '+str(n),lambda n=n:m.midpoint_integral(lambda t:1,1,n),exc=ValueError)
+ test('zero horizon still validates n',lambda:m.midpoint_integral(lambda t:1,0,0),exc=ValueError)
+ test('noncallable even zero horizon',lambda:m.midpoint_integral(None,0,4),exc=TypeError)
+ test('negative horizon',lambda:m.midpoint_integral(lambda t:1,-1,4),exc=ValueError)
+ test('infinite horizon',lambda:m.midpoint_integral(lambda t:1,math.inf,4),exc=ValueError)
+ test('nonfinite callback',lambda:m.midpoint_integral(lambda t:math.inf,1,2),exc=ValueError)
+ test('bool callback',lambda:m.midpoint_integral(lambda t:True,1,2),exc=TypeError)
+ def raised(t):raise LookupError('sentinel caller failure')
+ test('caller exception preserved',lambda:m.midpoint_integral(raised,1,2),exc=LookupError)
+ test('overflow products cancel',lambda:m.midpoint_integral(lambda t:1e308 if t<2 else -1e308,4,2),0,kind='selected complete-product support extension')
+ test('true final overflow',lambda:m.midpoint_integral(lambda t:1e308,4,4),exc=ValueError)
+ test('wide positive horizon finite amount',lambda:m.midpoint_integral(lambda t:1e-308,1e308,2),float(F(1e-308)*F(1e308)))
+ calls=[]
+ test('tiny grid rejected',lambda:m.midpoint_integral(lambda t:calls.append(t) or 1,math.ulp(0.),2),exc=ValueError,kind='explicit preflight policy')
+ test('invalid grid no callback side effects',lambda:calls,[],kind='explicit preflight policy')
+ calls=[]
+ test('native callback amount',lambda:m.midpoint_integral(lambda t:calls.append(t) or 1,8,4),8)
+ test('ascending sample positions',lambda:calls,[1.,3.,5.,7.])
+ test('subnormal products combine to reportable sum',lambda:m.midpoint_integral(lambda t:math.ulp(0.),1,2),math.ulp(0.),kind='selected complete-product support extension')
+ calls=[]
+ def fail_second(t):
+  calls.append(t)
+  if len(calls)==2:raise LookupError('second callback failure')
+  return 1
+ test('second callback failure propagates',lambda:m.midpoint_integral(fail_second,4,4),exc=LookupError)
+ test('already-run callback effects retained',lambda:calls,[.5,1.5],kind='caller effects are not rolled back')
+ for args in [[sys.executable,'section_10_05.py'],[sys.executable,'check_section_10_05.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0
+result=dict(pin=pin,source_selection='baseline' if baseline else 'candidate',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='Selected midpoint zero-origin grid/callback/complete-sum contracts only; variable-curve, derivative and full report remain unfinished')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']]);
+if not baseline:assert result['failed']==0
