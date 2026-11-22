@@ -1,7 +1,13 @@
 """Synthetic-only checks for bounded state-growth diagnostics."""
 import copy
+import io
+import json
+import tempfile
 import unittest
-from scaling_diagnostics import summarize
+from contextlib import redirect_stdout
+from pathlib import Path
+from unittest.mock import patch
+from scaling_diagnostics import main, summarize
 
 
 def fixture():
@@ -61,6 +67,41 @@ class ScalingDiagnosticsTests(unittest.TestCase):
         before = copy.deepcopy(report)
         summarize(report)
         self.assertEqual(report, before)
+
+
+    def test_cli_json_contract(self):
+        report = fixture()
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'synthetic.json'
+            path.write_text(json.dumps(report), encoding='utf-8')
+            output = io.StringIO()
+            with patch('sys.argv', ['scaling_diagnostics.py', str(path)]):
+                with redirect_stdout(output):
+                    main()
+        payload = json.loads(output.getvalue())
+        self.assertIs(payload['synthetic_only'], True)
+        self.assertEqual(len(payload['state_growth']), 4)
+        self.assertEqual(set(payload), {'synthetic_only', 'state_growth', 'caveat'})
+        self.assertTrue(payload['caveat'])
+        for row in payload['state_growth']:
+            self.assertEqual(set(row), {
+                'pattern', 'borrowers', 'states',
+                'state_growth_from_previous', 'peak_traced_bytes_median'})
+            self.assertIsInstance(row['states'], int)
+            self.assertGreater(row['peak_traced_bytes_median'], 0)
+
+    def test_cli_rejects_invalid_report_without_json_success(self):
+        report = fixture()
+        report['rows'][0]['expected_states'] = 999
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'invalid.json'
+            path.write_text(json.dumps(report), encoding='utf-8')
+            output = io.StringIO()
+            with patch('sys.argv', ['scaling_diagnostics.py', str(path)]):
+                with redirect_stdout(output):
+                    with self.assertRaises(ValueError):
+                        main()
+        self.assertEqual(output.getvalue(), '')
 
 
 if __name__ == '__main__':
