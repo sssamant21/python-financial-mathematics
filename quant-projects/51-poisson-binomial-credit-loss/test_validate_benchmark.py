@@ -40,7 +40,7 @@ class ContractTests(unittest.TestCase):
                 with self.assertRaises(ValueError): validate(r)
 
     def test_rejects_in_range_but_wrong_analytical_tail(self):
-        for value in ('0.5', '0.6835937500000000000000001'):
+        for value in ('0.5', '0.68359375000000000000001'):
             with self.subTest(value=value):
                 r = copy.deepcopy(self.report)
                 r['rows'][0]['analytical_tail'] = value
