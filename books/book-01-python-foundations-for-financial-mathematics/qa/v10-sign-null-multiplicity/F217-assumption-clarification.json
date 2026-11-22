@@ -1,0 +1,20 @@
+{
+  "finding": "F217",
+  "kind": "Scoped worked-answer assumption clarification, not an implementation defect or new test-method count",
+  "baseline_executable_pin": "7108ac9f0776faa84bb1b024276023900e20b66f",
+  "original": "22. **Multiple tests:** 20 independent null tests at \u03b1=.05. **Worked solution:** Expected false rejections under all true nulls=1; dependence affects distribution.",
+  "corrected": "22. **Multiple tests:** 20 true-null tests, each with actual false-rejection probability .05. **Worked solution:** Expected false rejections=20\u00d7.05=1 by linearity of expectation; independence is not required for this expectation, although dependence affects the count distribution and family-wise probability. If each test guarantees only a false-rejection probability at most .05, the expectation is at most 1 and can be lower for conservative discrete tests.",
+  "counterexample": {
+    "n": 6,
+    "nominal_alpha": ".05",
+    "actual_null_size": "1/32",
+    "tests": 20,
+    "exact_expected_false_count": "5/8",
+    "unqualified_old_expectation": "1"
+  },
+  "baseline_source_sha256": "b6e01b1a2e094c1bd49e5a66b1c5b15a4e12ec17121a77d1a3449737c1ae3bf7",
+  "candidate_source_sha256": "f8d568918d81a51218498029c8294416f01992e79fef52521149a96c77a69194",
+  "listing_sha256": "98b6b136977fd82d249d7cea476657a16486d19998aefe27cae92de1f38deefa",
+  "listing_unchanged": true,
+  "scope": "Numerical source remains at pinned identical fence; candidate prose correction is separately recorded for publication. Actual model calibration still needs its own evidence."
+}

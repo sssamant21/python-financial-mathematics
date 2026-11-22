@@ -1622,3 +1622,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-238 checkpoint — Section10.4 midpoint/fixed report contracts
 
 [Evidence](ch10-midpoint-report-2026-11-21/README.md):24 passes/nine baseline failed predicates reproduced; corrected33 predicates pass twice (23 midpoint/input/callback/numeric plus10 fixed-report checks). Exact grid preflight/zero-width policy and complete products/sum handle selected reportable results; extensions/rejection/resource tradeoffs explicit. Eight native regressions, prior21 PV/55 kernel-report/33 chapter-support predicates and all21 Chapter10 files/11checkers/10CLIs pass. Fixed five-scenario report fully checked; no generalized reporting API or error-bound/certification claim. Next:atomic publication then full pinned runtime refresh before10.5. All38 selected COV categories remain partial, none closed; broader acceptance stays open. Book1 separate.
+
+
+## V-239 checkpoint — Full pinned Book2 substitution/PV/midpoint refresh
+
+[Evidence](full-runtime-substitution-2026-11-21/README.md) at `7108ac9f0776faa84bb1b024276023900e20b66f`:642/642 Python files compile,429/429 check/test scripts pass,643/643 required source/fixture blobs verify before/after. Includes accumulated10.4 kernel/moment/complete-PV/midpoint changes; baseline failures, explicit policies/extensions and limits retained. Actual outputs/status/timings/source manifest saved. Next10.5 continuous-payment discounting lab/source crosswalk; selected10.4 runtime progression gate met, no book/independent acceptance claimed. All38 selected COV categories partial, none closed; broader numerical/resource/provenance/model/platform/release/independent/canonical gates remain open. Book1 separate.
