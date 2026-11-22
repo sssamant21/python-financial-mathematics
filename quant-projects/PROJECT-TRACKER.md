@@ -1371,3 +1371,18 @@ The dedicated `.github/workflows/quant-projects.yml` workflow was updated in [co
 Four additional synthetic unit tests were published in `test_repeated_benchmark.py` to reject cross-repetition mathematical drift, corrupted support-state counts, negative/nonfinite elapsed measurements, and invalid negative/fractional traced allocation values. The existing dedicated quant-projects CI workflow automatically invokes this module; **79 Project 51 test methods are now authored** (75 previously authored plus four). **These four new tests and the exact published-revision CI outcome are not yet verified.** The last independently confirmed passing baseline remains 72 tests; the 75-test CI run and repeated JSON artifact still require inspection. These checks validate internal report invariants only, not historical credit calibration, process RSS, correlated defaults, or production readiness.
 
 **Next:** verify the 79-test run, retrieve repeated benchmark JSON, inspect observed min/median/max with platform details, and resolve any failures before extending the series.
+
+### Project 51 repeated synthetic benchmark evidence (2026-11-22)
+
+Reviewed the actual `repeated-benchmark-evidence.json` from successful [Actions run 44987829901](https://github.com/sssamant21/python-financial-mathematics/actions/runs/44987829901), artifact [14739944914](https://github.com/sssamant21/python-financial-mathematics/actions/runs/44987829901/artifacts/14739944914), source SHA `c4e5392d416b692c8737b9e03629397624219802`. The preceding CI checkpoint confirmed **79/79 tests passed**; this section reviews measurements, not new tests. Artifact created 2026-11-22 05:06 UTC, scheduled expiry 2026-12-06. Three sequential same-process repetitions, CPython 3.11.18, Linux 7.0.0-1020-azure x86_64, glibc 2.43; synthetic independent-default fixtures, no market data.
+
+| Borrowers | Pattern | Retained states | Peak traced Python bytes (min / median / max) |
+|---:|---|---:|---:|
+| 4 | Equal loss | 5 | 3,120 / 3,120 / 3,512 |
+| 4 | Distinct loss | 16 | 5,120 / 5,120 / 5,184 |
+| 8 | Equal loss | 9 | 5,008 / 5,008 / 5,072 |
+| 8 | Distinct loss | 256 | 56,112 / 56,112 / 56,176 |
+| 12 | Equal loss | 13 | 7,264 / 7,264 / 7,328 |
+| 12 | Distinct loss | 4,096 | 986,092 / 986,092 / 986,156 |
+
+Full-batch elapsed seconds across repetitions: **min 0.140511 / median 0.141428 / max 0.142111** (rounded). The JSON reports deterministic analytical tails across all repetitions: 0.68359375 (4), 0.8998870849609375 (8), 0.968323647975921630859375 (12), equal and distinct patterns. These are synthetic model-consistency checks, **not independent accuracy certification**. The equal-loss state count grows linearly (n+1), whereas distinct-loss count grows exponentially (2^n) in these fixtures. Traced Python allocations are **not** RSS or total memory; small three-run sample, runner noise, warm caches and instrumentation limit performance inference. No historical calibration, correlated-default validation, independent review or production certification. Next: add schema-level artifact validation and reproducible numerical tolerances, then assess distinct-loss scaling beyond the current bounded cases without unsafe exponential workloads.
