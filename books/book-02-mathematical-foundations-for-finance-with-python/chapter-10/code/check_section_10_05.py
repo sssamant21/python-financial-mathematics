@@ -1,7 +1,7 @@
 """Independent reference checks for Section 10.5."""
 import math
 from section_10_05 import (
-    finite,constant_pv,growing_pv,linear_pv,midpoint_integral,
+    finite,exponential_integral,constant_pv,growing_pv,linear_pv,midpoint_integral,
     variable_curve_pv,growing_pv_rate_derivative,assessment)
 
 def close(a,b,rel_tol=2e-8,abs_tol=1e-8):
@@ -36,6 +36,16 @@ def run():
     variable=variable_curve_pv(lambda t:1000*math.exp(0.02*t),0.03,0.005,4,4000)
     reference=midpoint_integral(lambda t:1000*math.exp(-0.01*t-0.0025*t*t),4,4000)
     close(variable,reference)
+    # Selected complete-expression regressions; detailed independent oracle
+    # and pre-correction failures are retained in validation/ch10-payment-kernel.
+    assert exponential_integral(0,1e308,1e308)==0
+    close(exponential_integral(1e308,-1,2),8.646647167633873e307,rel_tol=1e-14,abs_tol=0)
+    close(exponential_integral(1e-300,1,1000),1.970071114017047e134,rel_tol=1e-14,abs_tol=0)
+    close(constant_pv(1,1e308,1e308),1e-308,rel_tol=1e-14,abs_tol=0)
+    close(growing_pv(1,-1e308,1e308,1),5e-309,rel_tol=1e-14,abs_tol=0)
+    close(growing_pv(1e-300,1,-1e-16,700),10142.320547350755,rel_tol=1e-14,abs_tol=0)
+    rejects(ValueError,exponential_integral,1,1,1000)
+    assert growing_pv(0,1e308,-1e308,1)==0
     report=assessment()
     assert len(report["scenarios"])==5
     assert report["runtime_certified"] is False

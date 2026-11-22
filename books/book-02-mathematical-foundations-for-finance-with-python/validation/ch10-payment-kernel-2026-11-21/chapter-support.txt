@@ -1,0 +1,14 @@
+"""Stage the candidate Chapter10 Python blobs and run all native checks and CLIs."""
+from pathlib import Path
+from datetime import datetime,timezone
+import subprocess,tempfile,sys,json,hashlib,platform
+here=Path(__file__).resolve().parent;root=here.parents[3];code=root/'books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code';commands=[];manifest={}
+with tempfile.TemporaryDirectory() as tmp:
+ for p in sorted(code.glob('*.py')):
+  b=p.read_bytes();manifest[str(p.relative_to(root))]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());(Path(tmp)/p.name).write_bytes(b)
+ targets=[[sys.executable,'-m','compileall','-q','.']]+[[sys.executable,p.name] for p in sorted(Path(tmp).glob('*.py'))]
+ for args in targets:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0,(args,z.stderr)
+ assert all(hashlib.sha256((root/p).read_bytes()).hexdigest()==v['sha256'] for p,v in manifest.items())
+result=dict(base_revision='199352a9f3398bb2bdd2b2fe3eee5ec42e605a76',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,commands=commands,files_compiled=len(manifest),native_check_scripts=sum(Path(p).name.startswith('check') for p in manifest),native_cli_scripts=sum(Path(p).name.startswith('section') for p in manifest),hashes_unchanged_after=True,scope='Candidate chapter support only; not full-book runtime or independent acceptance')
+(here/'chapter-support.json').write_text(json.dumps(result,indent=2)+'\n');print({k:result[k] for k in ['files_compiled','native_check_scripts','native_cli_scripts']})

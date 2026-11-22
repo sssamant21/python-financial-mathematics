@@ -1,0 +1,14 @@
+{
+  "finding": "F218",
+  "kind": "Scoped parallel-paragraph assumption clarification, not code or new failing predicate",
+  "baseline_executable_pin": "199352a9f3398bb2bdd2b2fe3eee5ec42e605a76",
+  "original": "Searching hundreds of strategies, time windows, and thresholds increases the risk of false discoveries. If 20 independent true null hypotheses are each tested at \u03b1=.05, the expected number of false rejections is **20\u00d7.05=1**. Independence is not required for that expectation, but it affects the probability distribution of the count.",
+  "corrected": "Searching hundreds of strategies, time windows, and thresholds increases the risk of false discoveries. If 20 true-null tests each have actual false-rejection probability .05, the expected number of false rejections is **20\u00d7.05=1**. If each test only guarantees a false-rejection probability at most .05, the expectation is at most 1 and may be lower for conservative discrete tests. Independence is not required for this expectation, but it affects the probability distribution of the count and the probability of any false rejection.",
+  "counterexample": "Prior n6 fair-IID sign null actual q=1/32; 20q=5/8, not 1",
+  "baseline_source_sha256": "f8d568918d81a51218498029c8294416f01992e79fef52521149a96c77a69194",
+  "candidate_source_sha256": "6200465501bde82fa32838392eed3828bf843fc65c28d68c7ca8383474f18900",
+  "listing_sha256": "98b6b136977fd82d249d7cea476657a16486d19998aefe27cae92de1f38deefa",
+  "listing_unchanged": true,
+  "prior_F217_candidate_identity_verified": true,
+  "scope": "Section11 paragraph only; F217 Exercise22 remains correctly qualified. Source execution uses baseline prose pin, unchanged executable fence."
+}
