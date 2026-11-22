@@ -1334,3 +1334,19 @@ GitHub Actions [run 44954381967](https://github.com/sssamant21/python-financial-
 The dedicated `quant-projects.yml` workflow now runs `benchmark_report.py --sizes 4 8 12 16 20 --precision 100 --max-states 10000 --output benchmark-evidence.json`, validates the synthetic-only eight-case JSON contract, and uploads the resulting JSON as a 14-day GitHub Actions artifact. Equal-loss cases cover 4/8/12/16/20 borrowers; distinct-loss cases stop at 12 borrowers. The artifact records observation timestamp, Python/platform details, traced allocation measurements, batch runtime, state counts and tail checks. **The workflow change was published in commit `8e3816f86b4168d8edc8909a5e374640707fb04c`; execution, artifact availability and measured results for that revision remain unverified until its CI run completes.** The previous 72-test passing CI baseline is [run 44954381967](https://github.com/sssamant21/python-financial-mathematics/actions/runs/44954381967). Traced allocations are not process RSS; a single noisy CI run is not a hardware-independent performance benchmark. No historical credit calibration, independent review or production certification is claimed.
 
 Next: inspect the exact-revision workflow run, download and validate the JSON artifact, summarize actual measurements with environment/provenance and any failure; avoid interpreting one-run timing as capacity guidance.
+
+### Project 51 verified synthetic benchmark artifact (2026-11-22 UTC)
+
+GitHub Actions [run 44964613867](https://github.com/sssamant21/python-financial-mathematics/actions/runs/44964613867) **passed** on source SHA `31f4962bb9efee1a6e09d65c72a59187f0ce14c4` (quant-labs and QuantLib cross-check both successful). The benchmark capture and upload steps succeeded; [artifact 14730619321](https://github.com/sssamant21/python-financial-mathematics/actions/runs/44964613867/artifacts/14730619321) was downloaded and its `benchmark-evidence.json` inspected. Artifact expires 2026-12-06 UTC (14-day retention). Environment: CPython 3.11.18, Linux Azure runner, 100 Decimal precision digits, max 10,000 states. Eight synthetic cases; no market data.
+
+| Borrowers | Equal-loss retained states / peak traced bytes | Distinct-loss retained states / peak traced bytes |
+|---|---|---|
+| 4 | 5 / 3,512 | 16 / 5,120 |
+| 8 | 9 / 5,008 | 256 / 56,112 |
+| 12 | 13 / 7,264 | 4,096 / 986,092 |
+| 16 | 17 / 8,832 | Not run (bounded cap) |
+| 20 | 21 / 10,528 | Not run (bounded cap) |
+
+All eight observed tail probabilities matched their analytical references exactly as Decimal strings in the artifact. Complete batch elapsed: **0.142126388 seconds** (single observation including tracing/validation overhead, **not** an algorithm-only benchmark). `tracemalloc` measures traced Python allocations, **not** RSS or production memory; do not extrapolate this single runner observation into capacity guarantees. The previously confirmed 72-test baseline is unchanged; this CI run's benchmark step and artifact upload passed. Independent mathematical review, historical calibration, correlated-default validation, repeatability across machines, and production certification remain **unverified**.
+
+Next: add repeated bounded measurements and an explicit report schema/accuracy regression check; compare variability without claiming performance guarantees. Preserve `quant-projects/`-only changes.
