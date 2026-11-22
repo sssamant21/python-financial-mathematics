@@ -6,7 +6,7 @@
 
 This index consolidates source-level comparisons of manuscript claims, examples, exercise/solution tasks, labs, projects and actual assertions. “Mapped” means the evidence or its absence is documented. It does not mean every claim is tested, every solution is correct, or a reviewer has approved the material. Ninety COV categories describe recurring evidence gaps; they are not ninety confirmed software defects or a severity score.
 
-**Latest execution checkpoint:** [V254 nominal grid/callback/resource](ch10-quadrature-grid-2026-11-22/README.md);partial10.7. V252 remains latest full runtime,preceding two changed executable blobs.
+**Latest execution checkpoint:** [V255 refinement reports/sequence](ch10-refinement-2026-11-22/README.md);partial10.7. V252 remains latest full runtime,preceding two changed executable blobs.
 
 ## Complete section map
 
@@ -1704,3 +1704,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-254 checkpoint — Partial Section10.7 nominal grid/callback/resource contracts
 
 [Evidence](ch10-quadrature-grid-2026-11-22/README.md):48 passes/30 failed baseline predicates reproduced; corrected78 pass twice plus56 retained V253 predicates. Exact binary-input nominal width/grid fixes compensated-width rejection and declares once-rounded nodes; represented-cell/midpoint preflight and MAX_PANELS100000 policies explicit. Six huge-n baseline probes inspect absent cap without execution; policy probes distinguished from numerical failures. Independent2500-digit Decimal nodes/constant integrals; callback order/values/errors/zero interval checked. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,only10.7 source/checker differ from V252. No new full runtime. Next10.7 refinement range/sequence/report then finance/oracle/aliasing/exercise/lab crosswalk. All38 COV categories partial,none closed;broader acceptance open. Book1 separate.
+
+
+## V-255 checkpoint — Partial Section10.7 refinement report/sequence contracts
+
+[Evidence](ch10-refinement-2026-11-22/README.md):47 passes/18 failed baseline contract predicates reproduced; corrected65 pass twice plus retained78 grid/56 weighted predicates. Complete binary-report difference/divisor avoids intermediate overflow; final nonzero-underflow ValueError policy explicit. Controlled integrator reports distinguished from genuine native callback cases;2500-digit Decimal oracle. New snapshotted finite list/tuple1–32-level and all-count parameter preflight policies separated from source numerical bugs; irregular/duplicate/decreasing order retained, only consecutive doubling emits error. Initial set-serialization records retained separately. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.7 executable changes since V252,no new full run. Nextfinance/report/oracle/aliasing/exercise/lab,then full refresh before10.8. All38 COV categories partial,none closed;broader acceptance open. Book1 separate.

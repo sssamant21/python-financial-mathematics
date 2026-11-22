@@ -1,0 +1,24 @@
+# V255 — Partial Section10.7 refinement reports/sequence contracts
+
+Baseline pin: `41ab3fbc4d0207aa3c2fa39aca56ee6a5f5c939c`. [Observer](review.txt), [baseline](baseline.json), [baseline replay](baseline-replay.json), [corrected](corrected.json), [replay](replay.json), [native chapter runner](native-runtime.txt), [chapter execution](chapter-runtime.json), [retained grid78](grid-retention.json), [retained weighted56](weighted-retention.json).
+
+```bash
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-refinement-2026-11-22/review.txt baseline baseline
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-refinement-2026-11-22/review.txt candidate corrected
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-refinement-2026-11-22/review.txt candidate replay
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-refinement-2026-11-22/grid-retention.txt candidate grid-retention
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-refinement-2026-11-22/weighted-retention.txt candidate weighted-retention
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-refinement-2026-11-22/native-runtime.txt
+```
+
+Baseline and replay **47 passes /18 failed contract predicates**; corrected **65 pass twice**, identical rows. Failures are not18 separate defects: six controlled overflow-compensation predicates plus one genuine native-callback estimator failure; three newly explicit nonzero-underflow reporting probes; eight sequence/preflight policy probes. Prior weighted/grid failures and policies remain in V253/V254. The observer's original records used unordered set strings; [original observer](observer-serialization.txt) and observer-serialization-*.json archive those pre-normalization records. Sorting schema sets fixes observer serialization only; no source predicate outcome changed.
+
+The fine-error estimate must report the complete `abs(Qfine−Qcoarse)/(2**p−1)`. Returned finite estimates−1.7e308/+1.7e308 overflow a float subtraction while the /3 or /15 result remains representable. Exact Fractions of represented estimates now preserve the complete difference/quotient, followed by one checked float report. Exact zero remains0; nonzero-to-zero and overflowing final output raise ValueError, consistently with the integral policy. A shared private reporter and input validator retain integral/grid behavior.
+
+Controlled integrate-return tests isolate estimator assembly from integration accuracy; they are explicitly not source integrand tests. Independent2500-digit Decimal differences/quotients supply expectations. Genuine native midpoint callback gives coarse−1e308/fine+1e308 and finite /3 estimate; another native trapezoid example and ordinary residual/equality cases are separate. Existing order/estimator/irregular-grid regressions still pass. The estimate remains heuristic under smoothness/asymptotic assumptions, not a true-error bound.
+
+Refinement now declares nonempty finite list/tuple counts, at most32 levels, with each count subject to the existing<=100000 panel budget/parity/input validation. Counts are snapshotted to a tuple before execution, so callback mutation cannot append levels. Two added snapshot/side-effect predicates distinguish this policy from rollback; the earlier63-predicate pair remains in interim63-*.json. All parameters preflight before any callback. A later collapsed grid or callback-origin failure may still follow earlier callback side effects; no transactional rollback claimed. Duplicate/decreasing and irregular counts remain allowed; only an immediately consecutive exact doubling emits estimated_fine_error. Generator/text input and empty/over32 sequences are policy rejections, not alleged baseline crashes. These declared bounds do not bound user callback time or prove arbitrary resource safety.
+
+Final native Chapter10: **21 files compiled /11 checkers and10 CLIs pass**,21 code identities verify afterward. Retained V25478 and V25356 predicates pass on the corrected candidate. Actual statuses/stdout/stderr/timings and candidate blobs retained. Fresh pinned Book2 inventory642 Python files /429 check-test scripts /643 required blobs; only10.7 source/checker differ from V252. This is NOT a new full-book run.
+
+**Next:** Independent10.7 financial-integral/report oracle, aliasing/smoothness/error-bound assumptions and full14-exercise/applied-lab crosswalk; refresh full pinned runtime before advancing10.8 after accumulated code/check changes. Existing arbitrary callbacks, symbolic-input precision, performance/model/platform/reviewer/release/canonical gates remain open. All38 selected COV categories partial,none closed; categories are not defects/percentages. Book2 IN PROGRESS; Book1 separate.

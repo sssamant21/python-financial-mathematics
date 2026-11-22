@@ -90,7 +90,37 @@ def check_grid_contracts():
     assert values==[nominal[0],nominal[-1],*nominal[1:-1]]
 
 
+def check_refinement_reporting():
+    from decimal import Decimal,localcontext
+    from unittest.mock import patch
+    import section_10_07 as lab
+    for method,divisor in (("midpoint",3),("trapezoid",3),("simpson",15)):
+        with patch.object(lab,"integrate",side_effect=[-1.7e308,1.7e308]):
+            result=refinement(lambda t:0.,0.,1.,method,[2,4])
+        with localcontext() as ctx:
+            ctx.prec=2500
+            expected=float(2*Decimal.from_float(1.7e308)/divisor)
+        assert result[1]["estimated_fine_error"]==expected
+        with patch.object(lab,"integrate",side_effect=[0.,math.ulp(0.)]):
+            rejects(ValueError,refinement,lambda t:0.,0.,1.,method,[2,4])
+    q=refinement(lambda t:-1e308 if t==.5 else 1e308,0.,1.,"midpoint",[1,2])
+    with localcontext() as ctx:
+        ctx.prec=2500
+        assert q[1]["estimated_fine_error"]==float(2*Decimal.from_float(1e308)/3)
+    supplied=[2]
+    def mutates(t):
+        if len(supplied)==1:supplied.append(4)
+        return 1.
+    assert [row["n"] for row in refinement(mutates,0.,1.,"midpoint",supplied)]==[2]
+    assert supplied==[2,4]
+    for counts,error in (([],ValueError),([2,True],TypeError),([2,100002],ValueError),([2]*33,ValueError)):
+        calls=[]
+        rejects(error,refinement,lambda t:calls.append(t) or 1.,0.,1.,"midpoint",counts)
+        assert calls==[]
+
+
 def run():
+    check_refinement_reporting()
     check_grid_contracts()
     check_weighted_range()
     check_orders_and_estimators()

@@ -4,6 +4,7 @@ import math
 from fractions import Fraction
 
 MAX_PANELS=100000  # Declared educational work/memory budget, not an optimal bound.
+MAX_REFINEMENTS=32
 
 def finite(x,name):
     if type(x) not in (int,float):
@@ -16,7 +17,7 @@ def finite(x,name):
         raise ValueError(f"{name} must be finite")
     return v
 
-def integrate(f,a,b,n,method):
+def _integration_inputs(f,a,b,n,method):
     if not callable(f):
         raise TypeError("f must be callable")
     a,b=finite(a,"a"),finite(b,"b")
@@ -30,6 +31,19 @@ def integrate(f,a,b,n,method):
         raise ValueError("Simpson requires even n")
     if n>MAX_PANELS:
         raise ValueError("panel count exceeds supported budget")
+    return a,b
+
+def _report(exact,name):
+    try:
+        result=float(exact)
+    except OverflowError as exc:
+        raise ValueError(f"{name} outside float range") from exc
+    if not math.isfinite(result) or (exact and result==0):
+        raise ValueError(f"{name} outside float range")
+    return result
+
+def integrate(f,a,b,n,method):
+    a,b=_integration_inputs(f,a,b,n,method)
     if a==b:
         return 0.0
     lower=Fraction.from_float(a)
@@ -62,15 +76,17 @@ def integrate(f,a,b,n,method):
         total+=sum(((4 if i%2 else 2)*exact_value(t)
                     for i,t in enumerate(grid[1:-1],1)),Fraction(0))
         exact_result=step*total/3
-    try:
-        result=float(exact_result)
-    except OverflowError as exc:
-        raise ValueError("integral outside float range") from exc
-    if not math.isfinite(result) or (exact_result and result==0):
-        raise ValueError("integral outside float range")
-    return result
+    return _report(exact_result,"integral")
 
 def refinement(f,a,b,method,counts):
+    if not isinstance(counts,(list,tuple)):
+        raise TypeError("counts must be a finite list or tuple")
+    counts=tuple(counts)  # Callback mutation of the caller list cannot extend this run.
+    if not 1<=len(counts)<=MAX_REFINEMENTS:
+        raise ValueError("counts requires 1 to 32 refinements")
+    # Parameter preflight does not execute f or prebuild every grid.
+    for n in counts:
+        _integration_inputs(f,a,b,n,method)
     p=4 if method=="simpson" else 2
     rows=[]
     previous=None
@@ -80,7 +96,8 @@ def refinement(f,a,b,method,counts):
         if previous is not None:
             old_n,old_value=previous
             if n==2*old_n:
-                row["estimated_fine_error"]=abs(result-old_value)/(2**p-1)
+                difference=abs(Fraction.from_float(result)-Fraction.from_float(old_value))
+                row["estimated_fine_error"]=_report(difference/(2**p-1),"estimated error")
         rows.append(row)
         previous=(n,result)
     return rows
