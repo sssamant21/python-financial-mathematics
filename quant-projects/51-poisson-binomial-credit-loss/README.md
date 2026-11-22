@@ -205,3 +205,8 @@ python repeated_benchmark.py --repetitions 3 --sizes 4 8 12 --precision 100 --ma
 ```
 
 Three synthetic tests are authored for mathematical/report contracts, repetition guardrails and fail-closed state caps. **Runtime execution and exact-revision CI are unverified**: local checkout was blocked by GitHub DNS resolution. The last confirmed CI baseline is 72 passing tests, not 75. No historical default calibration, correlated-default validation, independent review or production certification is claimed.
+
+
+### Repeated benchmark integrity tests (2026-11-22)
+
+Four additional `unittest` methods exercise deliberately corrupted synthetic report fixtures: mathematical output drift between repetitions, invalid retained-state counts, nonfinite/negative timing, and invalid traced allocation measurements. These checks protect the benchmark **evidence contract** rather than assert any portable timing or memory threshold. Run `python -m unittest -v test_repeated_benchmark.py` from this project directory. The dedicated quant-projects workflow includes this module. **79 tests are authored for Project 51; the four new tests and their exact-revision CI remain unverified.** No historical data, independent review or production certification is implied.
