@@ -233,3 +233,17 @@ Five new synthetic-fixture regression tests passed locally on source-equivalent 
 ### Analytical-tail tolerance boundary tests (2026-11-22)
 
 Two additional synthetic regression tests check that a `1e-24` absolute deviation from the exact `1 - 0.75**n` analytical tail is accepted, while `2e-24` is rejected. Run `python -m unittest -v test_validate_benchmark.py` from this directory. **89 Project 51 tests are authored**; the two new tests have not been executed, and exact-revision CI remains unverified. The previously verified baseline is 84 passing tests. The tolerance is a contract for this fixed synthetic fixture, not a guarantee of general numerical precision.
+
+
+### Bounded state-growth diagnostics (synthetic only)
+
+`scaling_diagnostics.py` reads the JSON produced by `repeated_benchmark.py`, validates its existing synthetic schema and analytical tail, then reports exact support-size growth between successive tested borrower counts for equal- and distinct-loss severity patterns. For equal losses, the support size is `n+1`; for distinct powers-of-two losses, it is `2**n`. These are **mathematical support sizes**, not measured total process memory or operational capacity. The report also retains observed median traced Python allocations, which are not RSS.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_scaling_diagnostics.py
+python repeated_benchmark.py --repetitions 3 > repeated.json
+python scaling_diagnostics.py repeated.json
+```
+
+Four new synthetic regression tests cover state-growth ratios, input validation, non-synthetic rejection and no mutation. **4/4 passed locally on authored source**; exact published-revision CI is unverified. No market data or investment signal is involved.
