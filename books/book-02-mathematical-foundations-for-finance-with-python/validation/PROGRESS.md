@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-22
-**Overall status:** In progress — V251 Section10.6 fixed-report/proof crosswalk and V252 full candidate Linux runtime recorded at `1a5045c7a3c39727737579534f7074051559aa64` (642/429/643). Next10.7;broader acceptance gaps remain open.
+**Overall status:** In progress — V253 partial Section10.7 weighted-output correction recorded; next grid/callback/resource/refinement and finance/report/lab contracts. Latest full runtime V252 at `1a5045c7a3c39727737579534f7074051559aa64` remains historical;10.7 source/checker now changed.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1868,3 +1868,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-252 checkpoint — Full pinned improper-integral runtime refresh
 
 [Evidence](full-runtime-improper-2026-11-22/README.md) at `1a5045c7a3c39727737579534f7074051559aa64`:642/642 Python files compile,429/429 check/test scripts pass,643/643 required blobs verify before/after. Accumulated10.6 perpetuity/finite/tail/target/p-integral corrections included;initial failures,policy probes,observer records and numerical/resource limits preserved. Actual outputs/status/timings/manifest retained;all executable identities match documentation candidate. Selected10.6 runtime progression gate met;next10.7 numerical-quadrature lab/source crosswalk. No book/independent/platform/release/canonical acceptance. All38 selected COV categories partial,none closed;broader gates open. Book1 separate.
+
+
+## V-253 checkpoint — Partial Section10.7 weighted quadrature range
+
+[Evidence](ch10-weighted-quadrature-2026-11-22/README.md):30 passes/26 failed baseline predicates retained; corrected56 predicates pass twice. Exact complete binary-sample weighted sum/step scaling fixes intermediate overflow, tiny endpoint loss and cancellation; final overflow/nonzero-underflow ValueError policy explicit (three underflow policy probes distinguished). Independent2500-digit constant/symmetry/residual references. Chapter10:21 compiled,11 checkers/10 CLIs pass; fresh642/429/643 inventory,only10.7 source/checker differ from V252. No new full runtime. Next10.7 grid/callback/resource/refinement contracts, then finance/report/exercise/lab crosswalk. All38 COV categories partial,none closed; broader acceptance open. Book1 separate.

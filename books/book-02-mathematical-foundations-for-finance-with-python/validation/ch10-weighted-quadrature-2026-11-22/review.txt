@@ -1,0 +1,41 @@
+"""Selected complete weighted-sum range contracts, not a general quadrature oracle."""
+from pathlib import Path
+import sys,subprocess,tempfile,importlib.util,json,math,hashlib,platform
+from decimal import Decimal as D,localcontext
+from datetime import datetime,timezone
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='4d32cafb9c9d97c9d3d3b4b81d3ef387bfd71ec4';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_07.py';mode=sys.argv[1];out=sys.argv[2];raw=subprocess.check_output(['git','show',pin+':'+path],cwd=root) if mode=='baseline' else (root/path).read_bytes();rows=[];commands=[]
+def ck(name,fn,want,kind='independent exact binary-sample Decimal reference'):
+ try:got=fn();ok=got==want
+ except Exception as e:got=type(e).__name__+': '+str(e);ok=False
+ rows.append(dict(name=name,actual=str(got),expected=str(want),passed=ok,kind=kind))
+def rejection(fn):
+ try:fn()
+ except ValueError:return 'ValueError'
+ return 'accepted'
+with tempfile.TemporaryDirectory() as tmp:
+ p=Path(tmp)/'section_10_07.py';p.write_bytes(raw);spec=importlib.util.spec_from_file_location('quadrature',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ with localcontext() as ctx:
+  ctx.prec=2500
+  tiny=math.nextafter(0.0,1.0)
+  for method in ['midpoint','trapezoid','simpson']:
+   for n in [2,4,8]:
+    for c,a,b in [(1e308,0.,.5),(-1e308,.5,0.),(tiny,0.,1.),(0.,0.,1.)]:
+     reference=float(D.from_float(c)*(D.from_float(b)-D.from_float(a)))
+     ck(f'{method} n{n} constant {c} [{a},{b}]',lambda:m.integrate(lambda t:c,a,b,n,method),reference)
+   # Pure odd function has exactly cancelling dyadic nodes, including large weights.
+   ck(method+' odd affine cancellation',lambda:m.integrate(lambda t:1.7e308*t,-1.,1.,4,method),0.)
+   for c,a,b in [(1e308,0.,2.),(tiny,0.,.25)]:ck(method+' final unreportable '+str(c),lambda:rejection(lambda:m.integrate(lambda t:c,a,b,2,method)),'ValueError','explicit final range policy; not truncation accuracy')
+  for method,want in [('trapezoid',.5),('simpson',float(D(2)/3))]:
+   samples={0.:1e308,.5:1.,1.:-1e308}
+   ck(method+' surviving middle residual',lambda:m.integrate(samples.__getitem__,0.,1.,2,method),want,'analytical endpoint cancellation leaves h*f(mid) or 4h*f(mid)/3')
+  for method in ['midpoint','trapezoid','simpson']:
+   points=[]
+   ck(method+' ordinary affine',lambda:m.integrate(lambda t:points.append(t) or 2+3*t,0.,2.,4,method),10.,'analytic integral 2t+3t²/2')
+   ck(method+' callback count',lambda:len(points),4 if method=='midpoint' else 5,'existing evaluation schedule')
+   ck(method+' finite callback nodes',lambda:all(math.isfinite(t) for t in points),True,'selected grid only')
+ for args in [[sys.executable,p.name],[sys.executable,'-m','compileall','-q',p.name]]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+r=dict(pin=pin,mode=mode,source_path=path,source_sha256=hashlib.sha256(raw).hexdigest(),executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),rows=rows,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='Selected weighted sum/scale outputs on existing representable grids. Grid geometry, resource limits, arbitrary callbacks/refinement/finance report remain open.')
+(here/(out+'.json')).write_text(json.dumps(r,indent=2)+'\n');print(r['passed'],r['failed'])
+if mode!='baseline':assert r['failed']==0 and all(x['returncode']==0 for x in commands)

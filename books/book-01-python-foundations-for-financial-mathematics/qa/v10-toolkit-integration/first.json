@@ -1,0 +1,899 @@
+{
+  "pin": "4d32cafb9c9d97c9d3d3b4b81d3ef387bfd71ec4",
+  "executed_at_utc": "2026-11-22T13:12:37.554633+00:00",
+  "sources": {
+    "11": {
+      "path": "books/book-01-python-foundations-for-financial-mathematics/chapter-15/15.11-financial-return-statistics.md",
+      "source_sha256": "9ea6709f5b729a734fb3204dcc022b99c90fd71215703d710b0cd13a51eb4fdc",
+      "listing_sha256": "9af9657c8a3e1e6c793870296cd87786b2dcf5e135480a44645b921899fae1a7"
+    },
+    "12": {
+      "path": "books/book-01-python-foundations-for-financial-mathematics/chapter-15/15.12-rolling-statistics.md",
+      "source_sha256": "609654b6362a1af757169ceb1404eab806eaf94cb929b1ef2fd9695b165f6c2b",
+      "listing_sha256": "564776c045f52dd1e261bc041c66aead06d8d74afd59ca8243e55622ec8f4941"
+    },
+    "13": {
+      "path": "books/book-01-python-foundations-for-financial-mathematics/chapter-15/15.13-statistical-pitfalls-in-financial-data.md",
+      "source_sha256": "fdd813580641a1711ad53ead9d4e4fd7f3672b0453b20246e908982c3807a0c5",
+      "listing_sha256": "386df46b950e64673cdb592c17689a7a6d34c1c4a6ef7e9db27df6551e51d3b5"
+    },
+    "14": {
+      "path": "books/book-01-python-foundations-for-financial-mathematics/chapter-15/15.14-chapter-project-financial-statistical-analysis-toolkit.md",
+      "source_sha256": "23f280771556825b46fe8a048d836b8ef30a8256f7f6fc36863a1d7255612530",
+      "listing_sha256": "31a4f1cd59fc7d0b762132e4b6f47a2fd3eaf7674a35f4ae2e7caf1d13c42f8f"
+    }
+  },
+  "fixture_sha256": "f34a0b1589c2f2e12f950c8ba2e5820bdbda059e9ea8fa7d8aa808db7c067bb0",
+  "dates": [
+    "2026-01-05",
+    "2026-01-06",
+    "2026-01-07",
+    "2026-01-08",
+    "2026-01-09"
+  ],
+  "prices": {
+    "asset": [
+      100,
+      101,
+      103,
+      102,
+      105
+    ],
+    "benchmark": [
+      100,
+      102,
+      104,
+      103,
+      106
+    ]
+  },
+  "report": {
+    "observations": 4,
+    "mean_return": 0.012376251759956122,
+    "volatility": 0.016720680640921515,
+    "cumulative_return": 0.05,
+    "correlation": 0.9544585794527587,
+    "regression": {
+      "alpha": -0.0016242215226564846,
+      "beta": 0.9472792795880587,
+      "r2": 0.9109911798909782,
+      "sse": 7.465556782151252e-05
+    },
+    "normal_ci_approx": [
+      -0.004009714166645016,
+      0.02876221768655726
+    ],
+    "historical_tail": {
+      "var": 0.009708737864077669,
+      "es": 0.009708737864077669,
+      "tail_count": 1
+    },
+    "rolling_mean": [
+      0.0149009900990099,
+      0.005046621166971067,
+      0.009851513420902342
+    ]
+  },
+  "rows": [
+    {
+      "name": "dates match exact fixture",
+      "actual": "['2026-01-05', '2026-01-06', '2026-01-07', '2026-01-08', '2026-01-09']",
+      "expected": "['2026-01-05', '2026-01-06', '2026-01-07', '2026-01-08', '2026-01-09']",
+      "kind": "native loader vs source CSV",
+      "passed": true
+    },
+    {
+      "name": "asset returns return0",
+      "actual": "0.01",
+      "expected": "1/100",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "asset returns return1",
+      "actual": "0.019801980198019802",
+      "expected": "2/101",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "asset returns return2",
+      "actual": "-0.009708737864077669",
+      "expected": "-1/103",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "asset returns return3",
+      "actual": "0.029411764705882353",
+      "expected": "1/34",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "asset financial_statistics_toolkit return0",
+      "actual": "0.01",
+      "expected": "1/100",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "asset financial_statistics_toolkit return1",
+      "actual": "0.019801980198019802",
+      "expected": "2/101",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "asset financial_statistics_toolkit return2",
+      "actual": "-0.009708737864077669",
+      "expected": "-1/103",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "asset financial_statistics_toolkit return3",
+      "actual": "0.029411764705882353",
+      "expected": "1/34",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "benchmark returns return0",
+      "actual": "0.02",
+      "expected": "1/50",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "benchmark returns return1",
+      "actual": "0.0196078431372549",
+      "expected": "1/51",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "benchmark returns return2",
+      "actual": "-0.009615384615384616",
+      "expected": "-1/104",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "benchmark returns return3",
+      "actual": "0.02912621359223301",
+      "expected": "3/103",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "benchmark financial_statistics_toolkit return0",
+      "actual": "0.02",
+      "expected": "1/50",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "benchmark financial_statistics_toolkit return1",
+      "actual": "0.0196078431372549",
+      "expected": "1/51",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "benchmark financial_statistics_toolkit return2",
+      "actual": "-0.009615384615384616",
+      "expected": "-1/104",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "benchmark financial_statistics_toolkit return3",
+      "actual": "0.02912621359223301",
+      "expected": "3/103",
+      "kind": "source returns vs rational endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "report observations",
+      "actual": "4",
+      "expected": "4",
+      "kind": "native report vs independent pairwise/raw-product oracle",
+      "passed": true
+    },
+    {
+      "name": "report mean_return",
+      "actual": "0.012376251759956122",
+      "expected": "24752503519912243/2000000000000000000",
+      "kind": "native report vs independent pairwise/raw-product oracle",
+      "passed": true
+    },
+    {
+      "name": "report volatility",
+      "actual": "0.016720680640921515",
+      "expected": "0.016720680640921515",
+      "kind": "native report vs independent pairwise/raw-product oracle",
+      "passed": true
+    },
+    {
+      "name": "report cumulative_return",
+      "actual": "0.05",
+      "expected": "2500000000000000051887064534551684755293546544831524843/50000000000000000000000000000000000000000000000000000000",
+      "kind": "native report vs independent pairwise/raw-product oracle",
+      "passed": true
+    },
+    {
+      "name": "report correlation",
+      "actual": "0.9544585794527587",
+      "expected": "0.9544585794527587",
+      "kind": "native report vs independent pairwise/raw-product oracle",
+      "passed": true
+    },
+    {
+      "name": "regression alpha",
+      "actual": "-0.0016242215226564846",
+      "expected": "-276606583275928998229340302949936381735391619069/170301020776726914035628978344989400000000000000000",
+      "kind": "native OLS vs covariance identities, SSE from explained sum of squares",
+      "passed": true
+    },
+    {
+      "name": "regression beta",
+      "actual": "0.9472792795880587",
+      "expected": "806613141372444449038987517728213/851505103883634570178144891724947",
+      "kind": "native OLS vs covariance identities, SSE from explained sum of squares",
+      "passed": true
+    },
+    {
+      "name": "regression sse",
+      "actual": "7.465556782151252e-05",
+      "expected": "31784798516674371572071274633391696765870195796187598424953090203/425752551941817285089072445862473500000000000000000000000000000000000",
+      "kind": "native OLS vs covariance identities, SSE from explained sum of squares",
+      "passed": true
+    },
+    {
+      "name": "regression r2",
+      "actual": "0.9109911798909782",
+      "expected": "59147705439520277719401743080822646782900915601625611178594197579/64926759715279254368869247559621137103968223928205174528585668525",
+      "kind": "native OLS vs covariance identities, SSE from explained sum of squares",
+      "passed": true
+    },
+    {
+      "name": "CI endpoint0",
+      "actual": "-0.004009714166645016",
+      "expected": "-0.0040097141666450165",
+      "kind": "declared normal critical literal; no normal-model coverage claim",
+      "passed": true
+    },
+    {
+      "name": "CI endpoint1",
+      "actual": "0.02876221768655726",
+      "expected": "0.028762217686557262",
+      "kind": "declared normal critical literal; no normal-model coverage claim",
+      "passed": true
+    },
+    {
+      "name": "tail count",
+      "actual": "1",
+      "expected": "1",
+      "kind": "ceil(.05*4)=1",
+      "passed": true
+    },
+    {
+      "name": "signed VaR",
+      "actual": "0.009708737864077669",
+      "expected": "9708737864077669/1000000000000000000",
+      "kind": "independent sorted rank",
+      "passed": true
+    },
+    {
+      "name": "signed ES",
+      "actual": "0.009708737864077669",
+      "expected": "9708737864077669/1000000000000000000",
+      "kind": "one-point tail mean",
+      "passed": true
+    },
+    {
+      "name": "cross mean return",
+      "actual": "0.012376251759956122",
+      "expected": "0.012376251759956122",
+      "kind": "same supplied return vector",
+      "passed": true
+    },
+    {
+      "name": "cross sample volatility",
+      "actual": "0.016720680640921515",
+      "expected": "0.016720680640921515",
+      "kind": "same supplied return vector",
+      "passed": true
+    },
+    {
+      "name": "cross cumulative",
+      "actual": "0.05",
+      "expected": "0.05",
+      "kind": "same supplied return vector",
+      "passed": true
+    },
+    {
+      "name": "cross pitfall mean",
+      "actual": "0.012376251759956122",
+      "expected": "24752503519912243/2000000000000000000",
+      "kind": "shared fixture vs independent rational mean",
+      "passed": true
+    },
+    {
+      "name": "rolling w1 length",
+      "actual": "4",
+      "expected": "4",
+      "kind": "window ending positions",
+      "passed": true
+    },
+    {
+      "name": "rolling w1 mean0",
+      "actual": "0.01",
+      "expected": "1/100",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "rolling w1 mean1",
+      "actual": "0.019801980198019802",
+      "expected": "9900990099009901/500000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "rolling w1 mean2",
+      "actual": "-0.009708737864077669",
+      "expected": "-9708737864077669/1000000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "rolling w1 mean3",
+      "actual": "0.029411764705882353",
+      "expected": "29411764705882353/1000000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "toolkit w1 length",
+      "actual": "4",
+      "expected": "4",
+      "kind": "window ending positions",
+      "passed": true
+    },
+    {
+      "name": "toolkit w1 mean0",
+      "actual": "0.01",
+      "expected": "1/100",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "toolkit w1 mean1",
+      "actual": "0.019801980198019802",
+      "expected": "9900990099009901/500000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "toolkit w1 mean2",
+      "actual": "-0.009708737864077669",
+      "expected": "-9708737864077669/1000000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "toolkit w1 mean3",
+      "actual": "0.029411764705882353",
+      "expected": "29411764705882353/1000000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "rolling compound w1 i0",
+      "actual": "0.01",
+      "expected": "1/100",
+      "kind": "native window product vs exact gross product",
+      "passed": true
+    },
+    {
+      "name": "rolling compound w1 i1",
+      "actual": "0.019801980198019802",
+      "expected": "9900990099009901/500000000000000000",
+      "kind": "native window product vs exact gross product",
+      "passed": true
+    },
+    {
+      "name": "rolling compound w1 i2",
+      "actual": "-0.009708737864077669",
+      "expected": "-9708737864077669/1000000000000000000",
+      "kind": "native window product vs exact gross product",
+      "passed": true
+    },
+    {
+      "name": "rolling compound w1 i3",
+      "actual": "0.029411764705882353",
+      "expected": "29411764705882353/1000000000000000000",
+      "kind": "native window product vs exact gross product",
+      "passed": true
+    },
+    {
+      "name": "rolling w2 length",
+      "actual": "3",
+      "expected": "3",
+      "kind": "window ending positions",
+      "passed": true
+    },
+    {
+      "name": "rolling w2 mean0",
+      "actual": "0.0149009900990099",
+      "expected": "14900990099009901/1000000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "rolling w2 mean1",
+      "actual": "0.005046621166971067",
+      "expected": "10093242333942133/2000000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "rolling w2 mean2",
+      "actual": "0.009851513420902342",
+      "expected": "4925756710451171/500000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "toolkit w2 length",
+      "actual": "3",
+      "expected": "3",
+      "kind": "window ending positions",
+      "passed": true
+    },
+    {
+      "name": "toolkit w2 mean0",
+      "actual": "0.0149009900990099",
+      "expected": "14900990099009901/1000000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "toolkit w2 mean1",
+      "actual": "0.005046621166971067",
+      "expected": "10093242333942133/2000000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "toolkit w2 mean2",
+      "actual": "0.009851513420902342",
+      "expected": "4925756710451171/500000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "rolling compound w2 i0",
+      "actual": "0.03",
+      "expected": "1500000000000000001/50000000000000000000",
+      "kind": "native window product vs exact gross product",
+      "passed": true
+    },
+    {
+      "name": "rolling compound w2 i1",
+      "actual": "0.009900990099009901",
+      "expected": "4950495049504950965250408535999231/500000000000000000000000000000000000",
+      "kind": "native window product vs exact gross product",
+      "passed": true
+    },
+    {
+      "name": "rolling compound w2 i2",
+      "actual": "0.01941747572815534",
+      "expected": "19417475728155340793546544831524843/1000000000000000000000000000000000000",
+      "kind": "native window product vs exact gross product",
+      "passed": true
+    },
+    {
+      "name": "rolling SD w2 i0",
+      "actual": "0.00693104666707606",
+      "expected": "0.00693104666707606",
+      "kind": "independent pairwise-difference variance",
+      "passed": true
+    },
+    {
+      "name": "rolling SD w2 i1",
+      "actual": "0.020867228859393454",
+      "expected": "0.020867228859393454",
+      "kind": "independent pairwise-difference variance",
+      "passed": true
+    },
+    {
+      "name": "rolling SD w2 i2",
+      "actual": "0.02766237265064449",
+      "expected": "0.02766237265064449",
+      "kind": "independent pairwise-difference variance",
+      "passed": true
+    },
+    {
+      "name": "pitfall overlap w2 i0",
+      "actual": "0.03",
+      "expected": "0.03",
+      "kind": "same positional windows across source modules",
+      "passed": true
+    },
+    {
+      "name": "pitfall overlap w2 i1",
+      "actual": "0.009900990099009901",
+      "expected": "0.009900990099009901",
+      "kind": "same positional windows across source modules",
+      "passed": true
+    },
+    {
+      "name": "pitfall overlap w2 i2",
+      "actual": "0.01941747572815534",
+      "expected": "0.01941747572815534",
+      "kind": "same positional windows across source modules",
+      "passed": true
+    },
+    {
+      "name": "rolling w3 length",
+      "actual": "2",
+      "expected": "2",
+      "kind": "window ending positions",
+      "passed": true
+    },
+    {
+      "name": "rolling w3 mean0",
+      "actual": "0.0066977474446473775",
+      "expected": "20093242333942133/3000000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "rolling w3 mean1",
+      "actual": "0.013168335679941495",
+      "expected": "19752503519912243/1500000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "toolkit w3 length",
+      "actual": "2",
+      "expected": "2",
+      "kind": "window ending positions",
+      "passed": true
+    },
+    {
+      "name": "toolkit w3 mean0",
+      "actual": "0.0066977474446473775",
+      "expected": "20093242333942133/3000000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "toolkit w3 mean1",
+      "actual": "0.013168335679941495",
+      "expected": "19752503519912243/1500000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "rolling compound w3 i0",
+      "actual": "0.02",
+      "expected": "1000000000000000047490291262135922331/50000000000000000000000000000000000000",
+      "kind": "native window product vs exact gross product",
+      "passed": true
+    },
+    {
+      "name": "rolling compound w3 i1",
+      "actual": "0.039603960396039604",
+      "expected": "19801980198019802493931332025264205497955906384470543/500000000000000000000000000000000000000000000000000000",
+      "kind": "native window product vs exact gross product",
+      "passed": true
+    },
+    {
+      "name": "rolling SD w3 i0",
+      "actual": "0.015029945911068715",
+      "expected": "0.015029945911068715",
+      "kind": "independent pairwise-difference variance",
+      "passed": true
+    },
+    {
+      "name": "rolling SD w3 i1",
+      "actual": "0.02038645040279781",
+      "expected": "0.02038645040279781",
+      "kind": "independent pairwise-difference variance",
+      "passed": true
+    },
+    {
+      "name": "pitfall overlap w3 i0",
+      "actual": "0.02",
+      "expected": "0.02",
+      "kind": "same positional windows across source modules",
+      "passed": true
+    },
+    {
+      "name": "pitfall overlap w3 i1",
+      "actual": "0.039603960396039604",
+      "expected": "0.039603960396039604",
+      "kind": "same positional windows across source modules",
+      "passed": true
+    },
+    {
+      "name": "rolling w4 length",
+      "actual": "1",
+      "expected": "1",
+      "kind": "window ending positions",
+      "passed": true
+    },
+    {
+      "name": "rolling w4 mean0",
+      "actual": "0.012376251759956122",
+      "expected": "24752503519912243/2000000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "toolkit w4 length",
+      "actual": "1",
+      "expected": "1",
+      "kind": "window ending positions",
+      "passed": true
+    },
+    {
+      "name": "toolkit w4 mean0",
+      "actual": "0.012376251759956122",
+      "expected": "24752503519912243/2000000000000000000",
+      "kind": "native means vs independent exact slices",
+      "passed": true
+    },
+    {
+      "name": "rolling compound w4 i0",
+      "actual": "0.05",
+      "expected": "2500000000000000051887064534551684755293546544831524843/50000000000000000000000000000000000000000000000000000000",
+      "kind": "native window product vs exact gross product",
+      "passed": true
+    },
+    {
+      "name": "rolling SD w4 i0",
+      "actual": "0.016720680640921515",
+      "expected": "0.016720680640921515",
+      "kind": "independent pairwise-difference variance",
+      "passed": true
+    },
+    {
+      "name": "pitfall overlap w4 i0",
+      "actual": "0.05",
+      "expected": "0.05",
+      "kind": "same positional windows across source modules",
+      "passed": true
+    },
+    {
+      "name": "positive currency/unit scaling 10,1",
+      "actual": "{'observations': 4, 'mean_return': 0.012376251759956122, 'volatility': 0.016720680640921515, 'cumulative_return': 0.05, 'correlation': 0.9544585794527587, 'regression': {'alpha': -0.0016242215226564846, 'beta': 0.9472792795880587, 'r2': 0.9109911798909782, 'sse': 7.465556782151252e-05}, 'normal_ci_approx': (-0.004009714166645016, 0.02876221768655726), 'historical_tail': {'var': 0.009708737864077669, 'es': 0.009708737864077669, 'tail_count': 1}, 'rolling_mean': [0.0149009900990099, 0.005046621166971067, 0.009851513420902342]}",
+      "expected": "{'observations': 4, 'mean_return': 0.012376251759956122, 'volatility': 0.016720680640921515, 'cumulative_return': 0.05, 'correlation': 0.9544585794527587, 'regression': {'alpha': -0.0016242215226564846, 'beta': 0.9472792795880587, 'r2': 0.9109911798909782, 'sse': 7.465556782151252e-05}, 'normal_ci_approx': (-0.004009714166645016, 0.02876221768655726), 'historical_tail': {'var': 0.009708737864077669, 'es': 0.009708737864077669, 'tail_count': 1}, 'rolling_mean': [0.0149009900990099, 0.005046621166971067, 0.009851513420902342]}",
+      "kind": "identical returns under integer positive price rescaling; no FX/adjustment adapter",
+      "passed": true
+    },
+    {
+      "name": "positive currency/unit scaling 1,10",
+      "actual": "{'observations': 4, 'mean_return': 0.012376251759956122, 'volatility': 0.016720680640921515, 'cumulative_return': 0.05, 'correlation': 0.9544585794527587, 'regression': {'alpha': -0.0016242215226564846, 'beta': 0.9472792795880587, 'r2': 0.9109911798909782, 'sse': 7.465556782151252e-05}, 'normal_ci_approx': (-0.004009714166645016, 0.02876221768655726), 'historical_tail': {'var': 0.009708737864077669, 'es': 0.009708737864077669, 'tail_count': 1}, 'rolling_mean': [0.0149009900990099, 0.005046621166971067, 0.009851513420902342]}",
+      "expected": "{'observations': 4, 'mean_return': 0.012376251759956122, 'volatility': 0.016720680640921515, 'cumulative_return': 0.05, 'correlation': 0.9544585794527587, 'regression': {'alpha': -0.0016242215226564846, 'beta': 0.9472792795880587, 'r2': 0.9109911798909782, 'sse': 7.465556782151252e-05}, 'normal_ci_approx': (-0.004009714166645016, 0.02876221768655726), 'historical_tail': {'var': 0.009708737864077669, 'es': 0.009708737864077669, 'tail_count': 1}, 'rolling_mean': [0.0149009900990099, 0.005046621166971067, 0.009851513420902342]}",
+      "kind": "identical returns under integer positive price rescaling; no FX/adjustment adapter",
+      "passed": true
+    },
+    {
+      "name": "positive currency/unit scaling 10,10",
+      "actual": "{'observations': 4, 'mean_return': 0.012376251759956122, 'volatility': 0.016720680640921515, 'cumulative_return': 0.05, 'correlation': 0.9544585794527587, 'regression': {'alpha': -0.0016242215226564846, 'beta': 0.9472792795880587, 'r2': 0.9109911798909782, 'sse': 7.465556782151252e-05}, 'normal_ci_approx': (-0.004009714166645016, 0.02876221768655726), 'historical_tail': {'var': 0.009708737864077669, 'es': 0.009708737864077669, 'tail_count': 1}, 'rolling_mean': [0.0149009900990099, 0.005046621166971067, 0.009851513420902342]}",
+      "expected": "{'observations': 4, 'mean_return': 0.012376251759956122, 'volatility': 0.016720680640921515, 'cumulative_return': 0.05, 'correlation': 0.9544585794527587, 'regression': {'alpha': -0.0016242215226564846, 'beta': 0.9472792795880587, 'r2': 0.9109911798909782, 'sse': 7.465556782151252e-05}, 'normal_ci_approx': (-0.004009714166645016, 0.02876221768655726), 'historical_tail': {'var': 0.009708737864077669, 'es': 0.009708737864077669, 'tail_count': 1}, 'rolling_mean': [0.0149009900990099, 0.005046621166971067, 0.009851513420902342]}",
+      "kind": "identical returns under integer positive price rescaling; no FX/adjustment adapter",
+      "passed": true
+    },
+    {
+      "name": "tail 0.05 count",
+      "actual": "1",
+      "expected": "1",
+      "kind": "same shared sample/discrete rank",
+      "passed": true
+    },
+    {
+      "name": "tail 0.05 VaR cross",
+      "actual": "0.009708737864077669",
+      "expected": "0.009708737864077669",
+      "kind": "same declared signed rank",
+      "passed": true
+    },
+    {
+      "name": "tail 0.05 ES cross",
+      "actual": "0.009708737864077669",
+      "expected": "0.009708737864077669",
+      "kind": "same declared worst-k mean",
+      "passed": true
+    },
+    {
+      "name": "tail 0.25 count",
+      "actual": "1",
+      "expected": "1",
+      "kind": "same shared sample/discrete rank",
+      "passed": true
+    },
+    {
+      "name": "tail 0.25 VaR cross",
+      "actual": "0.009708737864077669",
+      "expected": "0.009708737864077669",
+      "kind": "same declared signed rank",
+      "passed": true
+    },
+    {
+      "name": "tail 0.25 ES cross",
+      "actual": "0.009708737864077669",
+      "expected": "0.009708737864077669",
+      "kind": "same declared worst-k mean",
+      "passed": true
+    },
+    {
+      "name": "tail 0.5 count",
+      "actual": "2",
+      "expected": "2",
+      "kind": "same shared sample/discrete rank",
+      "passed": true
+    },
+    {
+      "name": "tail 0.5 VaR cross",
+      "actual": "-0.01",
+      "expected": "-0.01",
+      "kind": "same declared signed rank",
+      "passed": true
+    },
+    {
+      "name": "tail 0.5 ES cross",
+      "actual": "-0.0001456310679611655",
+      "expected": "-0.0001456310679611655",
+      "kind": "same declared worst-k mean",
+      "passed": true
+    },
+    {
+      "name": "tail 0.75 count",
+      "actual": "3",
+      "expected": "3",
+      "kind": "same shared sample/discrete rank",
+      "passed": true
+    },
+    {
+      "name": "tail 0.75 VaR cross",
+      "actual": "-0.019801980198019802",
+      "expected": "-0.019801980198019802",
+      "kind": "same declared signed rank",
+      "passed": true
+    },
+    {
+      "name": "tail 0.75 ES cross",
+      "actual": "-0.0066977474446473775",
+      "expected": "-0.0066977474446473775",
+      "kind": "same declared worst-k mean",
+      "passed": true
+    },
+    {
+      "name": "same-length mispaired benchmark accepted",
+      "actual": "4",
+      "expected": "4",
+      "kind": "native length check; caller-shifted benchmark is NOT aligned-data acceptance",
+      "passed": true
+    },
+    {
+      "name": "mispaired correlation differs",
+      "actual": "True",
+      "expected": "True",
+      "kind": "positional-pair sensitivity",
+      "passed": true
+    },
+    {
+      "name": "native report has no timestamp field",
+      "actual": "False",
+      "expected": "False",
+      "kind": "metadata remains external caller provenance",
+      "passed": true
+    },
+    {
+      "name": "rolling constant dependence",
+      "actual": "[None]",
+      "expected": "[None]",
+      "kind": "different documented missing/undefined contracts; adapter required",
+      "passed": true
+    },
+    {
+      "name": "toolkit constant dependence",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "kind": "different documented missing/undefined contracts; adapter required",
+      "passed": true
+    },
+    {
+      "name": "constant-return combined report fails",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "kind": "native report is fail-fast, not a partial-report API",
+      "passed": true
+    },
+    {
+      "name": "toolkit prior whole-source identity",
+      "actual": "23f280771556825b46fe8a048d836b8ef30a8256f7f6fc36863a1d7255612530",
+      "expected": "23f280771556825b46fe8a048d836b8ef30a8256f7f6fc36863a1d7255612530",
+      "kind": "F140 corrected manuscript retained",
+      "passed": true
+    },
+    {
+      "name": "toolkit prior listing identity",
+      "actual": "31a4f1cd59fc7d0b762132e4b6f47a2fd3eaf7674a35f4ae2e7caf1d13c42f8f",
+      "expected": "31a4f1cd59fc7d0b762132e4b6f47a2fd3eaf7674a35f4ae2e7caf1d13c42f8f",
+      "kind": "prior failures/62 predicates retained",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "returns.py"
+      ],
+      "returncode": 0,
+      "stdout": "Arithmetic: 0.0\nGeometric: -0.005012562893380045\nCumulative: -0.01\n",
+      "stderr": "test_01_simple (__main__.ReturnStatisticsTests.test_01_simple) ... ok\ntest_02_log (__main__.ReturnStatisticsTests.test_02_log) ... ok\ntest_03_mean (__main__.ReturnStatisticsTests.test_03_mean) ... ok\ntest_04_geometric (__main__.ReturnStatisticsTests.test_04_geometric) ... ok\ntest_05_cumulative (__main__.ReturnStatisticsTests.test_05_cumulative) ... ok\ntest_06_bankruptcy (__main__.ReturnStatisticsTests.test_06_bankruptcy) ... ok\ntest_07_volatility (__main__.ReturnStatisticsTests.test_07_volatility) ... ok\ntest_08_annual_vol (__main__.ReturnStatisticsTests.test_08_annual_vol) ... ok\ntest_09_var (__main__.ReturnStatisticsTests.test_09_var) ... ok\ntest_10_es (__main__.ReturnStatisticsTests.test_10_es) ... ok\ntest_11_log_additivity (__main__.ReturnStatisticsTests.test_11_log_additivity) ... ok\ntest_12_invalid (__main__.ReturnStatisticsTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "rolling.py"
+      ],
+      "returncode": 0,
+      "stdout": "Rolling mean: [0.006666666666666667, 0.0033333333333333335, 0.016666666666666666]\nRolling volatility: [0.025166114784235832, 0.025166114784235832, 0.015275252316519466]\nRolling compounded return: [0.019494, 0.0094, 0.0506]\n",
+      "stderr": "test_01_means (__main__.RollingStatisticsTests.test_01_means) ... ok\ntest_02_window_full (__main__.RollingStatisticsTests.test_02_window_full) ... ok\ntest_03_window_one (__main__.RollingStatisticsTests.test_03_window_one) ... ok\ntest_04_std (__main__.RollingStatisticsTests.test_04_std) ... ok\ntest_05_std_constant (__main__.RollingStatisticsTests.test_05_std_constant) ... ok\ntest_06_correlation_positive (__main__.RollingStatisticsTests.test_06_correlation_positive) ... ok\ntest_07_correlation_negative (__main__.RollingStatisticsTests.test_07_correlation_negative) ... ok\ntest_08_correlation_undefined (__main__.RollingStatisticsTests.test_08_correlation_undefined) ... ok\ntest_09_compound (__main__.RollingStatisticsTests.test_09_compound) ... ok\ntest_10_total_loss (__main__.RollingStatisticsTests.test_10_total_loss) ... ok\ntest_11_lag (__main__.RollingStatisticsTests.test_11_lag) ... ok\ntest_12_invalid (__main__.RollingStatisticsTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "pitfalls.py"
+      ],
+      "returncode": 0,
+      "stdout": "Survivor mean: 0.2\nFull-universe mean: -0.15\nBonferroni threshold: 0.0025\n",
+      "stderr": "test_01_asof_safe (__main__.PitfallAuditTests.test_01_asof_safe) ... ok\ntest_02_asof_leak (__main__.PitfallAuditTests.test_02_asof_leak) ... ok\ntest_03_asof_equal (__main__.PitfallAuditTests.test_03_asof_equal) ... ok\ntest_04_survivor (__main__.PitfallAuditTests.test_04_survivor) ... ok\ntest_05_full_mean (__main__.PitfallAuditTests.test_05_full_mean) ... ok\ntest_06_overlap_count (__main__.PitfallAuditTests.test_06_overlap_count) ... ok\ntest_07_overlap_value (__main__.PitfallAuditTests.test_07_overlap_value) ... ok\ntest_08_lag_autocorr (__main__.PitfallAuditTests.test_08_lag_autocorr) ... ok\ntest_09_bonferroni (__main__.PitfallAuditTests.test_09_bonferroni) ... ok\ntest_10_bonferroni_single (__main__.PitfallAuditTests.test_10_bonferroni_single) ... ok\ntest_11_total_loss (__main__.PitfallAuditTests.test_11_total_loss) ... ok\ntest_12_invalid (__main__.PitfallAuditTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "financial_statistics_toolkit.py"
+      ],
+      "returncode": 0,
+      "stdout": "{'observations': 4, 'mean_return': 0.012376251759956122, 'volatility': 0.016720680640921515, 'cumulative_return': 0.05, 'correlation': 0.9544585794527587, 'regression': {'alpha': -0.0016242215226564846, 'beta': 0.9472792795880587, 'r2': 0.9109911798909782, 'sse': 7.465556782151252e-05}, 'normal_ci_approx': (-0.004009714166645016, 0.02876221768655726), 'historical_tail': {'var': 0.009708737864077669, 'es': 0.009708737864077669, 'tail_count': 1}, 'rolling_mean': [0.0149009900990099, 0.005046621166971067, 0.009851513420902342]}\n",
+      "stderr": "test_01_mean (__main__.ToolkitTests.test_01_mean) ... ok\ntest_02_sd (__main__.ToolkitTests.test_02_sd) ... ok\ntest_03_covariance (__main__.ToolkitTests.test_03_covariance) ... ok\ntest_04_correlation (__main__.ToolkitTests.test_04_correlation) ... ok\ntest_05_returns (__main__.ToolkitTests.test_05_returns) ... ok\ntest_06_compounding (__main__.ToolkitTests.test_06_compounding) ... ok\ntest_07_rolling (__main__.ToolkitTests.test_07_rolling) ... ok\ntest_08_ci_center (__main__.ToolkitTests.test_08_ci_center) ... ok\ntest_09_ols (__main__.ToolkitTests.test_09_ols) ... ok\ntest_10_tail (__main__.ToolkitTests.test_10_tail) ... ok\ntest_11_report (__main__.ToolkitTests.test_11_report) ... ok\ntest_12_invalid (__main__.ToolkitTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "csv_usage.py"
+      ],
+      "returncode": 0,
+      "stdout": "2026-01-05 2026-01-09 {'observations': 4, 'mean_return': 0.012376251759956122, 'volatility': 0.016720680640921515, 'cumulative_return': 0.05, 'correlation': 0.9544585794527587, 'regression': {'alpha': -0.0016242215226564846, 'beta': 0.9472792795880587, 'r2': 0.9109911798909782, 'sse': 7.465556782151252e-05}, 'normal_ci_approx': (-0.004009714166645016, 0.02876221768655726), 'historical_tail': {'var': 0.009708737864077669, 'es': 0.009708737864077669, 'tail_count': 1}, 'rolling_mean': [0.0149009900990099, 0.005046621166971067, 0.009851513420902342]}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "passed": 108,
+  "failed": 0,
+  "scope": "Selected four-section shared synthetic fixture, arithmetic/report/undefined contracts. External orchestrator, no native timestamp join/model/platform/bookwide integration acceptance."
+}

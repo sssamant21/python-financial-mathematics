@@ -6,7 +6,7 @@
 
 This index consolidates source-level comparisons of manuscript claims, examples, exercise/solution tasks, labs, projects and actual assertions. “Mapped” means the evidence or its absence is documented. It does not mean every claim is tested, every solution is correct, or a reviewer has approved the material. Ninety COV categories describe recurring evidence gaps; they are not ninety confirmed software defects or a severity score.
 
-**Latest execution checkpoint:** [V252 full runtime](full-runtime-improper-2026-11-22/README.md) and [V251 report/proof crosswalk](ch10-improper-report-2026-11-22/README.md);next10.7. Original mapping date/scope retained.
+**Latest execution checkpoint:** [V253 weighted-output follow-up](ch10-weighted-quadrature-2026-11-22/README.md);partial10.7. [V252](full-runtime-improper-2026-11-22/README.md) remains latest full runtime,now preceding two changed executable blobs.
 
 ## Complete section map
 
@@ -1694,3 +1694,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-252 checkpoint — Full pinned improper-integral runtime refresh
 
 [Evidence](full-runtime-improper-2026-11-22/README.md) at `1a5045c7a3c39727737579534f7074051559aa64`:642/642 Python files compile,429/429 check/test scripts pass,643/643 required blobs verify before/after. Accumulated10.6 perpetuity/finite/tail/target/p-integral corrections included;initial failures,policy probes,observer records and numerical/resource limits preserved. Actual outputs/status/timings/manifest retained;all executable identities match documentation candidate. Selected10.6 runtime progression gate met;next10.7 numerical-quadrature lab/source crosswalk. No book/independent/platform/release/canonical acceptance. All38 selected COV categories partial,none closed;broader gates open. Book1 separate.
+
+
+## V-253 checkpoint — Partial Section10.7 weighted quadrature range
+
+[Evidence](ch10-weighted-quadrature-2026-11-22/README.md):30 passes/26 failed baseline predicates retained; corrected56 predicates pass twice. Exact complete binary-sample weighted sum/step scaling fixes intermediate overflow, tiny endpoint loss and cancellation; final overflow/nonzero-underflow ValueError policy explicit (three underflow policy probes distinguished). Independent2500-digit constant/symmetry/residual references. Chapter10:21 compiled,11 checkers/10 CLIs pass; fresh642/429/643 inventory,only10.7 source/checker differ from V252. No new full runtime. Next10.7 grid/callback/resource/refinement contracts, then finance/report/exercise/lab crosswalk. All38 COV categories partial,none closed; broader acceptance open. Book1 separate.

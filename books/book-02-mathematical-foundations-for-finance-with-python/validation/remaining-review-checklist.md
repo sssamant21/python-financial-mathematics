@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-22
 **Full-runtime candidate source revision:** `1a5045c7a3c39727737579534f7074051559aa64` ([V252](full-runtime-improper-2026-11-22/README.md)).
-**Latest scoped source:** V251 Section10.6 full fixed-report/proof crosswalk at the same executable pin;[evidence](ch10-improper-report-2026-11-22/README.md).
+**Latest scoped source:** V253 Section10.7 weighted-output correction;baseline `4d32cafb9c9d97c9d3d3b4b81d3ef387bfd71ec4`,candidate hashes/native execution in [evidence](ch10-weighted-quadrature-2026-11-22/README.md).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** Selected10.6 source/report/proof crosswalk and full-runtime gate recorded. Next10.7;broader numerical/resource/provenance/model/platform/release/independent/canonical acceptance open. Historical static checkpoint retains its older scope.
+**Disposition:** Partial10.7 weighted-output correction recorded;next grid/callback/resource/refinement then finance/report/lab obligations. V252 full runtime precedes two changed blobs;broader gates open.
 
 ## Reconciled evidence
 
@@ -1742,3 +1742,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-252 checkpoint — Full pinned improper-integral runtime refresh
 
 [Evidence](full-runtime-improper-2026-11-22/README.md) at `1a5045c7a3c39727737579534f7074051559aa64`:642/642 Python files compile,429/429 check/test scripts pass,643/643 required blobs verify before/after. Accumulated10.6 perpetuity/finite/tail/target/p-integral corrections included;initial failures,policy probes,observer records and numerical/resource limits preserved. Actual outputs/status/timings/manifest retained;all executable identities match documentation candidate. Selected10.6 runtime progression gate met;next10.7 numerical-quadrature lab/source crosswalk. No book/independent/platform/release/canonical acceptance. All38 selected COV categories partial,none closed;broader gates open. Book1 separate.
+
+
+## V-253 checkpoint — Partial Section10.7 weighted quadrature range
+
+[Evidence](ch10-weighted-quadrature-2026-11-22/README.md):30 passes/26 failed baseline predicates retained; corrected56 predicates pass twice. Exact complete binary-sample weighted sum/step scaling fixes intermediate overflow, tiny endpoint loss and cancellation; final overflow/nonzero-underflow ValueError policy explicit (three underflow policy probes distinguished). Independent2500-digit constant/symmetry/residual references. Chapter10:21 compiled,11 checkers/10 CLIs pass; fresh642/429/643 inventory,only10.7 source/checker differ from V252. No new full runtime. Next10.7 grid/callback/resource/refinement contracts, then finance/report/exercise/lab crosswalk. All38 COV categories partial,none closed; broader acceptance open. Book1 separate.

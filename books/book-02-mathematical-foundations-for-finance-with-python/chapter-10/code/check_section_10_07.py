@@ -50,7 +50,21 @@ def check_orders_and_estimators():
         for row,error in zip(rows[1:],errors[1:]):
             assert math.isclose(row["estimated_fine_error"],error,rel_tol=0.01),(method,row,error)
 
+def check_weighted_range():
+    tiny=math.nextafter(0.0,1.0)
+    for method in ("midpoint","trapezoid","simpson"):
+        assert integrate(lambda t:1e308,0.,.5,4,method)==5e307
+        assert integrate(lambda t:tiny,0.,1.,4,method)==tiny
+        assert integrate(lambda t:1.7e308*t,-1.,1.,4,method)==0.
+        rejects(ValueError,integrate,lambda t:tiny,0.,.25,2,method)
+        rejects(ValueError,integrate,lambda t:1e308,0.,2.,2,method)
+    values={0.:1e308,.5:1.,1.:-1e308}
+    assert integrate(values.__getitem__,0.,1.,2,"trapezoid")==.5
+    assert integrate(values.__getitem__,0.,1.,2,"simpson")==2/3
+
+
 def run():
+    check_weighted_range()
     check_orders_and_estimators()
     for method in ("midpoint","trapezoid","simpson"):
         close(integrate(lambda t:7,0,3,8,method),21)

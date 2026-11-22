@@ -1,6 +1,7 @@
 """Section 10.7: composite numerical quadrature (standard library)."""
 import json
 import math
+from fractions import Fraction
 
 def finite(x,name):
     if type(x) not in (int,float):
@@ -32,19 +33,29 @@ def integrate(f,a,b,n,method):
         raise ValueError("invalid step width")
     def value(t):
         return finite(f(t),"integrand")
+    # Complete weighted sum and scale use exact represented binary floats.
+    # Intermediate overflow/underflow must not discard a reportable result.
+    def exact_value(t):
+        return Fraction.from_float(value(t))
+    step=Fraction.from_float(h)
     if method=="midpoint":
-        terms=[value(a+(i+0.5)*h) for i in range(n)]
-        result=h*math.fsum(terms)
+        total=sum((exact_value(a+(i+0.5)*h) for i in range(n)),Fraction(0))
+        exact_result=step*total
     elif method=="trapezoid":
-        terms=[0.5*value(a),0.5*value(b)]
-        terms.extend(value(a+i*h) for i in range(1,n))
-        result=h*math.fsum(terms)
+        total=(exact_value(a)+exact_value(b))/2
+        total+=sum((exact_value(a+i*h) for i in range(1,n)),Fraction(0))
+        exact_result=step*total
     else:
-        terms=[value(a),value(b)]
-        terms.extend((4 if i%2 else 2)*value(a+i*h) for i in range(1,n))
-        result=(h/3)*math.fsum(terms)
-    if not math.isfinite(result):
-        raise ValueError("nonfinite integral")
+        total=exact_value(a)+exact_value(b)
+        total+=sum(((4 if i%2 else 2)*exact_value(a+i*h)
+                    for i in range(1,n)),Fraction(0))
+        exact_result=step*total/3
+    try:
+        result=float(exact_result)
+    except OverflowError as exc:
+        raise ValueError("integral outside float range") from exc
+    if not math.isfinite(result) or (exact_result and result==0):
+        raise ValueError("integral outside float range")
     return result
 
 def refinement(f,a,b,method,counts):
