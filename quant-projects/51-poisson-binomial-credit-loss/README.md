@@ -191,3 +191,17 @@ python benchmark_report.py --sizes 4 8 12 16 20 --precision 100 --max-states 100
 ```
 
 The JSON is created locally on demand and is not committed as a supposedly portable benchmark result. Three synthetic report-contract tests are authored; their exact-revision CI outcome and any actual benchmark measurements remain **unverified** until execution. No licensed market data or production calibration is included.
+
+
+### Repeated synthetic benchmark variability (2026-11-22)
+
+`repeated_benchmark.py` repeats the same bounded equal-versus-distinct scenarios **2–10 times in one Python process**. It checks the report schema, exact support sizes, and analytical Decimal tails on every repetition, then reports minimum, median and maximum **batch elapsed seconds** and **peak traced Python allocations**. The observations are sensitive to runner load, allocator state and interpreter warm-up; the repeated runs are neither independent samples nor process RSS measurements. No fixed speed or byte thresholds are asserted.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_repeated_benchmark.py
+python -m py_compile repeated_benchmark.py test_repeated_benchmark.py
+python repeated_benchmark.py --repetitions 3 --sizes 4 8 12 --precision 100 --max-states 10000
+```
+
+Three synthetic tests are authored for mathematical/report contracts, repetition guardrails and fail-closed state caps. **Runtime execution and exact-revision CI are unverified**: local checkout was blocked by GitHub DNS resolution. The last confirmed CI baseline is 72 passing tests, not 75. No historical default calibration, correlated-default validation, independent review or production certification is claimed.
