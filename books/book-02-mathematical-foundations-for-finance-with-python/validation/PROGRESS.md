@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-22
-**Overall status:** In progress — V261 partial10.8 timing-ratio/full fixed-report corrections recorded;next timing/limit/units/exercise/lab crosswalk,then full refresh before10.9. V257 remains latest full runtime,preceding two changed10.8 blobs.
+**Overall status:** In progress — V262 Section10.8 timing/limit/units/lab crosswalk and V263 full candidate Linux runtime recorded at `d70076db68175154442acfeb934c721bd438d6ab` (642/429/643). Next10.9;broader acceptance gaps open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 642/642 at `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85`. [V257](full-runtime-quadrature-2026-11-22/README.md). |
-| Automated script execution | Full candidate Linux pass | 429/429 at `8e2cd8aee2f7497e8da34be3f86c22ce28da3c85`;643 required blobs verify before/after. [V257](full-runtime-quadrature-2026-11-22/README.md). |
+| Python compilation | Full candidate Linux pass | 642/642 at `d70076db68175154442acfeb934c721bd438d6ab`. [V263](full-runtime-timing-2026-11-22/README.md). |
+| Automated script execution | Full candidate Linux pass | 429/429 at `d70076db68175154442acfeb934c721bd438d6ab`;643 required blobs verify before/after. [V263](full-runtime-timing-2026-11-22/README.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1913,3 +1913,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-261 checkpoint — Partial Section10.8 timing ratio/full fixed report
 
 [Evidence](ch10-ratio-report-2026-11-22/README.md):59 passes/20 failed baseline predicates reproduced;corrected79 pass twice with identical complete reports. Exact binary-input step/stable phi/800-digit combined scaling preserves extreme/subnormal ratios;three4096-bit policy probes separate. Independent2200-digit exponential quotient and complete report-field oracles;false-zero ratio cannot pass via absolute tolerance. Nonfinite nominal report metadata now rejects before assembly. Interim76 retained. Chapter10:21 compiled,11 checkers/10 CLIs pass plus18/39/27 retained predicates;fresh642/429/643 inventory,two10.8 blobs differ from V257,no new full runtime. Nexttiming/limit/units/exercise/lab then full refresh before10.9. All38 COV categories partial,none closed;broader gates open. Book1 separate.
+
+
+## V-262 checkpoint — Section10.8 timing/limit/units/applied-lab crosswalk
+
+[Evidence](ch10-timing-lab-2026-11-22/README.md):152 predicates pass twice. All three applied rates/four frequencies have independent1600-digit PV/nominal/order references;absolute/relative differences assembled externally from native signed fields. Selected begin/end order1 and midpoint order2 plus signed coefficients checked at both rate signs. Riemann-limit/sign/units/14-exercise/contracts reconciled;nonzero-PV ratio requirement clarified,analytic extension distinct from0/0. Four native CLI/compile commands,no numerical source change. NextV263 full pinned refresh before10.9. Earlier V258–261 failures/policies/limits retained;all38 COV categories partial,none closed;broader acceptance open. Book1 separate.
+
+
+## V-263 checkpoint — Full pinned timing/payment runtime refresh
+
+[Evidence](full-runtime-timing-2026-11-22/README.md) at `d70076db68175154442acfeb934c721bd438d6ab`:642/642 Python files compile,429/429 check-test scripts pass,643/643 required blobs verify before/after. Accumulated V258–261 corrected10.8 sources included;all earlier failures/policy/precision/resource limits retained. Exact outputs/status/timing/manifest retained;all executable identities match documentation candidate. V262152-predicate timing/lab crosswalk separate. Selected10.8 runtime gate met;next10.9 valuation-engine lab/source crosswalk. No book/platform/model/reviewer/release/canonical acceptance. All38 COV categories partial,none closed;broader gates open. Book1 separate.

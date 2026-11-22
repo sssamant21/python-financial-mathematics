@@ -623,3 +623,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section15.5 covariance/joint-law/pairing assumptions
 
 [Evidence](v10-covariance-models/README.md):283 predicates pass twice across30 pairings with fixed marginal samples,ddof/correlation/portfolio/matrix oracles. Zero covariance under Y=100X² coexists with joint event.2 versus independence product.08. External pairwise-subset matrix has quadratic−6,distinct from selected common-row native matrix quadratic2;no PSD/alignment/independence approval claimed. Four commands/24 invocations of twelve existing methods;F131 identities/prior eight failures/44 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next15.6 correlation/selection,then15.7. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section15.6 correlation/selection/aggregation assumptions
+
+[Evidence](v10-correlation-models/README.md):123 predicates pass twice. Caller selection changes independent fair-sign pair correlation0 to±1;within-group−1 coexists with pooled Pearson5/7 and Spearman19/35. Twelve tied pairings verify ranks/Pearson/Spearman/rolling/matrix fields against independent counted-rank/raw-sum oracles. Strict monotone versus tie-creating transforms distinguished. Four commands/24 invocations of twelve existing methods;F132 identities/prior seven failures/50 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next15.7 sampling/estimation,then remaining V10 reconciliation. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

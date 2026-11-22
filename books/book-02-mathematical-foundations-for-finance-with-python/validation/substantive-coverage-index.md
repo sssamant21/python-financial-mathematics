@@ -6,7 +6,7 @@
 
 This index consolidates source-level comparisons of manuscript claims, examples, exercise/solution tasks, labs, projects and actual assertions. “Mapped” means the evidence or its absence is documented. It does not mean every claim is tested, every solution is correct, or a reviewer has approved the material. Ninety COV categories describe recurring evidence gaps; they are not ninety confirmed software defects or a severity score.
 
-**Latest execution checkpoint:** [V261 timing-ratio/full report](ch10-ratio-report-2026-11-22/README.md);partial10.8. V257 remains latest full runtime,preceding two changed executable blobs.
+**Latest execution checkpoint:** [V263 full runtime](full-runtime-timing-2026-11-22/README.md) and [V262 timing/lab crosswalk](ch10-timing-lab-2026-11-22/README.md);next10.9. Original mapping scope retained.
 
 ## Complete section map
 
@@ -1739,3 +1739,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-261 checkpoint — Partial Section10.8 timing ratio/full fixed report
 
 [Evidence](ch10-ratio-report-2026-11-22/README.md):59 passes/20 failed baseline predicates reproduced;corrected79 pass twice with identical complete reports. Exact binary-input step/stable phi/800-digit combined scaling preserves extreme/subnormal ratios;three4096-bit policy probes separate. Independent2200-digit exponential quotient and complete report-field oracles;false-zero ratio cannot pass via absolute tolerance. Nonfinite nominal report metadata now rejects before assembly. Interim76 retained. Chapter10:21 compiled,11 checkers/10 CLIs pass plus18/39/27 retained predicates;fresh642/429/643 inventory,two10.8 blobs differ from V257,no new full runtime. Nexttiming/limit/units/exercise/lab then full refresh before10.9. All38 COV categories partial,none closed;broader gates open. Book1 separate.
+
+
+## V-262 checkpoint — Section10.8 timing/limit/units/applied-lab crosswalk
+
+[Evidence](ch10-timing-lab-2026-11-22/README.md):152 predicates pass twice. All three applied rates/four frequencies have independent1600-digit PV/nominal/order references;absolute/relative differences assembled externally from native signed fields. Selected begin/end order1 and midpoint order2 plus signed coefficients checked at both rate signs. Riemann-limit/sign/units/14-exercise/contracts reconciled;nonzero-PV ratio requirement clarified,analytic extension distinct from0/0. Four native CLI/compile commands,no numerical source change. NextV263 full pinned refresh before10.9. Earlier V258–261 failures/policies/limits retained;all38 COV categories partial,none closed;broader acceptance open. Book1 separate.
+
+
+## V-263 checkpoint — Full pinned timing/payment runtime refresh
+
+[Evidence](full-runtime-timing-2026-11-22/README.md) at `d70076db68175154442acfeb934c721bd438d6ab`:642/642 Python files compile,429/429 check-test scripts pass,643/643 required blobs verify before/after. Accumulated V258–261 corrected10.8 sources included;all earlier failures/policy/precision/resource limits retained. Exact outputs/status/timing/manifest retained;all executable identities match documentation candidate. V262152-predicate timing/lab crosswalk separate. Selected10.8 runtime gate met;next10.9 valuation-engine lab/source crosswalk. No book/platform/model/reviewer/release/canonical acceptance. All38 COV categories partial,none closed;broader gates open. Book1 separate.
