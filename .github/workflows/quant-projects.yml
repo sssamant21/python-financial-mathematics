@@ -430,6 +430,19 @@ jobs:
           python memory_comparison.py --sizes 4 8 --max-states 1000
           python benchmark_report.py --sizes 4 8 --max-states 1000
 
+      - name: Capture bounded Project 51 synthetic benchmark evidence
+        run: |
+          cd quant-projects/51-poisson-binomial-credit-loss
+          python benchmark_report.py --sizes 4 8 12 16 20 --precision 100 --max-states 10000 --output benchmark-evidence.json
+          python -c "import json; r=json.load(open('benchmark-evidence.json')); assert r['synthetic_only'] and len(r['rows'])==8; print('Benchmark JSON validated: 8 bounded cases')"
+      - name: Upload Project 51 benchmark evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-51-synthetic-benchmark
+          path: quant-projects/51-poisson-binomial-credit-loss/benchmark-evidence.json
+          retention-days: 14
+          if-no-files-found: error
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
