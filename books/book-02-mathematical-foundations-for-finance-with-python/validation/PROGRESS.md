@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-22
-**Overall status:** In progress — V253 partial Section10.7 weighted-output correction recorded; next grid/callback/resource/refinement and finance/report/lab contracts. Latest full runtime V252 at `1a5045c7a3c39727737579534f7074051559aa64` remains historical;10.7 source/checker now changed.
+**Overall status:** In progress — V254 partial10.7 nominal grid/callback/resource correction recorded;next refinement range/sequence/report and finance/oracle/lab contracts. V252 remains latest full runtime,preceding10.7 source/checker changes.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1873,3 +1873,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-253 checkpoint — Partial Section10.7 weighted quadrature range
 
 [Evidence](ch10-weighted-quadrature-2026-11-22/README.md):30 passes/26 failed baseline predicates retained; corrected56 predicates pass twice. Exact complete binary-sample weighted sum/step scaling fixes intermediate overflow, tiny endpoint loss and cancellation; final overflow/nonzero-underflow ValueError policy explicit (three underflow policy probes distinguished). Independent2500-digit constant/symmetry/residual references. Chapter10:21 compiled,11 checkers/10 CLIs pass; fresh642/429/643 inventory,only10.7 source/checker differ from V252. No new full runtime. Next10.7 grid/callback/resource/refinement contracts, then finance/report/exercise/lab crosswalk. All38 COV categories partial,none closed; broader acceptance open. Book1 separate.
+
+
+## V-254 checkpoint — Partial Section10.7 nominal grid/callback/resource contracts
+
+[Evidence](ch10-quadrature-grid-2026-11-22/README.md):48 passes/30 failed baseline predicates reproduced; corrected78 pass twice plus56 retained V253 predicates. Exact binary-input nominal width/grid fixes compensated-width rejection and declares once-rounded nodes; represented-cell/midpoint preflight and MAX_PANELS100000 policies explicit. Six huge-n baseline probes inspect absent cap without execution; policy probes distinguished from numerical failures. Independent2500-digit Decimal nodes/constant integrals; callback order/values/errors/zero interval checked. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,only10.7 source/checker differ from V252. No new full runtime. Next10.7 refinement range/sequence/report then finance/oracle/aliasing/exercise/lab crosswalk. All38 COV categories partial,none closed;broader acceptance open. Book1 separate.

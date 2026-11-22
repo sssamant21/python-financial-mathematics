@@ -1,6 +1,6 @@
 """Independent checks for Section 10.7."""
 import math
-from section_10_07 import integrate,refinement,finance_integrand,assessment,finite
+from section_10_07 import integrate,refinement,finance_integrand,assessment,finite,MAX_PANELS
 
 def close(x,y,tol=1e-9):
     assert math.isclose(x,y,rel_tol=tol,abs_tol=tol),(x,y)
@@ -63,7 +63,35 @@ def check_weighted_range():
     assert integrate(values.__getitem__,0.,1.,2,"simpson")==2/3
 
 
+def check_grid_contracts():
+    from decimal import Decimal,localcontext
+    tiny=math.ulp(0.)
+    for method in ("midpoint","trapezoid","simpson"):
+        calls=[]
+        def f(t):calls.append(t);return 1e-308
+        with localcontext() as ctx:
+            ctx.prec=2500
+            expected=float(Decimal.from_float(1e-308)*2*Decimal.from_float(1e308))
+        assert integrate(f,-1e308,1e308,2,method)==expected
+        assert all(math.isfinite(t) for t in calls)
+        for a,b,n in ((0.,tiny,2),(1e308,math.nextafter(1e308,math.inf),2),(0.,1.,MAX_PANELS+2)):
+            calls=[]
+            rejects(ValueError,integrate,f,a,b,n,method)
+            assert calls==[]
+    calls=[]
+    rejects(ValueError,integrate,lambda t:calls.append(t) or 1.,0.,tiny,1,"midpoint")
+    assert calls==[]
+    values=[]
+    integrate(lambda t:values.append(t) or 1.,.1,.7,6,"trapezoid")
+    with localcontext() as ctx:
+        ctx.prec=100
+        lo,hi=Decimal.from_float(.1),Decimal.from_float(.7)
+        nominal=[float(lo+(hi-lo)*i/6) for i in range(7)]
+    assert values==[nominal[0],nominal[-1],*nominal[1:-1]]
+
+
 def run():
+    check_grid_contracts()
     check_weighted_range()
     check_orders_and_estimators()
     for method in ("midpoint","trapezoid","simpson"):

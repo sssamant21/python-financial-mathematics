@@ -1,0 +1,793 @@
+{
+  "pin": "f77f274e9f0f601ad1b950097f38be188baecae5",
+  "mode": "candidate",
+  "source_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_07.py",
+  "source_sha256": "d70109b200fac465f8ee318725c5f048e203169bd6c286528facffef3d475355",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "executed_at_utc": "2026-11-22T14:07:33.992968+00:00",
+  "rows": [
+    {
+      "name": "midpoint overflow width result",
+      "actual": "1.9999999999999998",
+      "expected": "1.9999999999999998",
+      "passed": true,
+      "kind": "analytic constant integral with 2500-digit binary-input Decimal oracle"
+    },
+    {
+      "name": "midpoint overflow width callback nodes",
+      "actual": "[-5e+307, 5e+307]",
+      "expected": "[-5e+307, 5e+307]",
+      "passed": true,
+      "kind": "independent Decimal nominal-grid construction; exact float equality"
+    },
+    {
+      "name": "midpoint reversed huge result",
+      "actual": "-1.9999999999999998",
+      "expected": "-1.9999999999999998",
+      "passed": true,
+      "kind": "analytic constant integral with 2500-digit binary-input Decimal oracle"
+    },
+    {
+      "name": "midpoint reversed huge callback nodes",
+      "actual": "[7.5e+307, 2.5e+307, -2.5e+307, -7.5e+307]",
+      "expected": "[7.5e+307, 2.5e+307, -2.5e+307, -7.5e+307]",
+      "passed": true,
+      "kind": "independent Decimal nominal-grid construction; exact float equality"
+    },
+    {
+      "name": "midpoint decimal steps result",
+      "actual": "0.6",
+      "expected": "0.6",
+      "passed": true,
+      "kind": "analytic constant integral with 2500-digit binary-input Decimal oracle"
+    },
+    {
+      "name": "midpoint decimal steps callback nodes",
+      "actual": "[0.15, 0.25, 0.35, 0.44999999999999996, 0.5499999999999999, 0.6499999999999999]",
+      "expected": "[0.15, 0.25, 0.35, 0.44999999999999996, 0.5499999999999999, 0.6499999999999999]",
+      "passed": true,
+      "kind": "independent Decimal nominal-grid construction; exact float equality"
+    },
+    {
+      "name": "midpoint ordinary result",
+      "actual": "14.0",
+      "expected": "14.0",
+      "passed": true,
+      "kind": "analytic constant integral with 2500-digit binary-input Decimal oracle"
+    },
+    {
+      "name": "midpoint ordinary callback nodes",
+      "actual": "[-0.75, -0.25, 0.25, 0.75]",
+      "expected": "[-0.75, -0.25, 0.25, 0.75]",
+      "passed": true,
+      "kind": "independent Decimal nominal-grid construction; exact float equality"
+    },
+    {
+      "name": "midpoint collapsed 1e+308",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "explicit represented-grid support policy"
+    },
+    {
+      "name": "midpoint collapsed pre-callback 1e+308",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "preflight geometry before callbacks"
+    },
+    {
+      "name": "midpoint collapsed 0.0",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "explicit represented-grid support policy"
+    },
+    {
+      "name": "midpoint collapsed pre-callback 0.0",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "preflight geometry before callbacks"
+    },
+    {
+      "name": "midpoint bounded resource 100002",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "new explicit n<=100000 policy, not a baseline crash claim"
+    },
+    {
+      "name": "midpoint cap pre-callback 100002",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "resource guard before work"
+    },
+    {
+      "name": "midpoint bounded resource 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "new explicit n<=100000 policy, not a baseline crash claim"
+    },
+    {
+      "name": "midpoint cap pre-callback 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "resource guard before work"
+    },
+    {
+      "name": "midpoint callback nan",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "finite callback value contract"
+    },
+    {
+      "name": "midpoint callback inf",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "finite callback value contract"
+    },
+    {
+      "name": "midpoint callback True",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "passed": true,
+      "kind": "finite callback value contract"
+    },
+    {
+      "name": "midpoint callback '1'",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "passed": true,
+      "kind": "finite callback value contract"
+    },
+    {
+      "name": "midpoint callback exception LookupError",
+      "actual": "LookupError",
+      "expected": "LookupError",
+      "passed": true,
+      "kind": "callback errors propagate; not converted to successful outputs"
+    },
+    {
+      "name": "midpoint callback exception RuntimeError",
+      "actual": "RuntimeError",
+      "expected": "RuntimeError",
+      "passed": true,
+      "kind": "callback errors propagate; not converted to successful outputs"
+    },
+    {
+      "name": "midpoint zero interval",
+      "actual": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "kind": "validated zero-width interval"
+    },
+    {
+      "name": "midpoint zero no calls",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "zero interval needs no callbacks"
+    },
+    {
+      "name": "trapezoid overflow width result",
+      "actual": "1.9999999999999998",
+      "expected": "1.9999999999999998",
+      "passed": true,
+      "kind": "analytic constant integral with 2500-digit binary-input Decimal oracle"
+    },
+    {
+      "name": "trapezoid overflow width callback nodes",
+      "actual": "[-1e+308, 1e+308, 0.0]",
+      "expected": "[-1e+308, 1e+308, 0.0]",
+      "passed": true,
+      "kind": "independent Decimal nominal-grid construction; exact float equality"
+    },
+    {
+      "name": "trapezoid reversed huge result",
+      "actual": "-1.9999999999999998",
+      "expected": "-1.9999999999999998",
+      "passed": true,
+      "kind": "analytic constant integral with 2500-digit binary-input Decimal oracle"
+    },
+    {
+      "name": "trapezoid reversed huge callback nodes",
+      "actual": "[1e+308, -1e+308, 5e+307, 0.0, -5e+307]",
+      "expected": "[1e+308, -1e+308, 5e+307, 0.0, -5e+307]",
+      "passed": true,
+      "kind": "independent Decimal nominal-grid construction; exact float equality"
+    },
+    {
+      "name": "trapezoid decimal steps result",
+      "actual": "0.6",
+      "expected": "0.6",
+      "passed": true,
+      "kind": "analytic constant integral with 2500-digit binary-input Decimal oracle"
+    },
+    {
+      "name": "trapezoid decimal steps callback nodes",
+      "actual": "[0.1, 0.7, 0.2, 0.3, 0.39999999999999997, 0.5, 0.6]",
+      "expected": "[0.1, 0.7, 0.2, 0.3, 0.39999999999999997, 0.5, 0.6]",
+      "passed": true,
+      "kind": "independent Decimal nominal-grid construction; exact float equality"
+    },
+    {
+      "name": "trapezoid ordinary result",
+      "actual": "14.0",
+      "expected": "14.0",
+      "passed": true,
+      "kind": "analytic constant integral with 2500-digit binary-input Decimal oracle"
+    },
+    {
+      "name": "trapezoid ordinary callback nodes",
+      "actual": "[-1.0, 1.0, -0.5, 0.0, 0.5]",
+      "expected": "[-1.0, 1.0, -0.5, 0.0, 0.5]",
+      "passed": true,
+      "kind": "independent Decimal nominal-grid construction; exact float equality"
+    },
+    {
+      "name": "trapezoid collapsed 1e+308",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "explicit represented-grid support policy"
+    },
+    {
+      "name": "trapezoid collapsed pre-callback 1e+308",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "preflight geometry before callbacks"
+    },
+    {
+      "name": "trapezoid collapsed 0.0",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "explicit represented-grid support policy"
+    },
+    {
+      "name": "trapezoid collapsed pre-callback 0.0",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "preflight geometry before callbacks"
+    },
+    {
+      "name": "trapezoid bounded resource 100002",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "new explicit n<=100000 policy, not a baseline crash claim"
+    },
+    {
+      "name": "trapezoid cap pre-callback 100002",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "resource guard before work"
+    },
+    {
+      "name": "trapezoid bounded resource 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "new explicit n<=100000 policy, not a baseline crash claim"
+    },
+    {
+      "name": "trapezoid cap pre-callback 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "resource guard before work"
+    },
+    {
+      "name": "trapezoid callback nan",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "finite callback value contract"
+    },
+    {
+      "name": "trapezoid callback inf",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "finite callback value contract"
+    },
+    {
+      "name": "trapezoid callback True",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "passed": true,
+      "kind": "finite callback value contract"
+    },
+    {
+      "name": "trapezoid callback '1'",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "passed": true,
+      "kind": "finite callback value contract"
+    },
+    {
+      "name": "trapezoid callback exception LookupError",
+      "actual": "LookupError",
+      "expected": "LookupError",
+      "passed": true,
+      "kind": "callback errors propagate; not converted to successful outputs"
+    },
+    {
+      "name": "trapezoid callback exception RuntimeError",
+      "actual": "RuntimeError",
+      "expected": "RuntimeError",
+      "passed": true,
+      "kind": "callback errors propagate; not converted to successful outputs"
+    },
+    {
+      "name": "trapezoid zero interval",
+      "actual": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "kind": "validated zero-width interval"
+    },
+    {
+      "name": "trapezoid zero no calls",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "zero interval needs no callbacks"
+    },
+    {
+      "name": "simpson overflow width result",
+      "actual": "1.9999999999999998",
+      "expected": "1.9999999999999998",
+      "passed": true,
+      "kind": "analytic constant integral with 2500-digit binary-input Decimal oracle"
+    },
+    {
+      "name": "simpson overflow width callback nodes",
+      "actual": "[-1e+308, 1e+308, 0.0]",
+      "expected": "[-1e+308, 1e+308, 0.0]",
+      "passed": true,
+      "kind": "independent Decimal nominal-grid construction; exact float equality"
+    },
+    {
+      "name": "simpson reversed huge result",
+      "actual": "-1.9999999999999998",
+      "expected": "-1.9999999999999998",
+      "passed": true,
+      "kind": "analytic constant integral with 2500-digit binary-input Decimal oracle"
+    },
+    {
+      "name": "simpson reversed huge callback nodes",
+      "actual": "[1e+308, -1e+308, 5e+307, 0.0, -5e+307]",
+      "expected": "[1e+308, -1e+308, 5e+307, 0.0, -5e+307]",
+      "passed": true,
+      "kind": "independent Decimal nominal-grid construction; exact float equality"
+    },
+    {
+      "name": "simpson decimal steps result",
+      "actual": "0.6",
+      "expected": "0.6",
+      "passed": true,
+      "kind": "analytic constant integral with 2500-digit binary-input Decimal oracle"
+    },
+    {
+      "name": "simpson decimal steps callback nodes",
+      "actual": "[0.1, 0.7, 0.2, 0.3, 0.39999999999999997, 0.5, 0.6]",
+      "expected": "[0.1, 0.7, 0.2, 0.3, 0.39999999999999997, 0.5, 0.6]",
+      "passed": true,
+      "kind": "independent Decimal nominal-grid construction; exact float equality"
+    },
+    {
+      "name": "simpson ordinary result",
+      "actual": "14.0",
+      "expected": "14.0",
+      "passed": true,
+      "kind": "analytic constant integral with 2500-digit binary-input Decimal oracle"
+    },
+    {
+      "name": "simpson ordinary callback nodes",
+      "actual": "[-1.0, 1.0, -0.5, 0.0, 0.5]",
+      "expected": "[-1.0, 1.0, -0.5, 0.0, 0.5]",
+      "passed": true,
+      "kind": "independent Decimal nominal-grid construction; exact float equality"
+    },
+    {
+      "name": "simpson collapsed 1e+308",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "explicit represented-grid support policy"
+    },
+    {
+      "name": "simpson collapsed pre-callback 1e+308",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "preflight geometry before callbacks"
+    },
+    {
+      "name": "simpson collapsed 0.0",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "explicit represented-grid support policy"
+    },
+    {
+      "name": "simpson collapsed pre-callback 0.0",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "preflight geometry before callbacks"
+    },
+    {
+      "name": "simpson bounded resource 100002",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "new explicit n<=100000 policy, not a baseline crash claim"
+    },
+    {
+      "name": "simpson cap pre-callback 100002",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "resource guard before work"
+    },
+    {
+      "name": "simpson bounded resource 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "new explicit n<=100000 policy, not a baseline crash claim"
+    },
+    {
+      "name": "simpson cap pre-callback 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "resource guard before work"
+    },
+    {
+      "name": "simpson callback nan",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "finite callback value contract"
+    },
+    {
+      "name": "simpson callback inf",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "finite callback value contract"
+    },
+    {
+      "name": "simpson callback True",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "passed": true,
+      "kind": "finite callback value contract"
+    },
+    {
+      "name": "simpson callback '1'",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "passed": true,
+      "kind": "finite callback value contract"
+    },
+    {
+      "name": "simpson callback exception LookupError",
+      "actual": "LookupError",
+      "expected": "LookupError",
+      "passed": true,
+      "kind": "callback errors propagate; not converted to successful outputs"
+    },
+    {
+      "name": "simpson callback exception RuntimeError",
+      "actual": "RuntimeError",
+      "expected": "RuntimeError",
+      "passed": true,
+      "kind": "callback errors propagate; not converted to successful outputs"
+    },
+    {
+      "name": "simpson zero interval",
+      "actual": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "kind": "validated zero-width interval"
+    },
+    {
+      "name": "simpson zero no calls",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "zero interval needs no callbacks"
+    },
+    {
+      "name": "midpoint no interior float 0.0",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "new midpoint strictly inside each represented cell policy"
+    },
+    {
+      "name": "midpoint preflight 0.0",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "no callback at rounded cell boundary"
+    },
+    {
+      "name": "midpoint no interior float 5e-324",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "new midpoint strictly inside each represented cell policy"
+    },
+    {
+      "name": "midpoint preflight 5e-324",
+      "actual": "[]",
+      "expected": "[]",
+      "passed": true,
+      "kind": "no callback at rounded cell boundary"
+    },
+    {
+      "name": "trapezoid subnormal step exact scale",
+      "actual": "9.881312916824931e-16",
+      "expected": "9.881312916824931e-16",
+      "passed": true,
+      "kind": "complete exact step*weighted sum on representable grid"
+    },
+    {
+      "name": "simpson subnormal step exact scale",
+      "actual": "9.881312916824931e-16",
+      "expected": "9.881312916824931e-16",
+      "passed": true,
+      "kind": "complete exact step*weighted sum on representable grid"
+    }
+  ],
+  "records": [
+    {
+      "method": "midpoint",
+      "name": "overflow width",
+      "actual_nodes": [
+        -5e+307,
+        5e+307
+      ],
+      "expected_nodes": [
+        -5e+307,
+        5e+307
+      ]
+    },
+    {
+      "method": "midpoint",
+      "name": "reversed huge",
+      "actual_nodes": [
+        7.5e+307,
+        2.5e+307,
+        -2.5e+307,
+        -7.5e+307
+      ],
+      "expected_nodes": [
+        7.5e+307,
+        2.5e+307,
+        -2.5e+307,
+        -7.5e+307
+      ]
+    },
+    {
+      "method": "midpoint",
+      "name": "decimal steps",
+      "actual_nodes": [
+        0.15,
+        0.25,
+        0.35,
+        0.44999999999999996,
+        0.5499999999999999,
+        0.6499999999999999
+      ],
+      "expected_nodes": [
+        0.15,
+        0.25,
+        0.35,
+        0.44999999999999996,
+        0.5499999999999999,
+        0.6499999999999999
+      ]
+    },
+    {
+      "method": "midpoint",
+      "name": "ordinary",
+      "actual_nodes": [
+        -0.75,
+        -0.25,
+        0.25,
+        0.75
+      ],
+      "expected_nodes": [
+        -0.75,
+        -0.25,
+        0.25,
+        0.75
+      ]
+    },
+    {
+      "method": "trapezoid",
+      "name": "overflow width",
+      "actual_nodes": [
+        -1e+308,
+        1e+308,
+        0.0
+      ],
+      "expected_nodes": [
+        -1e+308,
+        1e+308,
+        0.0
+      ]
+    },
+    {
+      "method": "trapezoid",
+      "name": "reversed huge",
+      "actual_nodes": [
+        1e+308,
+        -1e+308,
+        5e+307,
+        0.0,
+        -5e+307
+      ],
+      "expected_nodes": [
+        1e+308,
+        -1e+308,
+        5e+307,
+        0.0,
+        -5e+307
+      ]
+    },
+    {
+      "method": "trapezoid",
+      "name": "decimal steps",
+      "actual_nodes": [
+        0.1,
+        0.7,
+        0.2,
+        0.3,
+        0.39999999999999997,
+        0.5,
+        0.6
+      ],
+      "expected_nodes": [
+        0.1,
+        0.7,
+        0.2,
+        0.3,
+        0.39999999999999997,
+        0.5,
+        0.6
+      ]
+    },
+    {
+      "method": "trapezoid",
+      "name": "ordinary",
+      "actual_nodes": [
+        -1.0,
+        1.0,
+        -0.5,
+        0.0,
+        0.5
+      ],
+      "expected_nodes": [
+        -1.0,
+        1.0,
+        -0.5,
+        0.0,
+        0.5
+      ]
+    },
+    {
+      "method": "simpson",
+      "name": "overflow width",
+      "actual_nodes": [
+        -1e+308,
+        1e+308,
+        0.0
+      ],
+      "expected_nodes": [
+        -1e+308,
+        1e+308,
+        0.0
+      ]
+    },
+    {
+      "method": "simpson",
+      "name": "reversed huge",
+      "actual_nodes": [
+        1e+308,
+        -1e+308,
+        5e+307,
+        0.0,
+        -5e+307
+      ],
+      "expected_nodes": [
+        1e+308,
+        -1e+308,
+        5e+307,
+        0.0,
+        -5e+307
+      ]
+    },
+    {
+      "method": "simpson",
+      "name": "decimal steps",
+      "actual_nodes": [
+        0.1,
+        0.7,
+        0.2,
+        0.3,
+        0.39999999999999997,
+        0.5,
+        0.6
+      ],
+      "expected_nodes": [
+        0.1,
+        0.7,
+        0.2,
+        0.3,
+        0.39999999999999997,
+        0.5,
+        0.6
+      ]
+    },
+    {
+      "method": "simpson",
+      "name": "ordinary",
+      "actual_nodes": [
+        -1.0,
+        1.0,
+        -0.5,
+        0.0,
+        0.5
+      ],
+      "expected_nodes": [
+        -1.0,
+        1.0,
+        -0.5,
+        0.0,
+        0.5
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"model\": \"linear continuous payments, deterministic time-varying discount\",\n  \"horizon_years\": 4,\n  \"methods\": {\n    \"midpoint\": [\n      {\n        \"n\": 8,\n        \"estimate\": 4446.041666884315\n      },\n      {\n        \"n\": 16,\n        \"estimate\": 4445.694448021999,\n        \"estimated_fine_error\": 0.11573962077212248\n      },\n      {\n        \"n\": 32,\n        \"estimate\": 4445.607655506331,\n        \"estimated_fine_error\": 0.02893083855603133\n      },\n      {\n        \"n\": 64,\n        \"estimate\": 4445.585958139762,\n        \"estimated_fine_error\": 0.007232455523080716\n      },\n      {\n        \"n\": 128,\n        \"estimate\": 4445.580533845764,\n        \"estimated_fine_error\": 0.0018080979992494879\n      }\n    ],\n    \"trapezoid\": [\n      {\n        \"n\": 8,\n        \"estimate\": 4444.652902974328\n      },\n      {\n        \"n\": 16,\n        \"estimate\": 4445.347284929321,\n        \"estimated_fine_error\": 0.2314606516644441\n      },\n      {\n        \"n\": 32,\n        \"estimate\": 4445.52086647566,\n        \"estimated_fine_error\": 0.0578605154463124\n      },\n      {\n        \"n\": 64,\n        \"estimate\": 4445.5642609909955,\n        \"estimated_fine_error\": 0.014464838445140535\n      },\n      {\n        \"n\": 128,\n        \"estimate\": 4445.575109565379,\n        \"estimated_fine_error\": 0.0036161914610299086\n      }\n    ],\n    \"simpson\": [\n      {\n        \"n\": 8,\n        \"estimate\": 4445.579043226106\n      },\n      {\n        \"n\": 16,\n        \"estimate\": 4445.578745580986,\n        \"estimated_fine_error\": 1.984300797630567e-05\n      },\n      {\n        \"n\": 32,\n        \"estimate\": 4445.578726991106,\n        \"estimated_fine_error\": 1.2393253200571054e-06\n      },\n      {\n        \"n\": 64,\n        \"estimate\": 4445.57872582944,\n        \"estimated_fine_error\": 7.744438335066661e-08\n      },\n      {\n        \"n\": 128,\n        \"estimate\": 4445.57872575684,\n        \"estimated_fine_error\": 4.840027637934933e-09\n      }\n    ]\n  },\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 78,
+  "failed": 0,
+  "scope": "Selected nominal uniform-grid and callback/resource contracts; policy probes distinct from numerical bugs; no general integration/error/resource proof"
+}

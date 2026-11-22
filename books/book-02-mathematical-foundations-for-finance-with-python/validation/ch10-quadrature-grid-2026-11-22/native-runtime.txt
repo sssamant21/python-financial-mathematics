@@ -1,0 +1,19 @@
+from pathlib import Path
+import json,subprocess,sys,py_compile,tempfile,hashlib,platform,time,os
+r=Path(__file__).resolve().parents[4];b=r/'books/book-02-mathematical-foundations-for-finance-with-python';d=b/'validation/ch10-quadrature-grid-2026-11-22';files=sorted((b/'chapter-10/code').glob('*.py'));commands=[];comp=[];t=time.monotonic()
+def sha(p):
+ v=p.read_bytes();return hashlib.sha1(b'blob '+str(len(v)).encode()+b'\0'+v).hexdigest()
+before={p.relative_to(r).as_posix():sha(p) for p in files}
+with tempfile.TemporaryDirectory() as tmp:
+ for i,p in enumerate(files):
+  try:py_compile.compile(str(p),cfile=tmp+'/'+str(i)+'.pyc',doraise=True);comp.append(dict(path=p.relative_to(r).as_posix(),passed=True))
+  except Exception as e:comp.append(dict(path=str(p),passed=False,error=str(e)))
+ for p in files:
+  start=time.monotonic();z=subprocess.run([sys.executable,p.name],cwd=p.parent,capture_output=True,text=True,timeout=60,env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1'});commands.append(dict(path=p.relative_to(r).as_posix(),kind='check' if p.name.startswith(('check_','test_')) else 'CLI',returncode=z.returncode,stdout=z.stdout,stderr=z.stderr,seconds=time.monotonic()-start))
+prior=json.loads((b/'validation/full-runtime-improper-2026-11-22/runtime.json').read_text());tracked=subprocess.check_output(['git','ls-tree','-r','HEAD'],cwd=r,text=True).splitlines();tree={line.split('\t')[1]:line.split()[2] for line in tracked};prefix='books/book-02-mathematical-foundations-for-finance-with-python/';fresh_paths=[p for p in tree if p.startswith(prefix) and (p.endswith('.py') or p==prefix+'chapter-01/data/section-1.14-cases.json')];required=prior['manifest'];assert set(fresh_paths)=={i['path'] for i in required};fresh_python=[p for p in fresh_paths if p.endswith('.py')];fresh_checks=[p for p in fresh_python if Path(p).name.startswith(('check_','test_'))];changed=[]
+for i in required:
+ p=r/i['path'];actual=sha(p)
+ if actual!=i['sha']:changed.append(i['path'])
+assert len(changed)==2 and all('/chapter-10/code/' in p and '10_07.py' in p for p in changed),changed
+x=dict(pin=subprocess.check_output(['git','rev-parse','HEAD'],cwd=r,text=True).strip(),python=platform.python_version(),platform=platform.platform(),compiled=comp,commands=commands,source_blobs=before,hashes_verified_after=all(sha(r/p)==s for p,s in before.items()),fresh_book2_inventory=dict(python_files=len(fresh_python),check_test_scripts=len(fresh_checks),required_blobs=len(fresh_paths)),changed_since_V252=changed,seconds=time.monotonic()-t,scope='Chapter10 only, not a new full-book run. Counts derived against pinned required manifest and changed source paths; no new Book2 .py files.')
+(d/'chapter-runtime.json').write_text(json.dumps(x,indent=2)+'\n');print(len(comp),'compiled;',len(commands),'scripts;',x['changed_since_V252']);assert all(i['passed'] for i in comp) and all(c['returncode']==0 for c in commands) and x['hashes_verified_after']

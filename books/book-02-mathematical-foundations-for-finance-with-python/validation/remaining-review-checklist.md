@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-22
 **Full-runtime candidate source revision:** `1a5045c7a3c39727737579534f7074051559aa64` ([V252](full-runtime-improper-2026-11-22/README.md)).
-**Latest scoped source:** V253 Section10.7 weighted-output correction;baseline `4d32cafb9c9d97c9d3d3b4b81d3ef387bfd71ec4`,candidate hashes/native execution in [evidence](ch10-weighted-quadrature-2026-11-22/README.md).
+**Latest scoped source:** V254 Section10.7 grid/callback/resource correction;baseline `f77f274e9f0f601ad1b950097f38be188baecae5`,candidate hashes/runtime in [evidence](ch10-quadrature-grid-2026-11-22/README.md).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** Partial10.7 weighted-output correction recorded;next grid/callback/resource/refinement then finance/report/lab obligations. V252 full runtime precedes two changed blobs;broader gates open.
+**Disposition:** Partial10.7 nominal-grid/callback/resource contracts recorded;next refinement then finance/oracle/lab obligations. V252 full runtime precedes two changed blobs;broader gates open.
 
 ## Reconciled evidence
 
@@ -1747,3 +1747,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-253 checkpoint — Partial Section10.7 weighted quadrature range
 
 [Evidence](ch10-weighted-quadrature-2026-11-22/README.md):30 passes/26 failed baseline predicates retained; corrected56 predicates pass twice. Exact complete binary-sample weighted sum/step scaling fixes intermediate overflow, tiny endpoint loss and cancellation; final overflow/nonzero-underflow ValueError policy explicit (three underflow policy probes distinguished). Independent2500-digit constant/symmetry/residual references. Chapter10:21 compiled,11 checkers/10 CLIs pass; fresh642/429/643 inventory,only10.7 source/checker differ from V252. No new full runtime. Next10.7 grid/callback/resource/refinement contracts, then finance/report/exercise/lab crosswalk. All38 COV categories partial,none closed; broader acceptance open. Book1 separate.
+
+
+## V-254 checkpoint — Partial Section10.7 nominal grid/callback/resource contracts
+
+[Evidence](ch10-quadrature-grid-2026-11-22/README.md):48 passes/30 failed baseline predicates reproduced; corrected78 pass twice plus56 retained V253 predicates. Exact binary-input nominal width/grid fixes compensated-width rejection and declares once-rounded nodes; represented-cell/midpoint preflight and MAX_PANELS100000 policies explicit. Six huge-n baseline probes inspect absent cap without execution; policy probes distinguished from numerical failures. Independent2500-digit Decimal nodes/constant integrals; callback order/values/errors/zero interval checked. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,only10.7 source/checker differ from V252. No new full runtime. Next10.7 refinement range/sequence/report then finance/oracle/aliasing/exercise/lab crosswalk. All38 COV categories partial,none closed;broader acceptance open. Book1 separate.
