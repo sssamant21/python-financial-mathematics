@@ -210,3 +210,18 @@ Three synthetic tests are authored for mathematical/report contracts, repetition
 ### Repeated benchmark integrity tests (2026-11-22)
 
 Four additional `unittest` methods exercise deliberately corrupted synthetic report fixtures: mathematical output drift between repetitions, invalid retained-state counts, nonfinite/negative timing, and invalid traced allocation measurements. These checks protect the benchmark **evidence contract** rather than assert any portable timing or memory threshold. Run `python -m unittest -v test_repeated_benchmark.py` from this project directory. The dedicated quant-projects workflow includes this module. **79 tests are authored for Project 51; the four new tests and their exact-revision CI remain unverified.** No historical data, independent review or production certification is implied.
+
+
+## Repeated benchmark JSON contract validation (2026-11-22)
+
+The standard-library-only `validate_benchmark.py` checks the versioned, synthetic-only repeated benchmark report: 2–10 repetitions, bounded scenarios, unique (borrowers, pattern) pairs, expected support sizes, finite [0,1] analytical tails, and nonnegative ordered min/median/max timings and traced allocations. It deliberately **does not** impose machine-specific performance limits, verify independent mathematical correctness, or compare real market observations.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_validate_benchmark.py
+python -m py_compile validate_benchmark.py test_validate_benchmark.py
+python repeated_benchmark.py --repetitions 3 --sizes 4 8 12 > repeated.json
+python validate_benchmark.py repeated.json
+```
+
+Five new synthetic-fixture regression tests passed locally on source-equivalent files; exact published-revision CI remains **unverified**. The existing 79-test verified CI checkpoint predates this extension. Next: add these tests and JSON validation to the dedicated workflow, then inspect exact-revision CI and review actual artifacts.
