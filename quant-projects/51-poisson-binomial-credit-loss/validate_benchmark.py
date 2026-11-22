@@ -39,6 +39,12 @@ def validate(report):
             raise ValueError('invalid tail probability') from None
         if not tail.is_finite() or not 0 <= tail <= 1:
             raise ValueError('tail probability out of bounds')
+        # Fixed synthetic fixture: independent defaults with PD=0.25 and
+        # threshold >= one cent, irrespective of severity pattern.
+        # Decimal arithmetic avoids float rounding and uses an exact reference.
+        expected_tail = Decimal(1) - Decimal('0.75') ** n
+        if abs(tail - expected_tail) > Decimal('1e-24'):
+            raise ValueError('analytical tail differs from independent reference')
         values = [row.get(f'peak_traced_bytes_{s}') for s in ('min', 'median', 'max')]
         if any(type(v) not in (int, float) or not math.isfinite(v) or v < 0 for v in values) or values != sorted(values):
             raise ValueError('invalid memory ordering')
