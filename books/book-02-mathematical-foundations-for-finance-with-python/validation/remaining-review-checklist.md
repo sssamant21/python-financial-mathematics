@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-22
 **Full-runtime candidate source revision:** `56ed4b707947235643686a472fb6e5b860199cee` ([V246](full-runtime-payments-2026-11-22/README.md)).
-**Latest scoped source:** V247 Section10.6 perpetuity baseline `e29f14d85ecbdf6bde690da001b06d61fa191865`;candidate source/checker identities and limits in [evidence](ch10-perpetuity-2026-11-22/README.md).
+**Latest scoped source:** V248 Section10.6 finite-horizon baseline `5c543db206151d5be9eb609a6e5e4fb5fe5e377b`;candidate identities/limits in [evidence](ch10-finite-horizon-2026-11-22/README.md).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** Section10.6 perpetuity subset passes scoped checks;remaining finite-horizon/tail/target/p-integral/report/proof contracts and fresh full-runtime gate before10.7 remain open. V246 full run retains its older pin;broader acceptance gaps stay open.
+**Disposition:** Selected10.6 perpetuity/finite-horizon subsets pass;tail/target/p-integral/report/proof contracts and fresh full-runtime gate before10.7 remain open. V246 full run retains its older pin;broader acceptance gaps remain open.
 
 ## Reconciled evidence
 
@@ -1717,3 +1717,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-247 checkpoint — Section10.6 perpetuity/partial lab
 
 [Evidence](ch10-perpetuity-2026-11-22/README.md):18 passes/seven baseline failed predicates reproduced; corrected25 predicates pass twice with independent1800-digit Decimal quotient expectations. Exact represented decay/convergence and complete rational reporting fix selected zero/overflowed-difference/last-bit cases; underflow0/final ValueError and resource/input policies explicit. Seven native regressions and all21 Chapter10 files/eleven checkers/tenCLIs pass. Twelve escaped backticks/status repaired; six lab units/fourteen exercise dispositions remain separate. Next10.6 finite-horizon/tail, then target/p-integral/report/proof contracts; refresh full runtime before10.7. Fresh642/429/643 inventory,641/643 V246 blobs match; only10.6 source/checker differ. No new full runtime/section completion/independent acceptance. All38 selected COV categories partial, none closed; broader gates open. Book1 separate.
+
+
+## V-248 checkpoint — Section10.6 finite-horizon PV
+
+[Evidence](ch10-finite-horizon-2026-11-22/README.md):13 passes/eight baseline failed predicates reproduced; corrected21 predicates pass twice against independent1800-digit integrated exponential series. Exact represented difference/product and anchored800-digit scaled reporting handle selected compensated range cases; final ValueError/underflow0 and precision/resource/cutoff policies explicit. Eight native regressions, prior25 perpetuity predicates and all21 Chapter10 files/eleven checkers/tenCLIs pass. Next10.6 tail, then target/p-integral/report/proof contracts; full refresh before10.7. Fresh642/429/643 inventory,641/643 V246 blobs match; only10.6 source/checker differ. No new full runtime/section completion/independent acceptance. All38 selected COV categories partial, none closed; broader gates open. Book1 separate.

@@ -44,6 +44,14 @@ def run():
     assert perpetuity_pv(-1e308,-1e308,1e308)==-0.5
     assert perpetuity_pv(1,-1e-16,1)==0.9999999999999999
     assert perpetuity_pv(1e308,-1e-16,1)==9.999999999999998e307
+    assert finite_horizon_pv(0,1e308,-1e308,1)==0
+    assert finite_horizon_pv(1,1e308,-1e308,0)==0
+    close(finite_horizon_pv(1e-300,1,0,1000),1.970071114017047e134,rel_tol=1e-14,abs_tol=0)
+    assert finite_horizon_pv(math.ulp(0.),1,0,745)>0
+    assert finite_horizon_pv(1e308,-1e308,1e308,1)==0.5
+    assert finite_horizon_pv(1e308,0,1e308,1e308)==1
+    assert finite_horizon_pv(1,0,1e-300,1e-300)==1e-300
+    rejects(ValueError,finite_horizon_pv,1,1,0,1000)
     report=assessment()
     assert len(report["scenarios"])==5
     assert not report["scenarios"][-1]["converges"]

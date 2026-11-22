@@ -13,7 +13,7 @@
 | 10.3 | [The Fundamental Theorem of Calculus](10.03-fundamental-theorem-of-calculus.md) | Draft — scoped lab/source crosswalk and candidate runtime recorded;broader acceptance open |
 | 10.4 | [Substitution and Integration by Parts](10.04-substitution-and-integration-by-parts.md) | Draft — scoped lab/source crosswalk and candidate runtime recorded;broader acceptance open |
 | 10.5 | [Discounting Continuous Payment Streams](10.05-discounting-continuous-payment-streams.md) | Draft — scoped lab/source crosswalk and candidate runtime recorded;broader acceptance open |
-| 10.6 | [Improper Integrals and Infinite Horizons](10.06-improper-integrals-and-infinite-horizons.md) | Draft — scoped perpetuity reviewed;remaining10.6 contracts/fresh full runtime pending |
+| 10.6 | [Improper Integrals and Infinite Horizons](10.06-improper-integrals-and-infinite-horizons.md) | Draft — scoped perpetuity/finite-horizon reviewed;remaining10.6 contracts/fresh full runtime pending |
 | 10.7 | [Numerical Quadrature](10.07-numerical-quadrature.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
 | 10.8 | [Discrete versus Continuous Payments](10.08-discrete-versus-continuous-payments.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
 | 10.9 | [Chapter Project — Continuous Cash-Flow Valuation Engine](10.09-continuous-cash-flow-valuation-engine.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |

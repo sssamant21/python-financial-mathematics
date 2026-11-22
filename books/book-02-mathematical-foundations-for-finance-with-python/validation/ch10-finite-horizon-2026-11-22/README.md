@@ -1,0 +1,23 @@
+# V-248 — Section10.6 complete finite-horizon exponential PV
+
+Baseline source: `5c543db206151d5be9eb609a6e5e4fb5fe5e377b`. [Runnable review](review.txt), [baseline](baseline.json), [baseline replay](baseline-replay.json), [corrected first](first.json), [corrected replay](replay.json), [perpetuity support](perpetuity-support.txt)/[results](perpetuity-support.json), [chapter runner](chapter-support.txt)/[results](chapter-support.json), [fresh inventory](inventory.json).
+
+```bash
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-finite-horizon-2026-11-22/review.txt baseline --baseline
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-finite-horizon-2026-11-22/review.txt first
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-finite-horizon-2026-11-22/review.txt replay
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-finite-horizon-2026-11-22/perpetuity-support.txt perpetuity-support
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-finite-horizon-2026-11-22/chapter-support.txt
+```
+
+Baseline13 passes/eight failed predicates reproduce identically. Corrected21 predicates pass twice:15 finite complete-expression/range cases and six type/domain/final-overflow checks. Actual outputs/exceptions/commands/runtime and exact baseline/candidate source/checker Git blob/SHA256 retained; baseline pin does not contain fixes. Eight added native regression assertions are separate from21 supplemental predicates. Each scope run executes native CLI/checker/compilation (three commands); prior25 perpetuity predicates pass support (three commands). Chapter support compiles21 Python files and runs eleven checkers/ten lab CLIs (22 commands), with staged hashes unchanged after. Failures are observations, not eight separately classified defects or new COV categories.
+
+The independent1800-digit reference integrates exp[(g−r)t] term by term: C*T*sum x^j/(j+1)! with x=(g−r)T. It differs from source anchored closed exponential evaluation. Exact zero-scale/horizon/net-rate identities and negligible large-decay limit supply selected additional references. Numeric tolerance rtol5e-14,atol0 keeps tiny/subnormal failures visible. Inputs retain finite-float conversion semantics; exact represented differences/products precede source and oracle reporting, not a decimal market-rate convention.
+
+The finite-horizon implementation validates payment/growth/discount/horizon before zero shortcuts, preserves exact represented k=g−r and kT even when binary subtraction/multiplication would overflow or underflow, folds scale into the anchored exponential and reports once. Zero net growth reports exact C*T. Selected cases include C1e−300,k1,T1000→1.9700711140e134; C1e308,g−1e308,r1e308,T1→.5; C1e308,r1e308,T1e308→1; k=−1e−300,T1e−300,C1→1e−300 instead of0. Raw growing-exponential OverflowError is normalized to ValueError for true final overflow. Final underflow0 remains allowed.
+
+The800-digit anchored kernel retains exact scaling and uses a positive decay-gap tail. With finite binary inputs, nonzero |C/k|≥2^-2099 for |k|≤2^1025; a positive exponent>10000 is unreportable even at this minimum scale. Gaps>10000 replace1−exp(−gap) by1 with negligible relative effect at these report scales. The smallest nonzero represented kT can approach2^-2148, leaving guard digits at800-digit precision. These bounds justify selected support shortcuts; no universal correctly-rounded/all-input, peak-memory or arbitrary workload guarantee is asserted. Exact/high-precision arithmetic has resource costs.
+
+This advances the V247 finite-horizon lab unit and selected ordinary/limit identities, without recounting six lab units/fourteen exercise dispositions or closing the project. A finite horizon can have a finite value when an infinite stream diverges; no perpetuity convergence claim follows from this pass. `tail_value`, target horizon and p-integral still use their prior implementations; full numerical decomposition/target/report/proof obligations remain next. Existing native ordinary identities are support, not broad tail/target acceptance.
+
+Fresh inventory642 Python/429 check-test/643 required blobs;641/643 V246 blobs match, only10.6 source/checker differ. This is not a new full runtime; V246 retains its pinned pass. Next10.6 tail complete-expression/range, then target-horizon/p-integral/report/proof obligations; fresh full runtime before10.7. All38 selected COV categories remain partial, none closed, distinct from defects/percentages. Broader numerical/resource/provenance/model/platform/release/independent/canonical gates stay open. Book1 separate.

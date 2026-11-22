@@ -1,0 +1,240 @@
+{
+  "pin": "5c543db206151d5be9eb609a6e5e4fb5fe5e377b",
+  "source_selection": "candidate",
+  "executed_at_utc": "2026-11-22T09:08:30.837105+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_06.py": {
+      "sha256": "b546eff5d13d91b514e5f98c28f13214bec645fbcf6bc469f39c07eae5a4ed93",
+      "git_blob": "8c380b7043fcbf5ff5c62f849089ab85ec7ec370"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_06.py": {
+      "sha256": "fc7f1e41d752611992c039db7ac026769df03a6a2ff2b11cb8d3d80826f6ced6",
+      "git_blob": "b42dcf3b9e1ed15028aa9e932f487cade8d75f8c"
+    }
+  },
+  "rows": [
+    {
+      "name": "ordinary",
+      "actual": 8639.392643942738,
+      "expected": "8639.392643942738",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative payment",
+      "actual": -8639.392643942738,
+      "expected": "-8639.392643942738",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero decay",
+      "actual": 10000.0,
+      "expected": "10000.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative decay finite",
+      "actual": 10517.091807564762,
+      "expected": "10517.091807564762",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero scale huge difference",
+      "actual": 0.0,
+      "expected": "0.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero horizon huge difference",
+      "actual": 0.0,
+      "expected": "0.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "scaled growing integral",
+      "actual": 1.970071114017047e+134,
+      "expected": "1.970071114017047e+134",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "minimum payment growing integral",
+      "actual": 1.750546594039472,
+      "expected": "1.750546594039472",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "overflowed decay finite PV",
+      "actual": 0.5,
+      "expected": "0.5",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "overflowed exponent finite PV",
+      "actual": 1.0,
+      "expected": "1.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "underflowed exponent finite PV",
+      "actual": 1e-300,
+      "expected": "1e-300",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "tiny positive decay",
+      "actual": 2000.0,
+      "expected": "2000.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "minimum positive decay",
+      "actual": 2000.0,
+      "expected": "2000.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "constant finite scaling",
+      "actual": 0.9999999999999999,
+      "expected": "0.9999999999999999",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "underflow final report allowed",
+      "actual": 0.0,
+      "expected": "0.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "true growing PV overflow",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite exponential integral"
+      },
+      "expected": "ValueError",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "true zero-decay overflow",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite exponential integral"
+      },
+      "expected": "ValueError",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative horizon even zero payment",
+      "actual": {
+        "exception": "ValueError",
+        "message": "horizon must be nonnegative"
+      },
+      "expected": "ValueError",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bool horizon",
+      "actual": {
+        "exception": "TypeError",
+        "message": "horizon must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "nonfinite horizon even zero payment",
+      "actual": {
+        "exception": "ValueError",
+        "message": "horizon must be finite"
+      },
+      "expected": "ValueError",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "nonfinite growth even zero horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "growth must be finite"
+      },
+      "expected": "ValueError",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_06.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"scenarios\": [\n    {\n      \"growth\": 0,\n      \"discount\": 0.05,\n      \"converges\": true,\n      \"finite_horizons\": {\n        \"10\": 7869.386805747331,\n        \"30\": 15537.396797031402,\n        \"100\": 19865.24106001829\n      },\n      \"perpetuity\": 20000.0,\n      \"tail_at_100\": 134.75893998170935,\n      \"one_percent_tail_horizon\": 92.10340371976181\n    },\n    {\n      \"growth\": 0.02,\n      \"discount\": 0.05,\n      \"converges\": true,\n      \"finite_horizons\": {\n        \"10\": 8639.392643942738,\n        \"30\": 19781.01134198003,\n        \"100\": 31673.764387737865\n      },\n      \"perpetuity\": 33333.33333333333,\n      \"tail_at_100\": 1659.568945595464,\n      \"one_percent_tail_horizon\": 153.5056728662697\n    },\n    {\n      \"growth\": 0.04,\n      \"discount\": 0.05,\n      \"converges\": true,\n      \"finite_horizons\": {\n        \"10\": 9516.258196404042,\n        \"30\": 25918.177931828213,\n        \"100\": 63212.05588285576\n      },\n      \"perpetuity\": 99999.99999999999,\n      \"tail_at_100\": 36787.944117144216,\n      \"one_percent_tail_horizon\": 460.517018598809\n    },\n    {\n      \"growth\": 0.049,\n      \"discount\": 0.05,\n      \"converges\": true,\n      \"finite_horizons\": {\n        \"10\": 9950.166250831946,\n        \"30\": 29554.466451491822,\n        \"100\": 95162.58196404042\n      },\n      \"perpetuity\": 999999.9999999991,\n      \"tail_at_100\": 904837.4180359587,\n      \"one_percent_tail_horizon\": 4605.170185988087\n    },\n    {\n      \"growth\": 0.05,\n      \"discount\": 0.05,\n      \"converges\": false,\n      \"finite_horizons\": {\n        \"10\": 10000.0,\n        \"30\": 30000.0,\n        \"100\": 100000.0\n      }\n    }\n  ],\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_06.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.6 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 21,
+  "failed": 0,
+  "scope": "Finite-horizon complete exponential stream only; tail/target/p-integral/report/proof contracts remain unfinished"
+}

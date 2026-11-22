@@ -2,6 +2,7 @@
 import json
 import math
 from fractions import Fraction
+from decimal import Context, Decimal, localcontext
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -23,20 +24,40 @@ def inputs(payment,growth,discount):
         raise ValueError("nonfinite net decay")
     return c,delta
 
+def _finite_exponential_integral(c,k,t):
+    # Inputs are exact fractions of validated finite floats. Preserve the full
+    # growth-minus-discount difference and scale before final float reporting.
+    if not c or not t:
+        return 0.0
+    if not k:
+        value=c*t
+        try:
+            result=float(value)
+        except OverflowError as exc:
+            raise ValueError("nonfinite exponential integral") from exc
+    else:
+        exponent=k*t
+        high,gap=max(Fraction(0),exponent),abs(exponent)
+        if high>10000:
+            raise ValueError("nonfinite exponential integral")
+        with localcontext(Context(prec=800)):
+            def decimal(value):
+                return Decimal(value.numerator)/Decimal(value.denominator)
+            tail=Decimal(1) if gap>10000 else Decimal(1)-(-decimal(gap)).exp()
+            magnitude=abs(decimal(c/k))*decimal(high).exp()*tail
+            result=float(-magnitude if c<0 else magnitude)
+    if not math.isfinite(result):
+        raise ValueError("nonfinite exponential integral")
+    return result
+
 def finite_horizon_pv(payment,growth,discount,horizon):
-    c,d=inputs(payment,growth,discount)
-    t=finite(horizon,"horizon")
+    c=Fraction(finite(payment,"payment"))
+    g=Fraction(finite(growth,"growth"))
+    r=Fraction(finite(discount,"discount"))
+    t=Fraction(finite(horizon,"horizon"))
     if t<0:
         raise ValueError("horizon must be nonnegative")
-    if c==0 or t==0:
-        return 0.0
-    x=-d*t
-    if not math.isfinite(x):
-        raise ValueError("nonfinite exponent")
-    result=c*t if d==0 else c*(-math.expm1(x))/d
-    if not math.isfinite(result):
-        raise ValueError("nonfinite PV")
-    return result
+    return _finite_exponential_integral(c,g-r,t)
 
 def perpetuity_pv(payment,growth,discount):
     # Preserve the exact represented decay difference through convergence
