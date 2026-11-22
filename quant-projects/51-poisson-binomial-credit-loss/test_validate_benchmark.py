@@ -58,6 +58,17 @@ class ContractTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate(r)
 
+    def test_accepts_tolerance_boundary(self):
+        r = copy.deepcopy(self.report)
+        r['rows'][0]['analytical_tail'] = '0.683593750000000000000001'
+        self.assertEqual(validate(r), 1)
+
+    def test_rejects_tolerance_exceedance(self):
+        r = copy.deepcopy(self.report)
+        r['rows'][0]['analytical_tail'] = '0.683593750000000000000002'
+        with self.assertRaises(ValueError):
+            validate(r)
+
     def test_rejects_duplicate(self):
         self.report['rows'].append(copy.deepcopy(self.report['rows'][0]))
         with self.assertRaises(ValueError): validate(self.report)
