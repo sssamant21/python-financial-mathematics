@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 import json
 import math
+from fractions import Fraction
+from section_10_05 import _exponential_integral as _shared_exponential_integral
 
 def finite(x,name):
     if type(x) not in (int,float):
@@ -58,11 +60,9 @@ def horizon(T):
 
 def exponential_integral(a,k,T):
     a,k,t=finite(a,"a"),finite(k,"k"),horizon(T)
-    x=k*t
-    if not math.isfinite(x):
-        raise ValueError("nonfinite exponent")
-    result=a*t if x==0 else a*t*(math.expm1(x)/x)
-    return finite(result,"integral")
+    # Preserve the complete binary-input value through scaling and exponentiation.
+    # The shared helper retains its 800-digit/cutoff/final-underflow policies.
+    return _shared_exponential_integral(Fraction(a),Fraction(k),Fraction(t))
 
 def weighted_integral(rate,T):
     r,t=finite(rate,"rate"),horizon(T)
@@ -86,11 +86,15 @@ def analytic_pv(stream,curve,T,shift=0.0):
     if curve.slope!=0:
         raise ValueError("analytic PV requires flat curve")
     t=horizon(T)
-    r=curve.base+finite(shift,"shift")
+    shift=finite(shift,"shift")
+    rate=Fraction(finite(curve.base,"base"))+Fraction(shift)
     if stream.kind=="constant":
-        return exponential_integral(stream.a,-r,t)
+        return _shared_exponential_integral(Fraction(finite(stream.a,"a")),-rate,Fraction(t))
     if stream.kind=="exponential":
-        return exponential_integral(stream.a,stream.b-r,t)
+        growth=Fraction(finite(stream.b,"b"))-rate
+        return _shared_exponential_integral(Fraction(finite(stream.a,"a")),growth,Fraction(t))
+    # The linear/moment branch has a separate, still pending range review.
+    r=curve.base+shift
     return finite(exponential_integral(stream.a,-r,t)+stream.b*weighted_integral(r,t),"PV")
 
 def simpson(f,T,n=256):

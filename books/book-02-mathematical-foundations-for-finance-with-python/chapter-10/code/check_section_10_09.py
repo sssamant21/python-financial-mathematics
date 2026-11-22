@@ -1,7 +1,7 @@
 """Independent checks for Section 10.9 valuation engine."""
 import math
 from section_10_09 import (Stream,Curve,finite,analytic_pv,numerical_pv,
-                           discrete_pv,portfolio_pv,parallel_shift_derivative,assessment)
+                           discrete_pv,portfolio_pv,parallel_shift_derivative,assessment,exponential_integral)
 
 def close(a,b,rel_tol=1e-8,abs_tol=1e-7):
     assert math.isclose(a,b,rel_tol=rel_tol,abs_tol=abs_tol),(a,b)
@@ -14,6 +14,14 @@ def rejects(exc,fn,*args):
     raise AssertionError("expected "+exc.__name__)
 
 def run():
+    close(exponential_integral(1e308,-1,2),8.646647167633874e307,rel_tol=2e-15,abs_tol=0.)
+    close(exponential_integral(1e-308,1,710),2.233994766161711,rel_tol=2e-15,abs_tol=0.)
+    close(exponential_integral(1e308,-1e308,1e308),1.,rel_tol=2e-15,abs_tol=0.)
+    assert exponential_integral(0,1e308,1e308)==0
+    close(analytic_pv(Stream("constant",1e308),Curve(1e308),1,1e308),.5,rel_tol=2e-15,abs_tol=0.)
+    close(analytic_pv(Stream("exponential",1e308,-1e308),Curve(1e308),1),.5,rel_tol=2e-15,abs_tol=0.)
+    close(analytic_pv(Stream("exponential",1,1e16),Curve(1e16),1,1),.6321205588285577,rel_tol=2e-15,abs_tol=0.)
+    rejects(ValueError,exponential_integral,1e308,0,2)
     flat=Curve(0.05)
     zero=Curve(0)
     affine=Curve(0.03,0.005)

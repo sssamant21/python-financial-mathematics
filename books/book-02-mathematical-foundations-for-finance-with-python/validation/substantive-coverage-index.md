@@ -1749,3 +1749,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-263 checkpoint — Full pinned timing/payment runtime refresh
 
 [Evidence](full-runtime-timing-2026-11-22/README.md) at `d70076db68175154442acfeb934c721bd438d6ab`:642/642 Python files compile,429/429 check-test scripts pass,643/643 required blobs verify before/after. Accumulated V258–261 corrected10.8 sources included;all earlier failures/policy/precision/resource limits retained. Exact outputs/status/timing/manifest retained;all executable identities match documentation candidate. V262152-predicate timing/lab crosswalk separate. Selected10.8 runtime gate met;next10.9 valuation-engine lab/source crosswalk. No book/platform/model/reviewer/release/canonical acceptance. All38 COV categories partial,none closed;broader gates open. Book1 separate.
+
+
+## V-264 checkpoint — Partial Section10.9 exponential/analytic rate contracts
+
+[Evidence](ch10-engine-exponential-2026-11-22/README.md):10 passes/10 failed final baseline predicates reproduced;corrected20 pass twice. Nine value failures and one new shared-call contract distinct;initial strict-comparison/19-probe records retained. Exact complete binary-input rate algebra and existing10.5 scaled helper fix intermediate product/rate overflow,zero-amplitude rejection and lost shift. Independent1800-digit integral/exponential references;800-digit/cutoff/final-underflow0 limits retained. Chapter10:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory,two10.9 blobs differ from V263,no new full run. Next10.9 weighted_integral/linear analytic range then remainingengine/assessment/lab contracts. All38 COV categories partial,none closed;broader acceptance open. Book1 separate.

@@ -628,3 +628,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section15.6 correlation/selection/aggregation assumptions
 
 [Evidence](v10-correlation-models/README.md):123 predicates pass twice. Caller selection changes independent fair-sign pair correlation0 to±1;within-group−1 coexists with pooled Pearson5/7 and Spearman19/35. Twelve tied pairings verify ranks/Pearson/Spearman/rolling/matrix fields against independent counted-rank/raw-sum oracles. Strict monotone versus tie-creating transforms distinguished. Four commands/24 invocations of twelve existing methods;F132 identities/prior seven failures/50 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next15.7 sampling/estimation,then remaining V10 reconciliation. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section15.7 finite sampling-design assumptions
+
+[Evidence](v10-sampling-design/README.md):416 predicates pass twice. Exact six WOR and sixteen WR size-two designs give mean variance5/12 versus5/8; mismatched FPC gives5/16. Census/local selected-frame bias, duplicate unit/value identity and256 empirical resamples distinguished; conditional bootstrap variance5/16 differs from original n−1 estimate5/12. Native B128/seed11 replay and pairwise SE checked. Four commands/24 invocations of twelve existing methods; F133 identities/nine baseline failures/34 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Nextremaining V10 scope/evidence reconciliation;selected15.1–15.15 crosswalks do not close V10/Book1. F28/F32/F209/F165/F185/broader acceptance open.

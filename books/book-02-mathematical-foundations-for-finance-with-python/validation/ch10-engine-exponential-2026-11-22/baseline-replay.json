@@ -1,0 +1,178 @@
+{
+  "pin": "0e5b5fc323732073c2164acbad2e30507e13a883",
+  "source_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_09.py",
+  "source_sha256": "c705c23ac2fe27f25b195df66449bc0af72a35d5214dddf78d3f22895d7edd9a",
+  "dependency_sha256": "067414f6cc9e989434a49425f1be6163007c7226a544fc67023dc2f2c170bef5",
+  "mode": "baseline",
+  "rows": [
+    {
+      "name": "helper ordinary",
+      "actual": "3625.3849384403625",
+      "expected": "3625.384938440363",
+      "passed": true,
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring,final-underflow0"
+    },
+    {
+      "name": "helper overflow product",
+      "actual": "ValueError",
+      "expected": "8.646647167633874e+307",
+      "passed": false,
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring,final-underflow0"
+    },
+    {
+      "name": "helper signed product",
+      "actual": "ValueError",
+      "expected": "-8.646647167633874e+307",
+      "passed": false,
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring,final-underflow0"
+    },
+    {
+      "name": "helper compensated growth",
+      "actual": "OverflowError",
+      "expected": "2.233994766161711",
+      "passed": false,
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring,final-underflow0"
+    },
+    {
+      "name": "helper overflow decay",
+      "actual": "ValueError",
+      "expected": "1.0",
+      "passed": false,
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring,final-underflow0"
+    },
+    {
+      "name": "helper zero huge exponent",
+      "actual": "ValueError",
+      "expected": "0.0",
+      "passed": false,
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring,final-underflow0"
+    },
+    {
+      "name": "helper zero horizon",
+      "actual": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring,final-underflow0"
+    },
+    {
+      "name": "helper tiny duration",
+      "actual": "0.6321205588285577",
+      "expected": "0.6321205588285577",
+      "passed": true,
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring,final-underflow0"
+    },
+    {
+      "name": "helper zero rate",
+      "actual": "0.9999999999999999",
+      "expected": "0.9999999999999999",
+      "passed": true,
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring,final-underflow0"
+    },
+    {
+      "name": "helper final overflow",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring,final-underflow0"
+    },
+    {
+      "name": "helper final underflow",
+      "actual": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "kind": "independent1800-digit integrated/halving-Taylor-squaring,final-underflow0"
+    },
+    {
+      "name": "analytic constant rate sum",
+      "actual": "ValueError",
+      "expected": "0.5",
+      "passed": false,
+      "kind": "complete exact-input base+shift and growth\u2212discount algebra"
+    },
+    {
+      "name": "analytic growth minus discount",
+      "actual": "1.7182818284590449",
+      "expected": "1.718281828459045",
+      "passed": true,
+      "kind": "complete exact-input base+shift and growth\u2212discount algebra"
+    },
+    {
+      "name": "analytic large decay difference",
+      "actual": "ValueError",
+      "expected": "0.5",
+      "passed": false,
+      "kind": "complete exact-input base+shift and growth\u2212discount algebra"
+    },
+    {
+      "name": "analytic rounded-away shift",
+      "actual": "1.0",
+      "expected": "0.6321205588285577",
+      "passed": false,
+      "kind": "complete exact-input base+shift and growth\u2212discount algebra"
+    },
+    {
+      "name": "analytic ordinary shifted",
+      "actual": "554.4607913767074",
+      "expected": "554.4607913767074",
+      "passed": true,
+      "kind": "complete exact-input base+shift and growth\u2212discount algebra"
+    },
+    {
+      "name": "analytic zero scaled difference",
+      "actual": "ValueError",
+      "expected": "0.0",
+      "passed": false,
+      "kind": "complete exact-input base+shift and growth\u2212discount algebra"
+    },
+    {
+      "name": "input (True, 1.0, 1.0)",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "passed": true,
+      "kind": "existing validation"
+    },
+    {
+      "name": "input (1.0, 1.0, -1.0)",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "kind": "existing validation"
+    },
+    {
+      "name": "actual shared helper call",
+      "actual": "no shared helper",
+      "expected": "1",
+      "passed": false,
+      "kind": "new integration probe,not numeric defect"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_09.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"horizon_years\": 4,\n  \"units\": \"currency; rates 1/year\",\n  \"flat_numeric\": {\n    \"continuous_components\": [\n      3625.3849384403634,\n      1075.5389138165062,\n      565.3978164142125\n    ],\n    \"discrete\": 452.4187090179798,\n    \"total\": 5718.7403776890615\n  },\n  \"flat_analytic_total\": 5718.740377689062,\n  \"flat_absolute_reconciliation\": 9.094947017729282e-13,\n  \"affine_numeric\": {\n    \"continuous_components\": [\n      3721.136262690569,\n      1106.4484840688388,\n      580.486593208694\n    ],\n    \"discrete\": 466.1969099529741,\n    \"total\": 5874.268249921076\n  },\n  \"flat_parallel_rate_derivative\": -11342.893931296203,\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "executed_at_utc": "2026-11-22T22:17:49.735059+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "passed": 10,
+  "failed": 10,
+  "scope": "Engine exponential helper and constant/exponential analytic PV only;linear/moment/Stream/Curve/numerical/discrete/portfolio/derivative/report pending"
+}
