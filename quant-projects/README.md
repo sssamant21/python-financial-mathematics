@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Fifty-one self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Fifty-two self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -302,3 +302,5 @@ Project 51 sparse-precision extension: [bounded Decimal monetary-loss DP](51-poi
 Project 51 observational benchmark: [synthetic scaling report](51-poisson-binomial-credit-loss/README.md#observational-benchmark-report-2026-11-21) adds a bounded JSON measurement harness with UTC/runtime context, traced Python allocation diagnostics and analytical tail checks. Run `python benchmark_report.py --sizes 4 8 12 16 20` from Project 51. Newly authored tests and exact-revision CI are pending verification; measured bytes are not RSS or capacity guarantees.
 
 Project 51 now includes [bounded repeated synthetic benchmark diagnostics](51-poisson-binomial-credit-loss/README.md#repeated-synthetic-benchmark-variability-2026-11-22), with 75 authored tests (72 previously CI-verified; three new tests unverified). Traced allocations are not RSS, and timing observations are not capacity guarantees.
+
+| [52](52-credit-transition-uncertainty/README.md) | Dirichlet–multinomial rating-row parameter uncertainty, seeded default-probability credible interval and prior sensitivity | Synthetic only | `transition_uncertainty.py` |
