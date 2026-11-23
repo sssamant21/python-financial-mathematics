@@ -1,0 +1,424 @@
+{
+  "pin": "2d5f2c8ccaffe737a199d7270a4bc048ca420dee",
+  "source_path": "books/book-01-python-foundations-for-financial-mathematics/chapter-14/14.09-expected-value.md",
+  "source_sha256": "86b15a20b3819db8cf7288498c7f758c249c93d627b8013b5c145c0677ab51ab",
+  "listing_sha256": "c81f3ca6bd4ba5c8cc9454a8bd65803eda3310656162ff02caefdf2cd5092931",
+  "rows": [
+    {
+      "name": "independent direct expected loss",
+      "actual": "2500.0",
+      "expected": "2500",
+      "passed": true,
+      "kind": "external joint default/severity state law"
+    },
+    {
+      "name": "independent unconditional LGD",
+      "actual": "0.5",
+      "expected": "0.5",
+      "passed": true,
+      "kind": "same marginal severity across three laws"
+    },
+    {
+      "name": "independent product of marginal inputs",
+      "actual": "2500.0",
+      "expected": "2500.0",
+      "passed": true,
+      "kind": "native fixed-factor helper cannot infer conditional LGD"
+    },
+    {
+      "name": "independent conditional LGD product",
+      "actual": "2500.0",
+      "expected": "2500",
+      "passed": true,
+      "kind": "fixed exposure and appropriate E[LGD|default] recover the joint loss"
+    },
+    {
+      "name": "aligned direct expected loss",
+      "actual": "4000.0",
+      "expected": "4000",
+      "passed": true,
+      "kind": "external joint default/severity state law"
+    },
+    {
+      "name": "aligned unconditional LGD",
+      "actual": "0.5",
+      "expected": "0.5",
+      "passed": true,
+      "kind": "same marginal severity across three laws"
+    },
+    {
+      "name": "aligned product of marginal inputs",
+      "actual": "2500.0",
+      "expected": "2500.0",
+      "passed": true,
+      "kind": "native fixed-factor helper cannot infer conditional LGD"
+    },
+    {
+      "name": "aligned conditional LGD product",
+      "actual": "4000.0",
+      "expected": "4000",
+      "passed": true,
+      "kind": "fixed exposure and appropriate E[LGD|default] recover the joint loss"
+    },
+    {
+      "name": "offset direct expected loss",
+      "actual": "1000.0",
+      "expected": "1000",
+      "passed": true,
+      "kind": "external joint default/severity state law"
+    },
+    {
+      "name": "offset unconditional LGD",
+      "actual": "0.5",
+      "expected": "0.5",
+      "passed": true,
+      "kind": "same marginal severity across three laws"
+    },
+    {
+      "name": "offset product of marginal inputs",
+      "actual": "2500.0",
+      "expected": "2500.0",
+      "passed": true,
+      "kind": "native fixed-factor helper cannot infer conditional LGD"
+    },
+    {
+      "name": "offset conditional LGD product",
+      "actual": "1000.0",
+      "expected": "1000",
+      "passed": true,
+      "kind": "fixed exposure and appropriate E[LGD|default] recover the joint loss"
+    },
+    {
+      "name": "independent EAD/LGD joint loss",
+      "actual": "10000.0",
+      "expected": "10000",
+      "passed": true,
+      "kind": "all states default;conditional EAD/LGD dependence still matters"
+    },
+    {
+      "name": "independent mean EAD",
+      "actual": "20000.0",
+      "expected": "20000.0",
+      "passed": true,
+      "kind": "same exposure marginal"
+    },
+    {
+      "name": "independent mean LGD",
+      "actual": "0.5",
+      "expected": "0.5",
+      "passed": true,
+      "kind": "same severity marginal"
+    },
+    {
+      "name": "independent product of conditional means",
+      "actual": "10000.0",
+      "expected": "10000.0",
+      "passed": true,
+      "kind": "product of means needs justification when both factors random"
+    },
+    {
+      "name": "aligned EAD/LGD joint loss",
+      "actual": "13000.0",
+      "expected": "13000",
+      "passed": true,
+      "kind": "all states default;conditional EAD/LGD dependence still matters"
+    },
+    {
+      "name": "aligned mean EAD",
+      "actual": "20000.0",
+      "expected": "20000.0",
+      "passed": true,
+      "kind": "same exposure marginal"
+    },
+    {
+      "name": "aligned mean LGD",
+      "actual": "0.5",
+      "expected": "0.5",
+      "passed": true,
+      "kind": "same severity marginal"
+    },
+    {
+      "name": "aligned product of conditional means",
+      "actual": "10000.0",
+      "expected": "10000.0",
+      "passed": true,
+      "kind": "product of means needs justification when both factors random"
+    },
+    {
+      "name": "offset EAD/LGD joint loss",
+      "actual": "7000.0",
+      "expected": "7000",
+      "passed": true,
+      "kind": "all states default;conditional EAD/LGD dependence still matters"
+    },
+    {
+      "name": "offset mean EAD",
+      "actual": "20000.0",
+      "expected": "20000.0",
+      "passed": true,
+      "kind": "same exposure marginal"
+    },
+    {
+      "name": "offset mean LGD",
+      "actual": "0.5",
+      "expected": "0.5",
+      "passed": true,
+      "kind": "same severity marginal"
+    },
+    {
+      "name": "offset product of conditional means",
+      "actual": "10000.0",
+      "expected": "10000.0",
+      "passed": true,
+      "kind": "product of means needs justification when both factors random"
+    },
+    {
+      "name": "affine-2/-5",
+      "actual": "-15.0",
+      "expected": "-15",
+      "passed": true,
+      "kind": "linearity with exact signed coefficients;no independence assumption"
+    },
+    {
+      "name": "affine-2/0",
+      "actual": "-10.0",
+      "expected": "-10",
+      "passed": true,
+      "kind": "linearity with exact signed coefficients;no independence assumption"
+    },
+    {
+      "name": "affine-2/7",
+      "actual": "-3.0",
+      "expected": "-3",
+      "passed": true,
+      "kind": "linearity with exact signed coefficients;no independence assumption"
+    },
+    {
+      "name": "affine0/-5",
+      "actual": "-5.0",
+      "expected": "-5",
+      "passed": true,
+      "kind": "linearity with exact signed coefficients;no independence assumption"
+    },
+    {
+      "name": "affine0/0",
+      "actual": "0.0",
+      "expected": "0",
+      "passed": true,
+      "kind": "linearity with exact signed coefficients;no independence assumption"
+    },
+    {
+      "name": "affine0/7",
+      "actual": "7.0",
+      "expected": "7",
+      "passed": true,
+      "kind": "linearity with exact signed coefficients;no independence assumption"
+    },
+    {
+      "name": "affine3/-5",
+      "actual": "10.0",
+      "expected": "10",
+      "passed": true,
+      "kind": "linearity with exact signed coefficients;no independence assumption"
+    },
+    {
+      "name": "affine3/0",
+      "actual": "15.0",
+      "expected": "15",
+      "passed": true,
+      "kind": "linearity with exact signed coefficients;no independence assumption"
+    },
+    {
+      "name": "affine3/7",
+      "actual": "22.0",
+      "expected": "22",
+      "passed": true,
+      "kind": "linearity with exact signed coefficients;no independence assumption"
+    },
+    {
+      "name": "independent sum expectation",
+      "actual": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "kind": "same common-state probability measure;linearity does not require independence"
+    },
+    {
+      "name": "independent marginal expectation sum",
+      "actual": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "kind": "independent raw state sums"
+    },
+    {
+      "name": "shared sum expectation",
+      "actual": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "kind": "same common-state probability measure;linearity does not require independence"
+    },
+    {
+      "name": "shared marginal expectation sum",
+      "actual": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "kind": "independent raw state sums"
+    },
+    {
+      "name": "offset sum expectation",
+      "actual": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "kind": "same common-state probability measure;linearity does not require independence"
+    },
+    {
+      "name": "offset marginal expectation sum",
+      "actual": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "kind": "independent raw state sums"
+    },
+    {
+      "name": "physical expectation",
+      "actual": "80.0",
+      "expected": "80",
+      "passed": true,
+      "kind": "caller selects probability measure;source does not identify it"
+    },
+    {
+      "name": "physical periodic discounted mean",
+      "actual": "72.72727272727273",
+      "expected": "800/11",
+      "passed": true,
+      "kind": "deterministic periodic discount factor,not automatic arbitrage-free price"
+    },
+    {
+      "name": "pricing teaching expectation",
+      "actual": "30.0",
+      "expected": "30",
+      "passed": true,
+      "kind": "caller selects probability measure;source does not identify it"
+    },
+    {
+      "name": "pricing teaching periodic discounted mean",
+      "actual": "27.272727272727273",
+      "expected": "300/11",
+      "passed": true,
+      "kind": "deterministic periodic discount factor,not automatic arbitrage-free price"
+    },
+    {
+      "name": "periodic discount convention",
+      "actual": "100.0",
+      "expected": "100.0",
+      "passed": true,
+      "kind": "10% effective periodic rate,not a continuously compounded rate"
+    },
+    {
+      "name": "certain same mean wealth",
+      "actual": "100.0",
+      "expected": "100.0",
+      "passed": true,
+      "kind": "mean does not identify distribution or preference"
+    },
+    {
+      "name": "certain relative log utility",
+      "actual": "0.0",
+      "expected": "0",
+      "passed": true,
+      "kind": "external dimensionless log-wealth transform;not an investment recommendation"
+    },
+    {
+      "name": "spread same mean wealth",
+      "actual": "100.0",
+      "expected": "100.0",
+      "passed": true,
+      "kind": "mean does not identify distribution or preference"
+    },
+    {
+      "name": "spread relative log utility",
+      "actual": "-0.14384103622589045",
+      "expected": "-0.1438410362258904637196095029969137157517548554488805282533328426746464753603902321690554495895526432",
+      "passed": true,
+      "kind": "external dimensionless log-wealth transform;not an investment recommendation"
+    },
+    {
+      "name": "total expectation correct regime weights",
+      "actual": "-33.0",
+      "expected": "-33.0",
+      "passed": true,
+      "kind": "external conditioning partition with matching weights"
+    },
+    {
+      "name": "wrong equal regime weights",
+      "actual": "-67.5",
+      "expected": "-67.5",
+      "passed": true,
+      "kind": "caller changes target population;not a source arithmetic defect"
+    },
+    {
+      "name": "prior whole source identity",
+      "actual": "86b15a20b3819db8cf7288498c7f758c249c93d627b8013b5c145c0677ab51ab",
+      "expected": "86b15a20b3819db8cf7288498c7f758c249c93d627b8013b5c145c0677ab51ab",
+      "passed": true,
+      "kind": "F118 nine failures/37 predicates/24 answers/ten requirements retained"
+    },
+    {
+      "name": "prior listing identity",
+      "actual": "c81f3ca6bd4ba5c8cc9454a8bd65803eda3310656162ff02caefdf2cd5092931",
+      "expected": "c81f3ca6bd4ba5c8cc9454a8bd65803eda3310656162ff02caefdf2cd5092931",
+      "passed": true,
+      "kind": "no source change"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "expected_value.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_payoff (__main__.ExpectedValueTests.test_01_payoff) ... ok\ntest_02_constant (__main__.ExpectedValueTests.test_02_constant) ... ok\ntest_03_bernoulli (__main__.ExpectedValueTests.test_03_bernoulli) ... ok\ntest_04_linear (__main__.ExpectedValueTests.test_04_linear) ... ok\ntest_05_square (__main__.ExpectedValueTests.test_05_square) ... ok\ntest_06_expected_loss (__main__.ExpectedValueTests.test_06_expected_loss) ... ok\ntest_07_zero_default (__main__.ExpectedValueTests.test_07_zero_default) ... ok\ntest_08_discount (__main__.ExpectedValueTests.test_08_discount) ... ok\ntest_09_scenarios (__main__.ExpectedValueTests.test_09_scenarios) ... ok\ntest_10_negative_expected (__main__.ExpectedValueTests.test_10_negative_expected) ... ok\ntest_11_invariance (__main__.ExpectedValueTests.test_11_invariance) ... ok\ntest_12_invalid (__main__.ExpectedValueTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "expected_value.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "joint_loss_records": [
+    {
+      "name": "independent",
+      "unconditional_lgd": ".5",
+      "conditional_lgd": "1/2",
+      "actual_loss": 2500.0,
+      "marginal_input_product": 2500
+    },
+    {
+      "name": "aligned",
+      "unconditional_lgd": ".5",
+      "conditional_lgd": "4/5",
+      "actual_loss": 4000.0,
+      "marginal_input_product": 2500
+    },
+    {
+      "name": "offset",
+      "unconditional_lgd": ".5",
+      "conditional_lgd": "1/5",
+      "actual_loss": 1000.0,
+      "marginal_input_product": 2500
+    }
+  ],
+  "executed_at_utc": "2026-11-23T05:29:50.358321+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "passed": 52,
+  "failed": 0,
+  "scope": "Finite expected-loss factorization/linearity/measure/utility/conditioning crosswalk;no empirical credit or market calibration/independent acceptance"
+}

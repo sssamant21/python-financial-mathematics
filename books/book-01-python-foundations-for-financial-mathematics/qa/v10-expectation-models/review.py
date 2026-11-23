@@ -1,0 +1,34 @@
+"""Expected loss factorization,common-state linearity,pricing measure and utility scope."""
+from pathlib import Path
+from fractions import Fraction as F
+from decimal import Decimal as D,localcontext
+import re,sys,json,subprocess,tempfile,importlib.util,hashlib,platform,math,itertools
+from datetime import datetime,timezone
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='2d5f2c8ccaffe737a199d7270a4bc048ca420dee';source_path='books/book-01-python-foundations-for-financial-mathematics/chapter-14/14.09-expected-value.md';raw=subprocess.check_output(['git','show',pin+':'+source_path],cwd=root);listing=re.findall(r'^```python\n(.*?)^```',raw.decode(),re.M|re.S)[0];rows=[];commands=[];records=[]
+def ck(name,got,want,kind,close=False):rows.append(dict(name=name,actual=str(got),expected=str(want),passed=math.isclose(float(got),float(want),rel_tol=5e-14,abs_tol=1e-15) if close else got==want,kind=kind))
+with tempfile.TemporaryDirectory() as tmp:
+ path=Path(tmp)/'expected_value.py';path.write_text(listing);spec=importlib.util.spec_from_file_location('ev_lab',path);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ for args in [[sys.executable,path.name],[sys.executable,'-m','compileall','-q',path.name]]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0
+ states=list(itertools.product([0,1],repeat=2));probs=[F(1,4)]*4
+ for name,lgds,want in [('independent',[F(1,5)+F(3,5)*s[1] for s in states],2500),('aligned',[F(1,5)+F(3,5)*s[0] for s in states],4000),('offset',[F(4,5)-F(3,5)*s[0] for s in states],1000)]:
+  losses=[10000*l*s[0] for s,l in zip(states,lgds)];actual=m.scenario_expected(probs,losses);conditional=sum(l for s,l in zip(states,lgds) if s[0])/2;ck(name+' direct expected loss',actual,want,'external joint default/severity state law');ck(name+' unconditional LGD',m.scenario_expected(probs,lgds),.5,'same marginal severity across three laws');ck(name+' product of marginal inputs',m.expected_loss(10000,.5,.5),2500.,'native fixed-factor helper cannot infer conditional LGD');ck(name+' conditional LGD product',m.expected_loss(10000,conditional,.5),want,'fixed exposure and appropriate E[LGD|default] recover the joint loss');records.append(dict(name=name,unconditional_lgd='.5',conditional_lgd=str(conditional),actual_loss=actual,marginal_input_product=2500))
+ for name,lgds,want in [('independent',[F(1,5)+F(3,5)*s[1] for s in states],10000),('aligned',[F(1,5)+F(3,5)*s[0] for s in states],13000),('offset',[F(4,5)-F(3,5)*s[0] for s in states],7000)]:
+  exposures=[10000+20000*s[0] for s in states];losses=[e*l for e,l in zip(exposures,lgds)];ck(name+' EAD/LGD joint loss',m.scenario_expected(probs,losses),want,'all states default;conditional EAD/LGD dependence still matters');ck(name+' mean EAD',m.scenario_expected(probs,exposures),20000.,'same exposure marginal');ck(name+' mean LGD',m.scenario_expected(probs,lgds),.5,'same severity marginal');ck(name+' product of conditional means',m.expected_loss(20000,.5,1.),10000.,'product of means needs justification when both factors random')
+ pmf={-20:F(1,4),5:F(1,2),30:F(1,4)}
+ for a,b in itertools.product([-2,0,3],[-5,0,7]):ck(f'affine{a}/{b}',m.transformed_expected(pmf,lambda x:a*x+b),a*5+b,'linearity with exact signed coefficients;no independence assumption')
+ X=[-100 if s[0]==0 else 100 for s in states]
+ for name,Y in [('independent',[-100 if s[1]==0 else 100 for s in states]),('shared',X),('offset',[-x for x in X])]:
+  ck(name+' sum expectation',m.scenario_expected(probs,[x+y for x,y in zip(X,Y)]),0.,'same common-state probability measure;linearity does not require independence');ck(name+' marginal expectation sum',m.scenario_expected(probs,X)+m.scenario_expected(probs,Y),0.,'independent raw state sums')
+ for name,pmf,mean in [('physical',{0:.2,100:.8},F(80)),('pricing teaching',{0:.7,100:.3},F(30))]:
+  ck(name+' expectation',m.expected(pmf),mean,'caller selects probability measure;source does not identify it',True);ck(name+' periodic discounted mean',m.discounted_expected(pmf,.1,1),mean/F(11,10),'deterministic periodic discount factor,not automatic arbitrage-free price',True)
+ ck('periodic discount convention',m.discounted_expected({110:1},.1,1),100.,'10% effective periodic rate,not a continuously compounded rate')
+ for name,pmf in [('certain',{100:1}),('spread',{50:.5,150:.5})]:
+  ck(name+' same mean wealth',m.expected(pmf),100.,'mean does not identify distribution or preference')
+  with localcontext() as ctx:ctx.prec=100;want=D(0) if name=='certain' else (D('.5').ln()+D('1.5').ln())/2
+  ck(name+' relative log utility',m.transformed_expected(pmf,lambda x:math.log(x/100)),want,'external dimensionless log-wealth transform;not an investment recommendation',True)
+ conditional=[m.scenario_expected([.9,.1],[0,-100]),m.scenario_expected([.75,.25],[0,-500])];ck('total expectation correct regime weights',m.scenario_expected([.8,.2],conditional),-33.,'external conditioning partition with matching weights');ck('wrong equal regime weights',m.scenario_expected([.5,.5],conditional),-67.5,'caller changes target population;not a source arithmetic defect')
+ prior=json.loads((here.parent/'chapter-14-expected-value-review/results.json').read_text());ck('prior whole source identity',hashlib.sha256(raw).hexdigest(),prior['source_sha256'],'F118 nine failures/37 predicates/24 answers/ten requirements retained');ck('prior listing identity',hashlib.sha256(listing.encode()).hexdigest(),prior['listing_sha256'],'no source change')
+r=dict(pin=pin,source_path=source_path,source_sha256=hashlib.sha256(raw).hexdigest(),listing_sha256=hashlib.sha256(listing.encode()).hexdigest(),rows=rows,commands=commands,joint_loss_records=records,executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='Finite expected-loss factorization/linearity/measure/utility/conditioning crosswalk;no empirical credit or market calibration/independent acceptance')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(r,indent=2)+'\n');print(r['passed'],r['failed']);assert r['failed']==0

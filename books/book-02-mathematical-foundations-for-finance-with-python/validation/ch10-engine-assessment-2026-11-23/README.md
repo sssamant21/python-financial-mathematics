@@ -39,3 +39,6 @@ T bounds continuous streams only;all supplied nonnegative discrete dates are val
 The specified lab scenario,fourteen worked answers and acceptance categories are crosswalked without new global answer/workflow or completion percentages. Functional limits fromV264–271,subclass/stateful-model boundaries,finite report fields,precision/cutoffs,resource budgets and quadrature assumptions remain. The JSON keeps runtime_certified=False and independent_review_completed=False.
 
 Chapter10 compiles21 files and passes11 checkers/10 CLIs with before/after source hashes verified. Fresh inventory remains642 Python files/429 check-test scripts/643 required blobs. Five executable blobs differ fromV263;this is a scoped chapter run. Next:V273 full pinned accumulated-code runtime refresh before advancing to10.10. All38 COV categories remain partial,none closed;no supported-platform,independent reviewer,release or canonical acceptance. Book1 tracked separately.
+
+
+Follow-up: [V273 full pinned runtime](../full-runtime-engine-2026-11-23/README.md) at `2d5f2c8ccaffe737a199d7270a4bc048ca420dee` compiles642 files and passes429 check-test scripts with643 required source/fixture blobs verified before/after. This meets the selected10.9 runtime progression gate;next10.10. Independent/model/platform/release/canonical gates and all earlier limits remain open.

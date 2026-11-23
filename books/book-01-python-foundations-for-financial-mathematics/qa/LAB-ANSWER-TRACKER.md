@@ -673,3 +673,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section14.8 continuous-variable assumptions
 
 [Evidence](v10-continuous-variable-models/README.md):303 predicates pass twice. Independent100-digit density/CDF/survival/interval/quantile references;model memorylessness and unit conversions distinguished from empirical claims. External censoring creates an atom;an exponential mixture with mean1 has variance2 and loses memorylessness. Four commands/24 invocations of twelve existing methods;F117 source/listing/six failures/31 predicates/24 answers/ten requirements retained. No source change/new historical/workflow/answer/step totals. Next14.9 expected-value assumptions,then14.10–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section14.9 expected-value/factorization assumptions
+
+[Evidence](v10-expectation-models/README.md):52 predicates pass twice. Fixed-exposure losses depend on conditional LGD;random exposure/LGD products require joint assumptions even within default. Matching-measure linearity,periodic discount/pricing-measure distinctions,utility and regime composition checked on finite models. Preparatory observer SyntaxError retained,with no financial-source execution before correction. Final four commands/24 invocations of twelve existing methods;F118 source/listing/nine failures/37 predicates/24 answers/ten requirements retained. No source change/new historical/workflow/answer/step totals. Next14.10 variance/SD assumptions,then14.11–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
