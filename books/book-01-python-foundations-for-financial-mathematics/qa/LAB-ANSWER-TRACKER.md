@@ -698,3 +698,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section14.13 normal-model assumptions
 
 [Evidence](v10-normal-assumptions/README.md):54 final predicates pass twice. Independent201-term normal density integrals/inversion check central probabilities,quantiles,units and unfloored loss conventions;mixture/joint-normal caveats and actual256-draw replay separated. Initial unsupported-Fraction observer error retained;declared int/float input contract respected in final runs. Four final commands/24 invocations of twelve existing methods;F122 source/listing/seven failures/36 predicates/24 answers/ten steps retained. No source change/new historical/workflow/answer/step totals. Narrow/extreme-tail/market-fit gaps remain. Next14.14 sampling,then14.15–14.17/marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section14.14 sampling-design assumptions
+
+[Evidence](v10-sampling-assumptions/README.md):58 predicates pass twice. Exhaustive small-sample interval coverage,IID SE,conditional bootstrap,shared-shock and replacement-design laws distinguished from actual256 weighted draws/128 bootstrap means and quantile replay. Six commands/24 invocations of twelve existing methods/two separate illustrations;F123 source/listing/four failures/33 predicates/24 answers/ten steps retained. No source change/new historical/workflow/answer/step totals. Tiny-weight/runtime/dependence-aware bootstrap gaps remain. Next14.15 RNG/reproducibility,then14.16–14.17/marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

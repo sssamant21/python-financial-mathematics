@@ -1,0 +1,16 @@
+# V10 — Section14.14 sampling-design assumptions
+
+Pinned source `d4729bfb7c23362138d9a0b92eee0d231b80c961`. Run `python -B review.py results` and `python -B review.py replay`. [Results](results.json) and [replay](replay.json) each record **58 predicates passed,zero failed**, manuscript/formal-listing/illustration SHA256,Python/platform and captured commands. No initial failure or financial-source correction occurred in this Book1 batch.
+
+| Selected assumption | Independent expectation and source alignment |
+|---|---|
+| IID standard error | All fair-Bernoulli paths of sizes2,3,4 compare source means to exact rational counts. Exact sampling variance of the mean is1/(4n);averaging actual source SE² reproduces that target. |
+| Approximate interval coverage | Actual source intervals cover the true mean.5 on1/2,3/4,7/8 of these exhaustive repeated samples,not95%. This supports the manuscript's large-sample approximation caveat;it is not an interval arithmetic defect or posterior probability calculation. |
+| Conditional bootstrap | All27 index-resamples of[0,0,1] give conditional mean1/3 and variance2/27. Original sample SE² is1/9;the finite conditional bootstrap variance uses empirical population variance rather than the unbiased sample variance. Supplemental enumeration is an exact reference law,not additional native bootstrap draws. |
+| Shared dependence | Four identical observations driven by one Bernoulli shock have actual mean variance1/4,but native SE and empirical bootstrap variation0. IID bootstrap cannot create absent shared-shock variation. No dependence-aware bootstrap is implemented here. |
+| Replacement design | Exact ordered draws from population0,1,2,3 give mean variance5/8 with replacement and5/12 without replacement. The latter is the finite-population correction(4−2)/(4−1). This is supplemental sampling-design algebra. |
+| Actual replay/quantiles |256 actual weighted draws match separate uniform CDF-band replay,including large common weight scaling.128 actual bootstrap means match separate uniform-index replay. Five quantiles check declared(n−1)p interpolation. Empirical resampling support cannot create unseen tails. |
+
+Each final run imports the exact formal listing,executes its twelve native methods,executes the separate replacement illustration verbatim,and compiles both fences:**six commands,24 invocations of twelve existing methods,and two separate illustration executions** across two runs. Supplemental predicates do not create historical methods,workflow totals,answers or steps. F123 source/listing identities match [the prior formal review](../chapter-14-sampling-review/README.md),retaining four initial failures,33 predicates,24 answers and ten project tasks. The original illustrative without-replacement command is executed,but finite-design expectations above are independently enumerated rather than inferred from that single sample.
+
+Extremely small weights,other runtimes,real-data lineage/model fit,time-dependent bootstrap and independent acceptance remain outside scope. Next: §14.15 RNG/reproducibility assumptions,then14.16–14.17 and other marked V10 interfaces. V10/Book1,F28/F32/F209/F165/F185 and broader acceptance remain open.

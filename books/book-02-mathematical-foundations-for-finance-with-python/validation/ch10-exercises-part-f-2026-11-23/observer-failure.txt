@@ -1,0 +1,8 @@
+Two initial observer attempts and this captured reproduction stopped after actual assessment/portfolio calls at a mismatched report key. No complete predicate JSON or final native command block was reached.
+Traceback (most recent call last):
+  File "/workspace/scratch/e0bed2e906cb/run2306/books/book-02-mathematical-foundations-for-finance-with-python/validation/ch10-exercises-part-f-2026-11-23/review.txt", line 37, in <module>
+    for i,value in enumerate(values):ck(f'T1/T4 {label} numerical component{i}',numeric['continuous'][i],value,'actual source component compared with independent exact integrated Taylor model',errors[i]+T/180*(T/n)**4*fourth(*params[i],T)+F(2,10**10))
+                                                                                ~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'continuous'
+
+Correction:use the source-declared continuous_components key,not continuous. Source financial output was valid;this was an observer schema assumption error.
