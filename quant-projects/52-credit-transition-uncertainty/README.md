@@ -28,3 +28,16 @@ The CLI prints JSON including the posterior mean, simulated 95% interval, poster
 Inputs require 2–20 states, nonnegative integer counts, strictly positive finite prior concentrations, valid default column, bounded draws (100–100,000) and seed. Simulation is reproducible for the same Python environment and seed. The model assumes exchangeable independent observations conditional on a fixed transition row; cohort selection, rating withdrawals, censored observations, time variation, clustering, migration dependence, historical regime shifts and survivorship bias are **not modeled**. The default state is identified by an explicit column index; no absorbing-row constraint is inferred or enforced.
 
 Seven deterministic synthetic unit tests are authored for conjugacy, mean identity, reproducibility, interval ordering, prior-only data and malformed inputs. **Exact published-revision runtime/CI is unverified until executed.** No historical calibration, independent model validation, production certification, financial advice or trading integration.
+
+## Prior-strength and held-out sensitivity (incremental extension)
+
+The companion `test_prior_sensitivity.py` defines a **predeclared** prior-strength grid and a held-out Bernoulli negative log-likelihood scoring helper. The training transition counts are used to estimate the posterior mean; the separately supplied held-out event count is used **only for scoring**, never to choose the prior after the fact. A smaller held-out log score is better, but one synthetic cohort is not evidence of calibrated real-world prediction.
+
+For prior multiplier `k > 0`, the posterior is `Dirichlet(k * alpha_j + n_j)`. A larger `k` puts more weight on the assumed prior; it does not automatically improve prediction. The held-out score is `-[d log(p) + (N-d) log(1-p)]/N` for `0 < p < 1`. Keep the cohort definition and time split fixed and report *all* predeclared settings rather than selecting the best on the test set.
+
+```bash
+python -m unittest -v test_transition_uncertainty.py test_prior_sensitivity.py
+python -m py_compile transition_uncertainty.py test_transition_uncertainty.py test_prior_sensitivity.py
+```
+
+The five new tests cover deterministic grid agreement, directional prior sensitivity, invalid grid rejection, proper held-out log-score ordering and invalid scoring inputs. **These tests are authored but not yet verified on the published revision.** The helper currently lives in the test module as a teaching scaffold, not a separate CLI or a full walk-forward calibration study. Market-data validation and independent review remain pending.
