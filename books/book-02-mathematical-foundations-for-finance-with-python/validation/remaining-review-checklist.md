@@ -1857,3 +1857,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-275 checkpoint — Partial Section10.10 Part B valuation exercises
 
 [Evidence](ch10-exercises-part-b-2026-11-23/README.md):37 predicates pass twice. Exercises5–9 align report/analytic/numerical/helper paths to independent exact integrated Taylor references with<1e−50 tails and derived Simpson bounds;growth-match/zero-rate/affine discount and month-unit conversions checked. No source/manuscript correction;each final run compiles seven pinned files and executes10.10 CLI/checker. Existing complete CLI/checker passes do not close later substantive obligations. Next Part C10–14,then15–20/Part F/full report/units/navigation. No new full-book run;V273 counts remain tied to its pin. All38 COV categories partial,none closed;Book2/broader acceptance open. Book1 separately advanced14.11 covariance assumptions.
+
+
+## V-276 checkpoint — Partial Section10.10 Part C improper integrals
+
+[Evidence](ch10-exercises-part-c-2026-11-23/README.md):49 final predicates pass twice. Exercises10–14 cover exact represented perpetuity quotients,convergence boundaries,finite/tail partition,direct100digit tail checks and adjacent-float p-integral gates. Initial47/2 and proposed48/1 observer results retained:115.13 is above the115.12925465... minimum,so the suspected rounding defect was false. Proposed edit rejected;manuscript restored exactly. No financial/manuscript source change. Each final run compiles seven pinned files and executes10.10 CLI/checker. Next15–20,then Part F/full report/units/navigation. No new full-book run;V273 remains tied to its pin. All38 COV categories partial,none closed;Book2/broader acceptance open. Book1 separately advanced14.12 distribution assumptions.

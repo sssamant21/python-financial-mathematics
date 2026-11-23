@@ -688,3 +688,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section14.11 covariance/correlation assumptions
 
 [Evidence](v10-covariance-assumptions/README.md):119 predicates pass twice. Six fixed-marginal pairings,signed affine scales,exhaustive IID paired estimators,tail-event contrasts and signed-weight/multi-asset PSD limits checked. Four commands/24 invocations of twelve existing methods;F120 source/listing/eight failures/29 predicates/24 answers/ten steps retained. No source change/new historical/workflow/answer/step totals. Next14.12 common-distribution assumptions,then14.13–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section14.12 distribution-selection assumptions
+
+[Evidence](v10-distribution-selection/README.md):142 predicates pass twice. Twenty small binomial parameter fixtures,ordinary Poisson/rate-mixture contrast,waiting/uniform unit contracts and actual256-count replay checked;external model laws distinguished. Four commands/24 invocations of twelve existing methods;F121 source/listing/five failures/39 predicates/24 answers/ten steps retained. No source change/new historical/workflow/answer/step totals. Poisson extremes/rare simulated tails remain open. Next14.13 normal assumptions,then14.14–14.17/marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

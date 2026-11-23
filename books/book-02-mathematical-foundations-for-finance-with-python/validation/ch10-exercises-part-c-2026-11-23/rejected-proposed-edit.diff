@@ -1,0 +1,13 @@
+diff --git a/books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/10.10-exercises-and-applied-problems.md b/books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/10.10-exercises-and-applied-problems.md
+index 3c76943f..2e2b7cb0 100644
+--- a/books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/10.10-exercises-and-applied-problems.md
++++ b/books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/10.10-exercises-and-applied-problems.md
+@@ -146,6 +146,8 @@ e^{-0.04T}\le0.01
+ T\ge\frac{\ln100}{0.04}\approx\boxed{115.13\text{ years}}.
+ \]
+ 
++The displayed 115.13 is an approximation to the minimum, not a feasible rounded cutoff: it leaves slightly more than 1% in the tail. If reporting the horizon to two decimal places, round **up to 115.14 years** to meet the at-most-1% requirement. The lab's approximate report should likewise not be treated as a directed-rounding guarantee; `horizon_for_tail_fraction` in Section 10.6 explicitly returns an upper float for its validated inputs.
++
+ ### Exercise 14 — Power-law integrability
+ 
+ For which \(p\) does \(\int_1^\infty t^{-p}dt\) converge?

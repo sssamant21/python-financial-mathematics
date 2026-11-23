@@ -1,0 +1,459 @@
+{
+  "pin": "4a72e39aea1dd8c330c76f1eecc595994a3cb152",
+  "sources": {
+    "section_10_05.py": "30a32c2adb4cd91be9258b40384fd30082866e312765d1c64e80fa98b432e6fc",
+    "section_10_06.py": "02e5b798a65852cd96f3372705fe706785fa5d3b51145700ff3973c1cbb64203",
+    "section_10_07.py": "0bcbacf7f262678b87b8294948884367dac3847a28c4e3355e98263e19b24084",
+    "section_10_08.py": "b31fa7900e9755a1759bb2483e5dde9eafe90ccfb2546222a15f1fd84acfd742",
+    "section_10_09.py": "9a3649e6dab7b629d0c655249473cf3d2b2a25e3e894ae071a84764ce009dda6",
+    "section_10_10.py": "01e17fbc9bc6d49ec151fe162922389f4261874c37e389ad2803043d88a7cbc0",
+    "check_section_10_10.py": "be055c97afe6d82130f11204b8e7b253f6bb659e9bbafc8ae554749ec5068d5f"
+  },
+  "manuscript_sha256": "e56c242ed7482cac911eeabd7eac1d6fb93eeddf80e1efe240ede52435508ec6",
+  "rows": [
+    {
+      "name": "E10 report",
+      "actual": "20000",
+      "expected": "20000",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "textbook rational900/.045 exact decimal convention"
+    },
+    {
+      "name": "E11 report",
+      "actual": "30000",
+      "expected": "30000",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "textbook rational1200/(.06-.02) exact decimal convention"
+    },
+    {
+      "name": "E10 native perpetuity",
+      "actual": "20000.0",
+      "expected": "20000.0",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "independent exact represented-input rational quotient,one float report"
+    },
+    {
+      "name": "E11 native perpetuity",
+      "actual": "30000.000000000004",
+      "expected": "30000.000000000004",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "independent exact represented-input rational quotient,one float report"
+    },
+    {
+      "name": "near boundary native perpetuity",
+      "actual": "1.4411518807585587e+17",
+      "expected": "1.4411518807585587e+17",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "independent exact represented-input rational quotient,one float report"
+    },
+    {
+      "name": "signed integrable native perpetuity",
+      "actual": "-20000.0",
+      "expected": "-20000.0",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "independent exact represented-input rational quotient,one float report"
+    },
+    {
+      "name": "E12 nonzero divergent growth 0.06",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "source convergence/input contract"
+    },
+    {
+      "name": "E12 nonzero divergent growth 0.060000000000000005",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "source convergence/input contract"
+    },
+    {
+      "name": "E12 nonzero divergent growth 0.07",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "source convergence/input contract"
+    },
+    {
+      "name": "zero stream despite nondecay",
+      "actual": "0.0",
+      "expected": "0",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "zero cash-flow function is integrable;positive-stream exercise hypothesis matters"
+    },
+    {
+      "name": "equal rate finite horizon",
+      "actual": "6000.0",
+      "expected": "6000",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "finite-horizon existence does not imply infinite-horizon convergence"
+    },
+    {
+      "name": "E13 rounded115.13 violates at-most1percent",
+      "actual": "False",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": false,
+      "kind": "independent100digit direct tail calculation"
+    },
+    {
+      "name": "E13 rounded-up115.14 meets target",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "conservative hundredth-year report"
+    },
+    {
+      "name": "E13 lab approximate horizon",
+      "actual": "115.12925464970229",
+      "expected": "1151292546497022842008995727342182103800550744314386488016663950483786304838676240117998602544799149/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "tolerance": "1/1000000000000",
+      "passed": true,
+      "kind": "report is an approximation,not certified upward endpoint"
+    },
+    {
+      "name": "tail horizon upper 0.0/0.04/0.01",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "independent100digit target;selected finite ordinary inputs"
+    },
+    {
+      "name": "tail achieved 0.0/0.04/0.01",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "direct survival check,not helper recomposition"
+    },
+    {
+      "name": "adjacent earlier fails 0.0/0.04/0.01",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "selected minimal upper-float endpoint witness"
+    },
+    {
+      "name": "tail source 0.0/0.04/0.01",
+      "actual": "224.99999999999991",
+      "expected": "22499999999999992870812316385009062547631569728265675569924923859919590879342244774027324121953214471/100000000000000002081668171172168513294309377670288085937500000000000000000000000000000000000000000",
+      "tolerance": "1/10000000000",
+      "passed": true,
+      "kind": "independent rational coefficient times100digit survival"
+    },
+    {
+      "name": "tail horizon upper 0.02/0.06/0.01",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "independent100digit target;selected finite ordinary inputs"
+    },
+    {
+      "name": "tail achieved 0.02/0.06/0.01",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "direct survival check,not helper recomposition"
+    },
+    {
+      "name": "adjacent earlier fails 0.02/0.06/0.01",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "selected minimal upper-float endpoint witness"
+    },
+    {
+      "name": "tail source 0.02/0.06/0.01",
+      "actual": "224.99999999999991",
+      "expected": "3749999999999998178054501544663704499954210059802307595633473098566850350527601444835925118959872987/16666666666666665568008465214688840205781161785125732421875000000000000000000000000000000000000000",
+      "tolerance": "1/10000000000",
+      "passed": true,
+      "kind": "independent rational coefficient times100digit survival"
+    },
+    {
+      "name": "tail horizon upper 0.0/0.04/0.5",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "independent100digit target;selected finite ordinary inputs"
+    },
+    {
+      "name": "tail achieved 0.0/0.04/0.5",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "direct survival check,not helper recomposition"
+    },
+    {
+      "name": "adjacent earlier fails 0.0/0.04/0.5",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "selected minimal upper-float endpoint witness"
+    },
+    {
+      "name": "tail source 0.0/0.04/0.5",
+      "actual": "11250.0",
+      "expected": "44999999999999998595703675668866435223070558861393520374075973019100710929573248623261815871732443953/4000000000000000083266726846886740531772375106811523437500000000000000000000000000000000000000000",
+      "tolerance": "1/10000000000",
+      "passed": true,
+      "kind": "independent rational coefficient times100digit survival"
+    },
+    {
+      "name": "tail horizon upper 0.02/0.06/0.1",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "independent100digit target;selected finite ordinary inputs"
+    },
+    {
+      "name": "tail achieved 0.02/0.06/0.1",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "direct survival check,not helper recomposition"
+    },
+    {
+      "name": "adjacent earlier fails 0.02/0.06/0.1",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "selected minimal upper-float endpoint witness"
+    },
+    {
+      "name": "tail source 0.02/0.06/0.1",
+      "actual": "2250.0000000000005",
+      "expected": "1500000000000000061936541764992737078596740218122224298948198664649981737184183433959095568862424631/666666666666666622720338608587553608231246471405029296875000000000000000000000000000000000000000",
+      "tolerance": "1/10000000000",
+      "passed": true,
+      "kind": "independent rational coefficient times100digit survival"
+    },
+    {
+      "name": "E10 tail at 0.0",
+      "actual": "20000.0",
+      "expected": "21617278211378380800/1080863910568919",
+      "tolerance": "1/10000000000",
+      "passed": true,
+      "kind": "100digit exponential tail reference"
+    },
+    {
+      "name": "E10 finite plus tail 0.0",
+      "actual": "20000.0",
+      "expected": "21617278211378380800/1080863910568919",
+      "tolerance": "1/10000000000",
+      "passed": true,
+      "kind": "integral partition identity and independently derived total"
+    },
+    {
+      "name": "E10 tail at 10.0",
+      "actual": "12752.563032435466",
+      "expected": "9564422274326599556435778967609782888601160703955999435276544234502336268086023423509701902224804689/749999999999999972244424384371086489409208297729492187500000000000000000000000000000000000000000",
+      "tolerance": "1/10000000000",
+      "passed": true,
+      "kind": "100digit exponential tail reference"
+    },
+    {
+      "name": "E10 finite plus tail 10.0",
+      "actual": "20000.0",
+      "expected": "21617278211378380800/1080863910568919",
+      "tolerance": "1/10000000000",
+      "passed": true,
+      "kind": "integral partition identity and independently derived total"
+    },
+    {
+      "name": "E10 tail at 100.0",
+      "actual": "222.17993076484618",
+      "expected": "1666349480736346251924404230889359914433953701964929118963562721803714450958603478150321021519036489/7499999999999999722444243843710864894092082977294921875000000000000000000000000000000000000000000",
+      "tolerance": "1/10000000000",
+      "passed": true,
+      "kind": "100digit exponential tail reference"
+    },
+    {
+      "name": "E10 finite plus tail 100.0",
+      "actual": "20000.0",
+      "expected": "21617278211378380800/1080863910568919",
+      "tolerance": "1/10000000000",
+      "passed": true,
+      "kind": "integral partition identity and independently derived total"
+    },
+    {
+      "name": "E14 convergent p=1.0000000000000002",
+      "actual": "4503599627370496.0",
+      "expected": "4503599627370496.0",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "antiderivative limit1/(p-1),exact represented power"
+    },
+    {
+      "name": "E14 convergent p=1.5",
+      "actual": "2.0",
+      "expected": "2.0",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "antiderivative limit1/(p-1),exact represented power"
+    },
+    {
+      "name": "E14 convergent p=2.0",
+      "actual": "1.0",
+      "expected": "1.0",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "antiderivative limit1/(p-1),exact represented power"
+    },
+    {
+      "name": "E14 convergent p=3.0",
+      "actual": "0.5",
+      "expected": "0.5",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "antiderivative limit1/(p-1),exact represented power"
+    },
+    {
+      "name": "E14 divergent p=0.9999999999999999",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "source convergence/input contract"
+    },
+    {
+      "name": "E14 divergent p=1.0",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "source convergence/input contract"
+    },
+    {
+      "name": "E14 divergent p=0.0",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "source convergence/input contract"
+    },
+    {
+      "name": "E14 divergent p=-2.0",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "source convergence/input contract"
+    },
+    {
+      "name": "tail fraction invalid 0.0",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "source convergence/input contract"
+    },
+    {
+      "name": "tail fraction invalid 1.0",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "source convergence/input contract"
+    },
+    {
+      "name": "tail fraction invalid -1.0",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "source convergence/input contract"
+    },
+    {
+      "name": "nondecaying tail",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "source convergence/input contract"
+    },
+    {
+      "name": "E13 conservative rounding instruction",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": "0",
+      "passed": true,
+      "kind": "manuscript must distinguish approximate minimum from upward rounded feasible hundredth-year horizon"
+    }
+  ],
+  "tail_records": [
+    {
+      "exercise": 13,
+      "exact_decimal_target": "115.1292546497022842008995727342182103800550744314386488016663950483786304838676240117998602544799149",
+      "tail_at_115_13": "0.009999701864325246042897676342794909195573889704476206068672357172724777148478821937902367617080541161",
+      "tail_at_115_14": "0.009995702783449012269442802351396642159001167446167297450412508763508265063740088678661810781063090411"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_10.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"examples\": {\n    \"accumulation_linear\": 1470,\n    \"fundamental_theorem_at_2\": 426.6666666666667,\n    \"substitution_integral\": 0.9816843611112658,\n    \"level_stream_pv\": 5544.607913767074,\n    \"growing_stream_pv\": 3760.099117292947,\n    \"growth_matches_discount_pv\": 4000,\n    \"zero_rate_linear_pv\": 2200,\n    \"level_perpetuity_pv\": 20000,\n    \"growing_perpetuity_pv\": 30000,\n    \"tail_one_percent_years\": 115.12925464970229,\n    \"discrete_two_payments_pv\": 928.0334212683367,\n    \"quadrature_midpoint\": 0.3125,\n    \"quadrature_trapezoid\": 0.375,\n    \"quadrature_simpson\": 0.3333333333333333\n  },\n  \"integrated_case\": {\n    \"flat_analytic_components\": [\n      3625.384938440363,\n      1075.538913816508,\n      565.3978164142125\n    ],\n    \"flat_analytic_discrete\": 452.4187090179798,\n    \"flat_analytic_total\": 5718.740377689063,\n    \"simpson_reconciliation\": [\n      {\n        \"subintervals\": 128,\n        \"total_pv\": 5718.740377688741,\n        \"absolute_error\": 3.219611244276166e-10\n      },\n      {\n        \"subintervals\": 256,\n        \"total_pv\": 5718.740377689042,\n        \"absolute_error\": 2.091837814077735e-11\n      },\n      {\n        \"subintervals\": 512,\n        \"total_pv\": 5718.7403776890615,\n        \"absolute_error\": 1.8189894035458565e-12\n      }\n    ],\n    \"affine_numerical_total\": 5874.268249921076,\n    \"flat_rate_derivative_1bp_bump\": -11342.893931296203,\n    \"affine_rate_derivative_1bp_bump\": -11723.523627292707\n  },\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_10.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.10 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "section_10_05.py",
+        "section_10_06.py",
+        "section_10_07.py",
+        "section_10_08.py",
+        "section_10_09.py",
+        "section_10_10.py",
+        "check_section_10_10.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "executed_at_utc": "2026-11-23T08:46:45.792853+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "passed": 48,
+  "failed": 1,
+  "scope": "Part C10-14 selected improper-integral/reporting contracts;100digit tail reference is not universal directed-rounding proof;complete10.10 checker/CLI execution does not close Part D-F/report obligations"
+}
