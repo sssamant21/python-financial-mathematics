@@ -233,18 +233,40 @@ def assessment():
     streams=[Stream("constant",1000),Stream("linear",200,50),
              Stream("exponential",150,0.02)]
     payments=[(2,500)]
+    panels=512
+    bump=0.0001
+    tolerance=1e-6
     flat=Curve(0.05)
     affine=Curve(0.03,0.005)
-    flat_numeric=portfolio_pv(streams,payments,flat,4,512)
+    flat_numeric=portfolio_pv(streams,payments,flat,4,panels)
     flat_exact=[analytic_pv(s,flat,4) for s in streams]
     exact_total=math.fsum(flat_exact+[discrete_pv(payments,flat)])
-    affine_result=portfolio_pv(streams,payments,affine,4,512)
+    affine_result=portfolio_pv(streams,payments,affine,4,panels)
+    affine_coarse=portfolio_pv(streams,payments,affine,4,panels//2)
+    difference=abs(Fraction(affine_result["total"])-Fraction(affine_coarse["total"]))
+    reconciliation=abs(flat_numeric["total"]-exact_total)
     return {"horizon_years":4,"units":"currency; rates 1/year",
             "flat_numeric":flat_numeric,"flat_analytic_total":exact_total,
-            "flat_absolute_reconciliation":abs(flat_numeric["total"]-exact_total),
+            "flat_absolute_reconciliation":reconciliation,
+            "flat_reconciliation_tolerance":tolerance,
+            "flat_reconciliation_within_tolerance":reconciliation<tolerance,
+            "simpson_panels":panels,
+            "parallel_shift_bump":bump,
+            "parallel_shift_derivative_units":"currency*years",
+            "discrete_timing_policy":"all supplied nonnegative year fractions; no horizon filtering",
+            "assumptions":["deterministic cash flows and curves",
+                           "annual decimal continuously compounded rates",
+                           "times in years; continuous rates in currency/year",
+                           "year fractions are supplied; no calendar or market calibration"],
+            "affine_refinement":{"coarse_panels":panels//2,"fine_panels":panels,
+                                 "coarse_total":affine_coarse["total"],
+                                 "fine_total":affine_result["total"],
+                                 "absolute_difference":_scalar_report(difference),
+                                 "estimated_fine_error":_scalar_report(difference/15),
+                                 "error_estimate_certified":False},
             "affine_numeric":affine_result,
             "flat_parallel_rate_derivative":parallel_shift_derivative(
-                streams,payments,flat,4,512),
+                streams,payments,flat,4,panels,bump),
             "runtime_certified":False,"independent_review_completed":False}
 
 if __name__=="__main__":

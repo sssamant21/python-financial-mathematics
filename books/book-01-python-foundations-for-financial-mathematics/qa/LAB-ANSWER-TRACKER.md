@@ -668,3 +668,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section14.7 discrete-variable/binomial assumptions
 
 [Evidence](v10-discrete-variable-models/README.md):1283 predicates pass twice.35 small binomial parameter cases use exhaustive binary paths;385 thresholds distinguish inclusive CDF/strict tail. Same mean3 permits count variances1.5/.5/9 under IID/heterogeneous/shared laws;regime mixture and fixed-loss unit scaling separated. Four commands/24 invocations of twelve existing methods;F116 source/listing/seven failures/48 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next14.8 continuous-variable assumptions,then14.9–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section14.8 continuous-variable assumptions
+
+[Evidence](v10-continuous-variable-models/README.md):303 predicates pass twice. Independent100-digit density/CDF/survival/interval/quantile references;model memorylessness and unit conversions distinguished from empirical claims. External censoring creates an atom;an exponential mixture with mean1 has variance2 and loses memorylessness. Four commands/24 invocations of twelve existing methods;F117 source/listing/six failures/31 predicates/24 answers/ten requirements retained. No source change/new historical/workflow/answer/step totals. Next14.9 expected-value assumptions,then14.10–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

@@ -90,6 +90,9 @@ def run():
     rejects(ValueError,finite,float("nan"),"value")
     report=assessment()
     assert report["flat_absolute_reconciliation"]<1e-6
+    assert report["simpson_panels"]==512 and report["parallel_shift_bump"]==.0001
+    assert report["affine_refinement"]["coarse_panels"]==256
+    assert report["affine_refinement"]["error_estimate_certified"] is False
     assert report["runtime_certified"] is False
     print("PASS: Section 10.9 independent checks")
 

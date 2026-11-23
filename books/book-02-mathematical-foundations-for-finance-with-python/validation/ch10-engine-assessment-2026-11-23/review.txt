@@ -1,0 +1,72 @@
+"""Independent fixed-scenario report/accuracy/metadata and model/unit crosswalk."""
+from pathlib import Path
+from fractions import Fraction as F
+import sys,subprocess,tempfile,importlib.util,json,math,hashlib,platform,re
+from datetime import datetime,timezone
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='bf827d7f8351c0d99cfe5760540964dd31fbbe0b';prefix='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/';mode,label=sys.argv[1:3];sources={name:(subprocess.check_output(['git','show',pin+':'+prefix+name],cwd=root) if mode=='baseline' else (root/prefix/name).read_bytes()) for name in ['section_10_09.py','section_10_05.py','section_10_07.py','section_10_08.py']};rows=[];commands=[];bounds=[]
+def ck(name,got,want,kind,close=False):rows.append(dict(name=name,actual=str(got),expected=str(want),passed=math.isclose(float(got),float(want),rel_tol=3e-14,abs_tol=2e-10) if close else got==want,kind=kind))
+def integral(a,b,u,v,T,moment=0):
+ # Integrate (a+b*t)*t^moment times the degree40 Taylor polynomial of exp(u*t+v*t²).
+ a,b,u,v,T=map(F,(a,b,u,v,T));total=F(0)
+ for degree in range(41):
+  for j in range(degree+1):
+   i=degree-j;power=i+2*j+moment;coefficient=u**i*v**j/F(math.factorial(i)*math.factorial(j));total+=coefficient*(a*T**(power+1)/(power+1)+b*T**(power+2)/(power+2))
+ z=abs(u)*T+abs(v)*T*T;assert z<F(3,10);error=2*T**(moment+1)*(abs(a)+abs(b)*T)*z**41/math.factorial(41);assert error<F(1,10**55);return total,error
+
+def discrete(amount,rate,slope,t,shift=0.):
+ x=-(F(rate)+F(shift))*F(t)-F(slope)*F(t)**2/2;assert abs(x)<F(3,10);value=F(amount)*sum((x**i/F(math.factorial(i)) for i in range(41)),F(0));error=2*abs(F(amount))*abs(x)**41/math.factorial(41);return value,error
+
+def fourth_bound(a,b,u,v,T):
+ p=[F(a),F(b)];u,v,T=map(F,(u,v,T))
+ for _ in range(4):
+  q=[F(0)]*(len(p)+1)
+  for i,c in enumerate(p):
+   if i:q[i-1]+=i*c
+   q[i]+=u*c;q[i+1]+=2*v*c
+  p=q
+ return 2*sum(abs(c)*T**i for i,c in enumerate(p))
+with tempfile.TemporaryDirectory() as tmp:
+ for name,raw in sources.items():(Path(tmp)/name).write_bytes(raw)
+ sys.path.insert(0,tmp);spec=importlib.util.spec_from_file_location('engine_lab',Path(tmp)/'section_10_09.py');m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m);r=m.assessment();T=4.;streams=[m.Stream('constant',1000),m.Stream('linear',200,50),m.Stream('exponential',150,.02)];models=[('constant',1000.,0.,0.),('linear',200.,50.,0.),('exponential',150.,0.,.02)];oracles={}
+ for curve_name,rate,slope in [('flat',.05,0.),('affine',.03,.005)]:
+  values=[]
+  for i,(kind,a,b,g) in enumerate(models):
+   u=F(g)-F(rate);v=-F(slope)/2;value,tail=integral(a,b,u,v,T);values.append(value)
+   for n in [256,512]:
+    got=m.numerical_pv(streams[i],m.Curve(rate,slope),T,n);bound=F(T)*(F(T)/n)**4*fourth_bound(a,b,u,v,T)/180+tail;ck(f'{curve_name} stream{i} n{n} accuracy',abs(got-float(value))<=float(bound)+2e-10,True,'derived Simpson fourth-derivative bound+2e-10 float allowance;independent integrated Taylor oracle');bounds.append(dict(curve=curve_name,stream=i,n=n,reference=str(value),tail_bound=str(tail),simpson_bound=str(bound),actual=got))
+   ck(f'{curve_name} reported component{i}',r[curve_name+'_numeric']['continuous_components'][i],float(value),'complete report field versus independent integral',True)
+   if curve_name=='flat':ck(f'flat analytic component{i}',m.analytic_pv(streams[i],m.Curve(rate),T),float(value),'independent integrated Taylor value,not shared source formula',True)
+  amount,tail=discrete(500.,rate,slope,2.);total=sum(values)+amount;oracles[curve_name]=total;ck(curve_name+' discrete report',r[curve_name+'_numeric']['discrete'],float(amount),'independent rational exponential Taylor reference',True);ck(curve_name+' total report',r[curve_name+'_numeric']['total'],float(total),'independent component+dated-payment reference',True)
+ ck('flat analytic report',r['flat_analytic_total'],float(oracles['flat']),'independent total reference',True);ck('reported reconciliation',r['flat_absolute_reconciliation'],abs(r['flat_numeric']['total']-r['flat_analytic_total']),'report-field composition,not independent accuracy')
+ # Exact model derivative uses the negative time-weighted integral;centered difference has O(h²) truncation.
+ exact=F(0)
+ for kind,a,b,g in models:exact-=integral(a,b,F(g)-F(.05),F(0),T,1)[0]
+ exact-=2*discrete(500.,.05,0.,2.)[0]
+ h=F(.0001);moment3=F(0);quadrature_derivative_bound=F(0)
+ for kind,a,b,g in models:
+  val,tail=integral(a,b,F(g)-F(.05),F(0),T,3);moment3+=val+tail
+  for shift in [-h,h]:quadrature_derivative_bound+=F(T)*(F(T)/512)**4*fourth_bound(a,b,F(g)-F(.05)-shift,F(0),T)/180/(2*h)
+ disc,disc_tail=discrete(500.,.05,0.,2.);moment3+=8*(disc+disc_tail)
+ truncation_bound=h*h*moment3/(6*(1-h*F(T)));floating_allowance=F(2,10**9)/h;sensitivity_bound=truncation_bound+quadrature_derivative_bound+floating_allowance
+ ck('flat sensitivity accuracy',abs(r['flat_parallel_rate_derivative']-float(exact))<=float(sensitivity_bound),True,'independent time-weighted integral,Taylor central-difference/Simpson bounds+declared2e-9 currency rounding allowance per valuation')
+ sensitivity_evidence=dict(reference=str(exact),finite_difference_truncation_bound=str(truncation_bound),quadrature_derivative_bound=str(quadrature_derivative_bound),floating_allowance=str(floating_allowance),combined_bound=str(sensitivity_bound),actual=r['flat_parallel_rate_derivative'])
+ for key,want in [('horizon_years',4),('units','currency; rates 1/year'),('runtime_certified',False),('independent_review_completed',False)]:ck('report '+key,r.get(key,'absent'),want,'existing report/governance fields')
+ required={'simpson_panels':512,'parallel_shift_bump':.0001,'parallel_shift_derivative_units':'currency*years','flat_reconciliation_tolerance':1e-6,'flat_reconciliation_within_tolerance':True,'discrete_timing_policy':'all supplied nonnegative year fractions; no horizon filtering'}
+ for key,want in required.items():ck('report metadata '+key,r.get(key,'absent'),want,'new explicit manuscript/report contract,not numerical defect')
+ ck('report assumptions',isinstance(r.get('assumptions'),list) and len(r['assumptions'])>=3,True,'new explicit model assumptions metadata')
+ ref=r.get('affine_refinement',{})
+ for key,want in [('coarse_panels',256),('fine_panels',512),('error_estimate_certified',False)]:ck('refinement metadata '+key,ref.get(key,'absent'),want,'new explicit resolution/heuristic metadata')
+ if ref:
+  ck('refinement fine identity',ref['fine_total'],r['affine_numeric']['total'],'report-field composition');difference=abs(F(ref['fine_total'])-F(ref['coarse_total']));ck('refinement difference',ref['absolute_difference'],float(difference),'exact difference of reported floats,not a rigorous bound');ck('refinement error estimate',ref['estimated_fine_error'],float(difference/15),'declared smooth-regime heuristic,not independent accuracy');ck('refinement coarse accuracy',abs(ref['coarse_total']-float(oracles['affine']))<=1e-7,True,'independent true-integral reference,selected fixed model')
+ else:
+  for name in ['fine identity','difference','error estimate','coarse accuracy']:ck('refinement '+name,'absent',True,'new report contract;numeric accuracy handled separately')
+ ck('continuous horizon excludes no discrete rows',m.portfolio_pv([],[(2,500)],m.Curve(.05),0.,2)['total'],float(discrete(500.,.05,0.,2.)[0]),'explicit date policy;T only bounds continuous streams',True)
+ ck('zero-rate constant units',m.analytic_pv(m.Stream('constant',1000),m.Curve(0),4.),4000.,'currency/year times years')
+ ck('zero-rate linear units',m.analytic_pv(m.Stream('linear',200,50),m.Curve(0),4.),1200.,'slope currency/year²')
+ ck('equal-growth-rate limit',m.analytic_pv(m.Stream('exponential',150,.05),m.Curve(.05),4.),600.,'g=r limit')
+ for args in [[sys.executable,'section_10_09.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0
+rout=dict(pin=pin,mode=mode,source_sha256={prefix+n:hashlib.sha256(v).hexdigest() for n,v in sources.items()},rows=rows,assessment=r,independent_bounds=bounds,sensitivity_evidence=sensitivity_evidence,commands=commands,executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='Fixed assessment/units/exercise/lab crosswalk with independent integrated Taylor/Simpson bounds;not calibration or independent acceptance')
+(here/(label+'.json')).write_text(json.dumps(rout,indent=2)+'\n');print(rout['passed'],rout['failed'])
+if mode!='baseline':assert rout['failed']==0
