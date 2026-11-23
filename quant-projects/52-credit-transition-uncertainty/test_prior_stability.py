@@ -35,6 +35,32 @@ class PriorStabilityTests(unittest.TestCase):
             self.assertAlmostEqual(summary["mean_absolute_gap"],
                 sum(abs(r["heldout_calibration_gap"]) for r in group) / len(group))
 
+    def test_independent_closed_form_score_reconciliation(self):
+        """Recompute predictions and held-out losses without model helpers."""
+        result = prior_stability(true_pd=0.07, train_size=73,
+                                 heldout_size=41, first_seed=19,
+                                 repetitions=4, strengths=(0.25, 2.0, 12.0))
+        self.assertEqual(len(result["runs"]), 12)
+        for row in result["runs"]:
+            k = row["strength"]
+            p = (row["train_defaults"] + k) / (row["train_size"] + 2 * k)
+            d = row["heldout_defaults"]
+            n = row["heldout_size"]
+            expected_log_loss = -(d * math.log(p) + (n - d) * math.log1p(-p)) / n
+            expected_brier = (d * (1 - p)**2 + (n - d) * p**2) / n
+            self.assertAlmostEqual(row["posterior_mean_default"], p, places=13)
+            self.assertAlmostEqual(row["heldout_default_rate"], d / n, places=13)
+            self.assertAlmostEqual(row["heldout_calibration_gap"], p - d / n, places=13)
+            self.assertAlmostEqual(row["heldout_log_loss"], expected_log_loss, places=13)
+            self.assertAlmostEqual(row["heldout_brier_score"], expected_brier, places=13)
+        for summary in result["summary"]:
+            group = [r for r in result["runs"]
+                     if r["strength"] == summary["strength"]]
+            self.assertAlmostEqual(summary["mean_log_loss"],
+                                   sum(r["heldout_log_loss"] for r in group) / 4)
+            self.assertAlmostEqual(summary["mean_brier"],
+                                   sum(r["heldout_brier_score"] for r in group) / 4)
+
     def test_invalid_grid_and_budget(self):
         cases = ({"strengths": (0.0,)}, {"strengths": (float("nan"),)},
                  {"strengths": (1.0, 1.0)}, {"strengths": (True,)},
