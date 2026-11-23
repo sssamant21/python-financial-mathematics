@@ -68,3 +68,17 @@ python repeated_cohorts.py --true-pd 0.04 --train-size 500 --heldout-size 200 --
 ```
 
 The number of repetitions is bounded to 2–200 and each cohort to 1–100,000 observations; seed overflow, booleans and invalid model parameters are rejected. The five new tests check deterministic output, individual-run agreement, aggregate arithmetic and invalid inputs. **These tests were authored but exact-revision execution and CI inclusion remain unverified.** All cohorts are synthetic; no historical transition calibration, model approval, or investment decision is supported.
+
+
+## Paired prior-strength stability (2026-11-23)
+
+`prior_stability.py` evaluates a **predeclared** symmetric Beta-prior strength grid against identical seeded training and held-out synthetic cohorts. For each seed, training and held-out default counts are the same across prior strengths (paired comparison); only the prior changes. The posterior forecast is frozen before held-out scoring. All rows are retained, with per-strength mean log loss, Brier score and absolute calibration gap. No winning prior is selected using held-out outcomes.
+
+```bash
+cd quant-projects/52-credit-transition-uncertainty
+python -m unittest -v test_prior_stability.py
+python -m py_compile prior_stability.py test_prior_stability.py
+python prior_stability.py --true-pd 0.04 --train-size 500 --heldout-size 200 --first-seed 42 --repetitions 10 --strengths 0.5 1 5
+```
+
+The simulation has a bounded work budget, 2–100 repetitions, 1–8 distinct finite prior strengths and 32-bit seed checks. These **five new tests are authored, not yet verified** against the published revision. Paired simulation reduces random comparison noise but does not establish historical stability, predictive coverage, independent review, or production suitability.
