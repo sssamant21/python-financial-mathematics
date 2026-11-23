@@ -4,6 +4,7 @@ import json
 import math
 from fractions import Fraction
 from decimal import Decimal,Context,localcontext
+from section_10_07 import integrate as _shared_integrate
 from section_10_05 import (_exponential_integral as _shared_exponential_integral,
                            time_weighted_factor as _shared_time_weighted_factor,
                            _linear_pv as _shared_linear_pv)
@@ -123,12 +124,8 @@ def simpson(f,T,n=256):
     t=horizon(T)
     if type(n) is not int or n<=0 or n%2:
         raise ValueError("n must be positive even integer")
-    if t==0:
-        return 0.0
-    h=t/n
-    terms=[finite(f(0),"integrand"),finite(f(t),"integrand")]
-    terms.extend((4 if i%2 else 2)*finite(f(i*h),"integrand") for i in range(1,n))
-    return finite(h*math.fsum(terms)/3,"integral")
+    # Shared exact weighted sum,once-rounded grid and bounded callback work.
+    return _shared_integrate(f,0.,t,n,"simpson")
 
 def numerical_pv(stream,curve,T,n=256,shift=0.0):
     if not isinstance(stream,Stream) or not isinstance(curve,Curve):

@@ -1,7 +1,7 @@
 """Independent checks for Section 10.9 valuation engine."""
 import math
 from section_10_09 import (Stream,Curve,finite,analytic_pv,numerical_pv,
-                           discrete_pv,portfolio_pv,parallel_shift_derivative,assessment,exponential_integral,weighted_integral)
+                           discrete_pv,portfolio_pv,parallel_shift_derivative,assessment,exponential_integral,weighted_integral,simpson)
 
 def close(a,b,rel_tol=1e-8,abs_tol=1e-7):
     assert math.isclose(a,b,rel_tol=rel_tol,abs_tol=abs_tol),(a,b)
@@ -34,6 +34,12 @@ def run():
     assert Curve(-1e308,1e308).discount(2)==1.
     assert Curve(1e308).discount(0,1e308)==1.
     rejects(ValueError,Stream("exponential",1,1).rate,710)
+    close(simpson(lambda t:1e308,1,2),1e308,rel_tol=3e-15,abs_tol=0.)
+    assert simpson(lambda t:-5e307 if t==.5 else 1e308,1,2)==0.
+    close(simpson(lambda t:1e308,1e-308,2),.9999999999999999,rel_tol=3e-15,abs_tol=0.)
+    rejects(ValueError,simpson,lambda t:1.,5e-324,2)
+    rejects(ValueError,simpson,lambda t:1.,1.,100002)
+    rejects(TypeError,simpson,3,0.,2)
     flat=Curve(0.05)
     zero=Curve(0)
     affine=Curve(0.03,0.005)
