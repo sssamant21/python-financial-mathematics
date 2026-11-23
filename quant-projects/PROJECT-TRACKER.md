@@ -1491,3 +1491,8 @@ Published five additional synthetic tests in `52-credit-transition-uncertainty/t
 ### Project 52 — seeded cohort calibration extension (2026-11-23)
 
 Added `cohort_calibration.py` and `test_cohort_calibration.py` for a reproducible synthetic two-state training/held-out split, training-only Dirichlet posterior fit, held-out log-loss/Brier scoring and calibration gap. Five new tests authored (17 total Project 52 tests); **not executed locally or in exact-revision CI during this checkpoint**. The cohort is synthetic, not a historical rating-transition calibration; no independent review or production certification. Next: verify all 17 tests against the current main revision and CI coverage, then add repeated-seed calibration summaries with predeclared settings.
+
+
+### Project 52 — dedicated CI coverage added (2026-11-23)
+
+The dedicated `.github/workflows/quant-projects.yml` workflow now explicitly runs all three Project 52 standard-library suites (`test_transition_uncertainty.py`, `test_prior_sensitivity.py`, `test_cohort_calibration.py`), Python compilation and both seeded CLI smoke commands. Workflow change: [d6cb0ee](https://github.com/sssamant21/python-financial-mathematics/commit/d6cb0ee812643990f62a45fb8f45631eadacad6e). This corrects the prior **CI coverage gap** but is **not** evidence of passing tests: the 17 authored tests and both CLI executions are pending exact-revision GitHub Actions verification. Synthetic data only; no historical calibration, independent mathematical review or production certification. Next: inspect the workflow run for this revision, fix any failures, then add bounded repeated-cohort diagnostics with predeclared seeds and report all runs rather than cherry-picking results.
