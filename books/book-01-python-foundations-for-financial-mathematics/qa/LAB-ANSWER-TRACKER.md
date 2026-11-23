@@ -678,3 +678,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section14.9 expected-value/factorization assumptions
 
 [Evidence](v10-expectation-models/README.md):52 predicates pass twice. Fixed-exposure losses depend on conditional LGD;random exposure/LGD products require joint assumptions even within default. Matching-measure linearity,periodic discount/pricing-measure distinctions,utility and regime composition checked on finite models. Preparatory observer SyntaxError retained,with no financial-source execution before correction. Final four commands/24 invocations of twelve existing methods;F118 source/listing/nine failures/37 predicates/24 answers/ten requirements retained. No source change/new historical/workflow/answer/step totals. Next14.10 variance/SD assumptions,then14.11–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section14.10 variance/SD model assumptions
+
+[Evidence](v10-probability-variance-models/README.md):53 predicates pass twice. Exact finite laws distinguish covariance,zero-covariance dependence,IID sampling denominators,correlated default counts and additive-horizon scaling. Four commands/24 invocations of twelve existing methods;F119 source/listing/nine failures/34 predicates/24 answers/ten steps retained. No financial-source change/new historical/workflow/answer/step totals. Next14.11 covariance/correlation assumptions,then14.12–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
