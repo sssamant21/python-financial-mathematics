@@ -4,12 +4,14 @@ import json
 import math
 from fractions import Fraction
 from decimal import Decimal,Context,localcontext
-from section_10_07 import integrate as _shared_integrate
+from section_10_07 import integrate as _shared_integrate,MAX_PANELS
 from section_10_08 import (_discounted_sum as _shared_discounted_sum,
                            MAX_SCHEDULE_PAYMENTS)
 from section_10_05 import (_exponential_integral as _shared_exponential_integral,
                            time_weighted_factor as _shared_time_weighted_factor,
                            _linear_pv as _shared_linear_pv)
+
+MAX_PORTFOLIO_STREAMS=10000  # Educational report/work budget,not an optimal bound.
 
 def finite(x,name):
     if type(x) not in (int,float):
@@ -180,10 +182,27 @@ def discrete_pv(payments,curve,shift=0.0):
     return finite(math.fsum(terms),"discrete PV")
 
 def portfolio_pv(streams,payments,curve,T,n=256,shift=0.0):
-    components=[numerical_pv(s,curve,T,n,shift) for s in streams]
+    if not isinstance(curve,Curve):
+        raise TypeError("expected Curve")
+    t=horizon(T)
+    shift=finite(shift,"shift")
+    if type(n) is not int or n<=0 or n%2:
+        raise ValueError("n must be positive even integer")
+    if n>MAX_PANELS:
+        raise ValueError("panel count exceeds supported budget")
+    validated=[]
+    for index,stream in enumerate(streams):
+        if index>=MAX_PORTFOLIO_STREAMS:
+            raise ValueError("portfolio exceeds supported stream count")
+        if not isinstance(stream,Stream):
+            raise TypeError("expected Stream")
+        validated.append(stream)
+    components=[numerical_pv(s,curve,t,n,shift) for s in validated]
     discrete=discrete_pv(payments,curve,shift)
-    return {"continuous_components":components,"discrete":discrete,
-            "total":finite(math.fsum(components+[discrete]),"total PV")}
+    # Reported components are individually finite;sum them completely before
+    # one final float report instead of overflowing an intermediate subtotal.
+    total=_scalar_report(sum((Fraction(v) for v in components+[discrete]),Fraction(0)))
+    return {"continuous_components":components,"discrete":discrete,"total":total}
 
 def parallel_shift_derivative(streams,payments,curve,T,n=256,bump=0.0001):
     bump=finite(bump,"bump")

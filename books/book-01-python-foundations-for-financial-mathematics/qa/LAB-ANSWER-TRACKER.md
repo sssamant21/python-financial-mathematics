@@ -658,3 +658,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section14.5 independence/joint-law assumptions
 
 [Evidence](v10-independence-models/README.md):281 predicates pass twice. Bernoulli constructors impose product laws;XOR is pairwise but not mutually independent. Fixed loan marginals admit varying joint default/union risk;zero covariance and conditional regime independence do not establish unconditional independence. Four commands/24 invocations of twelve existing methods;F114 source/listing/six failures/41 predicates/24 answers/eight tasks retained. No source change/new historical/workflow/answer/step totals. Next14.6 random-variable assumptions,then14.7–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section14.6 random-variable mapping assumptions
+
+[Evidence](v10-random-variable-models/README.md):679 predicates pass twice. All81 four-state payoff mappings check pushforward/event/mean/pairwise variance/affine contracts;coarsening loses source-state information and equal marginals permit portfolio variances.5/1/0 under different joint mappings. Units and actual128-draw replay/transform distinguished. Four commands/24 invocations of twelve existing methods;F115 source/listing/six failures/30 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next14.7 discrete-variable assumptions,then14.8–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

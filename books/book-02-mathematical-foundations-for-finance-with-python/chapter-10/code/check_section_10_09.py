@@ -48,6 +48,10 @@ def run():
     assert discrete_pv([(0,1e308),(0,1e308),(0,-1e308)],Curve(0))==1e308
     assert discrete_pv([(1e308,0)],Curve(-1e308))==0.
     rejects(TypeError,discrete_pv,[],Curve(0),True)
+    assert portfolio_pv([Stream("constant",x) for x in [1e308,1e308,-1e308]],[],Curve(0),1,2)["total"]==1e308
+    assert portfolio_pv([Stream("constant",1e308),Stream("constant",1e308)],[(0,-1e308)],Curve(0),1,2)["total"]==1e308
+    rejects(ValueError,portfolio_pv,[],[],Curve(0),-1,2)
+    rejects(ValueError,portfolio_pv,[],[],Curve(0),1,3)
     flat=Curve(0.05)
     zero=Curve(0)
     affine=Curve(0.03,0.005)
