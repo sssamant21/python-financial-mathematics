@@ -43,6 +43,11 @@ def run():
     close(numerical_pv(Stream("exponential",1e-308,1),Curve(1),710,2),7.1e-306,rel_tol=4e-15,abs_tol=0.)
     close(numerical_pv(Stream("exponential",1e-308,1e308),Curve(1e308),1e308,2),.9999999999999999,rel_tol=4e-15,abs_tol=0.)
     assert numerical_pv(Stream("constant",0),Curve(-1e308,-1e308),1e308,2)==0.
+    close(discrete_pv([(710,1e-308)],Curve(-1)),2.233994766161711,rel_tol=4e-15,abs_tol=0.)
+    assert discrete_pv([(710,1e308),(710,-1e308),(0,3)],Curve(-1))==3.
+    assert discrete_pv([(0,1e308),(0,1e308),(0,-1e308)],Curve(0))==1e308
+    assert discrete_pv([(1e308,0)],Curve(-1e308))==0.
+    rejects(TypeError,discrete_pv,[],Curve(0),True)
     flat=Curve(0.05)
     zero=Curve(0)
     affine=Curve(0.03,0.005)

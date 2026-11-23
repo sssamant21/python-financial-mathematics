@@ -52,6 +52,10 @@ def schedule_pv(payments,rate):
         amount=Fraction(finite(payment[1],"amount"))
         exponent=-r*Fraction(time)
         grouped[exponent]=grouped.get(exponent,Fraction(0))+amount
+    return _discounted_sum(grouped)
+
+def _discounted_sum(grouped):
+    """Complete sum for validated rational exponent/coefficient groups (internal)."""
     grouped={e:a for e,a in grouped.items() if a}
     if not grouped:
         return 0.0

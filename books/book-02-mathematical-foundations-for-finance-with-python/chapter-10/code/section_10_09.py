@@ -5,6 +5,8 @@ import math
 from fractions import Fraction
 from decimal import Decimal,Context,localcontext
 from section_10_07 import integrate as _shared_integrate
+from section_10_08 import (_discounted_sum as _shared_discounted_sum,
+                           MAX_SCHEDULE_PAYMENTS)
 from section_10_05 import (_exponential_integral as _shared_exponential_integral,
                            time_weighted_factor as _shared_time_weighted_factor,
                            _linear_pv as _shared_linear_pv)
@@ -151,13 +153,30 @@ def numerical_pv(stream,curve,T,n=256,shift=0.0):
 def discrete_pv(payments,curve,shift=0.0):
     if not isinstance(curve,Curve):
         raise TypeError("expected Curve")
-    terms=[]
-    for time,amount in payments:
-        time=finite(time,"payment time")
-        if time<0:
-            raise ValueError("negative payment time")
+    shift=finite(shift,"shift")
+    native=type(curve) is Curve
+    grouped={}
+    validated=[]
+    if native:
+        rate=Fraction(finite(curve.base,"base"))+Fraction(shift)
+        slope=Fraction(finite(curve.slope,"slope"))
+    for index,payment in enumerate(payments):
+        if index>=MAX_SCHEDULE_PAYMENTS:
+            raise ValueError("payment schedule exceeds supported count")
+        time,amount=payment  # Preserve existing two-value row iterator support.
+        time=horizon(time)
         amount=finite(amount,"amount")
-        terms.append(finite(amount*curve.discount(time,shift),"discounted payment"))
+        if native:
+            t=Fraction(time)
+            exponent=-rate*t-slope*t*t/2
+            grouped[exponent]=grouped.get(exponent,Fraction(0))+Fraction(amount)
+        else:
+            validated.append((time,amount))
+    if native:
+        return _shared_discounted_sum(grouped)
+    # Preserve custom curve dispatch;custom numerical range remains caller-owned.
+    terms=[finite(amount*curve.discount(time,shift),"discounted payment")
+           for time,amount in validated]
     return finite(math.fsum(terms),"discrete PV")
 
 def portfolio_pv(streams,payments,curve,T,n=256,shift=0.0):
