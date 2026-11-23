@@ -82,3 +82,17 @@ python prior_stability.py --true-pd 0.04 --train-size 500 --heldout-size 200 --f
 ```
 
 The simulation has a bounded work budget, 2–100 repetitions, 1–8 distinct finite prior strengths and 32-bit seed checks. These **five new tests are authored, not yet verified** against the published revision. Paired simulation reduces random comparison noise but does not establish historical stability, predictive coverage, independent review, or production suitability.
+
+## Independent formula regression (2026-11-23)
+
+A sixth `test_prior_stability.py` test recalculates the two-state symmetric-prior posterior forecast directly from the reported training defaults, without calling `cohort_diagnostics` or `posterior_alpha`:
+
+`p = (training_defaults + k) / (training_size + 2*k)`.
+
+It independently recomputes held-out Bernoulli log loss, Brier score, observed rate and signed calibration gap for **four predeclared seeds and three prior strengths**, then reconciles aggregate means. This checks numerical identities, not independent calibration or forecast quality. The symmetric `Beta(k,k)` prior has mean **50% default probability** regardless of `k`; it is deliberately a sensitivity teaching fixture, not a defensible empirical credit prior for a low-default portfolio. No strength is chosen using held-out outcomes.
+
+```bash
+python -m unittest -v test_prior_stability.py
+```
+
+The new regression is **authored but runtime and exact-revision CI remain unverified** at this checkpoint. Historical credit data, independent model review, and production suitability remain outstanding.
