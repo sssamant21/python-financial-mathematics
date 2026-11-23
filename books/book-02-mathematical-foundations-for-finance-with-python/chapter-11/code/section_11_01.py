@@ -61,7 +61,10 @@ def assessment():
     holdings=LabeledVector(("GAMMA","ALPHA","BETA"),(10,2,4),"shares")
     positions=market_values(prices,holdings)
     incorrect=math.fsum(p*q for p,q in zip(prices.values,holdings.values))
-    return {"price_labels":prices.labels,"holdings_source_labels":holdings.labels,
+    return {"quantity_metadata":{"axis":"asset","prices":"USD/share",
+                                 "holdings":"shares","positions":"USD",
+                                 "portfolio_total":"USD"},
+            "price_labels":prices.labels,"holdings_source_labels":holdings.labels,
             "aligned_holdings":holdings.align(prices.labels).values,
             "position_values":dict(zip(positions.labels,positions.values)),
             "portfolio_total_USD":math.fsum(positions.values),

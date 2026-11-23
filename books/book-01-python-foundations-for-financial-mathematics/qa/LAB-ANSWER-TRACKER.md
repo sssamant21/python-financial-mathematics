@@ -708,3 +708,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section14.15 RNG/reproducibility assumptions
 
 [Evidence](v10-rng-assumptions/README.md):34 predicates pass twice. Actual state/call-order and uniform/normal/scenario replay,exact paired shifts,finite CRN/antithetic covariance laws and narrow-manifest limits distinguished. Six commands/24 invocations of twelve existing methods/two illustrations;F124 source/listing/five failures/32 predicates/24 answers/ten requirements retained. No source change/new historical/workflow/answer/step totals. Parallel independence/security/rare-weight/cross-runtime gaps remain. Next14.16 probability simulator,then14.17/marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section14.16 integrated simulator assumptions
+
+[Evidence](v10-simulator-assumptions/README.md):26 predicates pass twice. Actual256-draw summaries/default trials and128-bootstrap replay separated from finite model/uncertainty/provenance laws;rounded sub-ULP payoff stress limit recorded. Six commands/24 invocations of twelve methods/two exact20,000-draw drivers;F125 source/listing/seven failures/48 predicates/24 answers/five phases retained. No source change/new historical/workflow/answer/step totals. Correlated-default/calibration/bootstrap/tiny-weight/runtime gaps remain. Next14.17 applied exercises,then marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

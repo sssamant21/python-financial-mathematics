@@ -26,6 +26,8 @@ def run():
     rejects(ValueError,q.align,("GAMMA","ALPHA","DELTA"))
     rejects(ValueError,market_values,p,LabeledVector(("ALPHA","BETA","GAMMA"),(2,4,10),"USD"))
     report=assessment()
+    assert report["quantity_metadata"] == {"axis":"asset","prices":"USD/share",
+        "holdings":"shares","positions":"USD","portfolio_total":"USD"}
     assert report["portfolio_total_USD"]==650
     assert report["invalid_positional_total_USD"]==1200
     assert report["runtime_certified"] is False
