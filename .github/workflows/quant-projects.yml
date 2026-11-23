@@ -443,6 +443,14 @@ jobs:
           python prior_stability.py --true-pd 0.04 --train-size 500 --heldout-size 200 --first-seed 42 --repetitions 5 --strengths 0.5 1 5 > prior-stability-ci.json
           python -c "import json,math; r=json.load(open('prior-stability-ci.json')); assert r['synthetic'] and r['repetitions']==5 and r['strengths']==[0.5,1.0,5.0]; assert len(r['runs'])==15 and len(r['summary'])==3; seeds=range(42,47); [(lambda group: (len(group)==3 or (_ for _ in ()).throw(AssertionError()), len({x['train_defaults'] for x in group})==1 or (_ for _ in ()).throw(AssertionError()), len({x['heldout_defaults'] for x in group})==1 or (_ for _ in ()).throw(AssertionError())))([x for x in r['runs'] if x['seed']==s]) for s in seeds]; [(_ for _ in ()).throw(AssertionError()) if not all(math.isclose(v, sum(fn(x) for x in group)/5, rel_tol=1e-12) for v,fn in ((row['mean_log_loss'],lambda x:x['heldout_log_loss']),(row['mean_brier'],lambda x:x['heldout_brier_score']),(row['mean_absolute_gap'],lambda x:abs(x['heldout_calibration_gap'])))) else None for row in r['summary'] for group in [[x for x in r['runs'] if x['strength']==row['strength']]]]; print('Paired-prior JSON reconciled: 15 runs, 3 priors, 5 seeds')"
 
+      - name: Validate Project 53 reverse credit stress
+        run: |
+          cd quant-projects/53-reverse-credit-stress
+          python -m unittest -v test_reverse_stress.py
+          python -m py_compile reverse_stress.py test_reverse_stress.py
+          python reverse_stress.py --budget 25 --max-multiplier 20 > reverse-stress-ci.json
+          python -c "import json,math; r=json.load(open('reverse-stress-ci.json')); assert math.isclose(r['baseline_loss'],22.5,rel_tol=1e-12); assert r['breach_multiplier'] is not None; m=r['breach_multiplier']; assert 1 <= m <= 20; assert math.isclose(sum(e*min(1,p*m)*l for e,p,l in zip([1000,500,750],[.01,.02,.03],[.4,.5,.6])),25,rel_tol=1e-10); print('Project 53 bounded threshold independently reconciled')"
+
       - name: Capture bounded Project 51 synthetic benchmark evidence
         run: |
           cd quant-projects/51-poisson-binomial-credit-loss
