@@ -28,6 +28,12 @@ def run():
     close(analytic_pv(Stream("linear",0,1e308),Curve(0),1e-308),5e-309,rel_tol=3e-15,abs_tol=0.)
     close(analytic_pv(Stream("linear",0,1e308),Curve(1e308),1),1e-308,rel_tol=3e-15,abs_tol=0.)
     assert analytic_pv(Stream("linear",709,-1),Curve(-1),710)==-710.
+    close(Stream("linear",1e308,-1e308).rate(2),-1e308,rel_tol=3e-15,abs_tol=0.)
+    close(Stream("exponential",1e-308,1).rate(710),2.233994766161711,rel_tol=3e-15,abs_tol=0.)
+    assert Stream("exponential",0,1e308).rate(1e308)==0.
+    assert Curve(-1e308,1e308).discount(2)==1.
+    assert Curve(1e308).discount(0,1e308)==1.
+    rejects(ValueError,Stream("exponential",1,1).rate,710)
     flat=Curve(0.05)
     zero=Curve(0)
     affine=Curve(0.03,0.005)

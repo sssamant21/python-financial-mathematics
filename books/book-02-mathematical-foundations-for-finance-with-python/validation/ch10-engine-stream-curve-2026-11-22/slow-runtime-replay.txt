@@ -1,0 +1,10 @@
+"""Optional replay of the observed slow implementation;timing is host-dependent."""
+from pathlib import Path
+import subprocess,sys,tempfile,json,time,hashlib
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='3938c931d4abccfc314e197e1ed2f75afe0acca4';prefix='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/';raw=(here/'slow-scalar-source.txt').read_bytes();observed=json.loads((here/'slow-runtime-failure.json').read_text());assert hashlib.sha256(raw).hexdigest()==observed['source_sha256'];t=time.monotonic()
+with tempfile.TemporaryDirectory() as tmp:
+ d=Path(tmp);(d/'section_10_09.py').write_bytes(raw);(d/'check_section_10_09.py').write_bytes((here/'slow-scalar-checker.txt').read_bytes());(d/'section_10_05.py').write_bytes(subprocess.check_output(['git','show',pin+':'+prefix+'section_10_05.py'],cwd=root))
+ try:
+  z=subprocess.run([sys.executable,'check_section_10_09.py'],cwd=tmp,capture_output=True,text=True,timeout=60);result=dict(timed_out=False,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr)
+ except subprocess.TimeoutExpired as e:result=dict(timed_out=True,timeout=60,stdout=(e.stdout or b'').decode() if isinstance(e.stdout,bytes) else e.stdout,stderr=(e.stderr or b'').decode() if isinstance(e.stderr,bytes) else e.stderr)
+result['seconds']=time.monotonic()-t;result['scope']='Optional host-dependent replay,not an assertion that every host exceeds60s';(here/'slow-runtime-replayed.json').write_text(json.dumps(result,indent=2)+'\n');print(result)

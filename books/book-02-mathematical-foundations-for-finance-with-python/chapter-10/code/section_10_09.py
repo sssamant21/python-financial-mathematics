@@ -3,6 +3,7 @@ from dataclasses import dataclass
 import json
 import math
 from fractions import Fraction
+from decimal import Decimal,Context,localcontext
 from section_10_05 import (_exponential_integral as _shared_exponential_integral,
                            time_weighted_factor as _shared_time_weighted_factor,
                            _linear_pv as _shared_linear_pv)
@@ -18,6 +19,32 @@ def finite(x,name):
         raise ValueError(f"{name} must be finite")
     return y
 
+def _scalar_report(value):
+    try:
+        result=float(value)
+    except OverflowError as exc:
+        raise ValueError("nonfinite scalar result") from exc
+    return finite(result,"scalar result")
+
+def _scaled_exp(scale,exponent):
+    """Complete validated binary-input value; bounded Decimal exponential."""
+    if not scale:
+        return 0.0
+    if not exponent:
+        return _scalar_report(scale)
+    if exponent>10000:
+        raise ValueError("unsupported growing scalar exponent")
+    if exponent < -10000:
+        return 0.0
+    # Ordinary bounded values avoid a high-precision exponential per quadrature
+    # node. Outside this range retain complete Decimal scaling before reporting.
+    if abs(exponent)<=1 and Fraction(1,10**200)<=abs(scale)<=10**200:
+        return _scalar_report(float(scale)*math.exp(float(exponent)))
+    with localcontext(Context(prec=800)):
+        coefficient=Decimal(scale.numerator)/Decimal(scale.denominator)
+        power=Decimal(exponent.numerator)/Decimal(exponent.denominator)
+        return _scalar_report(coefficient*power.exp())
+
 @dataclass(frozen=True)
 class Stream:
     kind: str
@@ -32,13 +59,13 @@ class Stream:
         t=finite(t,"t")
         if t<0:
             raise ValueError("negative time")
+        a,b=Fraction(finite(self.a,"a")),Fraction(finite(self.b,"b"))
+        time=Fraction(t)
         if self.kind=="constant":
-            result=self.a
-        elif self.kind=="linear":
-            result=self.a+self.b*t
-        else:
-            result=self.a*math.exp(self.b*t)
-        return finite(result,"payment rate")
+            return _scalar_report(a)
+        if self.kind=="linear":
+            return _scalar_report(a+b*time)
+        return _scaled_exp(a,b*time)
 
 @dataclass(frozen=True)
 class Curve:
@@ -52,7 +79,11 @@ class Curve:
         if t<0:
             raise ValueError("negative time")
         shift=finite(shift,"shift")
-        return finite(math.exp(-(self.base+shift)*t-0.5*self.slope*t*t),"discount")
+        time=Fraction(t)
+        rate=Fraction(finite(self.base,"base"))+Fraction(shift)
+        slope=Fraction(finite(self.slope,"slope"))
+        exponent=-rate*time-slope*time*time/2
+        return _scaled_exp(Fraction(1),exponent)
 
 def horizon(T):
     t=finite(T,"horizon")
