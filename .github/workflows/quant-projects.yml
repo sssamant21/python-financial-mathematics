@@ -431,6 +431,14 @@ jobs:
           python benchmark_report.py --sizes 4 8 --max-states 1000
           python repeated_benchmark.py --sizes 4 --repetitions 2 --max-states 100
 
+      - name: Validate Project 52 Bayesian transition uncertainty and held-out calibration
+        run: |
+          cd quant-projects/52-credit-transition-uncertainty
+          python -m unittest -v test_transition_uncertainty.py test_prior_sensitivity.py test_cohort_calibration.py
+          python -m py_compile transition_uncertainty.py cohort_calibration.py test_transition_uncertainty.py test_prior_sensitivity.py test_cohort_calibration.py
+          python transition_uncertainty.py --counts 920 65 15 --prior 1 1 1 --default-index 2 --draws 4000 --seed 42
+          python cohort_calibration.py --true-pd 0.04 --train-size 500 --heldout-size 200 --seed 42
+
       - name: Capture bounded Project 51 synthetic benchmark evidence
         run: |
           cd quant-projects/51-poisson-binomial-credit-loss
