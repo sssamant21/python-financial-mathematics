@@ -123,5 +123,33 @@ class ScalingDiagnosticsTests(unittest.TestCase):
         self.assertEqual([r['state_growth_from_previous'] for r in rows],
                          [None, 9 / 5, 13 / 9, None, 16.0, 16.0])
 
+
+    def test_rejects_invalid_memory_ordering_and_nonfinite_values(self):
+        for field, value in (
+            ('peak_traced_bytes_min', 121),
+            ('peak_traced_bytes_median', -1),
+            ('peak_traced_bytes_max', float('nan')),
+            ('peak_traced_bytes_max', float('inf')),
+            ('peak_traced_bytes_min', True),
+        ):
+            with self.subTest(field=field, value=str(value)):
+                report = fixture()
+                report['rows'][0][field] = value
+                with self.assertRaises(ValueError):
+                    summarize(report)
+
+    def test_rejects_duplicate_scenarios_and_invalid_batch_timing(self):
+        report = fixture()
+        report['rows'].append(copy.deepcopy(report['rows'][0]))
+        with self.assertRaises(ValueError):
+            summarize(report)
+        for value in (-1, float('inf'), True):
+            with self.subTest(batch_seconds_median=str(value)):
+                report = fixture()
+                report['batch_seconds_median'] = value
+                with self.assertRaises(ValueError):
+                    summarize(report)
+
+
 if __name__ == '__main__':
     unittest.main()
