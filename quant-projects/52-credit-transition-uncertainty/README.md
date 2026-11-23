@@ -54,3 +54,17 @@ python cohort_calibration.py --true-pd 0.04 --train-size 500 --heldout-size 200 
 ```
 
 Five new synthetic tests check reproducibility, training-only posterior identity, independence of fitted parameters from held-out cohort size, independent score reconciliation, and invalid-input rejection. **Authored, not executed or verified in CI in this checkpoint.** This extension is not a real historical backtest. Next: execute all 17 tests on the published revision, add repeated-cohort calibration summaries and verify CI coverage.
+
+
+## Repeated-cohort calibration diagnostics (2026-11-23)
+
+`repeated_cohorts.py` repeats the **predeclared** two-state synthetic train/held-out experiment with consecutive independent RNG seeds. It reports every run (no best-seed selection) and the mean, minimum and maximum of posterior PD, held-out default rate, signed calibration gap, log loss and Brier score. Mean absolute and root-mean-squared calibration gaps describe the dispersion of observed held-out errors; **they are not confidence intervals or demonstrated predictive coverage**. Each run refits on training observations only, never held-out outcomes.
+
+```bash
+cd quant-projects/52-credit-transition-uncertainty
+python -m unittest -v test_transition_uncertainty.py test_prior_sensitivity.py test_cohort_calibration.py test_repeated_cohorts.py
+python -m py_compile cohort_calibration.py repeated_cohorts.py test_repeated_cohorts.py
+python repeated_cohorts.py --true-pd 0.04 --train-size 500 --heldout-size 200 --first-seed 42 --repetitions 20
+```
+
+The number of repetitions is bounded to 2–200 and each cohort to 1–100,000 observations; seed overflow, booleans and invalid model parameters are rejected. The five new tests check deterministic output, individual-run agreement, aggregate arithmetic and invalid inputs. **These tests were authored but exact-revision execution and CI inclusion remain unverified.** All cohorts are synthetic; no historical transition calibration, model approval, or investment decision is supported.
