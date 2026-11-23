@@ -45,11 +45,11 @@ class ReverseStressTests(unittest.TestCase):
     def test_independent_piecewise_threshold(self):
         # Borrower 1 caps at m=2; borrower 2 stays linear until m=10.
         # For 2 <= m <= 10: EL = 100*0.5 + 200*(0.1*m)*0.5 = 50 + 10*m.
-        r = reverse_stress([100, 200], [.5, .1], [1, .5], 80,
+        r = reverse_stress([100, 200], [.5, .1], [.5, .5], 80,
                            maximum_multiplier=10)
-        self.assertAlmostEqual(r["baseline_loss"], 60)
+        self.assertAlmostEqual(r["baseline_loss"], 35)
         self.assertAlmostEqual(r["breach_multiplier"], 3, places=10)
-        self.assertAlmostEqual(expected_loss([100, 200], [.5, .1], [1, .5], 3), 80)
+        self.assertAlmostEqual(expected_loss([100, 200], [.5, .1], [.5, .5], 3), 80)
 
     def test_exact_upper_bound_and_unreachable_beyond_it(self):
         at_bound = reverse_stress([100], [.1], [.5], 15, maximum_multiplier=3)
