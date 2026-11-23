@@ -683,3 +683,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section14.10 variance/SD model assumptions
 
 [Evidence](v10-probability-variance-models/README.md):53 predicates pass twice. Exact finite laws distinguish covariance,zero-covariance dependence,IID sampling denominators,correlated default counts and additive-horizon scaling. Four commands/24 invocations of twelve existing methods;F119 source/listing/nine failures/34 predicates/24 answers/ten steps retained. No financial-source change/new historical/workflow/answer/step totals. Next14.11 covariance/correlation assumptions,then14.12–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section14.11 covariance/correlation assumptions
+
+[Evidence](v10-covariance-assumptions/README.md):119 predicates pass twice. Six fixed-marginal pairings,signed affine scales,exhaustive IID paired estimators,tail-event contrasts and signed-weight/multi-asset PSD limits checked. Four commands/24 invocations of twelve existing methods;F120 source/listing/eight failures/29 predicates/24 answers/ten steps retained. No source change/new historical/workflow/answer/step totals. Next14.12 common-distribution assumptions,then14.13–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
