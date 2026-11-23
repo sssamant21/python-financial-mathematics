@@ -52,6 +52,9 @@ def run():
     assert portfolio_pv([Stream("constant",1e308),Stream("constant",1e308)],[(0,-1e308)],Curve(0),1,2)["total"]==1e308
     rejects(ValueError,portfolio_pv,[],[],Curve(0),-1,2)
     rejects(ValueError,portfolio_pv,[],[],Curve(0),1,3)
+    assert parallel_shift_derivative([],[(0,1)],Curve(0),0,2,1e308)==0.
+    close(parallel_shift_derivative([],[(0,-1.3e308),(1,8.5e307)],Curve(0),2,2,1),-8.5e307*math.sinh(1),rel_tol=4e-15,abs_tol=0.)
+    close(parallel_shift_derivative(iter([]),iter([iter([1,1000])]),Curve(0),2,2,.0001),-1000.0000016666667,rel_tol=4e-11,abs_tol=0.)
     flat=Curve(0.05)
     zero=Curve(0)
     affine=Curve(0.03,0.005)

@@ -663,3 +663,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section14.6 random-variable mapping assumptions
 
 [Evidence](v10-random-variable-models/README.md):679 predicates pass twice. All81 four-state payoff mappings check pushforward/event/mean/pairwise variance/affine contracts;coarsening loses source-state information and equal marginals permit portfolio variances.5/1/0 under different joint mappings. Units and actual128-draw replay/transform distinguished. Four commands/24 invocations of twelve existing methods;F115 source/listing/six failures/30 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next14.7 discrete-variable assumptions,then14.8–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section14.7 discrete-variable/binomial assumptions
+
+[Evidence](v10-discrete-variable-models/README.md):1283 predicates pass twice.35 small binomial parameter cases use exhaustive binary paths;385 thresholds distinguish inclusive CDF/strict tail. Same mean3 permits count variances1.5/.5/9 under IID/heterogeneous/shared laws;regime mixture and fixed-loss unit scaling separated. Four commands/24 invocations of twelve existing methods;F116 source/listing/seven failures/48 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next14.8 continuous-variable assumptions,then14.9–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

@@ -22,7 +22,7 @@ class CashFlowBoundaries(unittest.TestCase):
         with self.assertRaises(ValueError):
             parallel_shift_derivative([],[(1,100)],Curve(.05),1,bump=1e-30)
     def test_denominator_overflow(self):
-        with self.assertRaises(OverflowError):
-            parallel_shift_derivative([],[],Curve(0),0,bump=1e308)
+        # A time-zero cash flow is shift-invariant even if 2*bump is not a float.
+        self.assertEqual(parallel_shift_derivative([],[(0,1)],Curve(0),0,bump=1e308),0.)
 
 if __name__ == '__main__': unittest.main()

@@ -152,36 +152,36 @@ def numerical_pv(stream,curve,T,n=256,shift=0.0):
         raise TypeError("expected Stream and Curve")
     return simpson(lambda t:_discounted_rate(stream,curve,t,shift),T,n)
 
+def _validated_payments(payments):
+    validated=[]
+    for index,payment in enumerate(payments):
+        if index>=MAX_SCHEDULE_PAYMENTS:
+            raise ValueError("payment schedule exceeds supported count")
+        time,amount=payment
+        validated.append((horizon(time),finite(amount,"amount")))
+    return tuple(validated)
+
 def discrete_pv(payments,curve,shift=0.0):
     if not isinstance(curve,Curve):
         raise TypeError("expected Curve")
     shift=finite(shift,"shift")
     native=type(curve) is Curve
-    grouped={}
-    validated=[]
     if native:
         rate=Fraction(finite(curve.base,"base"))+Fraction(shift)
         slope=Fraction(finite(curve.slope,"slope"))
-    for index,payment in enumerate(payments):
-        if index>=MAX_SCHEDULE_PAYMENTS:
-            raise ValueError("payment schedule exceeds supported count")
-        time,amount=payment  # Preserve existing two-value row iterator support.
-        time=horizon(time)
-        amount=finite(amount,"amount")
-        if native:
+    validated=_validated_payments(payments)
+    if native:
+        grouped={}
+        for time,amount in validated:
             t=Fraction(time)
             exponent=-rate*t-slope*t*t/2
             grouped[exponent]=grouped.get(exponent,Fraction(0))+Fraction(amount)
-        else:
-            validated.append((time,amount))
-    if native:
         return _shared_discounted_sum(grouped)
-    # Preserve custom curve dispatch;custom numerical range remains caller-owned.
     terms=[finite(amount*curve.discount(time,shift),"discounted payment")
            for time,amount in validated]
     return finite(math.fsum(terms),"discrete PV")
 
-def portfolio_pv(streams,payments,curve,T,n=256,shift=0.0):
+def _portfolio_parameters(curve,T,n,shift):
     if not isinstance(curve,Curve):
         raise TypeError("expected Curve")
     t=horizon(T)
@@ -190,6 +190,9 @@ def portfolio_pv(streams,payments,curve,T,n=256,shift=0.0):
         raise ValueError("n must be positive even integer")
     if n>MAX_PANELS:
         raise ValueError("panel count exceeds supported budget")
+    return t,shift
+
+def _validated_streams(streams):
     validated=[]
     for index,stream in enumerate(streams):
         if index>=MAX_PORTFOLIO_STREAMS:
@@ -197,6 +200,11 @@ def portfolio_pv(streams,payments,curve,T,n=256,shift=0.0):
         if not isinstance(stream,Stream):
             raise TypeError("expected Stream")
         validated.append(stream)
+    return tuple(validated)
+
+def portfolio_pv(streams,payments,curve,T,n=256,shift=0.0):
+    t,shift=_portfolio_parameters(curve,T,n,shift)
+    validated=_validated_streams(streams)
     components=[numerical_pv(s,curve,t,n,shift) for s in validated]
     discrete=discrete_pv(payments,curve,shift)
     # Reported components are individually finite;sum them completely before
@@ -212,14 +220,14 @@ def parallel_shift_derivative(streams,payments,curve,T,n=256,bump=0.0001):
         raise TypeError("expected Curve")
     if not math.isfinite(curve.base+bump) or not math.isfinite(curve.base-bump) or curve.base+bump==curve.base or curve.base-bump==curve.base:
         raise ValueError("bump must produce finite distinct rate shifts")
-    if not math.isfinite(2*bump):
-        raise OverflowError("derivative denominator exceeds float range")
-    # Both revaluations must use the same data, including one-shot iterators.
-    streams=tuple(streams)
-    payments=tuple(payments)
-    up=portfolio_pv(streams,payments,curve,T,n,bump)["total"]
-    down=portfolio_pv(streams,payments,curve,T,n,-bump)["total"]
-    return finite((up-down)/(2*bump),"rate derivative")
+    t,_=_portfolio_parameters(curve,T,n,0.)
+    # Snapshot bounded streams and immutable validated scalar payment rows once.
+    streams=_validated_streams(streams)
+    payments=_validated_payments(payments)
+    up=portfolio_pv(streams,payments,curve,t,n,bump)["total"]
+    down=portfolio_pv(streams,payments,curve,t,n,-bump)["total"]
+    quotient=(Fraction(up)-Fraction(down))/(2*Fraction(bump))
+    return _scalar_report(quotient)
 
 def assessment():
     streams=[Stream("constant",1000),Stream("linear",200,50),
