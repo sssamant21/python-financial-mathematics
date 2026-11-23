@@ -304,3 +304,4 @@ Project 51 observational benchmark: [synthetic scaling report](51-poisson-binomi
 
 Project 51 now includes [bounded repeated synthetic benchmark diagnostics](51-poisson-binomial-credit-loss/README.md#repeated-synthetic-benchmark-variability-2026-11-22), with 75 authored tests (72 previously CI-verified; three new tests unverified). Traced allocations are not RSS, and timing observations are not capacity guarantees.
 
+Project 52 additionally provides [paired synthetic prior-strength stability](52-credit-transition-uncertainty/README.md#paired-prior-strength-stability-2026-11-23) via `prior_stability.py`, with five authored synthetic regression tests in `test_prior_stability.py`. The same seeded train/held-out cohorts are compared across predeclared priors; exact-revision execution and independent validation remain pending.
