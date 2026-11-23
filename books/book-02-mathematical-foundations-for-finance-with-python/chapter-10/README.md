@@ -1,6 +1,6 @@
 # Chapter 10 — Integration and Continuous Cash Flows
 
-**Manuscript status:** 10/10 sections published as Draft. [Pinned candidate Linux checker runtime](../validation/full-runtime-timing-2026-11-22/README.md) is recorded;selected10.1–10.8 lab/source crosswalks are scoped. Remaining substantive reviews and independent editorial/canonical acceptance stay open.
+**Manuscript status:** 10/10 sections published as Draft. [Pinned candidate Linux checker runtime](../validation/full-runtime-engine-2026-11-23/README.md) is recorded;selected10.1–10.10 lab/source/report crosswalks are scoped. Independent editorial/canonical acceptance and other tracked substantive reviews stay open.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -16,8 +16,8 @@
 | 10.6 | [Improper Integrals and Infinite Horizons](10.06-improper-integrals-and-infinite-horizons.md) | Draft — scoped lab/source/report/proof and candidate runtime recorded;broader acceptance open |
 | 10.7 | [Numerical Quadrature](10.07-numerical-quadrature.md) | Draft — [finance/report/lab crosswalk](../validation/ch10-finance-oracle-2026-11-22/README.md) and full candidate runtime recorded;broader acceptance open |
 | 10.8 | [Discrete versus Continuous Payments](10.08-discrete-versus-continuous-payments.md) | Draft — [timing/report/lab crosswalk](../validation/ch10-timing-lab-2026-11-22/README.md) and full candidate runtime recorded;broader acceptance open |
-| 10.9 | [Chapter Project — Continuous Cash-Flow Valuation Engine](10.09-continuous-cash-flow-valuation-engine.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
-| 10.10 | [Exercises and Applied Problems](10.10-exercises-and-applied-problems.md) | Draft — checker runtime recorded;substantive lab/source crosswalk pending |
+| 10.9 | [Chapter Project — Continuous Cash-Flow Valuation Engine](10.09-continuous-cash-flow-valuation-engine.md) | Draft — [scoped assessment crosswalk](../validation/ch10-engine-assessment-2026-11-23/README.md) and V273 runtime recorded;broader acceptance open |
+| 10.10 | [Exercises and Applied Problems](10.10-exercises-and-applied-problems.md) | Draft — Parts A–F and [report/navigation crosswalk](../validation/ch10-report-navigation-2026-11-23/README.md) recorded;broader acceptance open |
 
 ## Section 10.10 companion material
 
@@ -71,6 +71,6 @@
 
 ## Validation status
 
-Draft manuscript and reference-check source are published. Candidate Linux checker runtime is recorded at V257;remaining section reviews, independent code/mathematical/editorial review and canonical approval remain open.
+Draft manuscript and reference-check source are published. Full pinned candidate Linux runtime is recorded at V273. The later 10.10 report changes have separate scoped Chapter10 execution evidence; no new full-book run or supported-platform acceptance is implied. Independent code/mathematical/editorial review, other tracked substantive work and canonical approval remain open.
 
 **Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.

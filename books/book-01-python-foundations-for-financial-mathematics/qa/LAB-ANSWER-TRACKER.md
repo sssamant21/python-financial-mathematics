@@ -703,3 +703,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section14.14 sampling-design assumptions
 
 [Evidence](v10-sampling-assumptions/README.md):58 predicates pass twice. Exhaustive small-sample interval coverage,IID SE,conditional bootstrap,shared-shock and replacement-design laws distinguished from actual256 weighted draws/128 bootstrap means and quantile replay. Six commands/24 invocations of twelve existing methods/two separate illustrations;F123 source/listing/four failures/33 predicates/24 answers/ten steps retained. No source change/new historical/workflow/answer/step totals. Tiny-weight/runtime/dependence-aware bootstrap gaps remain. Next14.15 RNG/reproducibility,then14.16–14.17/marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section14.15 RNG/reproducibility assumptions
+
+[Evidence](v10-rng-assumptions/README.md):34 predicates pass twice. Actual state/call-order and uniform/normal/scenario replay,exact paired shifts,finite CRN/antithetic covariance laws and narrow-manifest limits distinguished. Six commands/24 invocations of twelve existing methods/two illustrations;F124 source/listing/five failures/32 predicates/24 answers/ten requirements retained. No source change/new historical/workflow/answer/step totals. Parallel independence/security/rare-weight/cross-runtime gaps remain. Next14.16 probability simulator,then14.17/marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

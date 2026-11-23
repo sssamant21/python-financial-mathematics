@@ -1,0 +1,2358 @@
+{
+  "pin": "50191124b93345af6b74ccc971d94b86edbad98f",
+  "mode": "corrected",
+  "sources": {
+    "section_10_05.py": "30a32c2adb4cd91be9258b40384fd30082866e312765d1c64e80fa98b432e6fc",
+    "section_10_06.py": "02e5b798a65852cd96f3372705fe706785fa5d3b51145700ff3973c1cbb64203",
+    "section_10_07.py": "0bcbacf7f262678b87b8294948884367dac3847a28c4e3355e98263e19b24084",
+    "section_10_08.py": "b31fa7900e9755a1759bb2483e5dde9eafe90ccfb2546222a15f1fd84acfd742",
+    "section_10_09.py": "9a3649e6dab7b629d0c655249473cf3d2b2a25e3e894ae071a84764ce009dda6",
+    "section_10_10.py": "0c37e2ba44c21b6a0cb1c010206df5857763e79afb6ea584464acba138f99e76",
+    "check_section_10_10.py": "fb3e3b827a61424ad13b026e3ef10ce53b4390edb159379305307423de399b59"
+  },
+  "text_sha256": {
+    "chapter-10/10.10-exercises-and-applied-problems.md": "491c159625ad1b646a5052342aaf776f5af504a655503cd2af4beb09d583680c",
+    "chapter-10/README.md": "e2bd6c4d25eab6af5f38d8ef13b52d078a0d97bd216fb569cc166ef628cc668a",
+    "MASTER-TOC.md": "f2b4087b445ba6854a9b4855620605ed6a157342820db2b07f2b436e7752789c"
+  },
+  "rows": [
+    {
+      "name": "self-contained fixed model inputs",
+      "actual": {
+        "horizon_years": 4,
+        "streams": [
+          {
+            "kind": "constant",
+            "a": 1000,
+            "b": 0
+          },
+          {
+            "kind": "linear",
+            "a": 200,
+            "b": 50
+          },
+          {
+            "kind": "exponential",
+            "a": 150,
+            "b": 0.02
+          }
+        ],
+        "payments": [
+          {
+            "time_years": 2,
+            "amount": 500
+          }
+        ],
+        "flat_curve": {
+          "r0": 0.05,
+          "slope": 0
+        },
+        "affine_curve": {
+          "r0": 0.03,
+          "slope": 0.005
+        }
+      },
+      "expected": {
+        "horizon_years": 4,
+        "streams": [
+          {
+            "kind": "constant",
+            "a": 1000,
+            "b": 0
+          },
+          {
+            "kind": "linear",
+            "a": 200,
+            "b": 50
+          },
+          {
+            "kind": "exponential",
+            "a": 150,
+            "b": 0.02
+          }
+        ],
+        "payments": [
+          {
+            "time_years": 2,
+            "amount": 500
+          }
+        ],
+        "flat_curve": {
+          "r0": 0.05,
+          "slope": 0
+        },
+        "affine_curve": {
+          "r0": 0.03,
+          "slope": 0.005
+        }
+      },
+      "passed": true,
+      "kind": "report provenance contract,not a new numerical defect"
+    },
+    {
+      "name": "quantity and rate units",
+      "actual": {
+        "time": "years",
+        "continuous_payment_rate": "currency/year",
+        "linear_payment_slope": "currency/year^2",
+        "exponential_growth": "1/year",
+        "curve_r0": "1/year",
+        "curve_slope": "1/year^2",
+        "discrete_payment": "currency",
+        "present_value": "currency",
+        "parallel_shift_derivative": "currency*years",
+        "rate_convention": "annual continuously compounded decimals"
+      },
+      "expected": {
+        "time": "years",
+        "continuous_payment_rate": "currency/year",
+        "linear_payment_slope": "currency/year^2",
+        "exponential_growth": "1/year",
+        "curve_r0": "1/year",
+        "curve_slope": "1/year^2",
+        "discrete_payment": "currency",
+        "present_value": "currency",
+        "parallel_shift_derivative": "currency*years",
+        "rate_convention": "annual continuously compounded decimals"
+      },
+      "passed": true,
+      "kind": "explicit unit metadata for derivatives/affine curve/payment slopes"
+    },
+    {
+      "name": "quadrature/bump/tolerance settings",
+      "actual": {
+        "flat_simpson_subintervals": [
+          128,
+          256,
+          512
+        ],
+        "affine_simpson_subintervals": 512,
+        "parallel_shift_bump": 0.0001,
+        "flat_reconciliation_tolerance": 1e-06,
+        "refinement_is_error_certificate": false
+      },
+      "expected": {
+        "flat_simpson_subintervals": [
+          128,
+          256,
+          512
+        ],
+        "affine_simpson_subintervals": 512,
+        "parallel_shift_bump": 0.0001,
+        "flat_reconciliation_tolerance": 1e-06,
+        "refinement_is_error_certificate": false
+      },
+      "passed": true,
+      "kind": "source actual configuration made auditable"
+    },
+    {
+      "name": "Task3 maximum discrepancy",
+      "actual": 3.219611244276166e-10,
+      "expected": 3.219611244276166e-10,
+      "passed": true,
+      "kind": "requested maximum over all three grids"
+    },
+    {
+      "name": "assumptions present",
+      "actual": [
+        "Deterministic teaching cash flows and curves; no market calibration.",
+        "No default, termination or liquidity adjustment.",
+        "Continuous streams integrate over the stated horizon; supplied discrete dates are valued explicitly.",
+        "Finite-grid Simpson and central differences carry numerical error; reconciliation is not certification."
+      ],
+      "expected": [
+        "Deterministic teaching cash flows and curves; no market calibration.",
+        "No default, termination or liquidity adjustment.",
+        "Continuous streams integrate over the stated horizon; supplied discrete dates are valued explicitly.",
+        "Finite-grid Simpson and central differences carry numerical error; reconciliation is not certification."
+      ],
+      "passed": true,
+      "kind": "declared model and numerical scope"
+    },
+    {
+      "name": "runtime certification false",
+      "actual": false,
+      "expected": false,
+      "passed": true,
+      "kind": "execution does not confer certification"
+    },
+    {
+      "name": "independent reviewer false",
+      "actual": false,
+      "expected": false,
+      "passed": true,
+      "kind": "assistant validation is not independent human approval"
+    },
+    {
+      "name": "all previous report values preserved",
+      "actual": {
+        "examples": {
+          "accumulation_linear": 1470,
+          "fundamental_theorem_at_2": 426.6666666666667,
+          "substitution_integral": 0.9816843611112658,
+          "level_stream_pv": 5544.607913767074,
+          "growing_stream_pv": 3760.099117292947,
+          "growth_matches_discount_pv": 4000,
+          "zero_rate_linear_pv": 2200,
+          "level_perpetuity_pv": 20000,
+          "growing_perpetuity_pv": 30000,
+          "tail_one_percent_years": 115.12925464970229,
+          "discrete_two_payments_pv": 928.0334212683367,
+          "quadrature_midpoint": 0.3125,
+          "quadrature_trapezoid": 0.375,
+          "quadrature_simpson": 0.3333333333333333
+        },
+        "integrated_case": {
+          "flat_analytic_components": [
+            3625.384938440363,
+            1075.538913816508,
+            565.3978164142125
+          ],
+          "flat_analytic_discrete": 452.4187090179798,
+          "flat_analytic_total": 5718.740377689063,
+          "simpson_reconciliation": [
+            {
+              "subintervals": 128,
+              "total_pv": 5718.740377688741,
+              "absolute_error": 3.219611244276166e-10
+            },
+            {
+              "subintervals": 256,
+              "total_pv": 5718.740377689042,
+              "absolute_error": 2.091837814077735e-11
+            },
+            {
+              "subintervals": 512,
+              "total_pv": 5718.7403776890615,
+              "absolute_error": 1.8189894035458565e-12
+            }
+          ],
+          "affine_numerical_total": 5874.268249921076,
+          "flat_rate_derivative_1bp_bump": -11342.893931296203,
+          "affine_rate_derivative_1bp_bump": -11723.523627292707
+        },
+        "runtime_certified": false,
+        "independent_review_completed": false
+      },
+      "expected": {
+        "examples": {
+          "accumulation_linear": 1470,
+          "fundamental_theorem_at_2": 426.6666666666667,
+          "substitution_integral": 0.9816843611112658,
+          "level_stream_pv": 5544.607913767074,
+          "growing_stream_pv": 3760.099117292947,
+          "growth_matches_discount_pv": 4000,
+          "zero_rate_linear_pv": 2200,
+          "level_perpetuity_pv": 20000,
+          "growing_perpetuity_pv": 30000,
+          "tail_one_percent_years": 115.12925464970229,
+          "discrete_two_payments_pv": 928.0334212683367,
+          "quadrature_midpoint": 0.3125,
+          "quadrature_trapezoid": 0.375,
+          "quadrature_simpson": 0.3333333333333333
+        },
+        "integrated_case": {
+          "flat_analytic_components": [
+            3625.384938440363,
+            1075.538913816508,
+            565.3978164142125
+          ],
+          "flat_analytic_discrete": 452.4187090179798,
+          "flat_analytic_total": 5718.740377689063,
+          "simpson_reconciliation": [
+            {
+              "subintervals": 128,
+              "total_pv": 5718.740377688741,
+              "absolute_error": 3.219611244276166e-10
+            },
+            {
+              "subintervals": 256,
+              "total_pv": 5718.740377689042,
+              "absolute_error": 2.091837814077735e-11
+            },
+            {
+              "subintervals": 512,
+              "total_pv": 5718.7403776890615,
+              "absolute_error": 1.8189894035458565e-12
+            }
+          ],
+          "affine_numerical_total": 5874.268249921076,
+          "flat_rate_derivative_1bp_bump": -11342.893931296203,
+          "affine_rate_derivative_1bp_bump": -11723.523627292707
+        },
+        "runtime_certified": false,
+        "independent_review_completed": false
+      },
+      "passed": true,
+      "kind": "actual full report equality,all14 example and previous integrated fields"
+    },
+    {
+      "name": "authoritative next chapter title",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "master TOC is authoritative;old differential-equations next chapter was wrong"
+    },
+    {
+      "name": "next-section link",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "direct valid next-section target"
+    },
+    {
+      "name": "runtime checklist scope recorded",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "separate observed scoped runtime from independent/canonical acceptance"
+    },
+    {
+      "name": "canonical gate remains unchecked",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "no release/canonical acceptance"
+    },
+    {
+      "name": "independent gate remains unchecked",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "no human reviewer sign-off"
+    },
+    {
+      "name": "index10.9 review reconciled",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "V272 actual scoped review replaces pending status"
+    },
+    {
+      "name": "index10.10 review reconciled",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "new scoped report crosswalk replaces pending status"
+    },
+    {
+      "name": "index latest full runtime",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "V273 source-pinned runtime,not full run of this working candidate"
+    },
+    {
+      "name": "master next chapter consistent",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "no master TOC mutation required"
+    },
+    {
+      "name": "rubric points sum",
+      "actual": 100,
+      "expected": 100,
+      "passed": true,
+      "kind": "educational rubric only,no score awarded"
+    },
+    {
+      "name": "proposed benchmark remains proposed",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "no assessment pass/certification awarded"
+    },
+    {
+      "name": "link chapter-10/10.10-exercises-and-applied-problems.md -> README.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/10.10-exercises-and-applied-problems.md -> 10.09-continuous-cash-flow-valuation-engine.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/10.10-exercises-and-applied-problems.md -> ../MASTER-TOC.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/10.10-exercises-and-applied-problems.md -> code/section_10_10.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/10.10-exercises-and-applied-problems.md -> code/check_section_10_10.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/10.10-exercises-and-applied-problems.md -> ../validation/full-runtime-engine-2026-11-23/README.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/10.10-exercises-and-applied-problems.md -> ../validation/ch10-report-navigation-2026-11-23/README.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/10.10-exercises-and-applied-problems.md -> ../chapter-11/README.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/10.10-exercises-and-applied-problems.md -> ../chapter-11/11.01-vectors-components-and-labels.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> ../validation/full-runtime-engine-2026-11-23/README.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> ../README.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> ../MASTER-TOC.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> 10.01-accumulation-and-riemann-sums.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> 10.02-definite-and-indefinite-integrals.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> 10.03-fundamental-theorem-of-calculus.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> 10.04-substitution-and-integration-by-parts.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> 10.05-discounting-continuous-payment-streams.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> 10.06-improper-integrals-and-infinite-horizons.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> 10.07-numerical-quadrature.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> ../validation/ch10-finance-oracle-2026-11-22/README.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> 10.08-discrete-versus-continuous-payments.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> ../validation/ch10-timing-lab-2026-11-22/README.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> 10.09-continuous-cash-flow-valuation-engine.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> ../validation/ch10-engine-assessment-2026-11-23/README.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> 10.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> ../validation/ch10-report-navigation-2026-11-23/README.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/section_10_10.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/check_section_10_10.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/section_10_09.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/check_section_10_09.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/section_10_08.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/check_section_10_08.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/section_10_07.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/check_section_10_07.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/section_10_06.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/check_section_10_06.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/section_10_05.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/check_section_10_05.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/section_10_04.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/check_section_10_04.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/section_10_03.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/check_section_10_03.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/section_10_02.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/check_section_10_02.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/section_10_01.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> code/check_section_10_01.py",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link chapter-10/README.md -> ../validation/PROGRESS.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.01-why-mathematical-foundations-matter-in-finance.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.02-mathematical-objects-and-number-systems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.03-variables-constants-and-parameters.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.04-sets-intervals-and-financial-domains.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.05-mathematical-notation-and-indexed-quantities.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.06-expressions-equations-and-identities.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.07-inequalities-and-financial-constraints.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.08-logic-assumptions-and-implications.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.09-definitions-propositions-and-counterexamples.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.10-units-dimensions-and-financial-conventions.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.11-translating-financial-questions-into-mathematics.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.12-translating-mathematical-expressions-into-python.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.13-checking-mathematical-and-computational-results.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.14-chapter-project-financial-formula-validation-toolkit.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-01/1.15-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-02/2.01-algebraic-expressions-and-equivalent-forms.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-02/2.02-linear-equations-and-rearrangement.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-02/2.03-fractions-and-rational-equations.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-02/2.04-powers-roots-and-fractional-exponents.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-02/2.05-quadratic-equations.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-02/2.06-inequalities-and-absolute-values.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-02/2.07-simultaneous-equations.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-02/2.08-scaling-and-algebraic-validation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-02/2.09-chapter-project-break-even-and-formula-rearrangement-analyzer.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-02/2.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-03/3.01-inputs-outputs-domain-and-range.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-03/3.02-graphs-and-financial-interpretation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-03/3.03-composition-of-functions.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-03/3.04-inverse-functions.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-03/3.05-piecewise-functions-and-thresholds.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-03/3.06-monotonicity-and-bounds.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-03/3.07-convexity-and-concavity-intuition.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-03/3.08-function-specifications-and-validation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-03/3.09-chapter-project-financial-function-explorer.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-03/3.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-04/4.01-exponential-growth-and-decay.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-04/4.02-natural-exponential-and-logarithm.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-04/4.03-logarithm-rules-and-their-domains.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-04/4.04-discrete-and-continuous-compounding.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-04/4.05-solving-for-time-and-growth-rate.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-04/4.06-products-and-additive-log-changes.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-04/4.07-stable-numerical-evaluation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-04/4.08-numerical-conditioning-and-model-limits.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-04/4.09-growth-and-rate-conversion-explorer.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-04/4.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-05/5.01-sequences-and-time-indexing.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-05/5.02-arithmetic-and-geometric-sequences.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-05/5.03-first-order-balance-recurrences.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-05/5.04-closed-forms-from-repeated-substitution.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-05/5.05-fixed-points-and-equilibria.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-05/5.06-convergence-and-stability.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-05/5.07-variable-rates-and-payment-schedules.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-05/5.08-withdrawal-and-depletion-boundaries.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-05/5.09-contribution-and-withdrawal-recurrence-engine.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-05/5.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-06/6.01-summation-and-product-notation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-06/6.02-finite-geometric-sums.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-06/6.03-infinite-geometric-series.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-06/6.04-ordinary-annuities-and-annuities-due.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-06/6.05-growing-payment-streams.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-06/6.06-perpetuities-and-tail-conditions.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-06/6.07-truncation-and-approximation-error.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-06/6.08-zero-rates-and-independent-verification.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-06/6.09-cash-flow-series-derivation-and-verification-engine.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-06/6.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-07/7.01-limits-and-approaching-a-point.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-07/7.02-one-sided-limits.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-07/7.03-continuity-and-types-of-discontinuity.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-07/7.04-limits-at-infinity-and-asymptotes.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-07/7.05-exponential-limits-and-continuous-compounding.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-07/7.06-important-small-change-limits.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-07/7.07-intermediate-values-and-root-existence.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-07/7.08-numerical-investigation-versus-proof.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-07/7.09-chapter-project-boundary-and-continuity-investigation-lab.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-07/7.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-08/8.01-the-derivative-as-a-limit.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-08/8.02-power-sum-and-constant-rules.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-08/8.03-product-and-quotient-rules.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-08/8.04-the-chain-rule.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-08/8.05-exponential-and-logarithmic-derivatives.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-08/8.06-higher-derivatives-and-curvature.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-08/8.07-implicit-differentiation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-08/8.08-numerical-derivatives-and-step-selection.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-08/8.09-analytic-and-numerical-derivative-comparator.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-08/8.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-09/9.01-absolute-and-relative-sensitivity.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-09/9.02-elasticity.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-09/9.03-first-order-taylor-approximation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-09/9.04-second-order-taylor-approximation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-09/9.05-remainder-and-error-bounds.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-09/9.06-discounted-value-sensitivity.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-09/9.07-kinks-and-one-sided-sensitivities.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-09/9.08-sensitivity-reports-and-scenario-revaluation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-09/9.09-valuation-sensitivity-and-approximation-report-project.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-09/9.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-10/10.01-accumulation-and-riemann-sums.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-10/10.02-definite-and-indefinite-integrals.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-10/10.03-fundamental-theorem-of-calculus.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-10/10.04-substitution-and-integration-by-parts.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-10/10.05-discounting-continuous-payment-streams.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-10/10.06-improper-integrals-and-infinite-horizons.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-10/10.07-numerical-quadrature.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-10/10.08-discrete-versus-continuous-payments.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-10/10.09-continuous-cash-flow-valuation-engine.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-10/10.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-11/11.01-vectors-components-and-labels.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-11/11.02-vector-addition-and-scalar-multiplication.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-11/11.03-inner-products-and-valuation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-11/11.04-norms-and-distances.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-11/11.05-orthogonality-and-angles.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-11/11.06-projection-onto-a-direction.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-11/11.07-portfolio-weights-and-exposure-constraints.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-11/11.08-shape-broadcasting-and-alignment-checks.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-11/11.09-chapter-project-vectorized-portfolio-exposure-calculator.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-11/11.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-12/12.01-matrices-and-dimensions.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-12/12.02-matrix-multiplication-and-transformations.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-12/12.03-transpose-identity-and-diagonal-matrices.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-12/12.04-linear-systems-and-elimination.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-12/12.05-rank-and-existence-of-solutions.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-12/12.06-inverse-and-determinant.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-12/12.07-condition-numbers-and-perturbations.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-12/12.08-residuals-and-financial-interpretation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-12/12.09-chapter-project-exposure-matching-linear-solver.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-12/12.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-13/13.01-span-and-linear-combinations.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-13/13.02-independence-bases-and-dimension.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-13/13.03-column-space-and-null-space.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-13/13.04-orthogonal-projection-onto-a-subspace.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-13/13.05-least-squares-objectives.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-13/13.06-qr-factorization-and-stable-solvers.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-13/13.07-weighted-least-squares-and-units.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-13/13.08-rank-deficiency-and-regularization.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-13/13.09-chapter-project-least-squares-replication-analyzer.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-13/13.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-14/14.01-eigenvalues-and-eigenvectors.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-14/14.02-symmetric-matrices-and-spectral-decomposition.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-14/14.03-quadratic-forms.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-14/14.04-positive-definite-and-semidefinite-matrices.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-14/14.05-cholesky-factorization.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-14/14.06-singular-value-decomposition.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-14/14.07-low-rank-approximation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-14/14.08-decomposition-validation-and-interpretation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-14/14.09-chapter-project-quadratic-exposure-and-decomposition-lab.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-14/14.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-15/15.01-functions-of-several-variables.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-15/15.02-partial-derivatives.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-15/15.03-total-differentials-and-the-chain-rule.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-15/15.04-gradients-and-directional-derivatives.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-15/15.05-jacobians-of-vector-functions.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-15/15.06-hessians-and-mixed-partials.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-15/15.07-multivariable-taylor-approximation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-15/15.08-level-sets-and-sensitivity-interpretation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-15/15.09-chapter-project-multi-input-valuation-sensitivity-engine.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-15/15.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-16/16.01-objectives-and-decision-variables.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-16/16.02-stationary-points-and-first-order-conditions.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-16/16.03-second-order-classification.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-16/16.04-convex-sets-and-convex-objectives.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-16/16.05-gradient-descent.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-16/16.06-newton-and-quasi-newton-methods.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-16/16.07-scaling-initial-guesses-and-local-methods.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-16/16.08-calibration-residuals-and-validation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-16/16.09-chapter-project-deterministic-calibration-optimizer.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-16/16.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-17/17.01-feasible-sets-and-constraint-types.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-17/17.02-equality-constraints-and-lagrange-multipliers.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-17/17.03-inequality-constraints-and-kkt-conditions.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-17/17.04-active-constraints-and-complementarity.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-17/17.05-linear-programming.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-17/17.06-quadratic-programming.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-17/17.07-financial-allocation-assumptions.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-17/17.08-feasibility-and-independent-optimality-checks.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-17/17.09-chapter-project-constrained-allocation-decision-engine.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-17/17.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-18/18.01-error-taxonomy.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-18/18.02-floating-point-arithmetic-and-cancellation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-18/18.03-bracketing-and-bisection.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-18/18.04-newton-and-safeguarded-root-finding.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-18/18.05-multiple-roots-and-cash-flow-equations.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-18/18.06-interpolation-and-extrapolation.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-18/18.07-numerical-differentiation-and-integration.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-18/18.08-stopping-rules-and-diagnostics.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-18/18.09-chapter-project-financial-numerical-solver-and-diagnostics.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-18/18.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-19/19.01-differential-models-and-initial-conditions.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-19/19.02-separable-equations.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-19/19.03-linear-first-order-equations.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-19/19.04-equilibria-and-local-stability.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-19/19.05-euler-time-stepping.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-19/19.06-runge-kutta-and-adaptive-solvers.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-19/19.07-depletion-events-and-boundary-rules.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-19/19.08-validation-and-discrete-time-comparison.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-19/19.09-chapter-project-continuous-account-growth-and-depletion-simulator.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-19/19.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-20/20.01-model-validation-and-software-verification.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-20/20.02-known-value-and-analytic-benchmarks.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-20/20.03-financial-and-mathematical-invariants.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-20/20.04-boundary-and-invalid-inputs.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-20/20.05-floating-point-tolerances.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-20/20.06-property-and-metamorphic-checks.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-20/20.07-reproducibility-and-evidence.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-20/20.08-review-findings-and-release-gates.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-20/20.09-chapter-project-mathematical-model-validation-dossier.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-20/20.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-21/21.01-capstone-requirements-and-assumptions.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-21/21.02-architecture-and-module-interfaces.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-21/21.03-cash-flow-and-rate-module.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-21/21.04-sensitivity-and-approximation-module.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-21/21.05-linear-algebra-and-replication-module.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-21/21.06-optimization-and-feasibility-module.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-21/21.07-continuous-time-module-and-scenario-report.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-21/21.08-testing-documentation-and-transition-to-book-03.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-21/21.09-chapter-project-financial-mathematics-foundations-toolkit.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    },
+    {
+      "name": "link MASTER-TOC.md -> chapter-21/21.10-exercises-and-applied-problems.md",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "kind": "working-tree local target resolution"
+    }
+  ],
+  "report": {
+    "model": {
+      "horizon_years": 4,
+      "streams": [
+        {
+          "kind": "constant",
+          "a": 1000,
+          "b": 0
+        },
+        {
+          "kind": "linear",
+          "a": 200,
+          "b": 50
+        },
+        {
+          "kind": "exponential",
+          "a": 150,
+          "b": 0.02
+        }
+      ],
+      "payments": [
+        {
+          "time_years": 2,
+          "amount": 500
+        }
+      ],
+      "flat_curve": {
+        "r0": 0.05,
+        "slope": 0
+      },
+      "affine_curve": {
+        "r0": 0.03,
+        "slope": 0.005
+      }
+    },
+    "units": {
+      "time": "years",
+      "continuous_payment_rate": "currency/year",
+      "linear_payment_slope": "currency/year^2",
+      "exponential_growth": "1/year",
+      "curve_r0": "1/year",
+      "curve_slope": "1/year^2",
+      "discrete_payment": "currency",
+      "present_value": "currency",
+      "parallel_shift_derivative": "currency*years",
+      "rate_convention": "annual continuously compounded decimals"
+    },
+    "numerical_contract": {
+      "flat_simpson_subintervals": [
+        128,
+        256,
+        512
+      ],
+      "affine_simpson_subintervals": 512,
+      "parallel_shift_bump": 0.0001,
+      "flat_reconciliation_tolerance": 1e-06,
+      "refinement_is_error_certificate": false
+    },
+    "assumptions": [
+      "Deterministic teaching cash flows and curves; no market calibration.",
+      "No default, termination or liquidity adjustment.",
+      "Continuous streams integrate over the stated horizon; supplied discrete dates are valued explicitly.",
+      "Finite-grid Simpson and central differences carry numerical error; reconciliation is not certification."
+    ],
+    "examples": {
+      "accumulation_linear": 1470,
+      "fundamental_theorem_at_2": 426.6666666666667,
+      "substitution_integral": 0.9816843611112658,
+      "level_stream_pv": 5544.607913767074,
+      "growing_stream_pv": 3760.099117292947,
+      "growth_matches_discount_pv": 4000,
+      "zero_rate_linear_pv": 2200,
+      "level_perpetuity_pv": 20000,
+      "growing_perpetuity_pv": 30000,
+      "tail_one_percent_years": 115.12925464970229,
+      "discrete_two_payments_pv": 928.0334212683367,
+      "quadrature_midpoint": 0.3125,
+      "quadrature_trapezoid": 0.375,
+      "quadrature_simpson": 0.3333333333333333
+    },
+    "integrated_case": {
+      "flat_analytic_components": [
+        3625.384938440363,
+        1075.538913816508,
+        565.3978164142125
+      ],
+      "flat_analytic_discrete": 452.4187090179798,
+      "flat_analytic_total": 5718.740377689063,
+      "simpson_reconciliation": [
+        {
+          "subintervals": 128,
+          "total_pv": 5718.740377688741,
+          "absolute_error": 3.219611244276166e-10
+        },
+        {
+          "subintervals": 256,
+          "total_pv": 5718.740377689042,
+          "absolute_error": 2.091837814077735e-11
+        },
+        {
+          "subintervals": 512,
+          "total_pv": 5718.7403776890615,
+          "absolute_error": 1.8189894035458565e-12
+        }
+      ],
+      "maximum_reported_absolute_discrepancy": 3.219611244276166e-10,
+      "affine_numerical_total": 5874.268249921076,
+      "flat_rate_derivative_1bp_bump": -11342.893931296203,
+      "affine_rate_derivative_1bp_bump": -11723.523627292707
+    },
+    "runtime_certified": false,
+    "independent_review_completed": false
+  },
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_10.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"model\": {\n    \"horizon_years\": 4,\n    \"streams\": [\n      {\n        \"kind\": \"constant\",\n        \"a\": 1000,\n        \"b\": 0\n      },\n      {\n        \"kind\": \"linear\",\n        \"a\": 200,\n        \"b\": 50\n      },\n      {\n        \"kind\": \"exponential\",\n        \"a\": 150,\n        \"b\": 0.02\n      }\n    ],\n    \"payments\": [\n      {\n        \"time_years\": 2,\n        \"amount\": 500\n      }\n    ],\n    \"flat_curve\": {\n      \"r0\": 0.05,\n      \"slope\": 0\n    },\n    \"affine_curve\": {\n      \"r0\": 0.03,\n      \"slope\": 0.005\n    }\n  },\n  \"units\": {\n    \"time\": \"years\",\n    \"continuous_payment_rate\": \"currency/year\",\n    \"linear_payment_slope\": \"currency/year^2\",\n    \"exponential_growth\": \"1/year\",\n    \"curve_r0\": \"1/year\",\n    \"curve_slope\": \"1/year^2\",\n    \"discrete_payment\": \"currency\",\n    \"present_value\": \"currency\",\n    \"parallel_shift_derivative\": \"currency*years\",\n    \"rate_convention\": \"annual continuously compounded decimals\"\n  },\n  \"numerical_contract\": {\n    \"flat_simpson_subintervals\": [\n      128,\n      256,\n      512\n    ],\n    \"affine_simpson_subintervals\": 512,\n    \"parallel_shift_bump\": 0.0001,\n    \"flat_reconciliation_tolerance\": 1e-06,\n    \"refinement_is_error_certificate\": false\n  },\n  \"assumptions\": [\n    \"Deterministic teaching cash flows and curves; no market calibration.\",\n    \"No default, termination or liquidity adjustment.\",\n    \"Continuous streams integrate over the stated horizon; supplied discrete dates are valued explicitly.\",\n    \"Finite-grid Simpson and central differences carry numerical error; reconciliation is not certification.\"\n  ],\n  \"examples\": {\n    \"accumulation_linear\": 1470,\n    \"fundamental_theorem_at_2\": 426.6666666666667,\n    \"substitution_integral\": 0.9816843611112658,\n    \"level_stream_pv\": 5544.607913767074,\n    \"growing_stream_pv\": 3760.099117292947,\n    \"growth_matches_discount_pv\": 4000,\n    \"zero_rate_linear_pv\": 2200,\n    \"level_perpetuity_pv\": 20000,\n    \"growing_perpetuity_pv\": 30000,\n    \"tail_one_percent_years\": 115.12925464970229,\n    \"discrete_two_payments_pv\": 928.0334212683367,\n    \"quadrature_midpoint\": 0.3125,\n    \"quadrature_trapezoid\": 0.375,\n    \"quadrature_simpson\": 0.3333333333333333\n  },\n  \"integrated_case\": {\n    \"flat_analytic_components\": [\n      3625.384938440363,\n      1075.538913816508,\n      565.3978164142125\n    ],\n    \"flat_analytic_discrete\": 452.4187090179798,\n    \"flat_analytic_total\": 5718.740377689063,\n    \"simpson_reconciliation\": [\n      {\n        \"subintervals\": 128,\n        \"total_pv\": 5718.740377688741,\n        \"absolute_error\": 3.219611244276166e-10\n      },\n      {\n        \"subintervals\": 256,\n        \"total_pv\": 5718.740377689042,\n        \"absolute_error\": 2.091837814077735e-11\n      },\n      {\n        \"subintervals\": 512,\n        \"total_pv\": 5718.7403776890615,\n        \"absolute_error\": 1.8189894035458565e-12\n      }\n    ],\n    \"maximum_reported_absolute_discrepancy\": 3.219611244276166e-10,\n    \"affine_numerical_total\": 5874.268249921076,\n    \"flat_rate_derivative_1bp_bump\": -11342.893931296203,\n    \"affine_rate_derivative_1bp_bump\": -11723.523627292707\n  },\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_10.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.10 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "section_10_05.py",
+        "section_10_06.py",
+        "section_10_07.py",
+        "section_10_08.py",
+        "section_10_09.py",
+        "section_10_10.py",
+        "check_section_10_10.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "executed_at_utc": "2026-11-23T12:11:48.953092+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "passed": 281,
+  "failed": 0,
+  "scope": "10.10 report/provenance/units and navigation reconciliation;independent mathematical obligations retain V274-278 scope;no market/platform/reviewer/canonical approval"
+}

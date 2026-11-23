@@ -35,6 +35,15 @@ def run():
     case=report["integrated_case"]
     grids=case["simpson_reconciliation"]
     assert len(grids)==3
+    assert case["maximum_reported_absolute_discrepancy"] == max(row["absolute_error"] for row in grids)
+    assert report["model"]["horizon_years"] == 4
+    assert report["model"]["payments"] == [{"time_years":2,"amount":500}]
+    assert report["units"]["parallel_shift_derivative"] == "currency*years"
+    assert report["units"]["curve_slope"] == "1/year^2"
+    assert report["numerical_contract"]["flat_simpson_subintervals"] == [row["subintervals"] for row in grids]
+    assert report["numerical_contract"]["parallel_shift_bump"] == 0.0001
+    assert report["numerical_contract"]["refinement_is_error_certificate"] is False
+    assert len(report["assumptions"]) == 4
     assert grids[-1]["absolute_error"]<1e-6
     assert grids[-1]["absolute_error"]<=grids[0]["absolute_error"]+1e-10
     assert case["flat_rate_derivative_1bp_bump"]<0

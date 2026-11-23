@@ -37,11 +37,16 @@ def assessment():
         "quadrature_trapezoid":integrate(lambda t:t*t,0,1,2,"trapezoid"),
         "quadrature_simpson":integrate(lambda t:t*t,0,1,2,"simpson"),
     }
-    return {"examples":examples,"integrated_case":{
+    return {"model":{'horizon_years': 4, 'streams': [{'kind': 'constant', 'a': 1000, 'b': 0}, {'kind': 'linear', 'a': 200, 'b': 50}, {'kind': 'exponential', 'a': 150, 'b': 0.02}], 'payments': [{'time_years': 2, 'amount': 500}], 'flat_curve': {'r0': 0.05, 'slope': 0}, 'affine_curve': {'r0': 0.03, 'slope': 0.005}},
+        "units":{'time': 'years', 'continuous_payment_rate': 'currency/year', 'linear_payment_slope': 'currency/year^2', 'exponential_growth': '1/year', 'curve_r0': '1/year', 'curve_slope': '1/year^2', 'discrete_payment': 'currency', 'present_value': 'currency', 'parallel_shift_derivative': 'currency*years', 'rate_convention': 'annual continuously compounded decimals'},
+        "numerical_contract":{'flat_simpson_subintervals': [128, 256, 512], 'affine_simpson_subintervals': 512, 'parallel_shift_bump': 0.0001, 'flat_reconciliation_tolerance': 1e-06, 'refinement_is_error_certificate': False},
+        "assumptions":['Deterministic teaching cash flows and curves; no market calibration.', 'No default, termination or liquidity adjustment.', 'Continuous streams integrate over the stated horizon; supplied discrete dates are valued explicitly.', 'Finite-grid Simpson and central differences carry numerical error; reconciliation is not certification.'],
+        "examples":examples,"integrated_case":{
         "flat_analytic_components":exact_components,
         "flat_analytic_discrete":exact_discrete,
         "flat_analytic_total":exact_total,
         "simpson_reconciliation":grids,
+        "maximum_reported_absolute_discrepancy":max(row["absolute_error"] for row in grids),
         "affine_numerical_total":affine_value["total"],
         "flat_rate_derivative_1bp_bump":parallel_shift_derivative(
             streams,payments,flat,4,512,0.0001),
