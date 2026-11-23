@@ -27,6 +27,30 @@ class RepeatedCohortTests(unittest.TestCase):
         self.assertAlmostEqual(result["aggregate"]["root_mean_squared_calibration_gap"],
                                math.sqrt(sum(g*g for g in gaps) / len(gaps)))
 
+    def test_every_aggregate_metric_reconciles_to_reported_runs(self):
+        result = repeated_diagnostics(true_pd=0.07, train_size=80,
+                                      heldout_size=35, repetitions=5,
+                                      first_seed=2026)
+        rows = result["runs"]
+        self.assertEqual(len(rows), result["repetitions"])
+        self.assertTrue(all(row["synthetic"] for row in rows))
+        for key in ("posterior_mean_default", "heldout_default_rate",
+                    "heldout_calibration_gap", "heldout_log_loss",
+                    "heldout_brier_score"):
+            values = [row[key] for row in rows]
+            summary = result["aggregate"][key]
+            self.assertAlmostEqual(summary["mean"], sum(values) / len(values))
+            self.assertEqual(summary["min"], min(values))
+            self.assertEqual(summary["max"], max(values))
+            self.assertTrue(all(math.isfinite(v) for v in values))
+        for row in rows:
+            self.assertAlmostEqual(
+                row["heldout_calibration_gap"],
+                row["posterior_mean_default"] - row["heldout_default_rate"]
+            )
+            self.assertGreaterEqual(row["heldout_log_loss"], 0.0)
+            self.assertGreaterEqual(row["heldout_brier_score"], 0.0)
+
     def test_invalid_repetition_and_seed_ranges(self):
         for kwargs in ({"repetitions": 1}, {"repetitions": 201},
                        {"repetitions": True}, {"repetitions": 2.5},
