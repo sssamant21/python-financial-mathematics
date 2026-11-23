@@ -74,7 +74,7 @@ class ReverseStressTests(unittest.TestCase):
     def test_zero_exposure_and_search_boundary(self):
         # A zero-EAD borrower must not affect the stress threshold.
         base = reverse_stress([100], [.1], [.5], 10, maximum_multiplier=2)
-        with_zero = reverse_stress([100, 999999], [.1, 1], [.5, 1], 10,
+        with_zero = reverse_stress([100, 0], [.1, 1], [.5, 1], 10,
                                    maximum_multiplier=2)
         self.assertAlmostEqual(base["breach_multiplier"], 2, places=10)
         self.assertEqual(base["breach_multiplier"], with_zero["breach_multiplier"])
