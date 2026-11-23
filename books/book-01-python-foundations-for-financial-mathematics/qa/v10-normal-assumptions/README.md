@@ -1,0 +1,17 @@
+# V10 — Section14.13 normal-model assumptions
+
+Pinned source `b3242569ea57bf95431e08c85b84b592e0b240d5`. Run `python -B review.py results` and `python -B review.py replay`. [Results](results.json) and [replay](replay.json) each record **54 predicates passed,zero failed**, source/listing SHA256,Python/platform and captured native commands. Financial source and manuscript remain unchanged.
+
+| Contract | Independent reference and scope |
+|---|---|
+| Probability/standardization | Integrate the standard-normal density's power series using110digit Decimal arithmetic,201 terms and a supplied100digit pi constant. On the selected bracket abs(z)≤4,the last term is below1e−100. Seven central CDF/survival cases,return/percentage-point units and four intervals compare against this reference without source erf/erfc. |
+| Quantiles and loss convention |280 bisections of that independent integral on[−4,4] supply five quantiles1%,5%,50%,95%,99%. Fixed-exposure loss quantiles are V(.02q−.01),including zero exposure;native inputs use declared int/float types. A high modeled mean gives negative unfloored VaR. Probability tolerance2e−14,quantile5e−14 and dollar-loss2e−9 are recorded separately from reference precision. |
+| Mixtures and tails | Equal zero-mean normal regimes with sigma.5 and sqrt1.75 have variance1. The wide regime's weighted tail above3 alone exceeds the standard-normal tail;the omitted narrow-regime contribution is positive. This lower-bound witness distinguishes same mean/variance from normal tail shape. It is supplemental stipulated-model reasoning,not a market fit. |
+| Joint normality | External construction X=Z,Y=S·Z with independent equiprobable sign S gives normal marginals but a half-probability atom at zero in X+Y. The atom is a conceptual exact-law derivation,not a source joint sampler or empirical observation. |
+| Replay |256 actual native normal draws at seed803 match a separate Random.gauss replay. This establishes seeded reproducibility only;it does not validate market normality or independent generator quality. |
+
+**Retained observer input-contract failure.** [Initial observer](observer-initial.txt) passed Fraction objects into public helpers,whose declared domain accepts only int/float. Two initial attempts and a captured reproduction stopped at the first affine-CDF call after native main/compile had passed. [Diagnostic](observer-failure.txt) retains the reproduced traceback;no complete predicate JSON existed for those interrupted attempts. The final observer converts its native inputs to the declared public types and retains exact fractions only for oracle arithmetic. This is an observer error,not a financial-source defect.
+
+The two final runs each import the exact listing in isolation and execute native main/compile:**four final commands,24 invocations of twelve existing methods**. Earlier interrupted-attempt native invocations are separate and do not add historical methods. F122 source/listing hashes match [the prior formal review](../chapter-14-normal-review/README.md),retaining its seven initial failures,36 predicates,24 answers and ten project steps. No new workflow/answer/step totals.
+
+Arbitrarily narrow intervals,arbitrary extreme tails,production-grade quantile accuracy,empirical calibration and platform/independent acceptance remain open. Next: §14.14 sampling assumptions,then14.15–14.17 and other marked V10 interfaces. V10/Book1,F28/F32/F209/F165/F185 and broader acceptance remain open.

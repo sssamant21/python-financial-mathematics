@@ -1,0 +1,11 @@
+Initial observer used unsupported Fraction objects as native public inputs. Both attempted runs failed after executing native main/compile and initial standard-CDF rows;no complete JSON result was written. Exact reproduction below (temp directory varies).
+Traceback (most recent call last):
+  File "/workspace/scratch/e0bed2e906cb/run2305/books/book-01-python-foundations-for-financial-mathematics/qa/v10-normal-assumptions/review.py", line 32, in <module>
+    ck('affine return CDF '+str(z),m.cdf(F(1,100)+F(z,50),F(1,100),F(1,50)),F(want),'decimal return units/standardization');ck('percentage-point CDF '+str(z),m.cdf(1+2*z,1,2),F(want),'positive unit conversion preserves probability')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tmp9xm6jh2s/normal.py", line 48, in cdf
+  File "/tmp/tmp9xm6jh2s/normal.py", line 23, in check
+  File "/tmp/tmp9xm6jh2s/normal.py", line 8, in _number
+ValueError: finite numeric input required
+
+Correction:pass native int/float inputs as declared by the listing;retain Fraction only in independent oracle arithmetic. This is an observer input-contract error,not a financial-source defect.
