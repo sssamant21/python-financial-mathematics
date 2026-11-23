@@ -41,3 +41,16 @@ python -m py_compile transition_uncertainty.py test_transition_uncertainty.py te
 ```
 
 The five new tests cover deterministic grid agreement, directional prior sensitivity, invalid grid rejection, proper held-out log-score ordering and invalid scoring inputs. **These tests are authored but not yet verified on the published revision.** The helper currently lives in the test module as a teaching scaffold, not a separate CLI or a full walk-forward calibration study. Market-data validation and independent review remain pending.
+
+
+## Seeded train/held-out cohort calibration exercise (2026-11-23)
+
+`cohort_calibration.py` simulates a **two-state** (survival/default) cohort using a predeclared true default probability and a local seeded RNG. It fits the posterior mean using training counts **only**, freezes the forecast, then scores an independent held-out cohort with mean Bernoulli log loss, Brier score, and signed calibration gap (predicted minus observed default rate). No external market data or third-party dependencies are used. A single held-out cohort cannot establish calibration, uncertainty coverage, or performance across market regimes.
+
+```bash
+python -m unittest -v test_transition_uncertainty.py test_prior_sensitivity.py test_cohort_calibration.py
+python -m py_compile transition_uncertainty.py cohort_calibration.py test_cohort_calibration.py
+python cohort_calibration.py --true-pd 0.04 --train-size 500 --heldout-size 200 --seed 42
+```
+
+Five new synthetic tests check reproducibility, training-only posterior identity, independence of fitted parameters from held-out cohort size, independent score reconciliation, and invalid-input rejection. **Authored, not executed or verified in CI in this checkpoint.** This extension is not a real historical backtest. Next: execute all 17 tests on the published revision, add repeated-cohort calibration summaries and verify CI coverage.
