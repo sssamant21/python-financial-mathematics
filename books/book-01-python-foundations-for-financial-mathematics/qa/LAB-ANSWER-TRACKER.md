@@ -648,3 +648,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section14.3 probability-rule assumptions
 
 [Evidence](v10-probability-rule-models/README.md):1632 predicates pass twice. Three finite laws/all256 event pairs check native conditionals and exact independence;zero denominators,tolerance gap.024,directed1/4 versus5/13,partition omissions/overlap and Bayes/total-probability assembly distinguished. Four commands/24 invocations of twelve existing methods;F112 source/listing/nine baseline failures/40 predicates/24 answers/ten steps retained. No source change/new historical/workflow/answer/step totals. Next14.4 conditional-probability assumptions,then14.5–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section14.4 conditioning/base-rate/regime assumptions
+
+[Evidence](v10-conditioning-models/README.md):721 predicates pass twice. Two finite laws/all256 conditional pairs,96 Bayes/joint-table cases and tiny positive evidence checked against exact rational laws. Conditioning on a union changes independence;unchanged conditional rates with new regime mix change aggregate risk;case-mix reversal is external algebra,not causality. Four commands/24 invocations of twelve existing methods;F113 source/listing/six failures/33 predicates/24 answers/ten tasks retained. No source change/new historical/workflow/answer/step totals. Next14.5 independence assumptions,then14.6–14.17 and other marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

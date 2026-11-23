@@ -127,10 +127,26 @@ def simpson(f,T,n=256):
     # Shared exact weighted sum,once-rounded grid and bounded callback work.
     return _shared_integrate(f,0.,t,n,"simpson")
 
+def _discounted_rate(stream,curve,t,shift=0.0):
+    # Subclasses may define custom models;preserve their existing method route.
+    if type(stream) is not Stream or type(curve) is not Curve:
+        return finite(stream.rate(t)*curve.discount(t,shift),"integrand")
+    time=Fraction(horizon(t))
+    a,b=Fraction(finite(stream.a,"a")),Fraction(finite(stream.b,"b"))
+    rate=Fraction(finite(curve.base,"base"))+Fraction(finite(shift,"shift"))
+    slope=Fraction(finite(curve.slope,"slope"))
+    exponent=-rate*time-slope*time*time/2
+    scale=a
+    if stream.kind=="linear":
+        scale+=b*time
+    elif stream.kind=="exponential":
+        exponent+=b*time
+    return _scaled_exp(scale,exponent)
+
 def numerical_pv(stream,curve,T,n=256,shift=0.0):
     if not isinstance(stream,Stream) or not isinstance(curve,Curve):
         raise TypeError("expected Stream and Curve")
-    return simpson(lambda t:stream.rate(t)*curve.discount(t,shift),T,n)
+    return simpson(lambda t:_discounted_rate(stream,curve,t,shift),T,n)
 
 def discrete_pv(payments,curve,shift=0.0):
     if not isinstance(curve,Curve):
