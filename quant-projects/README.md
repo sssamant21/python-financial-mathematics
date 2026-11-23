@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Fifty-two self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Fifty-three self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -75,6 +75,8 @@ Fifty-two self-contained labs complement the financial-mathematics books without
 
 | [51](51-poisson-binomial-credit-loss/README.md) | Exact heterogeneous independent-default counts and monetary tails; bounded synthetic sparse-state benchmark | Synthetic only | `poisson_binomial.py`, `state_benchmark.py` |
 | [52](52-credit-transition-uncertainty/README.md) | Dirichlet–multinomial rating-row uncertainty, prior sensitivity, held-out and repeated synthetic cohort calibration | Synthetic only | `transition_uncertainty.py`, `cohort_calibration.py`, `repeated_cohorts.py` |
+
+| [53](53-reverse-credit-stress/README.md) | Reverse expected-credit-loss stress threshold with capped PD and bounded bisection | Synthetic only | `reverse_stress.py` |
 
 ## Quick start (Windows PowerShell)
 
