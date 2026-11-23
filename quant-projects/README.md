@@ -74,7 +74,7 @@ Fifty-two self-contained labs complement the financial-mathematics books without
 | [50](50-rare-event-importance-sampling/README.md) | Independent-default rare credit-loss events, exact binomial benchmark and likelihood-ratio importance sampling, fixed tilt sensitivity and repeated-seed variance diagnostics | Seeded synthetic | `rare_event.py`, `tilt_diagnostics.py`, `repeated_precision.py` |
 
 | [51](51-poisson-binomial-credit-loss/README.md) | Exact heterogeneous independent-default counts and monetary tails; bounded synthetic sparse-state benchmark | Synthetic only | `poisson_binomial.py`, `state_benchmark.py` |
-| [52](52-credit-transition-uncertainty/README.md) | Dirichlet–multinomial rating-row parameter uncertainty and seeded default-probability credible interval | Synthetic only | `transition_uncertainty.py` |
+| [52](52-credit-transition-uncertainty/README.md) | Dirichlet–multinomial rating-row uncertainty, prior sensitivity, held-out and repeated synthetic cohort calibration | Synthetic only | `transition_uncertainty.py`, `cohort_calibration.py`, `repeated_cohorts.py` |
 
 ## Quick start (Windows PowerShell)
 
