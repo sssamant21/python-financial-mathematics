@@ -58,5 +58,27 @@ class ReverseStressTests(unittest.TestCase):
         self.assertIsNone(beyond["breach_multiplier"])
 
 
+    def test_borrower_specific_pd_shock_reconciliation(self):
+        # Predeclared idiosyncratic PD shocks are represented as fixed input PDs,
+        # not inferred from outcomes or optimized after observing the threshold.
+        eads = [100, 200, 300]
+        stressed_pds = [.05, .10, .20]
+        lgds = [.5, .25, .4]
+        # Baseline EL = 2.5 + 5 + 24 = 31.5; at m=2, EL = 63.
+        self.assertAlmostEqual(expected_loss(eads, stressed_pds, lgds), 31.5)
+        self.assertAlmostEqual(expected_loss(eads, stressed_pds, lgds, 2), 63)
+        result = reverse_stress(eads, stressed_pds, lgds, 63,
+                                maximum_multiplier=3)
+        self.assertAlmostEqual(result["breach_multiplier"], 2, places=10)
+
+    def test_zero_exposure_and_search_boundary(self):
+        # A zero-EAD borrower must not affect the stress threshold.
+        base = reverse_stress([100], [.1], [.5], 10, maximum_multiplier=2)
+        with_zero = reverse_stress([100, 999999], [.1, 1], [.5, 1], 10,
+                                   maximum_multiplier=2)
+        self.assertAlmostEqual(base["breach_multiplier"], 2, places=10)
+        self.assertEqual(base["breach_multiplier"], with_zero["breach_multiplier"])
+
+
 if __name__ == "__main__":
     unittest.main()
