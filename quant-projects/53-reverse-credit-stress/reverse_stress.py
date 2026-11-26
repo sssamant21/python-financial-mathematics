@@ -32,6 +32,35 @@ def expected_loss(exposures, pds, lgds, multiplier=1.0):
     return total
 
 
+
+def borrower_stress(exposures, pds, lgds, multipliers):
+    """Forward stress with one predeclared PD multiplier >= 1 per borrower."""
+    baseline = expected_loss(exposures, pds, lgds)
+    if len(multipliers) != len(exposures):
+        raise ValueError("require one multiplier per borrower")
+    rows = []
+    for e, p, l, m in zip(exposures, pds, lgds, multipliers):
+        m = _number(m, "borrower multiplier", positive=True)
+        if m < 1:
+            raise ValueError("borrower multiplier must be >= 1")
+        p = float(p)
+        stressed_pd = min(1.0, p * m)
+        before = float(e) * p * float(l)
+        after = float(e) * stressed_pd * float(l)
+        rows.append({"baseline_pd": p, "stressed_pd": stressed_pd,
+                     "baseline_loss": before, "stressed_loss": after,
+                     "incremental_loss": after - before})
+    try:
+        stressed = math.fsum(row["stressed_loss"] for row in rows)
+        increment = math.fsum(row["incremental_loss"] for row in rows)
+    except OverflowError as exc:
+        raise ValueError("loss overflow") from exc
+    if not math.isfinite(stressed) or not math.isfinite(increment):
+        raise ValueError("loss overflow")
+    return {"baseline_loss": baseline, "stressed_loss": stressed,
+            "incremental_loss": increment, "borrowers": rows}
+
+
 def reverse_stress(exposures, pds, lgds, budget, *, maximum_multiplier=1000.0, iterations=80):
     """Find first multiplier in [1, max] with EL >= budget, or report unreachable.
 
