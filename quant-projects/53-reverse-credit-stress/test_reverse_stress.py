@@ -1,7 +1,7 @@
 import math
 import unittest
 
-from reverse_stress import expected_loss, reverse_stress
+from reverse_stress import borrower_stress, expected_loss, reverse_stress
 
 
 class ReverseStressTests(unittest.TestCase):
@@ -78,6 +78,32 @@ class ReverseStressTests(unittest.TestCase):
                                    maximum_multiplier=2)
         self.assertAlmostEqual(base["breach_multiplier"], 2, places=10)
         self.assertEqual(base["breach_multiplier"], with_zero["breach_multiplier"])
+
+
+    def test_explicit_vector_attribution(self):
+        result = borrower_stress([100, 200, 300], [.5, .1, 0], [.5, .25, 1], [3, 2, 100])
+        self.assertAlmostEqual(result["baseline_loss"], 30)
+        self.assertAlmostEqual(result["stressed_loss"], 60)
+        self.assertAlmostEqual(result["incremental_loss"], 30)
+        self.assertEqual([row["stressed_pd"] for row in result["borrowers"]], [1, .2, 0])
+        for row, expected in zip(result["borrowers"], [25, 5, 0]):
+            self.assertAlmostEqual(row["incremental_loss"], expected)
+
+    def test_vector_common_multiplier_equivalence(self):
+        for m in [1, 2, 100]:
+            result = borrower_stress([100, 200], [.1, .4], [.5, .25], [m, m])
+            self.assertAlmostEqual(result["stressed_loss"],
+                                   expected_loss([100, 200], [.1, .4], [.5, .25], m))
+
+    def test_invalid_vector(self):
+        for vector in [[], [1, 2], [.9], [True], [float("inf")], [float("nan")]]:
+            with self.subTest(vector=vector):
+                with self.assertRaises(ValueError):
+                    borrower_stress([100], [.1], [.5], vector)
+
+    def test_vector_loss_overflow(self):
+        with self.assertRaises(ValueError):
+            borrower_stress([1e308, 1e308], [.1, .1], [1, 1], [10, 10])
 
 
 if __name__ == "__main__":
