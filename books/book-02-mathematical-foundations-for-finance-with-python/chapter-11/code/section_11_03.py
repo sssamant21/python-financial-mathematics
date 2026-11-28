@@ -2,6 +2,7 @@
 from dataclasses import dataclass
 import json
 import math
+from fractions import Fraction
 
 def finite(x,name):
     if type(x) not in (int,float):
@@ -48,8 +49,14 @@ def dot(left,right):
     if left.axis!=right.axis:
         raise ValueError("axis mismatch")
     aligned=right.align(left.labels)
-    terms=[finite(x*y,"component product") for x,y in zip(left.values,aligned.values)]
-    return finite(math.fsum(terms),"dot product")
+    exact=sum(Fraction(x)*Fraction(y) for x,y in zip(left.values,aligned.values))
+    try:
+        value=float(exact)
+    except OverflowError as exc:
+        raise ValueError("dot product outside float range") from exc
+    if exact and value==0:
+        raise ValueError("dot product outside reportable float range")
+    return finite(value,"dot product")
 
 def market_value(prices,holdings):
     if prices.unit!="USD/share" or holdings.unit!="shares" or prices.axis!="asset" or holdings.axis!="asset":

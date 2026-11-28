@@ -1892,3 +1892,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-282 checkpoint — Full pinned vector-contract runtime refresh
 
 [Evidence](full-runtime-vector-2026-11-28/README.md) at `03787d6642909c67091365f23ae1b0b943205590`:642/642 Python files compile,429/429 check-test scripts pass,643/643 required source/fixture blobs verify before/after. Fresh manifest/path sets verified;includesV281 arithmetic/underflow fix and prior10.10/11.1 report/checkers. OriginalV281 failures and282-predicate oracle pair retained separately. Full-runtime progression gate met;next11.3 inner products/valuation. All38 COV categories partial,none closed;no platform/model/reviewer/release/canonical acceptance. Book2 remains in progress. Book1 separately advanced14.17 and remaining-source queue;next6.13.
+
+
+## V-283 checkpoint — Partial 11.3 aligned dot product
+
+[Evidence](ch11-dot-2026-11-28/README.md):37/4 baseline retained;41 corrected predicates pass twice; complete represented product accumulation fixes cancellation/underflow. Old report values agree within1e-12; exact equality observer expectation rejected. Two-file compilation and CLI/checker pass twice. Next11.3 gross notional/weight normalization then full answer/report/navigation crosswalk and reevaluate full refresh. V282 full counts remain tied to its pin. All38 COV partial, none closed; acceptance open. Book1 separately advanced6.13.

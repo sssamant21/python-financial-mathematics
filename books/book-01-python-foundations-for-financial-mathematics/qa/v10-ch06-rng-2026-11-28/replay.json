@@ -1,0 +1,130 @@
+{
+  "pin": "6eb128fff8b8067cdb8a2155f939628a381dca68",
+  "source_sha256": "a34e557b21535bdd026cefd44d05411ffe1dc9b54cb00d38dc388da6fd021dad",
+  "listing_hashes": [
+    "cdbf91f6bdd7ac47a12fd35bbbfda939b49050d8849d20da04519bc261cded4c",
+    "83d6451f7571667e0ae9ad4945aa7255f4ecea8b099bdce5b7d74cd9f2ddf6c7"
+  ],
+  "numpy": "2.3.5",
+  "python": "3.12.14",
+  "rows": [
+    {
+      "name": "replay 0 (1, 1)",
+      "passed": true
+    },
+    {
+      "name": "replay 0 (3, 4)",
+      "passed": true
+    },
+    {
+      "name": "replay 0 (7, 2)",
+      "passed": true
+    },
+    {
+      "name": "contiguous chunks 0",
+      "passed": true
+    },
+    {
+      "name": "reseed duplicates prefix 0",
+      "passed": true
+    },
+    {
+      "name": "same innovation scale 0",
+      "passed": true
+    },
+    {
+      "name": "replay 7 (1, 1)",
+      "passed": true
+    },
+    {
+      "name": "replay 7 (3, 4)",
+      "passed": true
+    },
+    {
+      "name": "replay 7 (7, 2)",
+      "passed": true
+    },
+    {
+      "name": "contiguous chunks 7",
+      "passed": true
+    },
+    {
+      "name": "reseed duplicates prefix 7",
+      "passed": true
+    },
+    {
+      "name": "same innovation scale 7",
+      "passed": true
+    },
+    {
+      "name": "replay 340282366920938463463374607431768211455 (1, 1)",
+      "passed": true
+    },
+    {
+      "name": "replay 340282366920938463463374607431768211455 (3, 4)",
+      "passed": true
+    },
+    {
+      "name": "replay 340282366920938463463374607431768211455 (7, 2)",
+      "passed": true
+    },
+    {
+      "name": "contiguous chunks 340282366920938463463374607431768211455",
+      "passed": true
+    },
+    {
+      "name": "reseed duplicates prefix 340282366920938463463374607431768211455",
+      "passed": true
+    },
+    {
+      "name": "same innovation scale 340282366920938463463374607431768211455",
+      "passed": true
+    },
+    {
+      "name": "independent equal-weight variance",
+      "passed": true
+    },
+    {
+      "name": "shared equal-weight variance",
+      "passed": true
+    },
+    {
+      "name": "offset equal-weight variance",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "random_lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "NumPy: 2.3.5\nBit generator: PCG64\nSeed: 20261022\nAxes: scenario, factor\nShape: (4, 2)\nFirst row: ['-0.223280', '-0.032109']\nFresh-stream repeat equal: True\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "test_random_lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_extra_draw_changes_later_values (__main__.RandomTests.test_extra_draw_changes_later_values) ... ok\ntest_same_seed_same_call (__main__.RandomTests.test_same_seed_same_call) ... ok\ntest_seed_and_generator_types (__main__.RandomTests.test_seed_and_generator_types) ... ok\ntest_shared_draws_for_two_assumptions (__main__.RandomTests.test_shared_draws_for_two_assumptions) ... ok\ntest_spawned_logical_streams (__main__.RandomTests.test_spawned_logical_streams) ... ok\ntest_state_advances (__main__.RandomTests.test_state_advances) ... ok\ntest_state_checkpoint (__main__.RandomTests.test_state_checkpoint) ... ok\ntest_validation_does_not_consume_stream (__main__.RandomTests.test_validation_does_not_consume_stream) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.035s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 21,
+  "failed": 0
+}

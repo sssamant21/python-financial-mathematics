@@ -723,3 +723,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Remaining-source queue refresh after Chapter14
 
 [Evidence](v10-remaining-scope-2026-11-28/README.md):336 inventory/hash predicates pass twice;322 locked sections/eight companions and all330 retained source identities verified.64 scoped V10 README references catalogued,not rerun/independently accepted.50 marker documents and26 outside selected14/15/18 groups remain heuristic candidates,not a completion percentage or26 proven unfinished sections. Next concrete item6.13 RNG,then6.17 companion and queued13/16/17/21 interfaces with fresh prior-evidence disposition. No new native execution/source change/answer/workflow/historical totals. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section 6.13 RNG assumptions
+
+[Evidence](v10-ch06-rng-2026-11-28/README.md):21 predicates pass twice; six commands/16 invocations of eight existing methods; source replay/chunk/scale checks separated from finite dependence laws. No source change or historical totals. Next6.17 companion. V10/Book1,F28/F32/F209/F165/F185 and broader acceptance open.

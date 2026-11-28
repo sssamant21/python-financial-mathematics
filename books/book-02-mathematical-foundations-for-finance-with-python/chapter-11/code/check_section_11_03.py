@@ -40,6 +40,12 @@ def run():
     rejects(ValueError,market_value,p,Vector(p.labels,(1,2,3),"USD"))
     rejects(ValueError,Vector,("A","A"),(1,2),"unit")
     rejects(TypeError,finite,True,"component")
+    huge=Vector(("A","B"),(1e308,1e308),"unit")
+    tiny=Vector(("A","B"),(5e-324,5e-324),"unit")
+    assert dot(huge,Vector(("A","B"),(2,-2),"unit"))==0
+    assert dot(huge,Vector(("A","B"),(2,-1),"unit"))==1e308
+    assert dot(tiny,Vector(("A","B"),(.5,.5),"unit"))==5e-324
+    rejects(ValueError,dot,Vector(("A",),(5e-324,),"unit"),Vector(("A",),(.5,),"unit"))
     report=assessment()
     close(report["portfolio_value_USD"],650)
     close(report["weighted_simple_return"],0.015)
