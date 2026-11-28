@@ -1839,3 +1839,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-281 checkpoint — Section11.2 aligned arithmetic/range/lab contracts
 
 [Evidence](ch11-addition-contracts-2026-11-28/README.md):baseline274 passes/six failed predicates retained;corrected282 pass twice. Exact complete represented linear combinations rescue intermediate overflow/subnormal accumulation;final nonzero unreportable scale/combination outputs reject.36 label-order pairs and14-answer/applied crosswalk retained;all previous assessment fields preserved. Command fence repaired. Chapter11:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory with six code/checker blobs changed since V273. Numeric-contract change makes new full pinned runtime the next gate before11.3. No new full-book pass yet. All38 COV categories partial,none closed;Book2/broader acceptance open. Book1 separately advanced14.17;V10/Book1 still open.
+
+
+## V-282 checkpoint — Full pinned vector-contract runtime refresh
+
+[Evidence](full-runtime-vector-2026-11-28/README.md) at `03787d6642909c67091365f23ae1b0b943205590`:642/642 Python files compile,429/429 check-test scripts pass,643/643 required source/fixture blobs verify before/after. Fresh manifest/path sets verified;includesV281 arithmetic/underflow fix and prior10.10/11.1 report/checkers. OriginalV281 failures and282-predicate oracle pair retained separately. Full-runtime progression gate met;next11.3 inner products/valuation. All38 COV categories partial,none closed;no platform/model/reviewer/release/canonical acceptance. Book2 remains in progress. Book1 separately advanced14.17 and remaining-source queue;next6.13.

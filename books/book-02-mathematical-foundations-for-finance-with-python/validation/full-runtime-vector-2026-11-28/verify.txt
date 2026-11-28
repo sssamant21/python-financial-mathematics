@@ -1,0 +1,10 @@
+from pathlib import Path
+import subprocess,json
+here=Path(__file__).resolve().parent;root=here.parents[3];r=json.loads((here/'runtime.json').read_text());pin=r['executable_source_revision'];prefix='books/book-02-mathematical-foundations-for-finance-with-python/';fixture=prefix+'chapter-01/data/section-1.14-cases.json';entries={}
+for row in subprocess.check_output(['git','ls-tree','-r',pin,'--',prefix],cwd=root,text=True).splitlines():
+ meta,path=row.split('\t',1)
+ if path.endswith('.py') or path==fixture:entries[path]=meta.split()[2]
+recorded={x['path']:x['sha'] for x in r['manifest']};assert len(recorded)==len(r['manifest']) and recorded==entries
+py={p for p in entries if p.endswith('.py')};scripts={p for p in py if Path(p).name.startswith(('check_','test_'))};assert len(r['compiled'])==len(py) and {x['path'] for x in r['compiled']}==py;assert len(r['scripts'])==len(scripts) and {x['path'] for x in r['scripts']}==scripts;assert r['assertions_enabled'] and r['hashes_verified_before'] and r['hashes_verified_after'];assert all(x['passed'] for x in r['compiled']+r['scripts'])
+v=dict(pin=pin,required_blobs=len(entries),compiled=len(py),compiled_passed=sum(x['passed'] for x in r['compiled']),scripts=len(scripts),scripts_passed=sum(x['passed'] for x in r['scripts']),exact_path_sets=True,manifest_matches_pinned_tree=True,source_fixture_hashes_verified_before_after=True,seconds=r['seconds'],limits='Candidate Linux execution only;COV38 categories remain partial,none closed;no reviewer/platform/model/release/canonical acceptance')
+(here/'verification.json').write_text(json.dumps(v,indent=2)+'\n');print(json.dumps(v))

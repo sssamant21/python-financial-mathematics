@@ -718,3 +718,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section14.17 applied-assessment assumptions
 
 [Evidence](v10-capstone-assumptions/README.md):40 predicates pass twice. Native binomial/scenario/summary/bootstrap/CDF checks separated from external screening,correlated-count,normal-loss and audit laws;actual1000/20000 draws and500 bootstrap means replayed. Four commands/24 invocations of twelve existing methods;F126 source/listing/eleven failures/49 predicates/24 answers/twelve rubric items retained. No source change/new historical/workflow/answer/step totals. Selected14.1–14.17 crosswalk recorded,not V10/Book1 closure. Next refresh/reconcile remaining marked sections/companions against v10-scope-probability-models/scope-index.json and manually disposition candidates. F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Remaining-source queue refresh after Chapter14
+
+[Evidence](v10-remaining-scope-2026-11-28/README.md):336 inventory/hash predicates pass twice;322 locked sections/eight companions and all330 retained source identities verified.64 scoped V10 README references catalogued,not rerun/independently accepted.50 marker documents and26 outside selected14/15/18 groups remain heuristic candidates,not a completion percentage or26 proven unfinished sections. Next concrete item6.13 RNG,then6.17 companion and queued13/16/17/21 interfaces with fresh prior-evidence disposition. No new native execution/source change/answer/workflow/historical totals. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.

@@ -18,3 +18,5 @@ Corrected scaling computes the exact represented binary product before reporting
 Fresh required paths remain the V273 path set. Six existing Python blobs now differ:earlier10.10/11.1 report/checker pairs plus11.2 arithmetic/checker. Because this batch changes a numeric evaluation/reporting contract,a new full pinned runtime refresh is the next progression gate before11.3. No new full-book pass is claimed by the scoped runtime. The most recent completed full execution remains V273 at2d5f2c8ccaffe737a199d7270a4bc048ca420dee until the refresh is recorded.
 
 All38 selected COV categories remain partial,none closed. Book2,platform,independent reviewer,market-model,release and canonical acceptance remain open. Book1 advanced separately. Next after the full refresh:11.3 inner products/valuation.
+
+**Later checkpoint:** [V282](../full-runtime-vector-2026-11-28/README.md) now records the full pinned runtime at03787d6642909c67091365f23ae1b0b943205590;the progression gate above is met. Earlier baseline/oracle/scoped evidence and broader acceptance limits remain unchanged.
