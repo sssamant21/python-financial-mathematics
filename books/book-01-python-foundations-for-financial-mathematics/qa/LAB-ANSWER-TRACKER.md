@@ -713,3 +713,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section14.16 integrated simulator assumptions
 
 [Evidence](v10-simulator-assumptions/README.md):26 predicates pass twice. Actual256-draw summaries/default trials and128-bootstrap replay separated from finite model/uncertainty/provenance laws;rounded sub-ULP payoff stress limit recorded. Six commands/24 invocations of twelve methods/two exact20,000-draw drivers;F125 source/listing/seven failures/48 predicates/24 answers/five phases retained. No source change/new historical/workflow/answer/step totals. Correlated-default/calibration/bootstrap/tiny-weight/runtime gaps remain. Next14.17 applied exercises,then marked interfaces. V10/Book1,F28/F32/F209/F165/F185/broader acceptance open.
+
+
+## V10 — Section14.17 applied-assessment assumptions
+
+[Evidence](v10-capstone-assumptions/README.md):40 predicates pass twice. Native binomial/scenario/summary/bootstrap/CDF checks separated from external screening,correlated-count,normal-loss and audit laws;actual1000/20000 draws and500 bootstrap means replayed. Four commands/24 invocations of twelve existing methods;F126 source/listing/eleven failures/49 predicates/24 answers/twelve rubric items retained. No source change/new historical/workflow/answer/step totals. Selected14.1–14.17 crosswalk recorded,not V10/Book1 closure. Next refresh/reconcile remaining marked sections/companions against v10-scope-probability-models/scope-index.json and manually disposition candidates. F28/F32/F209/F165/F185/broader acceptance open.

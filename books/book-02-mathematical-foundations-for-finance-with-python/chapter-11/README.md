@@ -9,7 +9,7 @@
 | Section | Title | Status |
 |---|---|---|
 | 11.1 | [Vectors, Components, and Labels](11.01-vectors-components-and-labels.md) | Draft — scoped label/unit/lab review and candidate runtime recorded;broader acceptance open |
-| 11.2 | [Vector Addition and Scalar Multiplication](11.02-vector-addition-and-scalar-multiplication.md) | Draft — runtime validation pending |
+| 11.2 | [Vector Addition and Scalar Multiplication](11.02-vector-addition-and-scalar-multiplication.md) | Draft — scoped arithmetic/lab review recorded;full refresh gate and broader acceptance open |
 | 11.3 | [Inner Products and Valuation](11.03-inner-products-and-valuation.md) | Draft — runtime validation pending |
 | 11.4 | [Norms and Distances](11.04-norms-and-distances.md) | Draft — runtime validation pending |
 | 11.5 | [Orthogonality and Angles](11.05-orthogonality-and-angles.md) | Draft — runtime validation pending |

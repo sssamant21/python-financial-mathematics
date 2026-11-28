@@ -1,5 +1,6 @@
 """Section 11.2: label-safe vector addition and scalar multiplication."""
 from dataclasses import dataclass
+from fractions import Fraction
 import json
 import math
 
@@ -56,17 +57,30 @@ def add(left,right):
     aligned=compatible(left,right)
     return Vector(left.labels,tuple(finite(a+b,"sum") for a,b in zip(left.values,aligned.values)),left.unit,left.axis)
 
+def _component_report(exact):
+    try:
+        value=float(exact)
+    except OverflowError as exc:
+        raise ValueError("component outside float range") from exc
+    if not math.isfinite(value) or (exact and value==0):
+        raise ValueError("component outside reportable float range")
+    return value
+
 def scale(value,scalar):
     if not isinstance(value,Vector):
         raise TypeError("expected Vector")
     k=finite(scalar,"scalar")
-    return Vector(value.labels,tuple(finite(k*x,"scaled component") for x in value.values),value.unit,value.axis)
+    return Vector(value.labels,tuple(_component_report(Fraction(k)*Fraction(x)) for x in value.values),value.unit,value.axis)
 
 def subtract(left,right):
     return add(left,scale(right,-1))
 
 def linear_combination(a,left,b,right):
-    return add(scale(left,a),scale(right,b))
+    aligned=compatible(left,right)
+    a,b=Fraction(finite(a,"left scalar")),Fraction(finite(b,"right scalar"))
+    values=tuple(_component_report(a*Fraction(x)+b*Fraction(y))
+                 for x,y in zip(left.values,aligned.values))
+    return Vector(left.labels,values,left.unit,left.axis)
 
 def assessment():
     desk_a=Vector(("ALPHA","BETA","GAMMA"),(100000,-20000,40000),"USD")

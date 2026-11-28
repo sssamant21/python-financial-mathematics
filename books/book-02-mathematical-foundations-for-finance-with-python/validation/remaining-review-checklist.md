@@ -1882,3 +1882,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-280 checkpoint — Section11.1 labels/units/immutable-record lab review
 
 [Evidence](ch11-labels-lab-2026-11-23/README.md):baseline139 passes/two audit/rendering gaps retained;corrected143 pass twice. All36 feed-order permutations,signed/zero holdings,mutable-list snapshots,frozen records,unit/axis/label rejection and14-answer/applied-lab crosswalk checked. Added explicit audit units/axis,repaired command fence and scoped status/next links;financial helpers and every old report value preserved. Chapter11:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory with four report/checker blobs changed since V273. No new full-book execution. Next11.2 addition/scalar multiplication. All38 COV categories partial,none closed;Book2/broader acceptance open. Book1 separately advanced14.16 simulator assumptions.
+
+
+## V-281 checkpoint — Section11.2 aligned arithmetic/range/lab contracts
+
+[Evidence](ch11-addition-contracts-2026-11-28/README.md):baseline274 passes/six failed predicates retained;corrected282 pass twice. Exact complete represented linear combinations rescue intermediate overflow/subnormal accumulation;final nonzero unreportable scale/combination outputs reject.36 label-order pairs and14-answer/applied crosswalk retained;all previous assessment fields preserved. Command fence repaired. Chapter11:21 compiled,11 checkers/10 CLIs pass;fresh642/429/643 inventory with six code/checker blobs changed since V273. Numeric-contract change makes new full pinned runtime the next gate before11.3. No new full-book pass yet. All38 COV categories partial,none closed;Book2/broader acceptance open. Book1 separately advanced14.17;V10/Book1 still open.

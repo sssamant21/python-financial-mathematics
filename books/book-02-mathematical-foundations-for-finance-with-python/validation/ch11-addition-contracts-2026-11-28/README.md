@@ -1,0 +1,20 @@
+# V281 — Section11.2 aligned arithmetic and finite-component contracts
+
+Base source `61c06b7c9114d0d45bcdb2ddfe08e8bce44a75a6`. Run `python -B review.txt baseline baseline` for pinned original,and `python -B review.txt corrected results` / `python -B review.txt corrected replay` for candidate source. Run `python -B runtime.txt` for scoped Chapter11 execution and fresh source inventory.
+
+[Baseline](baseline.json):274 passed/six failed predicates. Three linear-combination fixtures lose a representable final answer through intermediate scaled overflow or underflow;two final nonzero-underflow fixtures silently report0;one lab-command fence renders incorrectly. These are failed predicates for the identified evaluation/reporting mechanisms plus rendering,not six independent defect categories.
+
+Corrected scaling computes the exact represented binary product before reporting;the linear combination aligns compatible vectors and adds both exact products before one float report. Genuine final overflow or nonzero underflow rejects. This preserves0 from2·1e308−2·1e308,1e308 from2·1e308−1e308,and minimum subnormal5e−324 from two exact half-subnormal contributions. Separate scale(.5,minsubnormal) is unreportable and rejects. Addition/subtraction's existing rounded two-float behavior remains;mathematical associativity/distributivity is not generally guaranteed in floating point. The source checker retains these regression fixtures. Escaped command fences repaired and numeric contract/status/next links documented.
+
+| Worked exercises/applied scope | Independent expectation |
+|---|---|
+| 1–8 | Component sums/differences,positive/negative/zero scaling,identity and additive inverse follow exact coordinate arithmetic. Native ordinary signed/zero scalar cases and keyed operations checked. |
+| 9–11 | Holdings/trade and actual/target differences retain their quantity units. Desk exposures are150000,10000,30000 USD;total190000. All36 feed-order pairs check keyed add/subtract/linear-combination values and left output order;source operands retain their own label order. |
+| 12–14 | Misaligned allocation can preserve a signed total;total-only tests cannot certify labels. Units/currency/axis mismatch reject;no FX conversion or mandate validation is supplied. Tolerances are appropriate for ordinary differently ordered floating calculations but cannot justify wrong labels or erased representable range results. |
+| Applied assessment | Correct/incorrect allocation,signed/gross reporting andfalse approval flags checked. Gross equals signed only because combined components happen to be nonnegative here;the source's general definition uses absolute components. |
+
+[Results](results.json) and [replay](replay.json) each record282 passing predicates,zero failures,and retain rows,source/manuscript hashes and exact CLI/checker output. Each final run compiles two files and executes11.2 CLI/checker in isolation. Two added local evidence/next links expand the final link inventory relative to baseline;counts are not defect percentages. The [runtime record](runtime.json) records21 Chapter11 files compiled,11 checkers/10 CLIs passed,and fresh642 Python/429 check-test/643 required source-fixture identities verified before/after. [Preservation checks](preservation.json) confirm every prior assessment field remains unchanged. Existing checker naming does not imply independent reviewer sign-off.
+
+Fresh required paths remain the V273 path set. Six existing Python blobs now differ:earlier10.10/11.1 report/checker pairs plus11.2 arithmetic/checker. Because this batch changes a numeric evaluation/reporting contract,a new full pinned runtime refresh is the next progression gate before11.3. No new full-book pass is claimed by the scoped runtime. The most recent completed full execution remains V273 at2d5f2c8ccaffe737a199d7270a4bc048ca420dee until the refresh is recorded.
+
+All38 selected COV categories remain partial,none closed. Book2,platform,independent reviewer,market-model,release and canonical acceptance remain open. Book1 advanced separately. Next after the full refresh:11.3 inner products/valuation.

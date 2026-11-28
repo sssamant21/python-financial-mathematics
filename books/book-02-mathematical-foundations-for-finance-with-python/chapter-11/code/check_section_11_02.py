@@ -30,6 +30,14 @@ def run():
     rejects(ValueError,Vector,("A","A"),(1,2),"USD")
     rejects(TypeError,finite,True,"value")
     rejects(ValueError,scale,x,float("nan"))
+    huge=Vector(("A",),(1e308,),"USD")
+    tiny=Vector(("A",),(5e-324,),"USD")
+    assert linear_combination(2,huge,-2,huge).values==(0.0,)
+    assert linear_combination(2,huge,-1,huge).values==(1e308,)
+    assert linear_combination(.5,tiny,.5,tiny).values==(5e-324,)
+    rejects(ValueError,scale,tiny,.5)
+    rejects(ValueError,linear_combination,.5,tiny,0,tiny)
+    rejects(ValueError,linear_combination,2,huge,1,huge)
     report=assessment()
     assert report["combined_exposure_USD"]=={"ALPHA":150000.0,"BETA":10000.0,"GAMMA":30000.0}
     assert report["signed_total_USD"]==190000
